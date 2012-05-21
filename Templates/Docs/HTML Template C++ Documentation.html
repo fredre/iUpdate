@@ -1,0 +1,894 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+<title>HTML Template C++ Documentation</title>
+<style>
+
+BODY, .logo { background: white; }
+
+BODY {
+  color: black;
+  font-family: arial,sans-serif;
+  margin: 0;
+  padding: 1ex;
+}
+
+TABLE {
+  border-collapse: collapse;
+  border-spacing: 0;
+  border-width: 0;
+  color: inherit;
+}
+
+IMG { border: 0; }
+FORM { margin: 0; }
+input { margin: 2px; }
+
+.logo {
+  float: left;
+  width: 264px;
+  height: 77px;
+}
+
+.front .logo  {
+  float: none;
+  display:block;
+}
+
+.front .searchbox  {
+  margin: 2ex auto;
+  text-align: center;
+}
+
+.front .menubar {
+  text-align: center;
+}
+
+.menubar {
+  background: #006699;
+  margin: 1ex 0;
+  padding: 1px;
+} 
+
+.menubar A {
+  padding: 0.8ex;
+  font: bold 10pt Arial,Helvetica,sans-serif;
+}
+
+.menubar A:link, .menubar A:visited {
+  color: white;
+  text-decoration: none;
+}
+
+.menubar A:hover {
+  color: #ff6600;
+  text-decoration: underline;
+}
+
+A:link, A:visited {
+  background: transparent;
+  color: #006699;
+}
+
+A[href="#POD_ERRORS"] {
+  background: transparent;
+  color: #FF0000;
+}
+
+TD {
+  margin: 0;
+  padding: 0;
+}
+
+DIV {
+  border-width: 0;
+}
+
+DT {
+  margin-top: 1em;
+}
+
+.credits TD {
+  padding: 0.5ex 2ex;
+}
+
+.huge {
+  font-size: 32pt;
+}
+
+.s {
+  background: #dddddd;
+  color: inherit;
+}
+
+.s TD, .r TD {
+  padding: 0.2ex 1ex;
+  vertical-align: baseline;
+}
+
+TH {
+  background: #bbbbbb;
+  color: inherit;
+  padding: 0.4ex 1ex;
+  text-align: left;
+}
+
+TH A:link, TH A:visited {
+  background: transparent;
+  color: black;
+}
+
+.box {
+  border: 1px solid #006699;
+  margin: 1ex 0;
+  padding: 0;
+}
+
+.distfiles TD {
+  padding: 0 2ex 0 0;
+  vertical-align: baseline;
+}
+
+.manifest TD {
+  padding: 0 1ex;
+  vertical-align: top;
+}
+
+.l1 {
+  font-weight: bold;
+}
+
+.l2 {
+  font-weight: normal;
+}
+
+.t1, .t2, .t3, .t4, .t5  {
+  background: #006699;
+  color: white;
+}
+.t4 {
+  padding: 0.2ex 0.4ex;
+}
+.t1, .t2, .t3  {
+  padding: 0.5ex 1ex;
+}
+
+/* IE does not support  .box>.t1  Grrr */
+.box .t1, .box .t2, .box .t3, .box .t5 {
+  margin: 0;
+}
+
+.t1 {
+  font-size: 1.4em;
+  font-weight: bold;
+  text-align: center;
+}
+
+.t2 {
+  font-size: 1.0em;
+  font-weight: bold;
+  text-align: left;
+}
+
+.t3 {
+  font-size: 1.0em;
+  font-weight: normal;
+  text-align: left;
+}
+
+.t5 {
+  font-size: 0.8em;
+  font-weight: normal;
+  text-align: center;
+}
+
+/* width: 100%; border: 0.1px solid #FFFFFF; */ /* NN4 hack */
+
+.datecell {
+  text-align: center;
+  width: 17em;
+}
+
+.cell {
+  padding: 0.2ex 1ex;
+  text-align: left;
+}
+
+.label {
+  background: #aaaaaa;
+  color: black;
+  font-weight: bold;
+  padding: 0.2ex 1ex;
+  text-align: right;
+  white-space: nowrap;
+  vertical-align: baseline;
+}
+
+.categories {
+  border-bottom: 3px double #006699;
+  margin-bottom: 1ex;
+  padding-bottom: 3ex;
+  padding-top: 2ex;
+}
+
+.categories TABLE {
+  margin: auto;
+}
+
+.categories TD {
+  padding: 0.5ex 1ex;
+  vertical-align: baseline;
+}
+
+.path A {
+  background: transparent;
+  color: #006699;
+  font-weight: bold;
+}
+
+.pages {
+  background: #dddddd;
+  color: #006699;
+  padding: 0.2ex 0.4ex;
+}
+
+.path {
+  background: #dddddd;
+  border-bottom: 1px solid #006699;
+  color: #006699;
+ /*  font-size: 1.4em;*/
+  margin: 1ex 0;
+  padding: 0.5ex 1ex;
+}
+
+.menubar TD {
+  background: #006699;
+  color: white;
+}
+
+.menubar {
+  background: #006699;
+  color: white;
+  margin: 1ex 0;
+  padding: 1px;
+}
+
+.menubar .links     {
+  background: transparent;
+  color: white;
+  padding: 0.2ex;
+  text-align: left;
+}
+
+.menubar .searchbar {
+  background: black;
+  color: black;
+  margin: 0px;
+  padding: 2px;
+  text-align: right;
+}
+
+A.m:link, A.m:visited {
+  background: #006699;
+  color: white;
+  font: bold 10pt Arial,Helvetica,sans-serif;
+  text-decoration: none;
+}
+
+A.o:link, A.o:visited {
+  background: #006699;
+  color: #ccffcc;
+  font: bold 10pt Arial,Helvetica,sans-serif;
+  text-decoration: none;
+}
+
+A.o:hover {
+  background: transparent;
+  color: #ff6600;
+  text-decoration: underline;
+}
+
+A.m:hover {
+  background: transparent;
+  color: #ff6600;
+  text-decoration: underline;
+}
+
+table.dlsip     {
+  background: #dddddd;
+  border: 0.4ex solid #dddddd;
+}
+
+.pod PRE     {
+  background: #eeeeee;
+  border: 1px solid #888888;
+  color: black;
+  padding: 1em;
+  white-space: pre;
+}
+
+.pod H1      {
+  background: transparent;
+  color: #006699;
+  font-size: large;
+}
+
+.pod H1 A { text-decoration: none; }
+.pod H2 A { text-decoration: none; }
+.pod H3 A { text-decoration: none; }
+.pod H4 A { text-decoration: none; }
+
+.pod H2      {
+  background: transparent;
+  color: #006699;
+  font-size: medium;
+}
+
+.pod H3      {
+  background: transparent;
+  color: #006699;
+  font-size: medium;
+  font-style: italic;
+}
+
+.pod H4      {
+  background: transparent;
+  color: #006699;
+  font-size: medium;
+  font-weight: normal;
+}
+
+.pod IMG     {
+  vertical-align: top;
+}
+
+.pod .toc A  {
+  text-decoration: none;
+}
+
+.pod .toc LI {
+  line-height: 1.2em;
+  list-style-type: none;
+}
+
+.faq DT {
+  font-size: 1.4em;
+  font-weight: bold;
+}
+
+.chmenu {
+  background: black;
+  color: red;
+  font: bold 1.1em Arial,Helvetica,sans-serif;
+  margin: 1ex auto;
+  padding: 0.5ex;
+}
+
+.chmenu TD {
+  padding: 0.2ex 1ex;
+}
+
+.chmenu A:link, .chmenu A:visited  {
+  background: transparent;
+  color: white;
+  text-decoration: none;
+}
+
+.chmenu A:hover {
+  background: transparent;
+  color: #ff6600;
+  text-decoration: underline;
+}
+
+.column {
+  padding: 0.5ex 1ex;
+  vertical-align: top;
+}
+
+.datebar {
+  margin: auto;
+  width: 14em;
+}
+
+.date {
+  background: transparent;
+  color: #008000;
+}
+
+.footer {
+  margin-top: 1ex;
+  text-align: right;
+  color: #006699;
+  font-size: x-small;
+  border-top: 1px solid #006699;
+  line-height: 120%;
+}
+
+.front .footer {
+  border-top: none;
+}
+
+#permalink {
+  float: right
+}
+
+#permalink A {
+  font-size: small;
+}
+
+.sr {
+  font-size: inherit;
+  margin: 0;
+}
+
+.cpanstats {
+  float: left;
+  text-align: left;
+  color: #bbb;
+  white-space: pre;
+}
+
+form.tool {
+  margin: 1ex;
+}
+
+</style>
+</head>
+
+<body>
+  <b>HTML Template C++</b>
+  <div style="margin: 10px; font-size: 12px">NOTE: this is a modified version of the original
+  HTML::Template documentation, which can be found <a href="http://search.cpan.org/%7Esamtregar/HTML-Template-2.9/Template.pm" target="_blank">here</a>.
+  </div>
+<div class="pod" style="margin-right:20ex">
+<a name="___top"></a>
+<div class="pod">
+<div class="toc">
+<div class="indexgroup">
+<ul class="indexList indexList1">
+  <li class="indexItem indexItem1"><a href="#DOWNLOAD">Where to Download</a>
+  </li><li class="indexItem indexItem1"><a href="#SYNOPSIS">Synopsis</a>
+  </li><li class="indexItem indexItem1"><a href="#DESCRIPTION">Description</a>
+
+  </li><li class="indexItem indexItem1"><a href="#THE_TAGS">THE TAGS</a>
+  <ul class="indexList indexList2">
+    <li class="indexItem indexItem2"><a href="#TMPL_VAR">TMPL_VAR</a>
+    </li><li class="indexItem indexItem2"><a href="#TMPL_LOOP">TMPL_LOOP</a>
+    </li><li class="indexItem indexItem2"><a href="#TMPL_INCLUDE">TMPL_INCLUDE</a>
+    </li><li class="indexItem indexItem2"><a href="#TMPL_IF">TMPL_IF</a>
+
+    </li><li class="indexItem indexItem2"><a href="#TMPL_ELSE">TMPL_ELSE</a>
+    </li><li class="indexItem indexItem2"><a href="#TMPL_UNLESS">TMPL_UNLESS</a>
+    </li><li class="indexItem indexItem2"><a href="#CONTEXT_VARS">Loop Context Variables</a>
+    </li><li class="indexItem indexItem2"><a href="#NOTES">NOTES</a>
+  <ul class="indexList indexList2">
+    <li class="indexItem indexItem2"><a href="#SYNTAX">Shorter Syntax</a>
+    </li><li class="indexItem indexItem2"><a href="#CASE">Case Sensitivity</a>
+  </li></ul>
+  </li></ul>
+  </li><li class="indexItem indexItem1"><a href="#METHODS">METHODS</a>
+  <ul class="indexList indexList2">
+    <li class="indexItem indexItem2"><a href="#Set_Template_File%28%29">Set_Template_File()</a>
+    </li><li class="indexItem indexItem2"><a href="#Process%28%29">Process()</a>
+    </li><li class="indexItem indexItem2"><a href="#std_cout">std::cout</a>
+  </li></ul>
+
+  </li><li class="indexItem indexItem1"><a href="#TODO">TODO</a>
+  </li><li class="indexItem indexItem1"><a href="#AUTHOR">AUTHOR</a>
+  </li><li class="indexItem indexItem1"><a href="#LICENSE">LICENSE</a>
+
+</li></ul>
+</div>
+</div>
+
+<h1><a class="u" href="#___top" title="click to go to top of document" name="DOWNLOAD">WHERE TO DOWNLOAD</a></h1>
+
+<p>The project is available on <a href="http://sourceforge.net/projects/htmltemplatec/" target="_blank">SourceForge</a> for download.
+ The code is developed on <b>Linux</b> and tested against a version of <b>Microsoft Visual Studio</b> compiler.</p>
+
+
+<h1><a class="u" href="#___top" title="click to go to top of document" name="SYNOPSIS">SYNOPSIS</a></h1>
+
+<p>First you make a template - this is just a normal HTML file with a few extra tags,
+the simplest being &lt;TMPL_VAR&gt;</p>
+
+<p>For example,
+test.tmpl:</p>
+
+<pre>  My name is &lt;TMPL_VAR NAME=NAME&gt;.
+  I live in &lt;TMPL_VAR NAME=CITY&gt;.</pre>
+
+<p>Now create a small C++ program:</p>
+
+<pre>  #include "html_template.h"
+
+  using namespace std;
+  using namespace tmpl;
+
+  int main(int argc, char* argv[])
+  {
+   html_template templ("test.tmpl");
+
+   templ("NAME") = "Amador";
+   templ("CITY") = "New York City";
+
+   cout &lt;&lt; templ;
+   return 0;
+  }</pre>
+
+<p>You should see the following output when running this program:</p>
+
+<pre>  My name is Amador.
+  I live in New York City.</pre>
+
+<h1><a class="u" href="#___top" title="click to go to top of document" name="DESCRIPTION">DESCRIPTION </a></h1>
+
+<p>This module attempts to make using HTML templates simple and natural. 
+It extends standard HTML with a few new HTML-esque tags - &lt;TMPL_VAR&gt;, 
+&lt;TMPL_LOOP&gt;, &lt;TMPL_INCLUDE&gt;, &lt;TMPL_IF&gt;, &lt;TMPL_ELSE&gt; 
+and &lt;TMPL_UNLESS&gt;. The file written with HTML and these new tags is called 
+a template. It is usually saved separate from your script - possibly even created by someone else!
+Using this module you fill in the values for the variables, loops and branches 
+declared in the template. This allows you to separate design - the HTML - from the data, 
+which you generate in the C++ program.</p>
+
+<h1><a class="u" href="#___top" title="click to go to top of document" name="THE_TAGS">THE TAGS</a></h1>
+
+<h2><a class="u" href="#___top" title="click to go to top of document" name="TMPL_VAR">TMPL_VAR</a></h2>
+
+<pre>  &lt;TMPL_VAR NAME="PARAMETER_NAME"&gt;</pre>
+
+<p>The &lt;TMPL_VAR&gt; tag is very simple. For each &lt;TMPL_VAR&gt; 
+tag in the template you call template("PARAMETER_NAME") = VALUE. When 
+the template is output the &lt;TMPL_VAR&gt; is replaced with the VALUE 
+text you specified. If you don't set a parameter it just gets skipped in
+ the output.</p>
+
+<p>Optionally you can use the "ESCAPE=HTML" 
+option in the tag to indicate that you want the value to be HTML-escaped before 
+being returned from output. This means that the ", &lt;, &gt;, and &amp; 
+characters get translated into &amp;quot;, &amp;lt;, &amp;gt; and &amp;amp; respectively. 
+This is useful when you want to use a TMPL_VAR in a context where those characters 
+would cause trouble. Example:</p>
+
+<pre>  &lt;input name=param type=text value="&lt;TMPL_VAR NAME="PARAM"&gt;"&gt;</pre>
+
+<p>If you attempt to assign a value such as <b>sam"my</b> you'll get in trouble with HTML's idea of a double-quote. On the other hand, if you use ESCAPE=HTML, like this:</p>
+
+<pre>  &lt;input name=param type=text value="&lt;TMPL_VAR ESCAPE=HTML NAME="PARAM"&gt;"&gt;</pre>
+
+<p>You'll get what you wanted no matter what value happens to be passed in for param. 
+You can also write ESCAPE="HTML", ESCAPE='HTML' ESC=HTML, ESC HTML and ESC=HTML.</p>
+
+<p>There is also the "ESCAPE=URL" option which may be used for VARs that
+ populate a URL. It will do URL escaping, like replacing ' ' with '+' 
+and '/' with '%2F'.</p>
+
+<p>There is also the "ESCAPE=JS" option which may be used for VARs that 
+need to be placed within a Javascript string. All \n, \r, ' and " 
+characters are escaped.</p>
+
+<p>For convenience, ESCAPE=XML was added as well, which does the same thing as ESCAPE=HTML.</p>
+
+<h2><a class="u" href="#___top" title="click to go to top of document" name="TMPL_LOOP">TMPL_LOOP</a></h2>
+
+<pre>  &lt;TMPL_LOOP NAME="LOOP_NAME"&gt; ... &lt;/TMPL_LOOP&gt;</pre>
+
+<p>The &lt;TMPL_LOOP&gt; tag is a bit more complicated than &lt;TMPL_VAR&gt;. 
+The &lt;TMPL_LOOP&gt; tag allows you to delimit a section of text and give it a name. 
+Inside this named loop you place &lt;TMPL_VAR&gt;s. Now you pass to your template 
+a list (<b>loop_t</b>) of parameter assignments (<b>row_t</b>) for this loop. 
+The loop iterates over the list of row_t structures, and produces output from the text block for each pass. 
+Unset parameters are skipped. Here's an example:</p>
+
+<pre>  &lt;TMPL_LOOP NAME=EMPLOYEE_INFO&gt;
+    Name: &lt;TMPL_VAR NAME=NAME&gt;
+    Job:  &lt;TMPL_VAR NAME=JOB&gt;
+  &lt;/TMPL_LOOP&gt;</pre>
+
+<p>In the script:</p>
+
+<pre>  #include "html_template.h"
+
+  using namespace std;
+  using namespace tmpl;
+
+  int main(int argc, char* argv[])
+  {
+   html_template my_template("test.tmpl");  
+   loop_t loop_employee_info;
+   row_t row_employee_info;
+
+   row_employee_info("name") = "Sam";
+   row_employee_info("job") = "Bunny Farm Owner";
+   loop_employee_info += row_employee_info;
+
+   row_employee_info("name") = "Steve";
+   row_employee_info("job") = "Senior Keyboard Operator";
+   loop_employee_info += row_employee_info;
+
+   my_template("EMPLOYEE_INFO") = loop_employee_info;
+
+   cout &lt;&lt; my_template;
+
+
+ return 0;
+}</pre>  
+
+ <p>The output on screen:</p>
+
+<pre>   Name: Sam
+   Job: Bunny Farm Owner
+
+   Name: Steve
+   Job: Senior Keyboard Operator</pre>
+
+<p>&lt;TMPL_LOOP&gt;s within &lt;TMPL_LOOP&gt;s are fine and work as you would expect. 
+Here is an example, where we print out the list of nicknames for each name:
+</p><pre>&lt;TMPL_LOOP NAME=NAMES&gt;
+
+    Name: &lt;TMPL_VAR NAME=NAME&gt;
+    Nicknames:
+
+    &lt;TMPL_LOOP nicknames&gt;
+      &lt;TMPL_VAR NAME="nickname"&gt;
+    &lt;/TMPL_LOOP&gt;
+
+&lt;/TMPL_LOOP&gt;
+</pre>
+<p>In the code:</p>
+<pre>  #include "html_template.h"
+
+  using namespace std;
+  using namespace tmpl;
+ 
+  int main(int argc, char* argv[])
+  {
+   html_template my_template("test.tmpl");
+
+   loop_t loop_names;
+   loop_t loop_nicknames;
+   row_t row_name;
+   row_t row_nickname;
+
+   row_name("name") = "Bobby";
+
+   row_nickname("nickname") = "the big bad wolf";
+   loop_nicknames += row_nickname;
+
+   row_nickname("nickname") = "He-Man";
+   loop_nicknames += row_nickname;
+
+   row_name("nicknames") = loop_nicknames;
+   loop_names += row_name;
+
+   my_template("NAMES") = loop_names;
+
+   cout &lt;&lt; my_template;
+
+   return 0;
+  }</pre>   
+
+<p>Which gives us on screen:</p>
+<pre>  Name: Bobby
+  Nicknames:
+      the big bad wolf
+      He-Man</pre>
+
+<p>Sometimes it is difficult to wrap your head around the syntax, especially with nested loops.
+Whenever you have to code a loop, think of it this way: </p><div><b>To build a loop, create a loop_t object.
+ To add a row, create a row_t object, and add it to the loop after assigning variables. 
+ You can assign another loop_t to a row_t element, creating a nested loop.</b></div><p></p>
+
+<p>Any variable used outside of a loop, in global scope, CAN be used within any other loop scope.</p>
+
+<p>In nested loops, variables from higher-level loop scope "trickle-down" to nested loops.</p>
+
+<h2><a class="u" href="#___top" title="click to go to top of document" name="TMPL_INCLUDE">TMPL_INCLUDE</a></h2>
+
+<pre>  &lt;TMPL_INCLUDE NAME="filename.tmpl"&gt;</pre>
+
+<p>This tag includes a template directly into the current template at the point where the tag is found. 
+The included template contents are used exactly as if its contents were physically included in the master 
+template.</p>
+
+<p>The file specified can be an absolute path (beginning with a '/' under Unix, for example). 
+If it isn't absolute, the system will search for the template relative to the directory of the parent template.</p>
+
+<h2><a class="u" href="#___top" title="click to go to top of document" name="TMPL_IF">TMPL_IF</a></h2>
+
+<pre>  &lt;TMPL_IF NAME="PARAMETER_NAME"&gt; ... &lt;/TMPL_IF&gt;</pre>
+
+<p>The &lt;TMPL_IF&gt; tag allows you to include or not include a block of the template 
+based on the value of a given parameter name. If the parameter is given a value that is true - like '1' 
+- then the block is included in the output. If it is not defined, or given a false value 
+- like '0' - then it is skipped. The parameters are specified the same way as with TMPL_VAR.</p>
+
+<p>Example template:</p>
+
+<pre>  &lt;TMPL_IF NAME="BOOL"&gt;
+   Some text that only gets displayed if BOOL is true!
+  &lt;/TMPL_IF&gt;</pre>
+
+<p>Now if you call my_template("BOOL") = 1 then the above block will be included by output.</p>
+
+<p>&lt;TMPL_IF&gt; &lt;/TMPL_IF&gt; blocks can include any valid 
+HTML::Template construct - VARs and LOOPs and other IF/ELSE blocks. 
+Note, however, that intersecting a &lt;TMPL_IF&gt; and a 
+&lt;TMPL_LOOP&gt; is invalid.</p>
+
+<pre>  Not going to work:
+   &lt;TMPL_IF BOOL&gt;
+      &lt;TMPL_LOOP SOME_LOOP&gt;
+   &lt;/TMPL_IF&gt;
+     &lt;/TMPL_LOOP&gt;</pre>
+
+<p>If the name of a TMPL_LOOP is used in a TMPL_IF, the IF block will output if the loop has at least one row. Example:</p>
+
+<pre>  &lt;TMPL_IF LOOP_ONE&gt;
+    This will output if the loop is not empty.
+  &lt;/TMPL_IF&gt;
+
+  &lt;TMPL_LOOP LOOP_ONE&gt;
+    ....
+  &lt;/TMPL_LOOP&gt;</pre>
+
+<h2><a class="u" href="#___top" title="click to go to top of document" name="TMPL_ELSE">TMPL_ELSE</a></h2>
+
+<pre>  &lt;TMPL_IF NAME="PARAMETER_NAME"&gt; ... &lt;TMPL_ELSE&gt; ... &lt;/TMPL_IF&gt;</pre>
+
+<p>You can include an alternate block in your TMPL_IF block by using 
+TMPL_ELSE. NOTE: You still end the block with &lt;/TMPL_IF&gt;, not 
+&lt;/TMPL_ELSE&gt;!</p>
+
+<pre>   Example:
+
+   &lt;TMPL_IF BOOL&gt;
+     Some text that is included only if BOOL is true
+   &lt;TMPL_ELSE&gt;
+     Some text that is included only if BOOL is false
+   &lt;/TMPL_IF&gt;</pre>
+
+<h2><a class="u" href="#___top" title="click to go to top of document" name="TMPL_UNLESS">TMPL_UNLESS</a></h2>
+
+<pre>  &lt;TMPL_UNLESS NAME="PARAMETER_NAME"&gt; ... &lt;/TMPL_UNLESS&gt;</pre>
+
+<p>This tag is the opposite of &lt;TMPL_IF&gt;. The block is output if 
+the CONTROL_PARAMETER is set false or not defined. You can use 
+&lt;TMPL_ELSE&gt; with &lt;TMPL_UNLESS&gt; just as you can with 
+&lt;TMPL_IF&gt;.</p>
+
+<pre>  Example:
+
+  &lt;TMPL_UNLESS BOOL&gt;
+    Some text that is output only if BOOL is FALSE.
+  &lt;TMPL_ELSE&gt;
+    Some text that is output only if BOOL is TRUE.
+  &lt;/TMPL_UNLESS&gt;</pre>
+
+<p>If the name of a TMPL_LOOP is used in a TMPL_UNLESS, the UNLESS block output if the loop has zero rows.</p>
+
+<pre>  &lt;TMPL_UNLESS LOOP_ONE&gt;
+    This will output if the loop is empty.
+  &lt;/TMPL_UNLESS&gt;
+  
+  &lt;TMPL_LOOP LOOP_ONE&gt;
+    ....
+  &lt;/TMPL_LOOP&gt;</pre>
+
+<h2><a class="u" href="#___top" title="click to go to top of document" name="CONTEXT_VARS">Loop Context Variables</a></h2>
+
+<p>The following context variables are made available inside a loop: 
+__FIRST__, __LAST__, __INNER__, __ODD__, and __TOTAL__. 
+They can be used with &lt;TMPL_IF&gt;, &lt;TMPL_UNLESS&gt; and &lt;TMPL_ELSE&gt; 
+to control how a loop is output.
+
+</p><p>In addition to the above, a __COUNTER__ is also made available.</p>
+
+<p>Example:</p>
+
+<pre>   &lt;TMPL_LOOP NAME="FOO"&gt;
+      &lt;TMPL_IF NAME="__first__"&gt;
+        This only outputs on the first pass.
+      &lt;/TMPL_IF&gt;
+
+      &lt;TMPL_IF NAME="__odd__"&gt;
+        This outputs every other pass, on the odd passes.
+      &lt;/TMPL_IF&gt;
+
+      &lt;TMPL_UNLESS NAME="__odd__"&gt;
+        This outputs every other pass, on the even passes.
+      &lt;/TMPL_UNLESS&gt;
+
+      &lt;TMPL_IF NAME="__inner__"&gt;
+        This outputs on passes that are neither first nor last.
+      &lt;/TMPL_IF&gt;
+
+      This is pass number &lt;TMPL_VAR NAME="__counter__"&gt;.
+
+      &lt;TMPL_IF NAME="__last__"&gt;
+
+        This only outputs on the last pass.
+      &lt;/TMPL_IF&gt;
+   &lt;/TMPL_LOOP&gt;</pre>
+
+<p>One use of this feature is to provide a "separator" similar in effect to the perl function join(). Example:</p>
+
+<pre>  &lt;TMPL_LOOP FRUIT&gt;
+     &lt;TMPL_IF __last__&gt; and &lt;/TMPL_IF&gt;
+     &lt;TMPL_VAR KIND&gt;&lt;TMPL_UNLESS __last__&gt;, &lt;TMPL_ELSE&gt;.&lt;/TMPL_UNLESS&gt;
+  &lt;/TMPL_LOOP&gt;</pre>
+
+<p>Would output something like:</p>
+
+<pre>  Apples, Oranges, Brains, Toes, and Kiwi.</pre>
+
+<p>NOTE: A loop with only a single pass will get both __FIRST__ and __LAST__ set to true, but not __INNER__.</p>
+
+<p></p>
+
+<h2><a class="u" href="#___top" title="click to go to top of document" name="NOTES">NOTES</a></h2>
+
+<h2><a class="u" href="#___top" title="click to go to top of document" name="SYNTAX">Shorter syntax</a></h2>
+
+<p>The "NAME=" in the tag is optional, so "&lt;TMPL_VAR test&gt;" is acceptable. The same is true
+for all other tag types.</p>
+
+<h2><a class="u" href="#___top" title="click to go to top of document" name="CASE">Case Sensitivity</a></h2>
+
+<p>Variables are <b>case-insensitive</b>, except TMPL_INCLUDE, where operating systems usually expect
+case-sensitive file names.</p>
+
+<h1><a class="u" href="#___top" title="click to go to top of document" name="METHODS">METHODS</a></h1>
+
+<h2><a class="u" href="#___top" title="click to go to top of document" name="Set_Template_File()">Set_Template_File()</a></h2>
+
+<p>Set_Template_File() is called to set the template file to be parsed. The same can
+be done in template constructor, which takes the single parameter as the template path.</p>
+
+<h2><a class="u" href="#___top" title="click to go to top of document" name="Process()">Process()</a></h2>
+
+<p>Parse the template and process the variables. Nothing heavy is done by the template
+until this method is called.</p>
+
+<p>This returns reference to template output, which is an std::string.</p>
+<h2><a class="u" href="#___top" title="click to go to top of document" name="std_cout">std::cout</a></h2>
+
+<p>In an output stream context, a template object will implicitly call <a href="#Process%28%29">Process()</a>, and 
+print the output to standard out.</p>
+
+<h1><a class="u" href="#___top" title="click to go to top of document" name="TODO">TODO</a></h1>
+
+<ul>
+<li>The concept of filter stacks (pre-processors), from the original HTML::Template</li>
+<li>Caching</li>
+<li>The DEFAULT parameter</li>
+</ul>
+
+
+<h1><a class="u" href="#___top" title="click to go to top of document" name="AUTHOR">AUTHOR</a></h1>
+
+<p>Andrei Taranchenko</p>
+
+<h1><a class="u" href="#___top" title="click to go to top of document" name="LICENSE">LICENSE</a></h1>
+
+<pre>  HTML Template C++: A module for using HTML templates with C++
+  Copyright (C) 2009 Andrei Taranchenko
+
+  This program is free software; you can redistribute it and/or
+  modify it under the terms of the GNU General Public License
+  as published by the Free Software Foundation; either version 2
+  of the License, or (at your option) any later version.
+ 
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.</pre>
+
+</div>
+
+
+</div>
+ 
+
+</body></html>

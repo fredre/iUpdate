@@ -1,0 +1,926 @@
+/* ************************************************************************
+   Program : itscustom.css
+   Version : v01.0.0.2
+   Changes : 13-JUL-2004 Ollie T112550 Fix table layout on insert,update forms
+           : 31-MAR-2005 Ollie T119686 (Add errorDiv logic)
+           : 05-OCT-2005 Ollie T124507 (add sectionbrk logic)
+           : 05-OCT-2005 Ollie T124507 (fix framediv to left-align text)
+           : 05-OCT-2005 Ollie F124986 (Re-Align SS with Other Versions)
+           : 17-DEC-2004 Ollie T117125 Remove absolute position on login footer
+           : 21-Feb-2005 Els t117575 added rlheader_top for financial multi-row
+           :             record list headers (no bottom border).
+           : 30-OCT-2006 Ollie T137087 Copy from INT00 to INT01 and fix errors
+			  : 29-Nov-2006 DG T138024 Standardise stylesheet
+           : 11-NOV-2008 MUK   T147305 added breadcrumbs
+           : 01-FEB-2009 Sonja T152141 added tr.de for multi-row  and 
+           :                           note text vertical align 
+   ************************************************************************
+*/
+body {
+	background-color: #F4F4EC;
+	background-image: url(/itsimages/bg04.giff);
+	background-repeat: repeat;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 10pt;
+	margin-left: 10px; 
+}
+
+img {
+	border:0;
+}
+
+body.blankpage { background-image: none;
+}
+
+.rowover {
+	background-color: #ECE9D8;
+	vertical-align : top;
+	padding-right:2px;
+}
+
+.mandatory_fld {
+	color: #FF0000; 
+	font-weight: bold; 
+	font-size: 10pt;
+}
+
+.framebody {
+	background-color: #F4F4EC;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 10pt;
+	margin-top: 0;
+	margin-left: 10px;
+}
+
+body.accdet {
+	background-color: #F4F4EC;
+	font-family: Courier;
+	font-size: 8pt;
+	margin-top: 0;
+	margin-left: 10px;
+}
+
+A, A:active, 
+A:link, 
+A:visited {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 10pt;
+	color : #5A7EDC;
+	text-decoration: none;
+}
+
+A:hover {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 10pt;
+	color : #5A7EDC;
+	text-decoration : underline;
+}
+
+div {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 10pt;
+	color: #000000;
+}
+
+div.framediv {
+	text-align: left;
+	/* border : 1px solid Black; */
+}
+
+div.acadrec {
+	border : 1px solid Black;
+}
+
+div.repheader {
+        text-align: center;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 12pt;
+}
+
+div.repbody {
+}
+
+div.repfooter {
+        font-family: Arial, Helvetica, sans-serif;
+        text-align: center;
+        font-size: 12pt;
+}
+
+p {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 9pt;
+	color: #000000;
+}
+
+tr {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 10pt;
+	color: #000000;
+}
+
+td {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 10pt;
+	color: #000000;
+}
+
+td.notetext {
+   text-align: left;
+   vertical-align: top;
+}
+
+td.ie_process_hdr {
+   font-family: Arial, Helvetica, sans-serif;
+   font-weight: bold;
+   font-size: 12pt;
+   color: #0000FF;
+	border-top: solid black 1px;
+	border-left: solid black 1px;
+	border-right: solid black 1px;
+	text-align: center;
+	background-color: #F7F8BE;
+}
+
+td.ie_process {
+	vertical-align: top;
+}
+
+td.ie_process_desc {
+}
+
+p.fineprint {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 7pt;
+   text-align: left;
+	color: #000000;
+}
+
+li, ol, ul {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size : 9pt;
+	color : #000000;
+}
+
+h1 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14pt; 
+	font-weight: bold;
+	color: #5A7EDC;
+}
+
+h2 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14pt; 
+	font-weight: bold;
+	color: #6D717D;
+}
+
+h3 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12pt; 
+	font-weight: bold;
+	color: #5A7EDC;
+}
+
+h4 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12pt; 
+	font-weight: bold;
+	color: #6D717D;
+}
+
+h5 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 9pt; 
+	font-weight: bold;
+	color: #000000;
+}
+
+h6 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 9pt; 
+	font-weight: bold;
+	color: #000000;
+}
+
+HR {
+	color : #6D717D;
+	height : 1px;
+}
+
+hr.mudsep {
+  color: black;
+  width: 80%;
+  height: 5px;
+}
+
+.customfooter {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 9pt;
+   background-color: #CFEEC4;
+	background-color: #ECE9D8;
+	color: #9C9E9C;
+}
+
+.custfooterlink, 
+.custfooterlink:A, 
+.custfooterlink:A:active, 
+.custfooterlink:A:link, 
+.custfooterlink:A:visited {
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: normal;
+	text-decoration: none;
+	color: #9C9E9C;
+}
+
+.custfooterlink:Hover {
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight : normal;
+	text-decoration : underline;
+	color: #9C9E9C;
+}
+
+td.pagehdr_labt {  
+	border-top: solid black 1px;
+	border-left: solid black 1px;
+	font-weight: bold;
+}
+ 
+td.pagehdr_dett {  
+	border-top: solid black 1px;
+	border-right: solid black 1px;
+	border-left: solid black 1px;
+	font-weight: normal;
+}
+
+td.pagehdr_labb { 
+	border-bottom: solid black 1px;
+	border-left: solid black 1px;
+	font-weight: bold;
+}
+ 
+td.pagehdr_detb { 
+	border-right: solid black 1px;
+	border-bottom: solid black 1px;
+	border-left: solid black 1px;
+	font-weight: normal;
+}
+
+/* Start t108175 */
+/* heading: left, bottom, right, top lines */
+td.head_lbrt { 
+	border-left: solid black 1px;
+	border-bottom: solid black 1px;
+	border-right: solid black 1px;
+	border-top: solid black 1px;
+	font-weight: bold;
+}
+
+/* heading: bottom, right, top lines */
+td.head_brt { 
+	border-bottom: solid black 1px;
+	border-right: solid black 1px;
+	border-top: solid black 1px;
+	font-weight: bold;
+}
+
+/* heading: bottom, left, top lines */
+td.head_blt { 
+	border-bottom: solid black 1px;
+	border-left: solid black 1px;
+	border-top: solid black 1px;
+	font-weight: bold;
+}
+
+/* heading: bottom line */
+td.head_b { 
+	border-bottom: solid black 1px;
+	font-weight: bold;
+}
+
+/* heading: top, right lines */
+td.head_tr { 
+	border-top: solid black 1px;
+	border-right: solid black 1px;
+	font-weight: bold;
+}
+
+/* heading: no lines */
+td.head_nolines { 
+	font-weight: bold;
+}
+
+/* cell: left, bottom, right lines */
+td.cell_lbr { 
+	border-left: solid black 1px;
+	border-bottom: solid black 1px;
+	border-right: solid black 1px;
+	font-weight: normal;
+}
+
+/* cell: right line */
+td.cell_r { 
+	border-right: solid black 1px;
+	font-weight: normal;
+}
+
+/* cell: bottom, right lines */
+td.cell_br { 
+	border-right: solid black 1px;
+	border-bottom: solid black 1px;
+	font-weight: normal;
+}
+
+/* cell: left, bottom lines */
+td.cell_lb { 
+	border-bottom: solid black 1px;
+	border-left: solid black 1px;
+	font-weight: normal;
+}
+/* End t108175 */
+
+div.qualtext {  
+	border-right: solid black 1px;
+	border-bottom: solid black 1px;
+	border-left: solid black 1px;
+	border-top: solid black 1px;
+	font-family: Arial, helvetica;
+	font-size: 10pt;
+	font-weight: normal;
+	width: 75%;
+	text-align: left;
+}
+ 
+td.fra_inst { 
+	background-color: #ECE9D8;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size : 10pt; 
+	font-style : normal; 
+	font-weight : bold; 
+	color: #525252;
+	text-align : left; 
+	vertical-align : middle;
+}
+
+td.fra_date {
+	background-color: #ECE9D8;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size : 8pt;
+	font-style : normal;
+	font-weight : normal; 
+	color: #525252;
+	text-align : right;
+	vertical-align : middle;
+}
+
+td.coltotl {
+	border-left: solid black 1px;
+	border-top: solid black 1px;
+	border-bottom: solid black 1px;
+	padding-right: 2px;
+}
+
+td.coltotr {
+	border-left:   solid black 1px;
+	border-right:  solid black 1px;
+	border-top:    solid black 1px;
+	border-bottom: solid black 1px;
+	padding-right: 2px;
+}
+
+div.fra_footer {
+	background-color: #ECE9D8;
+	background-color: #A6E092;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size : 8pt;
+	text-align : left; 
+	vertical-align : top;
+	color: #9C9C9C;
+	position:absolute; bottom: 0%;
+}
+
+div.fra_main {
+	text-align : center; 
+}
+
+th.fra_main {
+	background-color: #E1BB79;  
+}
+
+td.fra_main {
+	background-color: #ECE9D8;  
+}
+
+p.fra_main {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+	font-weight: bold;
+	text-align: center; 
+	vertical-align: middle;
+	color: #525252;
+}
+/* ******************************************** */
+/* START: Setup used in Record List             */
+/* ******************************************** */
+table.rltable {
+	vertical-align : bottom;
+	border:0px solid black;
+	width:100%;
+}
+
+/* NB: if something changes in rlheader, keep rlheader_top in sync.  they are
+       same, except rlheader_top does not have a border-bottom.*/
+tr.rlheader {
+	font-family: Geneva, Helvetica, Arial, Verdana, sans-serif;
+	font-size: 10pt;
+	font-weight: bold;
+	background-color: #ECE9D8;
+	vertical-align : bottom;
+}
+
+tr.rlheader td, 
+tr.rlheader th {
+	border-bottom: 1px solid silver;
+	text-align:left;
+	padding-right:2px;
+}
+
+/* t117575 
+   same as rlheader, but used for multi-row headings, such as FinWeb query - 
+   budget allocation detail. no border-bottom. */
+tr.rlheader_top {
+	font-family: Geneva, Helvetica, Arial, Verdana, sans-serif;
+	font-size: 10pt;
+	font-weight: bold;
+	background-color: #ECE9D8;
+	vertical-align : bottom;
+}
+
+tr.rlheader_top td, 
+tr.rlheader_top th {
+	border-bottom: none;
+	text-align:left;
+	padding-right:2px;
+}
+
+/* Spreadsheet look with Heading on left, for quotations */
+td.colheader {
+   font-family: Geneva, Helvetica, Arial, Verdana, sans-serif;
+   font-size: 10pt;
+   font-weight: bold;
+   background-color: #ECE9D8;
+   vertical-align : bottom;
+	border-bottom: none;
+	text-align:left;
+	padding-right:2px;
+	border-right:1px solid silver;
+}
+
+td.colheader_bottom {
+   font-family: Geneva, Helvetica, Arial, Verdana, sans-serif;
+   font-size: 10pt;
+   font-weight: bold;
+   background-color: #ECE9D8;
+   vertical-align : bottom;
+	border-bottom: none;
+	text-align:left;
+	padding-right:2px;
+	border-right:1px solid silver;
+	border-bottom:1px solid silver;
+}
+
+td.rlerror {
+	font-family: Geneva, Helvetica, Arial, Verdana, sans-serif;
+	color: RED;
+	font-weight: bold;
+	font-style: italic;
+}
+
+tr.rldata {
+	font-family: Geneva, Helvetica, Arial, Verdana, sans-serif;
+	font-size: 10pt;
+	vertical-align : top;
+	padding-right:2px;
+}
+
+tr.rlctlbrk {
+	font-family: Geneva, Helvetica, Arial, Verdana, sans-serif;
+	background-color: #ECE9D8;
+	vertical-align : bottom;
+}
+/* END  : Setup used in Record List             */
+
+/* START: Setup used in insert and update forms */
+table.datadisp {
+	vertical-align : bottom;
+	border:0px solid black;
+}
+
+/* Header setup for Single row screens */
+/* This is used for single records where the prompts are on the left */
+td.datahdr {
+	font-family: Geneva, Helvetica, Arial, Verdana, sans-serif;
+	font-size: 10pt;
+	font-weight: bold;
+	text-align: right;
+	padding-right:2px;
+	vertical-align: middle;
+}
+
+/* Header setup for Multi-Row screens */
+/* This is used for displaying rows of detail in columnar format */
+tr.mrheader {
+	font-family: Geneva, Helvetica, Arial, Verdana, sans-serif;
+	font-size: 10pt;
+	font-weight: bold;
+	background-color: #ECE9D8;
+	padding-right:2px;
+}
+
+tr.mrheader td, 
+tr.mrheader th {
+	border-bottom: 1px solid silver;
+	text-align:left;
+	vertical-align:bottom;
+}
+
+/* Header setup for Multi-Row screens */
+/* This is used for displaying rows of detail in columnar format */
+table.mrdatadisp {
+	font-family: Geneva, Helvetica, Arial, Verdana, sans-serif;
+	font-size: 10pt;
+	padding-right:2px;
+	vertical-align : top;
+}
+
+td.datacella {
+	font-family: Geneva, Helvetica, Arial, Verdana, sans-serif;
+	font-size: 10pt;
+	text-align: left;
+}
+
+td.datacelln {
+	font-family: Geneva, Helvetica, Arial, Verdana, sans-serif;
+	font-size: 10pt;
+	text-align: right;
+}
+
+td.datacellc {
+	font-family: Geneva, Helvetica, Arial, Verdana, sans-serif;
+	font-size: 10pt;
+	text-align: center;
+}
+
+/* To be discontinued: Rather use DATACELLN or DATACELLA */
+td.datacell {
+	font-family: Geneva, Helvetica, Arial, Verdana, sans-serif;
+	font-size: 10pt;
+}
+
+/* Multi-row Error display */
+td.mrerror {
+	font-family: Geneva, Helvetica, Arial, Verdana, sans-serif;
+	color: RED;
+	font-weight: bold;
+	font-style: italic;
+}
+/* END  : Setup used in insert and update forms */
+
+td.fra_header { 
+	background-color: white;
+	background-image: url(/itsimages/headbck.gif);
+	width: 100%;
+}
+
+td.nodata {
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight : bold;
+	font-size : 12pt;
+	background-color : #F4F4EC;
+}
+
+p.sectionhdr {
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight : bold;
+	font-size   : 10pt;
+	text-align  : center;
+	background-color: #C0C0C0;
+}
+
+.sectionbrk {
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight : bold;
+	font-size   : 12pt;
+	text-align  : center;
+	background-color: #C0C0C0;
+}
+
+.sectionhdr {
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight : bold;
+	font-size   : 10pt;
+	text-align  : center;
+	background-color: #C0C0C0;
+}
+
+.subhead1 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size : 12pt;
+	font-weight : bold;
+	color : #5A7EDC;
+}
+
+TD.loginlabel {
+	text-align: left;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 10pt;
+}
+
+TD.loginbuttons {
+	text-align: center;
+}
+
+table.fra_table { 
+	background-color: #A0BAF3;
+	background-image: url(/itsimages/headbck.gif);
+	vertical-align : bottom;
+}
+
+TABLE.logintab {
+	background-color: #F4F4EC;
+}
+
+table.finreqdoc {
+	background-color: #CEDBFF;
+	width: 100%;
+	height: 7%;
+}
+
+table.mi_userdet {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 10pt;
+	background-color: #ECE9D8;
+}
+
+table.ctx_table {
+   font-family: Arial, Helvetica, sans-serif;
+}
+
+td.ctx_colhdr {
+   font-family: Arial, Helvetica, sans-serif;
+   font-weight : bold;
+	padding-right:2px;
+	padding-left:2px;
+}
+
+td.ctx_coldata {
+   font-family: Arial, Helvetica, sans-serif;
+	padding-right:2px;
+	padding-left:2px;
+}
+
+td.crm_userdet {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+	background-color: #ECE9D8;
+}
+
+td.defined_itm_dark {
+	background-color: #ECE9D8;
+}
+
+td.defined_itm_light {
+	background-color: #F4F4EC;
+}
+
+INPUT.btnsubmit {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 10pt;
+}
+
+tr.birlhdr {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12pt;
+	background-color: #E2E2E2;
+	padding-right:2px;
+}
+
+A.loginlinks:LINK, 
+A.loginlinks:VISITED, 
+A.loginlinks:ACTIVE {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12pt;
+	text-decoration: underline;
+}
+
+A.loginlinks:HOVER {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12pt;
+	text-decoration: underline;
+}
+
+A.here_font:LINK, 
+A.here_font:VISITED, 
+A.here_font:ACTIVE {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13pt;
+	font-weight: bold;
+	font-style: italic;
+}
+
+A.here_font:HOVER {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13pt;
+	text-decoration: underline;
+	font-weight: bold;
+	font-style: italic;
+}
+
+/* The Words "Login:" on top of the login screen */
+#login_login {
+	display:block;
+}
+
+/* Setup for the top Division on the login screen */
+#login_top {
+	margin-left:1px;
+	margin-right:1px;
+	border-right:2px solid #000;
+	border-bottom:2px solid #000;
+	border-left:2px solid #000;
+	border-top:2px solid #000;
+	vertical-align:top;
+	display:none;
+}
+
+/* Setup for the bottom Division on the login screen */
+#login_bottom {
+	margin-left:1px;
+	margin-right:1px;
+	vertical-align:bottom;
+	display:block;
+}
+
+/* Setup for the Left Division on the login screen */
+#login_left {
+	margin-left:1px;
+	margin-right:1px;
+	vertical-align:top;
+	display:block;
+}
+
+#login_left p {
+	margin-left:50px;
+}
+
+/* Setup for the right Division on the login screen */
+#login_right {
+	margin-left:1px;
+	margin-right:1px;
+	vertical-align:top;
+	display:block;
+}
+#login_right p  {
+	margin-left:50px;
+}
+
+/* The header at the top of the login screen */
+/* NOTE: this has no effect on the header frame after login */
+#fra_header {
+	display:block;
+}
+
+/* The Footer at the bottom of the login screen  */
+/* NOTE: this has no effect on the footer frame after login */
+
+font.fldhdr {
+	font-weight: bold;
+}
+
+span.cycleblock {
+	background-color: #C9B405;
+}
+
+span.blockheader {
+	background-color: yellow;
+	font-weight: bold;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14pt; 
+}
+
+/* This is used for reporting errors on insert/update/delete screens */
+.ErrorDiv {
+   color: RED;
+	font-weight: bold;
+	font-style: italic;
+}
+
+.ISMA_error {
+	color: RED;
+	font-weight: bold;
+	font-style: italic;
+}
+
+DIV.ISMA_ok {
+	color: Green;
+	font-weight: bold;
+	font-style: italic;
+	font-size: 20pt;
+}
+TD.thisProc {
+	color: Red;
+	font-weight: bold;
+	font-style: italic;
+}
+
+TD.nxtProc A ,
+TD.nxtProc A:active ,
+TD.nxtProc A:link ,
+TD.nxtProc A:visited ,
+TD.nxtProc A:hover {
+	color: Red;
+	background-color: #C0C0C0;
+	text-align : right; 
+	vertical-align : Bottom;
+	font-weight: bold;
+	font-style: italic;
+	margin-top: 3px;
+	border-top: 1px solid buttonhighlight;
+	border-left: 1px solid buttonshadow;
+	border-right: 1px solid buttonshadow;
+	border-bottom: 1px solid buttonshadow;
+}
+
+div.lll {
+	margin-left:10px;
+}
+/* Class sortColumns are used when a table has to have the sort functionality
+   Remember to include the tablesort.js script */
+thead.sortColumns td {
+	font-family: Geneva, Helvetica, Arial, Verdana, sans-serif;
+	font-size: 10pt;
+	font-weight: bold;
+	background-color: #ECE9D8;
+	vertical-align : bottom;
+	border-bottom: 1px solid red;
+	text-align:left;
+	padding-right:2px;
+}
+
+thead.sortColumns .arrow {
+	font-family: webdings;
+	color: black;
+	padding: 0;
+	font-size: 10px;
+	height: 11px;
+	width: 10px;
+	overflow: hidden;
+	margin-bottom: 2px;
+	margin-top: 1px;
+	padding: 0px;
+	padding-top: 0px;
+	padding-bottom: 2px;
+}
+
+td.TestMarkColumn {
+	padding-top: 0px;
+   padding-bottom: 0px;
+	border-left: 1px solid buttonshadow;
+	border-right: 1px solid buttonshadow;
+	border-top: 1px solid buttonshadow;
+	border-bottom: 1px solid buttonshadow;
+}
+
+.divon {
+  display: block;
+}
+
+.divoff {
+  display: none;
+}
+
+.breadcrumb{
+   font: bold 10px Verdana, Helvetica, sans-serif;
+}
+
+/* Underline breadcrumb for class="visited" href */
+.breadcrumb a.visited{
+  background: transparent url(/itsimages/breadcrumb.gif) no-repeat center right; 
+  font-size: 11px;
+  text-decoration: underline;
+  padding-right: 10px; 
+ /*adjust bullet image padding*/
+  color: navy;
+}
+/* Don't underline breadcrumb for class="current" href */
+.breadcrumb a.current{
+  background: transparent url(/itsimages/breadcrumb.gif) no-repeat center right; 
+  font-size: 11px;
+  padding-right: 10px; 
+ /*adjust bullet image padding*/
+  color: navy;
+}
+
+tr.de td {
+	background-color: #FFFFF4;
+}

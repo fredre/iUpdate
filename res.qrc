@@ -1,0 +1,9 @@
+<RCC>
+    <qresource prefix="/images">
+        <file>ajax-loader.gif</file>
+    </qresource>
+    <qresource prefix="/templ">
+        <file alias="test.tmpl">Templates/IUpdate/test.tmpl</file>
+        <file alias="mtdetails.tmpl">Templates/IUpdate/mtdetails.tmpl</file>
+    </qresource>
+</RCC>   
