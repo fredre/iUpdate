@@ -2,7 +2,16 @@
 #include "ui_mainwindow.h"
 #include <QMessageBox>
 #include "qdebug.h"
-#include "Templates\html_template.h"
+
+#ifdef Q_WS_WIN //This may not be needed
+    #include "Templates\html_template.h"
+#endif
+
+#ifdef Q_WS_X11
+    #include "Templates/html_template.h"
+#endif
+
+
 #include <QTextEdit>
 
 using namespace std;
