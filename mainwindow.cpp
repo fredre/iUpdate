@@ -164,13 +164,22 @@ void MainWindow::on_actionLoad_triggered()
     qDebug() << Q_FUNC_INFO <<"start";
     ui->labelProgress->show();
     csvInter.setFilePath(QFileDialog::getOpenFileName(this,tr("Open %1 Marks File").arg(csvInter.getFileTypeName()), QDir::homePath(), tr("%1").arg(csvInter.getFileExt())));
-    csvInter.loadFile();
+
+    if(csvInter.loadFile())
+    {
+
     PopulateSubjectGrid();
 
     //Load the marktypes into the combo box
     ui->comboBoxMarkTypeSlct->addItems(csvInter.getMarkTypesList());
 
     showSideWindow();
+
+    }
+    else
+    {
+        qDebug()<<"File not loaded (Perhaps cancell was clicked)";
+    }
     ui->labelProgress->hide();
     qDebug() << Q_FUNC_INFO <<"end";
 }

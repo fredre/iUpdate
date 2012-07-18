@@ -14,10 +14,16 @@ QString DocInterface::FilePath()
 void DocInterface::setFilePath(QString fp)
 {
     filepath = fp;
+
+
 }
 
-void DocInterface::loadFile()
+bool DocInterface::loadFile()
 {
+    if(filepath.isNull())
+    {
+        return false;
+    }
 
         QFile file(filepath);
 
@@ -31,6 +37,11 @@ void DocInterface::loadFile()
                 qDebug()<<line;
             }
             file.close();
+            return true;
+        }
+        else
+        {
+            return false;
         }
 }
 

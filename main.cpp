@@ -44,7 +44,7 @@ ts << txt << endl;
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-    qInstallMsgHandler(myMessageHandler);
+   // qInstallMsgHandler(myMessageHandler);
     // Setting the Application version
         a.setApplicationVersion(APP_VERSION);
         qDebug()<<APP_VERSION;

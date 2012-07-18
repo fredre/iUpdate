@@ -16,7 +16,7 @@ public:
     void setFilePath(QString);
     QString getFileExt();
     QString getFileTypeName();
-    void loadFile();
+    bool loadFile();
     QString getSubjectCode();
     QString getFirstStudentNumber();
     QString getLastStudentNumber();
