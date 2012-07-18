@@ -95,7 +95,7 @@ void MainWindow::on_webViewBrowser_anyError(QString error)
 {
     qDebug() << Q_FUNC_INFO <<"start";
 
-    ui->statusBar->showMessage("Eish: "+error);
+    ui->statusBar->showMessage("Error on browser load: "+error);
 
     qDebug() << Q_FUNC_INFO <<"end";
 }
