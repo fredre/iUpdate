@@ -29,6 +29,9 @@ bool DocInterface::loadFile()
 
         if (file.open(QIODevice::ReadOnly | QIODevice::Text))
         {
+            //Clear file contents
+            filecontents.clear();
+
             while (!file.atEnd())
             {
                 QString line = file.readLine();

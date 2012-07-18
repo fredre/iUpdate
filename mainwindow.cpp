@@ -171,6 +171,7 @@ void MainWindow::on_actionLoad_triggered()
     PopulateSubjectGrid();
 
     //Load the marktypes into the combo box
+    ui->comboBoxMarkTypeSlct->clear();
     ui->comboBoxMarkTypeSlct->addItems(csvInter.getMarkTypesList());
 
     showSideWindow();
@@ -188,6 +189,24 @@ void MainWindow::on_actionLoad_triggered()
  {
 qDebug() << Q_FUNC_INFO <<"start";
 
+    //Clear all from the table
+    ui->tableSubjecInfo->clear();
+    ui->tableSubjecInfo->setRowCount(4);
+
+    //Setup the table for subject info by adding the headers
+    QTableWidgetItem *newItem = new QTableWidgetItem("Subject Name: ");
+    ui->tableSubjecInfo->setVerticalHeaderItem(0,newItem);
+
+    QTableWidgetItem *newItem1 = new QTableWidgetItem("Total Students: ");
+    ui->tableSubjecInfo->setVerticalHeaderItem(1,newItem1);
+
+    QTableWidgetItem *newItem2 = new QTableWidgetItem("First Student: ");
+    ui->tableSubjecInfo->setVerticalHeaderItem(2,newItem2);
+
+    QTableWidgetItem *newItem3 = new QTableWidgetItem("Last Student: ");
+    ui->tableSubjecInfo->setVerticalHeaderItem(3,newItem3);
+
+    //Add the info for the headers
      QTableWidgetItem *NameItm = new QTableWidgetItem(csvInter.getSubjectCode());
      ui->tableSubjecInfo->setItem(0,0,NameItm);
 
@@ -204,36 +223,14 @@ qDebug() << Q_FUNC_INFO <<"start";
 
      for(int a=0,x=4;a < csvInter.getMarkTypesList().count();a++,x++)
      {
-          ui->tableSubjecInfo->setVerticalHeaderItem(x,new QTableWidgetItem(tr("Mark Type: %1").arg(csvInter.getMarkTypesList()[a])));
+         //Add the header for each marktype
+         ui->tableSubjecInfo->setVerticalHeaderItem(x,new QTableWidgetItem(tr("Mark Type: %1").arg(csvInter.getMarkTypesList()[a])));
 
-//          //Insert a list for each marktype that will show more details
-//           QListWidget *MarkTypeListWidget = new QListWidget(this);
-
-//           QStringList MarkTypeListWidgetContents;
-
-//           MarkTypeListWidgetContents.append(tr("Number of marks: %1").arg(csvInter.getMarkTypeTotalNumberMarks(csvInter.getMarkTypesList()[a])));
-//           MarkTypeListWidgetContents.append(tr("Missing marks: %1").arg(csvInter.getStudentCount()-csvInter.getMarkTypeTotalNumberMarks(csvInter.getMarkTypesList()[a])));
-
-//           //Show all the student numbers that does not have a mark for this marktype
-//           foreach(const QString &stnum,csvInter.getStudentNumbersWithNoMark(csvInter.getMarkTypesList()[a]))
-//           {
-//                MarkTypeListWidgetContents.append(tr("No mark or mark is 0 for %1").arg(stnum));
-//           }
-
-
-//           MarkTypeListWidget->insertItems(0,MarkTypeListWidgetContents);
-
-//           ui->tableSubjecInfo->setCellWidget(x,0, MarkTypeListWidget);
-
-          //Insert a new tEXTeDIT
+         //Insert a new tEXTeDIT
          QTextEdit *mtDetails = new QTextEdit(this);
          mtDetails->setStyleSheet(" border: 1px solid gray;padding: 4px;border-radius: 6px;");
 
-
-
          tmpl::html_template one(":/templ/mtdetails.tmpl");
-
-
 
          one("NUMMARKS") =  csvInter.getMarkTypeTotalNumberMarks(csvInter.getMarkTypesList()[a]);
          one("MISMARKS") = csvInter.getStudentCount()-csvInter.getMarkTypeTotalNumberMarks(csvInter.getMarkTypesList()[a]);
