@@ -22,6 +22,8 @@ void appendLog(QStringList appme)
 
 void LogWindow::addUpdateHeader(QString fileUsed,QString mtused,QString subject)
 {
+    qDebug() << Q_FUNC_INFO <<"start";
+
    QTextCursor cur(ui->textEdit->textCursor());
 
     cur.clearSelection();
@@ -36,8 +38,19 @@ void LogWindow::addUpdateHeader(QString fileUsed,QString mtused,QString subject)
     cur.insertText(tr("Using file marktype %1 \n").arg(mtused));
 
     //Save the subjectName and marktype  for later
-    Subname  = subject;
+    Subname  = subject.trimmed();
+    Subname  = subject.simplified();
+
+    if(Subname.contains(' '))
+    {
+        qDebug()<<"Removed spaces from subject name";
+        Subname= Subname.remove(QChar(' '), Qt::CaseInsensitive);
+    }
+
     MarkType = mtused;
+    MarkType = MarkType.trimmed();
+
+    qDebug() << Q_FUNC_INFO <<"end";
 }
 
 void  LogWindow::addErrors(QStringList li)
@@ -47,13 +60,6 @@ void  LogWindow::addErrors(QStringList li)
  cur.insertBlock();
  cur.insertText(tr("Errors \n"));
  cur.insertBlock();
-
-  ////QTextListFormat listFormat;
-  //listFormat.setStyle(QTextListFormat::ListDecimal);
-  //listFormat.setNumberPrefix("(");
- // listFormat.setNumberSuffix(")");
- // listFormat.setIndent(listFormat.indent() + 1);
-  //cur.insertList(listFormat);
 
   foreach(QString item,li)
   {
@@ -109,8 +115,6 @@ void LogWindow::on_actionSave_triggered()
     outfile.open(QIODevice::Append| QIODevice::Text);
     QTextStream out(&outfile);
     out<< ui->textEdit->document()->toPlainText()<<endl;
-
-
 
 
     qDebug() << Q_FUNC_INFO <<"end";
