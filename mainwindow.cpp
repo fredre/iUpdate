@@ -130,23 +130,21 @@ void MainWindow::on_actionAbout_triggered()
     qDebug() << Q_FUNC_INFO <<"start";
     QMessageBox::about( this, "ITS Update",
                        "Copyright (C) <2010>  <Fredre Hattingh>\n\n<hattinghfg@tut.ac.za>\n\n"
-                       "In my opinion the best solution would be to develop a \"Dropbox\" way of entering marks. The lecturer will update an automatically generated (created) spreadsheet that will synch up to ITS automatically (both ways if more than one lecturer teaches the course). For more information on how Dropbox works see the Dropbox website.\n\n"
-                       "The above solution cannot be implemented without access to some kind of ITS API. If you have access to the API I will happily spend a few weekends implementing the above solution.\n\n"
 
-                         "\tThis program comes with ABSOLUTELY NO WARRANTY\n\n\n"
+                         "This program comes with ABSOLUTELY NO WARRANTY\n\n\n"
 
-                           "\tThis program is free software: you can redistribute it and/or modify\n"
-                           "\tit under the terms of the GNU General Public License as published by\n"
-                           "\tthe Free Software Foundation, either version 3 of the License, or\n"
-                           "\t(at your option) any later version.\n\n"
+                           "This program is free software: you can redistribute it and/or modify\n"
+                           "it under the terms of the GNU General Public License as published by\n"
+                           "the Free Software Foundation, either version 3 of the License, or\n"
+                           "(at your option) any later version.\n\n"
 
-                           "\tThis program is distributed in the hope that it will be useful,\n"
-                           "\tbut WITHOUT ANY WARRANTY; without even the implied warranty of\n"
-                           "\tMERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\n"
-                           "\tGNU General Public License for more details.\n\n"
+                           "This program is distributed in the hope that it will be useful,\n"
+                           "but WITHOUT ANY WARRANTY; without even the implied warranty of\n"
+                           "MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\n"
+                           "GNU General Public License for more details.\n\n"
 
-                           "\tYou should have received a copy of the GNU General Public License\n"
-                           "\talong with this program.  If not, see <http://www.gnu.org/licenses/>.\n"
+                           "You should have received a copy of the GNU General Public License\n"
+                           "along with this program.  If not, see <http://www.gnu.org/licenses/>.\n"
                        );
 
 qDebug() << Q_FUNC_INFO <<"end";

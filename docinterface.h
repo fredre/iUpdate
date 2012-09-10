@@ -25,11 +25,8 @@ public:
     int getMarkTypesCount();
     int getMarkTypeTotalNumberMarks(QString);
     QStringList getAllStudentNumbersPerMarkType(QString);
-
     QMap<QString, int> getAllMarksPerMarkType(QString);
-
     int getStudentMarkPerMarkType(QString,QString);
-
     QStringList getStudentNumbersWithNoMark(QString);
 
 private:
