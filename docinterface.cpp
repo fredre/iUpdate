@@ -85,7 +85,7 @@ bool DocInterface::loadFile()
 
   int  DocInterface::getStudentCount()
   {
-      for(int a=0;a<filecontents.count();a++)
+      for(int a=filecontents.count()-1;a>=0;a--)
       {
          if(filecontents[a].split(',')[0]=="END")
           {
