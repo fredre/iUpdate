@@ -22,6 +22,12 @@ void TestDocInterfaceCsv::testloadFile()
    QCOMPARE(QString(docInt->getSubjectCode()),QString("PGG311T"));
  }
 
+ void TestDocInterfaceCsv::testgetFirstStudentNumber()
+ {
+     QCOMPARE(QString(docInt->getFirstStudentNumber()),QString("204041431"));
+ }
+
+
 void TestDocInterfaceCsv::cleanupTestCase()
 {
     delete docInt;

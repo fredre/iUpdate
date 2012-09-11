@@ -28,6 +28,8 @@ private slots:
 
     void testgetSubjectCode();
 
+    void testgetFirstStudentNumber();
+
     void cleanupTestCase();
 
 };
