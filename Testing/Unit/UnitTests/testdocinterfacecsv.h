@@ -34,6 +34,8 @@ private slots:
 
     void testgetStudentCount();
 
+    void testgetMarkTypesList();
+
     void cleanupTestCase();
 
 };
