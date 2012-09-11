@@ -30,7 +30,9 @@ private slots:
 
     void testgetFirstStudentNumber();
 
-    void getLastStudentNumber();
+    void testgetLastStudentNumber();
+
+    void testgetStudentCount();
 
     void cleanupTestCase();
 
