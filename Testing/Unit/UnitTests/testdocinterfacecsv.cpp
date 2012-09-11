@@ -27,6 +27,12 @@ void TestDocInterfaceCsv::testloadFile()
      QCOMPARE(QString(docInt->getFirstStudentNumber()),QString("204041431"));
  }
 
+ void TestDocInterfaceCsv::getLastStudentNumber()
+ {
+   QCOMPARE(QString(docInt->getLastStudentNumber()),QString("210172149"));
+
+   QBENCHMARK { docInt->getLastStudentNumber(); }
+ }
 
 void TestDocInterfaceCsv::cleanupTestCase()
 {
