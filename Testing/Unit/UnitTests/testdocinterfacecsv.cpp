@@ -17,6 +17,11 @@ void TestDocInterfaceCsv::testloadFile()
    QCOMPARE(docInt->loadFile(),true);
 }
 
+ void TestDocInterfaceCsv::testgetSubjectCode()
+ {
+   QCOMPARE(QString(docInt->getSubjectCode()),QString("PGG311T"));
+ }
+
 void TestDocInterfaceCsv::cleanupTestCase()
 {
     delete docInt;
