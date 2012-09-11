@@ -73,12 +73,13 @@ bool DocInterface::loadFile()
 
   QString DocInterface::getLastStudentNumber()
   {
-      for(int a=0;a<filecontents.count();a++)
+
+      for(int a=filecontents.count()-1;a>=0;a--)
       {
         if(filecontents[a].split(',')[0]=="END")
-        {
-         return filecontents[a-1].split(',')[0];
-        }
+       {
+        return filecontents[a-1].split(',')[0];
+       }
       }
   }
 
