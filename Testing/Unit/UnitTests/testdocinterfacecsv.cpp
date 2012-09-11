@@ -9,6 +9,12 @@ TestDocInterfaceCsv::TestDocInterfaceCsv(QObject *parent) :
 void TestDocInterfaceCsv::initTestCase()
 {
    docInt = new DocInterface();
+   docInt->setFilePath("../Test1.csv");
+}
+
+void TestDocInterfaceCsv::testloadFile()
+{
+   QCOMPARE(docInt->loadFile(),true);
 }
 
 void TestDocInterfaceCsv::cleanupTestCase()

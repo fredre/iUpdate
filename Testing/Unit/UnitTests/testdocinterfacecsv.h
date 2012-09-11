@@ -24,6 +24,10 @@ private:
 private slots:
     void initTestCase();
 
+    void testloadFile();
+
+    void testgetSubjectCode();
+
     void cleanupTestCase();
 
 };
