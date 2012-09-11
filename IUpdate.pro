@@ -15,16 +15,14 @@ SOURCES += main.cpp\
     itsbrowser.cpp \
     docinterface.cpp \
     Templates/html_template.cpp \
-    logwindow.cpp \
-    testdocinterface.cpp
+    logwindow.cpp
 
 HEADERS  += mainwindow.h \
     itsbrowser.h \
     docinterface.h \
     Templates/html_template.h \
     logwindow.h \
-    DocumentInterface.h \
-    testdocinterface.h
+    DocumentInterface.h
 
 FORMS    += mainwindow.ui \
     logwindow.ui
