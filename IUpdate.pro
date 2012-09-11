@@ -15,14 +15,16 @@ SOURCES += main.cpp\
     itsbrowser.cpp \
     docinterface.cpp \
     Templates/html_template.cpp \
-    logwindow.cpp
+    logwindow.cpp \
+    testdocinterface.cpp
 
 HEADERS  += mainwindow.h \
     itsbrowser.h \
     docinterface.h \
     Templates/html_template.h \
     logwindow.h \
-    DocumentInterface.h
+    DocumentInterface.h \
+    testdocinterface.h
 
 FORMS    += mainwindow.ui \
     logwindow.ui
@@ -35,5 +37,3 @@ VERSION = 12.01.03
 
 # Define the preprocessor macro to get the application version in our application.
 DEFINES += APP_VERSION=\\\"$$VERSION\\\"
-
-
