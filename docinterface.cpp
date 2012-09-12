@@ -6,6 +6,15 @@ DocInterface::DocInterface(QObject *parent) :
 
 }
 
+void DocInterface::sanitizeString(QString &needsSanitation)
+{
+    //Remove ""
+  if(needsSanitation.contains('"'))
+  {
+    needsSanitation.replace('"',"");
+  }
+}
+
 QString DocInterface::FilePath()
 {
     return filepath;
@@ -37,7 +46,7 @@ bool DocInterface::loadFile()
                 QString line = file.readLine();
                 line = line.trimmed();
                 filecontents.append(line);
-                qDebug()<<line;
+                //qDebug()<<line;
             }
             file.close();
             return true;
@@ -62,7 +71,9 @@ bool DocInterface::loadFile()
   {
       QString scode;
       scode = filecontents[0];
-      return scode.split(',')[0];
+      scode = scode.split(',')[0];
+      sanitizeString(scode);
+      return scode;
   }
 
   QString DocInterface::getFirstStudentNumber()
@@ -76,7 +87,11 @@ bool DocInterface::loadFile()
 
       for(int a=filecontents.count()-1;a>=0;a--)
       {
-        if(filecontents[a].split(',')[0]=="END")
+       //this needs sanitation also bec of "END"
+       QString content =filecontents[a].split(',')[0];
+       sanitizeString(content);
+
+        if(content=="END")
        {
         return filecontents[a-1].split(',')[0];
        }
@@ -87,7 +102,10 @@ bool DocInterface::loadFile()
   {
       for(int a=filecontents.count()-1;a>=0;a--)
       {
-         if(filecontents[a].split(',')[0]=="END")
+         QString content =filecontents[a].split(',')[0];
+         sanitizeString(content);
+
+         if(content=="END")
           {
            return (a-3);
           }
@@ -97,6 +115,7 @@ bool DocInterface::loadFile()
 QStringList DocInterface::getMarkTypesList()
 {
    QString mtypes =filecontents[2];
+   sanitizeString(mtypes);
    QStringList mtypesSp = mtypes.split(',');
 
   mtypesSp.removeAt(0);
@@ -112,10 +131,12 @@ QStringList DocInterface::getMarkTypesList()
 
      for(int a=0;a<mtypesall.count();a++)
      {
-       if(mtypesall[a]==mt)
+       QString snglmt =mtypesall[a];
+       sanitizeString(snglmt);
+       if(snglmt==mt)
        {
            loc =a;
-           qDebug()<<"Mark type found "<<mt<<" location "<<loc;
+           //qDebug()<<"Mark type found "<<mt<<" location "<<loc;
        }
      }
 
@@ -126,6 +147,7 @@ QStringList DocInterface::getMarkTypesList()
 int DocInterface::getMarkTypeTotalNumberMarks(QString mt)
 {
     //Return the total ammount of marks for the marktype
+    //If mark is 0 or empty it is not counted
 
     int totamt=0;
 

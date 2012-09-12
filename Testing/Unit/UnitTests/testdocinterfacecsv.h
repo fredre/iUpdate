@@ -36,6 +36,10 @@ private slots:
 
     void testgetMarkTypesList();
 
+    void testgetMarkTypeColumn();
+
+    void testgetMarkTypeTotalNumberMarks();
+
     void cleanupTestCase();
 
 };

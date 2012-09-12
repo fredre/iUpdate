@@ -24,12 +24,12 @@ void TestDocInterfaceCsv::testloadFile()
 
  void TestDocInterfaceCsv::testgetFirstStudentNumber()
  {
-     QCOMPARE(QString(docInt->getFirstStudentNumber()),QString("204041431"));
+     QCOMPARE(QString(docInt->getFirstStudentNumber()),QString("96139802"));
  }
 
  void TestDocInterfaceCsv::testgetLastStudentNumber()
  {
-   QCOMPARE(QString(docInt->getLastStudentNumber()),QString("210172149"));
+   QCOMPARE(QString(docInt->getLastStudentNumber()),QString("211359803"));
 
    //QBENCHMARK { docInt->getLastStudentNumber(); }
  }
@@ -58,6 +58,29 @@ void TestDocInterfaceCsv::testloadFile()
      correct.append("ST2");
 
      QCOMPARE(fromfile,correct);
+ }
+
+ void TestDocInterfaceCsv::testgetMarkTypeColumn()
+ {
+    QCOMPARE(docInt->getMarkTypeColumn("A1"),1);
+    QCOMPARE(docInt->getMarkTypeColumn("A3"),3);
+    QCOMPARE(docInt->getMarkTypeColumn("A6"),6);
+    QCOMPARE(docInt->getMarkTypeColumn("ST1"),9);
+    QCOMPARE(docInt->getMarkTypeColumn("ST2"),10);
+ }
+
+ void TestDocInterfaceCsv::testgetMarkTypeTotalNumberMarks()
+ {
+     QCOMPARE(docInt->getMarkTypeTotalNumberMarks("A1"),35);
+     QCOMPARE(docInt->getMarkTypeTotalNumberMarks("A2"),3);
+     QCOMPARE(docInt->getMarkTypeTotalNumberMarks("A3"),1);
+     QCOMPARE(docInt->getMarkTypeTotalNumberMarks("A4"),3);
+     QCOMPARE(docInt->getMarkTypeTotalNumberMarks("A5"),6);
+     QCOMPARE(docInt->getMarkTypeTotalNumberMarks("A6"),6);
+     QCOMPARE(docInt->getMarkTypeTotalNumberMarks("CT"),9);
+     QCOMPARE(docInt->getMarkTypeTotalNumberMarks("PJ"),10);
+     QCOMPARE(docInt->getMarkTypeTotalNumberMarks("ST1"),9);
+     QCOMPARE(docInt->getMarkTypeTotalNumberMarks("ST2"),10);
  }
 
 void TestDocInterfaceCsv::cleanupTestCase()

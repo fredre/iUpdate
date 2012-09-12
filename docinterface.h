@@ -28,11 +28,13 @@ public:
     QMap<QString, int> getAllMarksPerMarkType(QString);
     int getStudentMarkPerMarkType(QString,QString);
     QStringList getStudentNumbersWithNoMark(QString);
+    int getMarkTypeColumn(QString);
 
 private:
     QString filepath;
     QStringList filecontents;
-    int getMarkTypeColumn(QString);
+    void sanitizeString(QString &);
+
 
 signals:
     void FileParseError(QString);
