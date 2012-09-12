@@ -157,11 +157,12 @@ int DocInterface::getMarkTypeTotalNumberMarks(QString mt)
     //loop over all marks and get the mark count for this marktype
    QMap<QString, int>::const_iterator i = allMarks.constBegin();
     while (i != allMarks.constEnd()) {
+
         if(i.value()!=0)
         {
           totamt++;
-           qDebug()<<"Ammount "<<totamt << "of marks incremented for mark "<<i.value()<<"Marktype "<<mt<<" student number"<<i.key();
-       }
+           //qDebug()<<"Ammount "<<totamt << "of marks incremented for mark "<<i.value()<<"Marktype "<<mt<<" student number"<<i.key();
+        }
            ++i;
     }
 
