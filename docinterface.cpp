@@ -23,8 +23,6 @@ QString DocInterface::FilePath()
 void DocInterface::setFilePath(QString fp)
 {
     filepath = fp;
-
-
 }
 
 bool DocInterface::loadFile()

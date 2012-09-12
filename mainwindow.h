@@ -58,13 +58,13 @@ private slots:
 
     void on_actionLoad_ec_tut_ac_za_triggered();
 
+    void CsvFileParseError(QString);
+
 private:
     Ui::MainWindow *ui;
     DocInterface csvInter;
     void hideSideWindow();
     void showSideWindow();
-
-
 
 };
 
