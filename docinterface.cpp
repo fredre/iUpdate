@@ -235,6 +235,8 @@ int DocInterface::getMarkTypeTotalNumberMarks(QString mt)
 
 QMap<QString, int> DocInterface::getAllMarksPerMarkType(QString mt)
 {
+   //This will return all marks from the file for the specified marktype. If the mark is empty or 0 the mark will slill be returned
+
    QMap<QString, int> allMarks;
 
    int loc = getMarkTypeColumn(mt);
@@ -252,8 +254,13 @@ QMap<QString, int> DocInterface::getAllMarksPerMarkType(QString mt)
        }
 
        allMarks.insert(snum,mark.toInt());
-
    }
+
+   if(allMarks.count() != getStudentCount())  //I shot the dean but I didnt shoot the associate dean ! This should never happen
+   {
+     emit FileParseError(QString("Serious error. The total ammount of students are %1 but the ammount of marks returned for %2 is %3").arg(getStudentCount()).arg(mt).arg(allMarks.count()));
+   }
+
  return allMarks;
 }
 

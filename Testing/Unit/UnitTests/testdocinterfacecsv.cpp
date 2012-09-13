@@ -126,6 +126,25 @@ void TestDocInterfaceCsv::testloadFile()
      QCOMPARE(docInt->getMarkTypeTotalNumberMarks("ST2"),30);
  }
 
+void TestDocInterfaceCsv::testgetAllMarksPerMarkType()
+{
+     QMap<QString, int> allMarksFromFileA1;
+
+     allMarksFromFileA1 = docInt->getAllMarksPerMarkType("A1");
+
+     QMap<QString, int> allMarksFromFileA6;
+
+     allMarksFromFileA6 = docInt->getAllMarksPerMarkType("A6");
+
+     QMap<QString, int> allMarksFromFileST2;
+
+     allMarksFromFileST2 = docInt->getAllMarksPerMarkType("ST2");
+
+     qDebug()<<allMarksFromFileA1.count();
+
+
+}
+
 void TestDocInterfaceCsv::cleanupTestCase()
 {
     delete docInt;
