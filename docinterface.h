@@ -32,6 +32,7 @@ public:
     int getMarkTypeColumn(QString);
     bool validateStudentNumber(QString);
     void sanitizeString(QString &);
+    bool checkDuplicateStudentNumbers(QStringList);
 
 private:
     QString filepath;

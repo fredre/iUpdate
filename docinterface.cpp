@@ -1,6 +1,3 @@
-//TODO: Remember path of last opend file
-//Todo: Validate all student numbers when file is loaded not when user submits
-
 #include "docinterface.h"
 
 DocInterface::DocInterface(QObject *parent) :
@@ -54,6 +51,28 @@ bool DocInterface::validateStudentNumber(QString number)
      }
 
     return true;
+}
+
+bool DocInterface::checkDuplicateStudentNumbers(QStringList  lstsnums)
+{
+    //This is not really used by the app since the file contents is converted to QMap and Qmap does not allow duplicate keys.
+    //And i used student number as key lol
+    //So when 2 student numbers is the same one is just ignored !
+    //This is fixed at the point where the qmap is built ! and the user is warned getAllMarksPerMarkType
+
+    lstsnums.sort();
+
+   for(int a =0;a<lstsnums.count()-1;a++)
+   {
+       if(lstsnums.at(a)==lstsnums.at(a+1))
+       {
+           qDebug()<<QString("Duplicate student numbers found. %1 was found multiple times").arg(lstsnums.at(a));
+           emit FileParseError(QString("Duplicate student numbers found. %1 was found multiple times").arg(lstsnums.at(a)));
+           return false;
+       }
+   }
+
+  return true;
 }
 
 QString DocInterface::FilePath()
@@ -226,6 +245,12 @@ QMap<QString, int> DocInterface::getAllMarksPerMarkType(QString mt)
        QString mark = line[loc]; //Get only the mark for the marktype specified by arg mt
        QString snum = line[0]; //Get the student number
 
+       //A QMap ingores duplicate keys. so if the map already contains key named stunum warn the user
+       if(allMarks.contains(snum))
+       {
+           emit FileParseError(QString("Duplicate student number found. %1 was found for mark type %2 more then once").arg(snum).arg(mt));
+       }
+
        allMarks.insert(snum,mark.toInt());
 
    }
@@ -245,7 +270,7 @@ QStringList DocInterface::getAllStudentNumbersPerMarkType(QString mt)
          snums.append(stunum);
          ++i;
      }
-
+     checkDuplicateStudentNumbers(snums);
      return snums;
 }
 
@@ -283,7 +308,7 @@ int DocInterface::getStudentMarkPerMarkType(QString mt,QString stunum)
      }
          ++i;
   }
-
+   checkDuplicateStudentNumbers(nomarks);
     return nomarks;
 
  }

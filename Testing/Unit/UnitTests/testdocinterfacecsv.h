@@ -40,6 +40,8 @@ private slots:
 
     void testvalidateStudentNumber();
 
+    void testcheckDuplicateStudentNumbers();
+
     void testgetMarkTypeTotalNumberMarks();
 
     void cleanupTestCase();

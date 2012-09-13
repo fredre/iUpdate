@@ -92,6 +92,26 @@ void TestDocInterfaceCsv::testloadFile()
   QCOMPARE(docInt->validateStudentNumber("20406398w"),false);
  }
 
+ void TestDocInterfaceCsv::testcheckDuplicateStudentNumbers()
+ {
+    QStringList a;
+    a.append("204063982");
+    a.append("204063482");
+    a.append("504063782");
+    a.append("204063982");
+
+    QCOMPARE(docInt->checkDuplicateStudentNumbers(a),false);
+
+    QStringList ab;
+    a.append("204063982");
+    a.append("204053482");
+    a.append("504063782");
+    a.append("203063982");
+
+
+    QCOMPARE(docInt->checkDuplicateStudentNumbers(ab),true);
+ }
+
  void TestDocInterfaceCsv::testgetMarkTypeTotalNumberMarks()
  {
      QCOMPARE(docInt->getMarkTypeTotalNumberMarks("A1"),35);
