@@ -196,9 +196,17 @@ void TestDocInterfaceCsv::testgetAllMarksPerMarkType()
      allMarksFromFileST2 = docInt->getAllMarksPerMarkType("ST2");
      QCOMPARE(allMarksFromFileST2.count(),docInt->getStudentCount());
 
+}
 
+void TestDocInterfaceCsv::testgetAllStudentNumbersPerMarkType()
+{
+    QStringList FromFile = docInt->getAllStudentNumbersPerMarkType("CT");
 
+    QStringList FromTpye;
 
+    FromTpye<<"200300400" <<"204041431"<<"204116415"<< "206223529"<<"207161292"<<"208094416"<<"208128906"<<"208213172"<<"209068559"<<"209071641"<<"209088398"<<"209089955"<<"209112027"<< "209243733"<< "209253754"<< "209261286"<< "209295741"<< "209296276"<< "209313391"<< "209331519"<< "210008420"<< "210060758"<< "210062270"<< "210098780"<< "210100687"<< "210128506"<< "210172149"<< "210242775"<< "210244174"<< "210265899"<< "210276165"<< "210284036"<< "210284893"<< "210287051"<< "210297626"<< "210301607"<< "210309802"<< "210327100"<< "211039884"<< "211089520"<< "211242523"<< "211247703"<< "211316187"<< "211359803"<< "96139802";
+
+    QCOMPARE(FromFile,FromTpye);
 }
 
 void TestDocInterfaceCsv::cleanupTestCase()

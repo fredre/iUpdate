@@ -266,6 +266,9 @@ QMap<QString, int> DocInterface::getAllMarksPerMarkType(QString mt)
 
 QStringList DocInterface::getAllStudentNumbersPerMarkType(QString mt)
 {
+
+    //Will return all student numbers irrespective of mark
+
     QMap<QString, int> allMarks = getAllMarksPerMarkType(mt);
 
     QStringList snums;

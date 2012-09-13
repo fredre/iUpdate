@@ -46,6 +46,8 @@ private slots:
 
     void testgetAllMarksPerMarkType();
 
+    void testgetAllStudentNumbersPerMarkType();
+
     void cleanupTestCase();
 
 };
