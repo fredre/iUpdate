@@ -36,7 +36,7 @@ void TestDocInterfaceCsv::testloadFile()
 
  void TestDocInterfaceCsv::testgetStudentCount()
  {
-    QCOMPARE(docInt->getStudentCount(),46);
+    QCOMPARE(docInt->getStudentCount(),45);
 
     //QBENCHMARK { docInt->getStudentCount(); }
  }
@@ -115,15 +115,15 @@ void TestDocInterfaceCsv::testloadFile()
  void TestDocInterfaceCsv::testgetMarkTypeTotalNumberMarks()
  {
      QCOMPARE(docInt->getMarkTypeTotalNumberMarks("A1"),35);
-     QCOMPARE(docInt->getMarkTypeTotalNumberMarks("A2"),3);
-     QCOMPARE(docInt->getMarkTypeTotalNumberMarks("A3"),1);
-     QCOMPARE(docInt->getMarkTypeTotalNumberMarks("A4"),3);
-     QCOMPARE(docInt->getMarkTypeTotalNumberMarks("A5"),6);
-     QCOMPARE(docInt->getMarkTypeTotalNumberMarks("A6"),6);
-     QCOMPARE(docInt->getMarkTypeTotalNumberMarks("CT"),9);
-     QCOMPARE(docInt->getMarkTypeTotalNumberMarks("PJ"),10);
-     QCOMPARE(docInt->getMarkTypeTotalNumberMarks("ST1"),9);
-     QCOMPARE(docInt->getMarkTypeTotalNumberMarks("ST2"),10);
+     QCOMPARE(docInt->getMarkTypeTotalNumberMarks("A2"),36);
+     QCOMPARE(docInt->getMarkTypeTotalNumberMarks("A3"),39);
+     QCOMPARE(docInt->getMarkTypeTotalNumberMarks("A4"),32);
+     QCOMPARE(docInt->getMarkTypeTotalNumberMarks("A5"),27);
+     QCOMPARE(docInt->getMarkTypeTotalNumberMarks("A6"),21);
+     QCOMPARE(docInt->getMarkTypeTotalNumberMarks("CT"),39);
+     QCOMPARE(docInt->getMarkTypeTotalNumberMarks("PJ"),30);
+     QCOMPARE(docInt->getMarkTypeTotalNumberMarks("ST1"),40);
+     QCOMPARE(docInt->getMarkTypeTotalNumberMarks("ST2"),30);
  }
 
 void TestDocInterfaceCsv::cleanupTestCase()
