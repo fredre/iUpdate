@@ -128,19 +128,75 @@ void TestDocInterfaceCsv::testloadFile()
 
 void TestDocInterfaceCsv::testgetAllMarksPerMarkType()
 {
+     QMap<QString, int> allMarksFromFileProgA1;
+
+     allMarksFromFileProgA1 = docInt->getAllMarksPerMarkType("A1");
+
      QMap<QString, int> allMarksFromFileA1;
 
-     allMarksFromFileA1 = docInt->getAllMarksPerMarkType("A1");
+     allMarksFromFileA1["96139802"]=	0;
+     allMarksFromFileA1["200300400"]=	80;
+     allMarksFromFileA1["204041431"]=	0;
+     allMarksFromFileA1["204116415"]=	87;
+     allMarksFromFileA1["206223529"]=	0;
+     allMarksFromFileA1["207161292"]=	0;
+     allMarksFromFileA1["208094416"]=	80;
+     allMarksFromFileA1["208128906"]=	7;
+     allMarksFromFileA1["208213172"]=	80;
+     allMarksFromFileA1["209068559"]=	87;
+     allMarksFromFileA1["209071641"]=	7;
+     allMarksFromFileA1["209088398"]=	87;
+     allMarksFromFileA1["209089955"]=	90;
+     allMarksFromFileA1["209112027"]=	80;
+     allMarksFromFileA1["209243733"]=	7;
+     allMarksFromFileA1["209253754"]=	7;
+     allMarksFromFileA1["209261286"]=	93;
+     allMarksFromFileA1["209295741"]=	0;
+     allMarksFromFileA1["209296276"]=	0;
+     allMarksFromFileA1["209313391"]=	93;
+     allMarksFromFileA1["209331519"]=	0;
+     allMarksFromFileA1["210008420"]=	93;
+     allMarksFromFileA1["210060758"]=	87;
+     allMarksFromFileA1["210062270"]=	93;
+     allMarksFromFileA1["210098780"]=	87;
+     allMarksFromFileA1["210100687"]=	100;
+     allMarksFromFileA1["210128506"]=	63;
+     allMarksFromFileA1["210172149"]=	100;
+     allMarksFromFileA1["210242775"]=	87;
+     allMarksFromFileA1["210244174"]=	77;
+     allMarksFromFileA1["210265899"]=	0;
+     allMarksFromFileA1["210276165"]=	93;
+     allMarksFromFileA1["210284036"]=	87;
+     allMarksFromFileA1["210284893"]=	87;
+     allMarksFromFileA1["210287051"]=	100;
+     allMarksFromFileA1["210297626"]=	77;
+     allMarksFromFileA1["210301607"]=	0;
+     allMarksFromFileA1["210309802"]=	80;
+     allMarksFromFileA1["210327100"]=	0;
+     allMarksFromFileA1["211039884"]=	73;
+     allMarksFromFileA1["211089520"]=	53;
+     allMarksFromFileA1["211242523"]=	83;
+     allMarksFromFileA1["211247703"]=	73;
+     allMarksFromFileA1["211316187"]=	93;
+     allMarksFromFileA1["211359803"]=	80;
+
+    QCOMPARE(allMarksFromFileA1,allMarksFromFileProgA1);
+    QCOMPARE(allMarksFromFileProgA1.count(),docInt->getStudentCount());
+
+    //Add the rest...
+
 
      QMap<QString, int> allMarksFromFileA6;
 
      allMarksFromFileA6 = docInt->getAllMarksPerMarkType("A6");
+     QCOMPARE(allMarksFromFileA6.count(),docInt->getStudentCount());
 
      QMap<QString, int> allMarksFromFileST2;
 
      allMarksFromFileST2 = docInt->getAllMarksPerMarkType("ST2");
+     QCOMPARE(allMarksFromFileST2.count(),docInt->getStudentCount());
 
-     qDebug()<<allMarksFromFileA1.count();
+
 
 
 }
