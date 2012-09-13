@@ -4,9 +4,9 @@
 #
 #-------------------------------------------------
 
-QT       += core testlib
+QT       += core testlib gui
 
-QT       -= gui
+
 
 TARGET = UnitTests
 CONFIG   += console

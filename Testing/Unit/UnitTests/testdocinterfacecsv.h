@@ -38,6 +38,8 @@ private slots:
 
     void testgetMarkTypeColumn();
 
+    void testvalidateStudentNumber();
+
     void testgetMarkTypeTotalNumberMarks();
 
     void cleanupTestCase();

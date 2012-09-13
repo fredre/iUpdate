@@ -6,6 +6,7 @@
 #include <QFile>
 #include "qdebug.h"
 #include <QMap>
+#include <QIntValidator>
 
 class DocInterface : public QObject
 {
@@ -29,11 +30,13 @@ public:
     int getStudentMarkPerMarkType(QString,QString);
     QStringList getStudentNumbersWithNoMark(QString);
     int getMarkTypeColumn(QString);
+    bool validateStudentNumber(QString);
+    void sanitizeString(QString &);
 
 private:
     QString filepath;
     QStringList filecontents;
-    void sanitizeString(QString &);
+
 
 
 signals:

@@ -69,6 +69,29 @@ void TestDocInterfaceCsv::testloadFile()
     QCOMPARE(docInt->getMarkTypeColumn("ST2"),10);
  }
 
+ void TestDocInterfaceCsv::testvalidateStudentNumber()
+ {
+  QCOMPARE(docInt->validateStudentNumber("204063982"),true);
+  //Also sanitize
+  QString teststu = "204063982 ";
+  docInt->sanitizeString(teststu);
+  QCOMPARE(docInt->validateStudentNumber(teststu),true);
+
+  teststu = " 204063982 ";
+  docInt->sanitizeString(teststu);
+  QCOMPARE(docInt->validateStudentNumber(teststu),true);
+
+  teststu ="204063982 " ;
+  docInt->sanitizeString(teststu);
+  QCOMPARE(docInt->validateStudentNumber(teststu),true);
+
+  QCOMPARE(docInt->validateStudentNumber("96139802"),true);
+  QCOMPARE(docInt->validateStudentNumber("2000000000"),false);
+  QCOMPARE(docInt->validateStudentNumber("010"),false);
+  QCOMPARE(docInt->validateStudentNumber("2040 8762"),false);
+  QCOMPARE(docInt->validateStudentNumber("20406398w"),false);
+ }
+
  void TestDocInterfaceCsv::testgetMarkTypeTotalNumberMarks()
  {
      QCOMPARE(docInt->getMarkTypeTotalNumberMarks("A1"),35);

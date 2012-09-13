@@ -1,3 +1,6 @@
+//TODO: Remember path of last opend file
+//Todo: Validate all student numbers when file is loaded not when user submits
+
 #include "docinterface.h"
 
 DocInterface::DocInterface(QObject *parent) :
@@ -13,6 +16,44 @@ void DocInterface::sanitizeString(QString &needsSanitation)
   {
     needsSanitation.replace('"',"");
   }
+
+  //Sometimes I feel the campus needsSanitation ;P
+
+  //Trimmerd
+  needsSanitation = needsSanitation.simplified();
+  needsSanitation = needsSanitation.trimmed();
+
+}
+
+bool DocInterface::validateStudentNumber(QString number)
+{
+   //False trap to check
+
+
+    if(number.length()>=10)
+    {
+        emit FileParseError(QString("Invalid student number found. Student number %1 has more then 9 digits").arg(number));
+        qDebug()<<QString("Invalid student number found. Student number %1 has more then 9 digits").arg(number);
+        return false;
+    }
+
+    if(number.length()<=7)
+    {
+       emit FileParseError(QString("Invalid student number found. Student number %1 has less then 8 digits").arg(number));
+       qDebug()<<QString("Invalid student number found. Student number %1 has less then 8 digits").arg(number);
+       return false;
+    }
+
+     QIntValidator v(00000001, 999999999, this);
+     int pos=0;
+     if(v.validate(number,pos) == QValidator::Invalid)
+     {
+      emit FileParseError(QString("Invalid student number found. Student number %1 does not consist of all numbers or contains spaces.").arg(number));
+      qDebug()<<QString("Invalid student number found. Student number %1 does not consist of all numbers or contains spaces.").arg(number);
+      return false;
+     }
+
+    return true;
 }
 
 QString DocInterface::FilePath()
@@ -77,7 +118,10 @@ bool DocInterface::loadFile()
   QString DocInterface::getFirstStudentNumber()
   {
       QString snum = filecontents[3];
-      return snum.split(',')[0];
+      snum = snum.split(',')[0];
+      sanitizeString(snum);
+      validateStudentNumber(snum);
+      return snum;
   }
 
   QString DocInterface::getLastStudentNumber()
@@ -91,7 +135,10 @@ bool DocInterface::loadFile()
 
         if(content=="END")
        {
-        return filecontents[a-1].split(',')[0];
+        QString lstu = filecontents[a-1].split(',')[0];
+        sanitizeString(lstu);
+        validateStudentNumber(lstu);
+        return lstu;
        }
       }
   }
@@ -193,7 +240,9 @@ QStringList DocInterface::getAllStudentNumbersPerMarkType(QString mt)
 
     QMap<QString, int>::const_iterator i = allMarks.constBegin();
      while (i != allMarks.constEnd()) {
-         snums.append(i.key());
+         QString stunum = i.key();
+         validateStudentNumber(stunum);
+         snums.append(stunum);
          ++i;
      }
 
@@ -206,6 +255,8 @@ int DocInterface::getStudentMarkPerMarkType(QString mt,QString stunum)
 
    QMap<QString, int>::const_iterator i = allMarks.constBegin();
     while (i != allMarks.constEnd()) {
+        sanitizeString(stunum);
+        validateStudentNumber(stunum);
         if(i.key()==stunum)
         {
          return i.value();
@@ -225,7 +276,10 @@ int DocInterface::getStudentMarkPerMarkType(QString mt,QString stunum)
   while (i != allMarks.constEnd()) {
       if(i.value()==0)
       {
-        nomarks.append(i.key());
+       QString stunum = i.key();
+       sanitizeString(stunum);
+       validateStudentNumber(stunum);
+        nomarks.append(stunum);
      }
          ++i;
   }
