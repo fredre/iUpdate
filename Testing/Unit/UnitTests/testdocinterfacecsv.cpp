@@ -119,7 +119,7 @@ void TestDocInterfaceCsv::testloadFile()
      QCOMPARE(docInt->getMarkTypeTotalNumberMarks("A3"),39);
      QCOMPARE(docInt->getMarkTypeTotalNumberMarks("A4"),32);
      QCOMPARE(docInt->getMarkTypeTotalNumberMarks("A5"),27);
-     QCOMPARE(docInt->getMarkTypeTotalNumberMarks("A6"),21);
+     QCOMPARE(docInt->getMarkTypeTotalNumberMarks("A6"),20);
      QCOMPARE(docInt->getMarkTypeTotalNumberMarks("CT"),39);
      QCOMPARE(docInt->getMarkTypeTotalNumberMarks("PJ"),30);
      QCOMPARE(docInt->getMarkTypeTotalNumberMarks("ST1"),40);
@@ -208,6 +208,48 @@ void TestDocInterfaceCsv::testgetAllStudentNumbersPerMarkType()
 
     QCOMPARE(FromFile,FromTpye);
 }
+
+ void TestDocInterfaceCsv::testgetStudentMarkPerMarkType_data()
+ {
+
+     QTest::addColumn<QString>("StudentNumber");
+     QTest::addColumn<QString>("MarkType");
+     QTest::addColumn<int>("MarkExpected");
+
+     QTest::newRow("Test1") << "209068559"<<"A1"<<87;
+     QTest::newRow("Test2") << "209068559"<<"A2"<<77;
+     QTest::newRow("Test3") << "209068559"<<"A3"<<86;
+     QTest::newRow("Test4") << "209068559"<<"A4"<<0;
+     QTest::newRow("Test5") << "209068559"<<"A5"<<93;
+     QTest::newRow("Test6") << "209068559"<<"A6"<<0;
+     QTest::newRow("Test7") << "209068559"<<"CT"<<50;
+     QTest::newRow("Test8") << "209068559"<<"PJ"<<77;
+     QTest::newRow("Test9") << "209068559"<<"ST1"<<40;
+     QTest::newRow("Test10") << "209068559"<<"ST2"<<29;
+
+ }
+
+void TestDocInterfaceCsv::testgetStudentMarkPerMarkType()
+{
+    QFETCH(QString, StudentNumber);
+    QFETCH(QString, MarkType);
+    QFETCH(int, MarkExpected);
+
+
+    QCOMPARE(docInt->getStudentMarkPerMarkType(MarkType,StudentNumber), MarkExpected);
+
+}
+
+ void TestDocInterfaceCsv::testgetStudentNumbersWithNoMark()
+ {
+     QStringList nomarkcs = docInt->getStudentNumbersWithNoMark("A5");
+
+     QStringList selfde;
+
+     selfde<<"200300400" <<"204116415"<< "207161292"<< "208094416"<< "209071641"<< "209088398"<< "209243733"<< "209253754"<< "209295741"<< "209296276"<< "210008420"<< "210062270"<< "210128506"<< "210265899"<< "210276165"<< "210284893"<< "210287051"<< "210301607";
+
+     QCOMPARE(nomarkcs,selfde);
+ }
 
 void TestDocInterfaceCsv::cleanupTestCase()
 {

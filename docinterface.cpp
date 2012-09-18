@@ -303,6 +303,8 @@ int DocInterface::getStudentMarkPerMarkType(QString mt,QString stunum)
  QStringList DocInterface::getStudentNumbersWithNoMark(QString mt)
  {
 
+  //Will return all student numbers where mark is 0 or empty
+
  QMap<QString, int> allMarks = getAllMarksPerMarkType(mt);
 
  QStringList nomarks;
