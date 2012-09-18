@@ -16,6 +16,7 @@
 #include <QDateTime>
 #include <QNetworkProxy>
 #include "logwindow.h"
+#include <QSettings>
 
 namespace Ui {
     class MainWindow;
@@ -28,6 +29,7 @@ class MainWindow : public QMainWindow
 public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
+    QSettings IUpdatesettings;
 
 private slots:
     void on_pushButton_clicked();

@@ -26,6 +26,13 @@ MainWindow::MainWindow(QWidget *parent) :
 
     ui->setupUi(this);
 
+    //Setup the settings class
+    QCoreApplication::setOrganizationName("TUT");
+    QCoreApplication::setOrganizationDomain("tut.ac.za");
+    QCoreApplication::setApplicationName("IUpdate");
+
+
+
     ui->progressBarWebInd->hide();
     ui->labelProgress->hide();
 
@@ -162,10 +169,18 @@ void MainWindow::on_actionLoad_triggered()
 {
     qDebug() << Q_FUNC_INFO <<"start";
     ui->labelProgress->show();
-    csvInter.setFilePath(QFileDialog::getOpenFileName(this,tr("Open %1 Marks File").arg(csvInter.getFileTypeName()), QDir::homePath(), tr("%1").arg(csvInter.getFileExt())));
+
+    //First try to load settings
+    QString lstload = IUpdatesettings.value("lastLoadPath",QDir::homePath()).toString();
+
+    csvInter.setFilePath(QFileDialog::getOpenFileName(this,tr("Open %1 Marks File").arg(csvInter.getFileTypeName()), lstload, tr("%1").arg(csvInter.getFileExt())));
 
     if(csvInter.loadFile())
     {
+    //Update setting
+    QDir d = QFileInfo(csvInter.FilePath()).absoluteDir();
+
+    IUpdatesettings.setValue("lastLoadPath",d.absolutePath());
 
     PopulateSubjectGrid();
 
