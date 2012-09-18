@@ -43,79 +43,12 @@
          </layout>
         </item>
         <item>
-         <widget class="QTableWidget" name="tableSubjecInfo">
-          <property name="styleSheet">
-           <string notr="true">QHeaderView {
-	
-	background-color: rgb(230, 230, 230);
-border-radius: 10px;
-}
-
-QHeaderView::section
-{
-spacing: 40px;
-
-border: 1px solid gray;
-
-padding: 4px;
-
-border-radius: 6px;
-
-background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(223, 210, 170, 12), stop:1 rgba(255, 255, 255, 255));
-
-margin: 5px;
-
-text-align: centre;
-	
-font: 75 10pt &quot;Trebuchet MS&quot;;
-
-}
-
-QTableView::item
-{
-  border: 0px;
-  padding: 5px;
-}
-</string>
+         <widget class="QWebView" name="webViewSubjectInfo">
+          <property name="url">
+           <url>
+            <string>about:blank</string>
+           </url>
           </property>
-          <property name="showGrid">
-           <bool>false</bool>
-          </property>
-          <property name="gridStyle">
-           <enum>Qt::NoPen</enum>
-          </property>
-          <property name="rowCount">
-           <number>4</number>
-          </property>
-          <property name="columnCount">
-           <number>1</number>
-          </property>
-          <attribute name="horizontalHeaderVisible">
-           <bool>false</bool>
-          </attribute>
-          <attribute name="horizontalHeaderDefaultSectionSize">
-           <number>150</number>
-          </attribute>
-          <attribute name="horizontalHeaderMinimumSectionSize">
-           <number>150</number>
-          </attribute>
-          <attribute name="verticalHeaderDefaultSectionSize">
-           <number>50</number>
-          </attribute>
-          <attribute name="verticalHeaderHighlightSections">
-           <bool>false</bool>
-          </attribute>
-          <attribute name="verticalHeaderMinimumSectionSize">
-           <number>50</number>
-          </attribute>
-          <attribute name="verticalHeaderStretchLastSection">
-           <bool>false</bool>
-          </attribute>
-          <row/>
-          <row/>
-          <row/>
-          <row/>
-          <column/>
          </widget>
         </item>
        </layout>
@@ -247,6 +180,11 @@ QTableView::item
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <customwidgets>
+  <customwidget>
+   <class>QWebView</class>
+   <extends>QWidget</extends>
+   <header>QtWebKit/QWebView</header>
+  </customwidget>
   <customwidget>
    <class>itsBrowser</class>
    <extends>QWidget</extends>

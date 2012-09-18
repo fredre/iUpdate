@@ -61,7 +61,8 @@ MainWindow::MainWindow(QWidget *parent) :
     //file:///C:/Documents%20and%20Settings/Fredre/Desktop/test/w06pkg.w06marks_entry.htm //Test
     //file:///C:/Documents%20and%20Settings/Fredre/Desktop/w06pkg.html
 
-    //Setup the table for subject info
+    //Setup the table for subject info Subject info not used anymore
+    /*
     QTableWidgetItem *newItem = new QTableWidgetItem("Subject Name: ");
     ui->tableSubjecInfo->setVerticalHeaderItem(0,newItem);
 
@@ -80,7 +81,7 @@ MainWindow::MainWindow(QWidget *parent) :
     //Stretch last
     QHeaderView *header =  ui->tableSubjecInfo->horizontalHeader();
     header->setStretchLastSection(true);
-
+   */
 
 
     //Test the templating system
@@ -183,7 +184,11 @@ void MainWindow::on_actionLoad_triggered()
 
     IUpdatesettings.setValue("lastLoadPath",d.absolutePath());
 
-    PopulateSubjectGrid();
+    //PopulateSubjectGrid();
+     PopulateSubjectWeb();
+
+    //ADD POPULATE HTML INFO HERE
+
 
     //Load the marktypes into the combo box
     ui->comboBoxMarkTypeSlct->clear();
@@ -200,9 +205,13 @@ void MainWindow::on_actionLoad_triggered()
     qDebug() << Q_FUNC_INFO <<"end";
 }
 
+
  void MainWindow::PopulateSubjectGrid()
  {
-qDebug() << Q_FUNC_INFO <<"start";
+     /*
+     //Not used anymore ! Rather have a single template with everything needed in html loaded in webview
+
+    qDebug() << Q_FUNC_INFO <<"start";
 
     //Clear all from the table
     ui->tableSubjecInfo->clear();
@@ -242,8 +251,12 @@ qDebug() << Q_FUNC_INFO <<"start";
          ui->tableSubjecInfo->setVerticalHeaderItem(x,new QTableWidgetItem(tr("Mark Type: %1").arg(csvInter.getMarkTypesList()[a])));
 
          //Insert a new tEXTeDIT
-         QTextEdit *mtDetails = new QTextEdit(this);
-         mtDetails->setStyleSheet(" border: 1px solid gray;padding: 4px;border-radius: 6px;");
+         //QTextEdit *mtDetails = new QTextEdit(this);
+         //mtDetails->setStyleSheet(" border: 1px solid gray;padding: 4px;border-radius: 6px;");
+
+         //Insert a new QWebView
+         QWebView *mtDetails;
+         mtDetails = new QWebView(this);
 
          tmpl::html_template one(":/templ/mtdetails.tmpl");
 
@@ -261,14 +274,48 @@ qDebug() << Q_FUNC_INFO <<"start";
      ui->tableSubjecInfo->resizeColumnsToContents();
      ui->tableSubjecInfo->resizeRowsToContents();
 qDebug() << Q_FUNC_INFO <<"end";
+ */
  }
+
+ void  MainWindow::PopulateSubjectWeb()
+ {
+     tmpl::html_template one(":/templ/mtdetails.tmpl");
+
+     loop_t loop_marktypes;
+     row_t row_marktypes;
+
+     //Get all the marktypes and add a row
+     QStringList marktypes = csvInter.getMarkTypesList();
+
+    for(int a=0;a < marktypes.count();a++)
+     {
+
+        QString mtName = marktypes[a];
+       row_marktypes("name") = mtName.toStdString();
+       row_marktypes("nummarks") = csvInter.getMarkTypeTotalNumberMarks(mtName);
+       row_marktypes("mismarks") = csvInter.getStudentCount()-csvInter.getMarkTypeTotalNumberMarks(mtName);
+
+       loop_marktypes += row_marktypes;
+
+
+      }
+
+     one("MARKTYPES") = loop_marktypes;
+
+
+     one("NUMMARKS") =  csvInter.getMarkTypeTotalNumberMarks(csvInter.getMarkTypesList()[0]);
+     one("MISMARKS") = csvInter.getStudentCount()-csvInter.getMarkTypeTotalNumberMarks(csvInter.getMarkTypesList()[0]);
+
+     ui->webViewSubjectInfo->setHtml(QString::fromStdString(one.Process()));
+ }
+
 
  void MainWindow::hideSideWindow()
 {
     qDebug() << Q_FUNC_INFO <<"start";
      ui->pushButtonUpdateMrks->hide();
      ui->comboBoxMarkTypeSlct->hide();
-     ui->tableSubjecInfo->hide();
+     ui->webViewSubjectInfo->hide();
      QList<int> currentSizes = ui->splitter->sizes();
      // adjust sizes individually
 
@@ -283,7 +330,7 @@ qDebug() << Q_FUNC_INFO <<"end";
      qDebug() << Q_FUNC_INFO <<"start";
      ui->pushButtonUpdateMrks->show();
      ui->comboBoxMarkTypeSlct->show();
-     ui->tableSubjecInfo->show();
+     ui->webViewSubjectInfo->show();
 
      QList<int> currentSizes = ui->splitter->sizes();
      // adjust sizes individually

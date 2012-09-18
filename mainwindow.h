@@ -49,6 +49,7 @@ private slots:
     void on_actionLoad_triggered();
 
     void PopulateSubjectGrid();
+    void PopulateSubjectWeb();
 
     void on_pushButtonUpdateMrks_clicked();
 
