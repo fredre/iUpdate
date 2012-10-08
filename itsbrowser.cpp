@@ -15,6 +15,7 @@ itsBrowser::itsBrowser(QWidget *parent) :
 
 
 
+
     QNetworkCookieJar *myjar = new QNetworkCookieJar();
 
 

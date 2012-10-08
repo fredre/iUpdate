@@ -3,6 +3,7 @@
 #include "ui_mainwindow.h"
 #include <QMessageBox>
 #include "qdebug.h"
+#include <QNetworkDiskCache>
 
 #ifdef Q_WS_WIN //This may not be needed (unless the entire TUT switch to Linux from Monday)
     #include "Templates\html_template.h"
@@ -56,6 +57,11 @@ MainWindow::MainWindow(QWidget *parent) :
     connect(ui->wFitsbrowser,SIGNAL(onAnyError(QString)),this,SLOT(on_webViewBrowser_anyError(QString)));
 
     ui->wFitsbrowser->setUrl(QUrl("https://jupiter.tut.ac.za/staffportal/system/login.php?refscript=/staffportal/index.php"));
+
+    QNetworkDiskCache *diskCache = new QNetworkDiskCache(this);
+    diskCache->setCacheDirectory("cachedir");
+     ui->webViewSubjectInfo->page()->networkAccessManager()->setCache(diskCache );
+
     //https://jupiter.tut.ac.za/staffportal/apps/its/leave.php?action=app_self  //Direct
     //https://jupiter.tut.ac.za/staffportal/system/login.php?refscript=/staffportal/index.php  //Normal
     //file:///C:/Documents%20and%20Settings/Fredre/Desktop/test/w06pkg.w06marks_entry.htm //Test
@@ -334,8 +340,13 @@ qDebug() << Q_FUNC_INFO <<"end";
      one("NUMMARKS") =  csvInter.getMarkTypeTotalNumberMarks(csvInter.getMarkTypesList()[0]);
      one("MISMARKS") = csvInter.getStudentCount()-csvInter.getMarkTypeTotalNumberMarks(csvInter.getMarkTypesList()[0]);
 
+    // ui->webViewSubjectInfo->setc
+
+    // ui->webViewSubjectInfo->settings()->setUserStyleSheetUrl(QUrl::from);
+
      ui->webViewSubjectInfo->setHtml(QString::fromStdString(one.Process()));
- }
+
+}
 
 
  void MainWindow::hideSideWindow()
@@ -520,5 +531,28 @@ void MainWindow::CsvFileParseError(QString mes)
     msgBox.setIcon(QMessageBox::Critical);
     msgBox.exec();
     qDebug() << Q_FUNC_INFO <<"end";
+
+}
+
+void MainWindow::on_comboBoxMarkTypeSlct_editTextChanged(const QString &arg1)
+{
+
+}
+
+void MainWindow::on_comboBoxMarkTypeSlct_currentIndexChanged(const QString &arg1)
+{
+    qDebug()<<arg1;
+    ui->webViewSubjectInfo->findText(QString(" "));
+    ui->webViewSubjectInfo->findText(arg1,QWebPage::FindWrapsAroundDocument);
+}
+
+void MainWindow::on_webViewSubjectInfo_loadFinished(bool arg1)
+{
+
+
+}
+
+void MainWindow::on_webViewSubjectInfo_loadStarted()
+{
 
 }

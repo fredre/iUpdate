@@ -63,6 +63,14 @@ private slots:
 
     void CsvFileParseError(QString);
 
+    void on_comboBoxMarkTypeSlct_editTextChanged(const QString &arg1);
+
+    void on_comboBoxMarkTypeSlct_currentIndexChanged(const QString &arg1);
+
+    void on_webViewSubjectInfo_loadFinished(bool arg1);
+
+    void on_webViewSubjectInfo_loadStarted();
+
 private:
     Ui::MainWindow *ui;
     DocInterface csvInter;
