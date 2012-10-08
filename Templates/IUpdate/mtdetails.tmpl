@@ -25,30 +25,21 @@
     <div data-role="collapsible">
     <h3> <TMPL_VAR NAME=NAME> </h3>
     <p> Number of marks <TMPL_VAR NAME=NUMMARKS>. </p>
-    <p style="color:red;"> Missing Marks <TMPL_VAR NAME=MISMARKS>.   </p>
+    <p style="color:red;"> Missing Marks (Mark is 0 or empty) <TMPL_VAR NAME=MISMARKS>.   </p>
+    
+    
+             <ul data-role="listview" data-inset="true" data-filter="true">
+			<TMPL_LOOP allmarks>
+							
+							<li><TMPL_VAR NAME="stunumber"> : <TMPL_VAR NAME="onemark"></li>
+					
+			</TMPL_LOOP>
+			</ul>
+			
     </div>
-
   </TMPL_LOOP>
 
 
-    <div data-role="collapsible">
-    <h3>I'm a header</h3>
-    <p>I'm the collapsible content. By default I'm closed, but you can click the header to open me.</p>
-
-
-
-            <ul data-role="listview" data-inset="true" data-filter="true">
-                    <li>Acura</li>
-                    <li><a href="#">Audi</a></li>
-                    <li><a href="#">BMW</a></li>
-                    <li><a href="#">Cadillac</a></li>
-                    <li><a href="#">Ferrari</a></li>
-            </ul>
-
-
-
-
-        </div><!-- /content -->
 
 </div><!-- /page -->
 

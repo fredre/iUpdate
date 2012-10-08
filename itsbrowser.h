@@ -13,6 +13,7 @@
 #include <QAuthenticator>
 #include <QWebFrame>
 #include <QNetworkProxy>
+#include <QNetworkReply>
 
 class itsBrowser : public QWebView
 {
@@ -32,6 +33,7 @@ public slots:
     void handleSslErrors(QNetworkReply* reply, const QList<QSslError> &errors);
     void provideAuthentication(QNetworkReply*,QAuthenticator*);
     void provideProxAuthentication(const QNetworkProxy &, QAuthenticator*);
+    void networkTaskfinished (QNetworkReply *);
 
 };
 

@@ -23,9 +23,15 @@ itsBrowser::itsBrowser(QWidget *parent) :
     connect(page()->networkAccessManager(),SIGNAL(sslErrors(QNetworkReply*, const QList<QSslError> & )),this,SLOT(handleSslErrors(QNetworkReply*, const QList<QSslError> & )));
     connect(page()->networkAccessManager(),SIGNAL(authenticationRequired(QNetworkReply*,QAuthenticator*)),this,SLOT(provideAuthentication(QNetworkReply*,QAuthenticator*)));
     connect(page()->networkAccessManager(),SIGNAL(proxyAuthenticationRequired(const QNetworkProxy &, QAuthenticator *)),this,SLOT(provideProxAuthentication(const QNetworkProxy&, QAuthenticator*)));
+    connect(page()->networkAccessManager(),SIGNAL(finished ( QNetworkReply *)),this,SLOT(networkTaskfinished (QNetworkReply *)));
+
 
 }
 
+void itsBrowser::networkTaskfinished(QNetworkReply *reply)
+{
+    qDebug()<<reply->errorString();
+}
 
 void itsBrowser::handleSslErrors(QNetworkReply* reply, const QList<QSslError> &errors)
 {

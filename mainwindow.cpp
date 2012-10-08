@@ -4,7 +4,7 @@
 #include <QMessageBox>
 #include "qdebug.h"
 
-#ifdef Q_WS_WIN //This may not be needed
+#ifdef Q_WS_WIN //This may not be needed (unless the entire TUT switch to Linux from Monday)
     #include "Templates\html_template.h"
 #endif
 
@@ -282,7 +282,10 @@ qDebug() << Q_FUNC_INFO <<"end";
      tmpl::html_template one(":/templ/mtdetails.tmpl");
 
      loop_t loop_marktypes;
+
+
      row_t row_marktypes;
+
 
      //Get all the marktypes and add a row
      QStringList marktypes = csvInter.getMarkTypesList();
@@ -295,7 +298,32 @@ qDebug() << Q_FUNC_INFO <<"end";
        row_marktypes("nummarks") = csvInter.getMarkTypeTotalNumberMarks(mtName);
        row_marktypes("mismarks") = csvInter.getStudentCount()-csvInter.getMarkTypeTotalNumberMarks(mtName);
 
+
+       //Loop start
+        loop_t loop_marks;
+        row_t row_marks;
+
+        QMap<QString,int>  marks= csvInter.getAllMarksPerMarkType(mtName);
+
+
+         QMapIterator<QString, int> i(marks); //For each marktype get the marks and stu num then add to loop marks
+         while (i.hasNext()) {
+             i.next();
+             QString onemark = QString("%1").arg(i.value());
+             QString stunumber = i.key();
+             row_marks("onemark") = onemark.toStdString();
+             row_marks("stunumber") = stunumber.toStdString();
+            loop_marks+=row_marks;
+
+        }
+
+
+       row_marktypes("allmarks") = loop_marks; //Now add loop_marks as a row to the orig loop called loop_marktypes (See template docss for more info)
        loop_marktypes += row_marktypes;
+       loop_marks.Empty();
+
+       //Loop end
+
 
 
       }
