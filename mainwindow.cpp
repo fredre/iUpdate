@@ -120,7 +120,7 @@ void MainWindow::on_pushButton_clicked()
       errorPage("ERMES") = error.toStdString();
 
  \
-      ui->wFitsbrowser->setHtml(QString::fromStdString(errorPage.Process()));
+     // ui->wFitsbrowser->setHtml(QString::fromStdString(errorPage.Process()));
 
 
 

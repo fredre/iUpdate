@@ -171,6 +171,9 @@
    </property>
   </action>
   <action name="actionBlackout_Cancelled">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
    <property name="text">
     <string>Blackout Cancelled</string>
    </property>
