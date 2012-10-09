@@ -55,6 +55,7 @@ MainWindow::MainWindow(QWidget *parent) :
     connect(ui->wFitsbrowser,SIGNAL(loadStarted ()),this,SLOT(on_webViewBrowser_loadStarted()));
     connect(ui->wFitsbrowser,SIGNAL(loadFinished (bool)),this,SLOT(on_webViewBrowser_loadFinished(bool)));
     connect(ui->wFitsbrowser,SIGNAL(onAnyError(QString)),this,SLOT(on_webViewBrowser_anyError(QString)));
+    connect(ui->wFitsbrowser,SIGNAL(onNetworkError(QString)),this,SLOT(on_webViewBrowser_networkError(QString)));
 
     ui->wFitsbrowser->setUrl(QUrl("https://jupiter.tut.ac.za/staffportal/system/login.php?refscript=/staffportal/index.php"));
 
@@ -106,6 +107,25 @@ void MainWindow::on_pushButton_clicked()
 {
 
 }
+
+ void MainWindow::on_webViewBrowser_networkError(QString error)
+ {
+     qDebug() << Q_FUNC_INFO <<"start";
+
+     qDebug()<<error;
+
+      tmpl::html_template errorPage(":/templ/conerror.tmpl");
+
+
+      errorPage("ERMES") = error.toStdString();
+
+ \
+      ui->wFitsbrowser->setHtml(QString::fromStdString(errorPage.Process()));
+
+
+
+      qDebug() << Q_FUNC_INFO <<"end";
+ }
 
 void MainWindow::on_webViewBrowser_anyError(QString error)
 {

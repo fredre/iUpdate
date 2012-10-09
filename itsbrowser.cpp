@@ -31,7 +31,10 @@ itsBrowser::itsBrowser(QWidget *parent) :
 
 void itsBrowser::networkTaskfinished(QNetworkReply *reply)
 {
+    qDebug() << Q_FUNC_INFO <<"start";
     qDebug()<<reply->errorString();
+    emit onNetworkError(reply->errorString());
+    qDebug() << Q_FUNC_INFO <<"end";
 }
 
 void itsBrowser::handleSslErrors(QNetworkReply* reply, const QList<QSslError> &errors)

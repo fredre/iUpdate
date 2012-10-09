@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>853</width>
+    <width>968</width>
     <height>600</height>
    </rect>
   </property>
@@ -63,6 +63,9 @@
             <verstretch>0</verstretch>
            </sizepolicy>
           </property>
+          <zorder>lineEdit</zorder>
+          <zorder>lineEdit</zorder>
+          <zorder>lineEdit</zorder>
          </widget>
         </item>
        </layout>
@@ -103,7 +106,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>853</width>
+     <width>968</width>
      <height>25</height>
     </rect>
    </property>

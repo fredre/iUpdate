@@ -29,6 +29,7 @@ public:
 
 signals:
     void onAnyError(QString);
+    void onNetworkError(QString); //Problem with network connectivity
 public slots:
     void handleSslErrors(QNetworkReply* reply, const QList<QSslError> &errors);
     void provideAuthentication(QNetworkReply*,QAuthenticator*);

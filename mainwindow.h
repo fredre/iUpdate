@@ -42,6 +42,8 @@ private slots:
 
     void on_webViewBrowser_anyError(QString);
 
+    void on_webViewBrowser_networkError(QString);
+
     void on_actionAbout_triggered();
 
     void on_actionAbout_QT_triggered();

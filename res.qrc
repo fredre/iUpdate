@@ -1,10 +1,10 @@
 <RCC>
     <qresource prefix="/">
         <file>ajax-loader.gif</file>
-        <file>Templates/IUpdate/jquery.mobile-1.2.0.js</file>
     </qresource>
     <qresource prefix="/templ">
         <file alias="test.tmpl">Templates/IUpdate/test.tmpl</file>
         <file alias="mtdetails.tmpl">Templates/IUpdate/mtdetails.tmpl</file>
+        <file alias="conerror.tmpl">Templates/IUpdate/conerror.tmpl</file>
     </qresource>
 </RCC>
