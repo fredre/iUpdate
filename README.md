@@ -25,24 +25,24 @@ We provide binaries for direct download.
 You can also run the latest version from source (Branch master) or 
 run Version 12.02.0 from source (Branch 12.2FixOnly) 
 
-	Microsoft (Binaries available)
+Microsoft (Binaries available)
 	
-		Windows XP - Not supported anymore 
+Windows XP - Not supported anymore 
+Windows 7: https://github.com/downloads/fredre/iUpdate/IUpdateWin7_12.2.0.zip
+	
 		
-		Windows 7: https://github.com/downloads/fredre/iUpdate/IUpdateWin7_12.2.0.zip
+Linux (From source only)
 	
+Tested on Ubuntu 10.04  - Version 12.02.0 from source (Branch 12.2FixOnly)
+Tested on Ubuntu 11.04 - Version 12.02.0 from source (Branch 12.2FixOnly)
 		
-	Linux (From source only)
+Please let us know if you can confirm other distributions.
+Please let us know if you would like to maintain Linux binaries or deb/rpm 
 	
-		Tested on Ubuntu 10.04  - Version 12.02.0 from source (Branch 12.2FixOnly)
-		Tested on Ubuntu 11.04 - Version 12.02.0 from source (Branch 12.2FixOnly)
-		
-		Please let us know if you can confirm other distributions.
-		Please let us know if you would like to maintain Linux binaries or deb/rpm 
-	
-	Mac 
-		No binaries but should theoretically run from source.
-		If you would like to maintain  Mac binaries or test the application on Mac please let us know.
+Mac 
+
+No binaries but should theoretically run from source.
+If you would like to maintain  Mac binaries or test the application on Mac please let us know.
 		
 For older versions see: https://github.com/fredre/iUpdate/tree/master/release
 
