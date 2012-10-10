@@ -29,7 +29,7 @@ run Version 12.02.0 from source (Branch 12.2FixOnly)
 	
 		Windows XP - Not supported anymore 
 		
-		Windows 7: - https://github.com/downloads/fredre/iUpdate/IUpdateWin7_12.2.0.zip
+		Windows 7: https://github.com/downloads/fredre/iUpdate/IUpdateWin7_12.2.0.zip
 	
 		
 	Linux (From source only)
