@@ -78,7 +78,8 @@ https://github.com/fredre/iUpdate/wiki
 
 I have suggestions / found a bug / want to send some codes 
 ----------------
-If you have found a bug or want to suggest an improvement see the section on Bugs and Suggestions in the wiki.
+
+See the wiki for user manual on how to send suggestions and report bugs 
 
 https://github.com/fredre/iUpdate/wiki
 
