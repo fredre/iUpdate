@@ -1,9 +1,11 @@
 iUpdate
 =======
 
-iUpdate is a QT (C++) application that can read different files (.csv currently supported) and write the marks into the iEnabler product provided by ITS tertiary software.
+iUpdate is a QT (Mostly C++ with a little HTML an JavaScript) application that can read different files (.csv currently supported) and write the marks into the iEnabler product provided by ITS tertiary software.
 
-iUpdate is open source and free (as in beer and speech).  
+iUpdate is open source and free (as in beer and speech). 
+
+iUpdate is released under the GNU General Public License 
 
 
 Link to ITS tertiary software (A Subsidiary of ITS Holdings)
@@ -21,6 +23,7 @@ iUpdate does not connect to the ITS database directly or update any marks direct
 
 iUpdate should be considered a helper application only. Think of it as running a grease monkey script in Firefox.
 
+
 Download
 ---------
 
@@ -36,6 +39,8 @@ run Version 12.02.0 from source (Branch 12.2FixOnly)
 >Windows XP - Not supported anymore 
 
 >Windows 7: https://github.com/downloads/fredre/iUpdate/IUpdateWin7_12.2.0.zip
+
+>Windows 8: Stadig oor die Klippe ;) http://www.youtube.com/watch?v=dKNEuBQ7oBs
 	
 		
 ####Linux (From source only)
@@ -66,17 +71,24 @@ Help
 
 See the wiki for user manual on how to use the latest version of iUpdate. 
 
+https://github.com/fredre/iUpdate/wiki
+
+
+
+
+I have suggestions / found a bug / want to send some codes 
+----------------
 If you have found a bug or want to suggest an improvement see the section on Bugs and Suggestions in the wiki.
 
+https://github.com/fredre/iUpdate/wiki
 
-How can I help ?
-----------------
+If you can code your help will be greatly appreciated not only C++ but also HTML and JavaScript
 
-Because iUpdate is open source anyone can jump in and easily contribute. 
+Because iUpdate is open source anyone can jump in and easily contribute. You will need to clone the master branch and can then submit a pull request. Alternatively you can
+create a patch and mail it to hattinghfg@tut.ac.za. Google is your friend in this regard. Please add a suggestion or bug before starting to work on code so that the process can be tracked.
 
-You don't have to be a programmer. We need documenters testers and artists. See the section in the wiki called Contribute without coding.
-
-If you can code your help will be greatly appreciated. See the section called Developers wanted in the wiki.
+If you need some guidance on how to use QT, Git or GitHub feel free to mail Fredre at hattinghfg@tut.ac.za
+ 
 
 
 
