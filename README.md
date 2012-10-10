@@ -1,7 +1,7 @@
 iUpdate
 =======
 
-iUpdate is a QT application that can read different files (.csv currently supported) and write the marks into the iEnabler product provided by ITS tertiary software.
+iUpdate is a QT (C++) application that can read different files (.csv currently supported) and write the marks into the iEnabler product provided by ITS tertiary software.
 iUpdate is open source and free (as in beer and speech).  
 
 
@@ -20,10 +20,14 @@ Download
 
 The current stable version is 12.02.0
 
-We provide binaries for direct download. You can also run the latest version from source
+We provide binaries for direct download. 
+
+You can also run the latest version from source (Branch master) or 
+run Version 12.02.0 from source (Branch 12.2FixOnly) 
+
 	Microsoft
-		Windows XP (Will only be supported until version 13.01).
-		Windows 7.
+		Windows XP - Not supported anymore 
+		Windows 7 - 
 		
 	Linux
 		Tested on Ubuntu 10.04.
