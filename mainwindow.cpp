@@ -305,6 +305,8 @@ qDebug() << Q_FUNC_INFO <<"end";
 
  void  MainWindow::PopulateSubjectWeb()
  {
+     qDebug() << Q_FUNC_INFO <<"start";
+
      tmpl::html_template one(":/templ/mtdetails.tmpl");
 
      loop_t loop_marktypes;
@@ -315,11 +317,15 @@ qDebug() << Q_FUNC_INFO <<"end";
 
      //Get all the marktypes and add a row
      QStringList marktypes = csvInter.getMarkTypesList();
+     qDebug()<<marktypes.count();
 
     for(int a=0;a < marktypes.count();a++)
      {
 
         QString mtName = marktypes[a];
+
+        qDebug()<<mtName;
+
        row_marktypes("name") = mtName.toStdString();
        row_marktypes("nummarks") = csvInter.getMarkTypeTotalNumberMarks(mtName);
        row_marktypes("mismarks") = csvInter.getStudentCount()-csvInter.getMarkTypeTotalNumberMarks(mtName);
@@ -365,6 +371,7 @@ qDebug() << Q_FUNC_INFO <<"end";
     // ui->webViewSubjectInfo->settings()->setUserStyleSheetUrl(QUrl::from);
 
      ui->webViewSubjectInfo->setHtml(QString::fromStdString(one.Process()));
+     qDebug() << Q_FUNC_INFO <<"end";
 
 }
 
