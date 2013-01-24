@@ -59,40 +59,12 @@ MainWindow::MainWindow(QWidget *parent) :
 
     ui->wFitsbrowser->setUrl(QUrl("https://jupiter.tut.ac.za/staffportal/system/login.php?refscript=/staffportal/index.php"));
 
+
+
     QNetworkDiskCache *diskCache = new QNetworkDiskCache(this);
     diskCache->setCacheDirectory("cachedir");
-     ui->webViewSubjectInfo->page()->networkAccessManager()->setCache(diskCache );
+    ui->webViewSubjectInfo->page()->networkAccessManager()->setCache(diskCache );
 
-    //https://jupiter.tut.ac.za/staffportal/apps/its/leave.php?action=app_self  //Direct
-    //https://jupiter.tut.ac.za/staffportal/system/login.php?refscript=/staffportal/index.php  //Normal
-    //file:///C:/Documents%20and%20Settings/Fredre/Desktop/test/w06pkg.w06marks_entry.htm //Test
-    //file:///C:/Documents%20and%20Settings/Fredre/Desktop/w06pkg.html
-
-    //Setup the table for subject info Subject info not used anymore
-    /*
-    QTableWidgetItem *newItem = new QTableWidgetItem("Subject Name: ");
-    ui->tableSubjecInfo->setVerticalHeaderItem(0,newItem);
-
-    QTableWidgetItem *newItem1 = new QTableWidgetItem("Total Students: ");
-    ui->tableSubjecInfo->setVerticalHeaderItem(1,newItem1);
-
-    QTableWidgetItem *newItem2 = new QTableWidgetItem("First Student: ");
-    ui->tableSubjecInfo->setVerticalHeaderItem(2,newItem2);
-
-    QTableWidgetItem *newItem3 = new QTableWidgetItem("Last Student: ");
-    ui->tableSubjecInfo->setVerticalHeaderItem(3,newItem3);
-
-    ui->tableSubjecInfo->resizeColumnsToContents();
-    ui->tableSubjecInfo->resizeRowsToContents();
-
-    //Stretch last
-    QHeaderView *header =  ui->tableSubjecInfo->horizontalHeader();
-    header->setStretchLastSection(true);
-   */
-
-
-    //Test the templating system
-    //tmpl::html_template one("F:\\Dropbox\\ProjectIncubator\\IUpdate-build-desktop\\debug\\test.tmpl");
 
   qDebug() << Q_FUNC_INFO <<"end";
 

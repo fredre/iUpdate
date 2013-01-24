@@ -4,6 +4,12 @@ itsBrowser::itsBrowser(QWidget *parent) :
     QWebView(parent)
 {
 
+    //This is needed in Ubuntu under QT 5 for SSL to work
+    //Still need to test in Windows7
+    QSslConfiguration sslConfig = QSslConfiguration::defaultConfiguration();
+    sslConfig.setProtocol( QSsl::SslV3 ); //Seems under ubuntu we need to specify the version
+    QSslConfiguration::setDefaultConfiguration( sslConfig );
+
 
 
     QWebSettings *Tsettings = settings();
@@ -35,12 +41,15 @@ void itsBrowser::networkTaskfinished(QNetworkReply *reply)
     qDebug()<<reply->errorString();
     emit onNetworkError(reply->errorString());
     qDebug() << Q_FUNC_INFO <<"end";
+
+
 }
 
 void itsBrowser::handleSslErrors(QNetworkReply* reply, const QList<QSslError> &errors)
 {
-   qDebug() << Q_FUNC_INFO <<"start";
-    qDebug() << "handleSslErrors: ";
+
+    qDebug() << Q_FUNC_INFO <<"start";
+    qDebug() << "handleSslErrors: !!!!!!!!!!!!!!!! ";
     foreach (QSslError e, errors)
     {
         qDebug() << "ssl error: " << e;
@@ -70,11 +79,6 @@ void itsBrowser::provideAuthentication(QNetworkReply *rep ,QAuthenticator *auth)
     qDebug()<<auth->user();
     qDebug()<<rep->error();
     rep->ignoreSslErrors();
-
-    rep->url().setUserInfo(QString("%1:%2").arg(user).arg(pass));
-
-    this->load(rep->url());
-
 }
 
 void itsBrowser::provideProxAuthentication(const QNetworkProxy &np, QAuthenticator *auth)
