@@ -35,10 +35,12 @@ You can also run the latest version from source (Branch master) or
 run Version 12.02.0 from source (Branch 12.2FixOnly) 
 
 ####Microsoft (Binaries available)
+
+>Files are hosted on sourceforge.net
 	
 >Windows XP - Not supported anymore 
 
->Windows 7: https://github.com/downloads/fredre/iUpdate/IUpdateWin7_12.2.0.zip
+>Windows 7: http://sourceforge.net/projects/iupdownload/files/IUpdateWin7_12.2.0.zip/download
 	
 		
 ####Linux (From source only)
