@@ -71,6 +71,10 @@ void itsBrowser::provideAuthentication(QNetworkReply *rep ,QAuthenticator *auth)
     qDebug()<<rep->error();
     rep->ignoreSslErrors();
 
+    rep->url().setUserInfo(QString("%1:%2").arg(user).arg(pass));
+
+    this->load(rep->url());
+
 }
 
 void itsBrowser::provideProxAuthentication(const QNetworkProxy &np, QAuthenticator *auth)
