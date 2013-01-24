@@ -31,7 +31,7 @@ RESOURCES += \
     res.qrc
 
 # The application version
-VERSION = 12.01.03
+VERSION = 13.01
 
 # Define the preprocessor macro to get the application version in our application.
 DEFINES += APP_VERSION=\\\"$$VERSION\\\"
