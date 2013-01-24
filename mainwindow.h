@@ -3,7 +3,7 @@
 
 #include <QMainWindow>
 #include <QInputDialog>
-#include <QWebFrame>
+//#include <QWebFrame>
 #include <QNetworkCookieJar>
 #include <QMovie>
 #include <QAuthenticator>

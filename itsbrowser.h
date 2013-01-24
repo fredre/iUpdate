@@ -1,6 +1,8 @@
 #ifndef ITSBROWSER_H
 #define ITSBROWSER_H
 
+#include<QtWebKit>
+//#include<QtWebKitWidgets>
 #include <QWebView>
 #include <QNetworkCookieJar>
 #include "qdebug.h"

@@ -5,11 +5,11 @@
 #include "qdebug.h"
 #include <QNetworkDiskCache>
 
-#ifdef Q_WS_WIN //This may not be needed (unless the entire TUT switch to Linux from Monday)
+#ifdef Q_OS_WIN //This may not be needed (unless the entire TUT switch to Linux from Monday)
     #include "Templates\html_template.h"
 #endif
 
-#ifdef Q_WS_X11
+#ifdef Q_OS_LINUX
     #include "Templates/html_template.h"
 #endif
 
