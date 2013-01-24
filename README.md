@@ -39,8 +39,6 @@ run Version 12.02.0 from source (Branch 12.2FixOnly)
 >Windows XP - Not supported anymore 
 
 >Windows 7: https://github.com/downloads/fredre/iUpdate/IUpdateWin7_12.2.0.zip
-
->Windows 8: Stadig oor die Klippe ;) http://www.youtube.com/watch?v=dKNEuBQ7oBs
 	
 		
 ####Linux (From source only)
