@@ -27,22 +27,22 @@ class MainWindow : public QMainWindow
     Q_OBJECT
 
 public:
-    explicit MainWindow(QWidget *parent = 0);
+    explicit MainWindow( QWidget *parent = 0 );
     ~MainWindow();
     QSettings IUpdatesettings;
 
 private slots:
     void on_pushButton_clicked();
 
-    void on_webViewBrowser_loadProgress(int progress);
+    void on_webViewBrowser_loadProgress( int progress );
 
     void on_webViewBrowser_loadStarted();
 
-    void on_webViewBrowser_loadFinished(bool );
+    void on_webViewBrowser_loadFinished( bool );
 
-    void on_webViewBrowser_anyError(QString);
+    void on_webViewBrowser_anyError( QString );
 
-    void on_webViewBrowser_networkError(QString);
+    void on_webViewBrowser_networkError( QString );
 
     void on_actionAbout_triggered();
 
@@ -63,13 +63,13 @@ private slots:
 
     void on_actionLoad_ec_tut_ac_za_triggered();
 
-    void CsvFileParseError(QString);
+    void CsvFileParseError( QString );
 
-    void on_comboBoxMarkTypeSlct_editTextChanged(const QString &arg1);
+    void on_comboBoxMarkTypeSlct_editTextChanged( const QString &arg1 );
 
-    void on_comboBoxMarkTypeSlct_currentIndexChanged(const QString &arg1);
+    void on_comboBoxMarkTypeSlct_currentIndexChanged( const QString &arg1 );
 
-    void on_webViewSubjectInfo_loadFinished(bool arg1);
+    void on_webViewSubjectInfo_loadFinished( bool arg1 );
 
     void on_webViewSubjectInfo_loadStarted();
 
