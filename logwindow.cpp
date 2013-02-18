@@ -4,14 +4,12 @@
 
 LogWindow::LogWindow(QWidget *parent) :
     QMainWindow(parent),
-    ui(new Ui::LogWindow)
-{
+    ui(new Ui::LogWindow){
     ui->setupUi(this);
 
 }
 
-LogWindow::~LogWindow()
-{
+LogWindow::~LogWindow(){
     delete ui;
 }
 
