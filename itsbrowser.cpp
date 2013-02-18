@@ -1,7 +1,7 @@
 #include "itsbrowser.h"
 
-itsBrowser::itsBrowser(QWidget *parent) :
-    QWebView(parent)
+itsBrowser::itsBrowser( QWidget *parent ) :
+    QWebView( parent )
 {
 
     //This is needed in Ubuntu under QT 5 for SSL to work
@@ -13,11 +13,11 @@ itsBrowser::itsBrowser(QWidget *parent) :
 
 
     QWebSettings *Tsettings = settings();
-    Tsettings->setAttribute(QWebSettings::JavascriptEnabled, true);
-    Tsettings->setAttribute(QWebSettings::PluginsEnabled, true);
-    Tsettings->setAttribute(QWebSettings::AutoLoadImages, true);
-    Tsettings->setAttribute(QWebSettings::JavaEnabled, true);
-    Tsettings->setAttribute(QWebSettings::JavascriptCanOpenWindows, true);
+    Tsettings->setAttribute( QWebSettings::JavascriptEnabled , true );
+    Tsettings->setAttribute( QWebSettings::PluginsEnabled , true );
+    Tsettings->setAttribute( QWebSettings::AutoLoadImages , true );
+    Tsettings->setAttribute( QWebSettings::JavaEnabled , true );
+    Tsettings->setAttribute( QWebSettings::JavascriptCanOpenWindows , true);
 
 
 
@@ -27,51 +27,51 @@ itsBrowser::itsBrowser(QWidget *parent) :
 
     this->page()->networkAccessManager()->setCookieJar(myjar);
 
-    connect(page()->networkAccessManager(),SIGNAL(sslErrors(QNetworkReply*, const QList<QSslError> & )),this,SLOT(handleSslErrors(QNetworkReply*, const QList<QSslError> & )));
-    connect(page()->networkAccessManager(),SIGNAL(authenticationRequired(QNetworkReply*,QAuthenticator*)),this,SLOT(provideAuthentication(QNetworkReply*,QAuthenticator*)));
-    connect(page()->networkAccessManager(),SIGNAL(proxyAuthenticationRequired(const QNetworkProxy &, QAuthenticator *)),this,SLOT(provideProxAuthentication(const QNetworkProxy&, QAuthenticator*)));
-    connect(page()->networkAccessManager(),SIGNAL(finished ( QNetworkReply *)),this,SLOT(networkTaskfinished (QNetworkReply *)));
+    connect( page()->networkAccessManager(), SIGNAL( sslErrors( QNetworkReply*, const QList<QSslError> & ) ) ,this,SLOT( handleSslErrors( QNetworkReply*, const QList<QSslError> & ) ) );
+    connect( page()->networkAccessManager(), SIGNAL( authenticationRequired( QNetworkReply*,QAuthenticator* ) ) , this,SLOT(provideAuthentication(QNetworkReply*,QAuthenticator*) ) );
+    connect( page()->networkAccessManager(), SIGNAL( proxyAuthenticationRequired(const QNetworkProxy &, QAuthenticator *)) , this , SLOT( provideProxAuthentication( const QNetworkProxy&, QAuthenticator*) ) );
+    connect( page()->networkAccessManager(), SIGNAL( finished ( QNetworkReply *)),this,SLOT(networkTaskfinished (QNetworkReply *)));
 
 
 }
 
-void itsBrowser::networkTaskfinished(QNetworkReply *reply)
+void itsBrowser::networkTaskfinished( QNetworkReply *reply )
 {
     qDebug() << Q_FUNC_INFO <<"start";
     qDebug()<<reply->errorString();
-    emit onNetworkError(reply->errorString());
+    emit onNetworkError( reply->errorString() );
     qDebug() << Q_FUNC_INFO <<"end";
 
 
 }
 
-void itsBrowser::handleSslErrors(QNetworkReply* reply, const QList<QSslError> &errors)
+void itsBrowser::handleSslErrors( QNetworkReply* reply , const QList<QSslError> &errors )
 {
 
     qDebug() << Q_FUNC_INFO <<"start";
     qDebug() << "handleSslErrors: !!!!!!!!!!!!!!!! ";
-    foreach (QSslError e, errors)
+    foreach ( QSslError e , errors )
     {
         qDebug() << "ssl error: " << e;
-        emit onAnyError(e.errorString());
+        emit onAnyError( e.errorString( ));
     }
 
     reply->ignoreSslErrors();
     qDebug() << Q_FUNC_INFO <<"end";
 }
 
-void itsBrowser::provideAuthentication(QNetworkReply *rep ,QAuthenticator *auth)
+void itsBrowser::provideAuthentication( QNetworkReply *rep , QAuthenticator *auth )
 {
     qDebug()<<"Active directory waisting our time master. Auto engage responce";
 
     bool ok;
-    QString user = QInputDialog::getText(this, tr("Provide user name"),tr("User name:"), QLineEdit::Normal,tr("tut\\"), &ok);
+    QString user = QInputDialog::getText( this , tr( "Provide user name" ) , tr( "User name:" ), QLineEdit::Normal , tr( "tut\\" ) , &ok);
 
-    QString pass = QInputDialog::getText(this, tr("Provide password"), tr("Password:"), QLineEdit::Normal,tr(""), &ok);
+    QString pass = QInputDialog::getText( this , tr( "Provide password" ), tr( "Password:" ), QLineEdit::Normal , tr( "" ) , &ok);
 
 
-    auth->setUser(user);
-    auth->setPassword(pass);
+    auth->setUser( user );
+    auth->setPassword( pass );
 
 
     qDebug() << rep->readAll();
@@ -81,19 +81,19 @@ void itsBrowser::provideAuthentication(QNetworkReply *rep ,QAuthenticator *auth)
     rep->ignoreSslErrors();
 }
 
-void itsBrowser::provideProxAuthentication(const QNetworkProxy &np, QAuthenticator *auth)
+void itsBrowser::provideProxAuthentication( const QNetworkProxy &np, QAuthenticator *auth )
 {
     qDebug()<<"Proxy authentication required !!!!!";
 
     qDebug()<<"Proxy authentication is requisted !!!!";
 
     bool ok;
-    QString user = QInputDialog::getText(this, tr("Provide user name"),tr("User name:"), QLineEdit::Normal,tr("tut\\"), &ok);
+    QString user = QInputDialog::getText( this, tr( "Provide user name" ),tr( "User name:" ), QLineEdit::Normal,tr( "tut\\" ) , &ok );
 
-    QString pass = QInputDialog::getText(this, tr("Provide password"), tr("Password:"), QLineEdit::Normal,tr(""), &ok);
+    QString pass = QInputDialog::getText( this, tr( "Provide password" ), tr( "Password:" ), QLineEdit::Normal,tr( "" ) , &ok );
 
-    auth->setUser(user);
-    auth->setPassword(pass);
+    auth->setUser( user );
+    auth->setPassword( pass );
 
 
 
@@ -101,37 +101,37 @@ void itsBrowser::provideProxAuthentication(const QNetworkProxy &np, QAuthenticat
 
 }
 
-int itsBrowser::getInblrMark(QString stn)
+int itsBrowser::getInblrMark( QString stn )
 {
-  QVariant result =  this->page()->currentFrame()->evaluateJavaScript(QString("for(a=0;a<document.frmOne.elements.length;a++){ if(document.frmOne.elements[a].value =='%1 ') { document.frmOne.elements[a+1].value}}").arg(stn));
+  QVariant result =  this->page()->currentFrame()->evaluateJavaScript( QString( "for(a=0;a<document.frmOne.elements.length;a++ ) { if( document.frmOne.elements[a].value =='%1 ' ) { document.frmOne.elements[a+1].value } }" ).arg( stn ) );
   qDebug()<<result;
   qDebug()<<"getInblrMark Result "<<result;
   return result.toInt();
 }
 
-void itsBrowser::setInblrMark(QString stn,int mark)
+void itsBrowser::setInblrMark( QString stn, int mark )
 {
-  QString mrk =  tr("%1").arg(mark);
-  QVariant result = this->page()->currentFrame()->evaluateJavaScript(QString("for(a=0;a<document.frmOne.elements.length;a++){ if(document.frmOne.elements[a].value =='%1 '){ document.frmOne.elements[a+1].value = %2}}").arg(stn).arg(mrk));
+  QString mrk =  tr( "%1" ).arg( mark );
+  QVariant result = this->page()->currentFrame()->evaluateJavaScript( QString( "for(a=0;a<document.frmOne.elements.length;a++) { if ( document.frmOne.elements[a].value =='%1 ' ) { document.frmOne.elements[a+1].value = %2 } }" ).arg(stn).arg( mrk ) );
   qDebug()<<result;
   qDebug()<<"Student mark updated itsbrowser.cpp Result "<<result;
 }
 
 void itsBrowser::setInblrMarkAllZero()
 {
-    QVariant result = this->page()->currentFrame()->evaluateJavaScript(QString("for(a=0;a<document.frmOne.elements.length;a++){ if(document.frmOne.elements[a].value.length == 10 && document.frmOne.elements[a].name=='x_stno' && document.frmOne.elements[a].value !='' && document.frmOne.elements[a].value!=null ){ document.frmOne.elements[a+1].value = '0'}}"));
+    QVariant result = this->page()->currentFrame()->evaluateJavaScript( QString( "for( a=0;a<document.frmOne.elements.length;a++ ) { if ( document.frmOne.elements[a].value.length == 10 && document.frmOne.elements[a].name=='x_stno' && document.frmOne.elements[a].value !='' && document.frmOne.elements[a].value!=null ) { document.frmOne.elements[a+1].value = '0'} }" ) );
     qDebug()<<"setInblrMarkAllZero()  itsbrowser.cpp Result "<<result;
 }
 
 void itsBrowser::setInblrMarkZero()
 {
-    QVariant result = this->page()->currentFrame()->evaluateJavaScript(QString("for(a=0;a<document.frmOne.elements.length;a++){ if(document.frmOne.elements[a].value.length == 10 && document.frmOne.elements[a].name=='x_stno' && document.frmOne.elements[a].value !='' && document.frmOne.elements[a].value!=null ){ if(document.frmOne.elements[a+1].value == ''){document.frmOne.elements[a+1].value = '0'}}}"));
+    QVariant result = this->page()->currentFrame()->evaluateJavaScript( QString( "for(a=0;a<document.frmOne.elements.length;a++ ) { if ( document.frmOne.elements[a].value.length == 10 && document.frmOne.elements[a].name=='x_stno' && document.frmOne.elements[a].value !='' && document.frmOne.elements[a].value!=null ) { if ( document.frmOne.elements[a+1].value == '' ) {document.frmOne.elements[a+1].value = '0'} } }" ) );
     qDebug()<<"setInblrMarkZero()  itsbrowser.cpp Result "<<result;
 }
 
-bool itsBrowser::InblrContainsStuNum(QString stn)
+bool itsBrowser::InblrContainsStuNum( QString stn )
 {
-    QVariant result = this->page()->currentFrame()->evaluateJavaScript(QString("false; for(a=0;a<document.frmOne.elements.length;a++){ if(document.frmOne.elements[a].value =='%1 '){true}}").arg(stn));
+    QVariant result = this->page()->currentFrame()->evaluateJavaScript( QString( "false; for( a=0;a<document.frmOne.elements.length;a++ ) { if(document.frmOne.elements[a].value =='%1 ' ) {true} }" ).arg( stn ) );
     qDebug()<<result;
    qDebug()<<"Contains student numberexecuted  itsbrowser.cpp Result "<<result;
     return result.toBool();
@@ -139,5 +139,5 @@ bool itsBrowser::InblrContainsStuNum(QString stn)
 
  void itsBrowser::setInblrCanBlackOut()
  {
-   QVariant result = this->page()->currentFrame()->evaluateJavaScript(QString("for(a=0;a<document.frmOne.elements.length;a++){ if(document.frmOne.elements[a].type='table'){for ( i = 0, row; row = document.frmOne.elements[a].rows[i]; i++) {}  }  } "));
+   QVariant result = this->page()->currentFrame()->evaluateJavaScript( QString( "for(a=0;a<document.frmOne.elements.length;a++ ) { if(document.frmOne.elements[a].type='table' ) {for ( i = 0, row; row = document.frmOne.elements[a].rows[i]; i++ ) {}  }  } " ) );
  }
