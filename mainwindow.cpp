@@ -20,18 +20,18 @@ using namespace std;
 using namespace tmpl;
 
 
-MainWindow::MainWindow(QWidget *parent) :
-    QMainWindow(parent),
-    ui(new Ui::MainWindow)
+MainWindow::MainWindow( QWidget *parent ) :
+    QMainWindow( parent ),
+    ui( new Ui::MainWindow )
 {
     qDebug() << Q_FUNC_INFO <<"start";
 
-    ui->setupUi(this);
+    ui->setupUi( this );
 
     //Setup the settings class
-    QCoreApplication::setOrganizationName("TUT");
-    QCoreApplication::setOrganizationDomain("tut.ac.za");
-    QCoreApplication::setApplicationName("IUpdate");
+    QCoreApplication::setOrganizationName( "TUT" );
+    QCoreApplication::setOrganizationDomain( "tut.ac.za" );
+    QCoreApplication::setApplicationName( "IUpdate" );
 
 
 
@@ -41,29 +41,29 @@ MainWindow::MainWindow(QWidget *parent) :
     hideSideWindow(); //Maximizes the splitter window
 
 
-    QMovie *movie = new QMovie(":/images/ajax-loader.gif");
+    QMovie *movie = new QMovie( ":/images/ajax-loader.gif" );
 
-    ui->labelProgress->setMovie(movie);
+    ui->labelProgress->setMovie( movie );
 
     movie->start();
 
     //Hook up to the csv inter error reporter
-     connect(&csvInter,SIGNAL(FileParseError(QString)),this,SLOT(CsvFileParseError(QString)));
+     connect( &csvInter,SIGNAL( FileParseError( QString ) ),this,SLOT( CsvFileParseError( QString ) ) );
 
     //Hook up to the loadprogress and loadstarted
-    connect(ui->wFitsbrowser,SIGNAL(loadProgress (int)),this,SLOT(on_webViewBrowser_loadProgress(int)));
-    connect(ui->wFitsbrowser,SIGNAL(loadStarted ()),this,SLOT(on_webViewBrowser_loadStarted()));
-    connect(ui->wFitsbrowser,SIGNAL(loadFinished (bool)),this,SLOT(on_webViewBrowser_loadFinished(bool)));
-    connect(ui->wFitsbrowser,SIGNAL(onAnyError(QString)),this,SLOT(on_webViewBrowser_anyError(QString)));
-    connect(ui->wFitsbrowser,SIGNAL(onNetworkError(QString)),this,SLOT(on_webViewBrowser_networkError(QString)));
+    connect(ui->wFitsbrowser,SIGNAL( loadProgress( int ) ),this,SLOT( on_webViewBrowser_loadProgress( int ) ) );
+    connect(ui->wFitsbrowser,SIGNAL( loadStarted () ),this,SLOT( on_webViewBrowser_loadStarted() ) );
+    connect(ui->wFitsbrowser,SIGNAL( loadFinished ( bool ) ),this,SLOT(on_webViewBrowser_loadFinished( bool ) ) );
+    connect(ui->wFitsbrowser,SIGNAL( onAnyError( QString ) ),this,SLOT( on_webViewBrowser_anyError( QString ) ) );
+    connect(ui->wFitsbrowser,SIGNAL( onNetworkError( QString ) ),this,SLOT( on_webViewBrowser_networkError( QString ) ) );
 
-    ui->wFitsbrowser->setUrl(QUrl("https://jupiter.tut.ac.za/staffportal/system/login.php?refscript=/staffportal/index.php"));
+    ui->wFitsbrowser->setUrl( QUrl( "https://jupiter.tut.ac.za/staffportal/system/login.php?refscript=/staffportal/index.php" ) );
 
 
 
-    QNetworkDiskCache *diskCache = new QNetworkDiskCache(this);
-    diskCache->setCacheDirectory("cachedir");
-    ui->webViewSubjectInfo->page()->networkAccessManager()->setCache(diskCache );
+    QNetworkDiskCache *diskCache = new QNetworkDiskCache( this );
+    diskCache->setCacheDirectory( "cachedir" );
+    ui->webViewSubjectInfo->page()->networkAccessManager()->setCache( diskCache );
 
 
   qDebug() << Q_FUNC_INFO <<"end";
