@@ -15,13 +15,11 @@ LogWindow::~LogWindow()
     delete ui;
 }
 
-void appendLog(QStringList appme)
-{
+void appendLog(QStringList appme){
 
 }
 
-void LogWindow::addUpdateHeader(QString fileUsed,QString mtused,QString subject)
-{
+void LogWindow::addUpdateHeader(QString fileUsed,QString mtused,QString subject){
     qDebug() << Q_FUNC_INFO <<"start";
 
    QTextCursor cur(ui->textEdit->textCursor());
@@ -41,8 +39,7 @@ void LogWindow::addUpdateHeader(QString fileUsed,QString mtused,QString subject)
     Subname  = subject.trimmed();
     Subname  = subject.simplified();
 
-    if(Subname.contains(' '))
-    {
+    if(Subname.contains(' ')){
         qDebug()<<"Removed spaces from subject name";
         Subname= Subname.remove(QChar(' '), Qt::CaseInsensitive);
     }
@@ -53,53 +50,45 @@ void LogWindow::addUpdateHeader(QString fileUsed,QString mtused,QString subject)
     qDebug() << Q_FUNC_INFO <<"end";
 }
 
-void  LogWindow::addErrors(QStringList li)
-{
+void  LogWindow::addErrors(QStringList li){
  QTextCursor cur(ui->textEdit->textCursor());
 
  cur.insertBlock();
  cur.insertText(tr("Errors \n"));
  cur.insertBlock();
 
-  foreach(QString item,li)
-  {
+  foreach(QString item,li){
     cur.insertText(tr("%1 \n").arg(item));
   }
 
 }
 
-void LogWindow::addWarning(QStringList li)
-{
+void LogWindow::addWarning(QStringList li){
     QTextCursor cur(ui->textEdit->textCursor());
 
     cur.insertBlock();
     cur.insertText(tr("Warning \n"));
     cur.insertBlock();
 
-    foreach(QString item,li)
-    {
+    foreach(QString item,li){
       cur.insertText(tr("%1 \n").arg(item));
     }
-
 }
 
-void LogWindow::addInformation(QStringList li)
-{
+void LogWindow::addInformation(QStringList li){
     QTextCursor cur(ui->textEdit->textCursor());
 
     cur.insertBlock();
     cur.insertText(tr("Information \n"));
     cur.insertBlock();
 
-    foreach(QString item,li)
-    {
+    foreach(QString item,li){
       cur.insertText(tr("%1 \n").arg(item));
     }
 }
 
 
-void LogWindow::on_actionSave_triggered()
-{
+void LogWindow::on_actionSave_triggered(){
     qDebug() << Q_FUNC_INFO <<"start";
     QDir dir;
      qDebug()<<"Current dir "<<dir.current();
