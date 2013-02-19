@@ -17,8 +17,7 @@
 #include <QNetworkProxy>
 #include <QNetworkReply>
 
-class itsBrowser : public QWebView
-{
+class itsBrowser : public QWebView{
     Q_OBJECT
 public:
     explicit itsBrowser( QWidget *parent = 0 );
