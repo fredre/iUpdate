@@ -12,9 +12,9 @@ class DocInterface : public QObject
 {
     Q_OBJECT
 public:
-    explicit DocInterface(QObject *parent = 0);
+    explicit DocInterface( QObject *parent = 0 );
     QString FilePath();
-    void setFilePath(QString);
+    void setFilePath( QString );
     QString getFileExt();
     QString getFileTypeName();
     bool loadFile();
@@ -24,24 +24,23 @@ public:
     int getStudentCount();
     QStringList getMarkTypesList();
     int getMarkTypesCount();
-    int getMarkTypeTotalNumberMarks(QString);
-    QStringList getAllStudentNumbersPerMarkType(QString);
-    QMap<QString, int> getAllMarksPerMarkType(QString);
-    int getStudentMarkPerMarkType(QString,QString);
-    QStringList getStudentNumbersWithNoMark(QString);
-    int getMarkTypeColumn(QString);
-    bool validateStudentNumber(QString);
-    void sanitizeString(QString &);
-    bool checkDuplicateStudentNumbers(QStringList);
+    int getMarkTypeTotalNumberMarks( QString );
+    QStringList getAllStudentNumbersPerMarkType( QString );
+    QMap<QString, int> getAllMarksPerMarkType( QString );
+    int getStudentMarkPerMarkType( QString,QString );
+    QStringList getStudentNumbersWithNoMark( QString );
+    int getMarkTypeColumn( QString );
+    bool validateStudentNumber( QString );
+    void sanitizeString( QString & );
+    bool checkDuplicateStudentNumbers( QStringList );
 
 private:
     QString filepath;
     QStringList filecontents;
 
 
-
 signals:
-    void FileParseError(QString);
+    void FileParseError( QString );
 
 public slots:
 
