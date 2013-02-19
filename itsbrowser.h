@@ -21,22 +21,22 @@ class itsBrowser : public QWebView
 {
     Q_OBJECT
 public:
-    explicit itsBrowser(QWidget *parent = 0);
-    int getInblrMark(QString);
-    void setInblrMark(QString,int);
+    explicit itsBrowser( QWidget *parent = 0 );
+    int getInblrMark( QString );
+    void setInblrMark( QString,int );
     void setInblrMarkAllZero();
     void setInblrMarkZero();
-    bool InblrContainsStuNum(QString);
+    bool InblrContainsStuNum( QString );
     void setInblrCanBlackOut();
 
 signals:
-    void onAnyError(QString);
-    void onNetworkError(QString); //Problem with network connectivity
+    void onAnyError( QString );
+    void onNetworkError( QString ); //Problem with network connectivity
 public slots:
-    void handleSslErrors(QNetworkReply* reply, const QList<QSslError> &errors);
-    void provideAuthentication(QNetworkReply*,QAuthenticator*);
-    void provideProxAuthentication(const QNetworkProxy &, QAuthenticator*);
-    void networkTaskfinished (QNetworkReply *);
+    void handleSslErrors( QNetworkReply* reply, const QList<QSslError> &errors );
+    void provideAuthentication( QNetworkReply*,QAuthenticator* );
+    void provideProxAuthentication( const QNetworkProxy &, QAuthenticator* );
+    void networkTaskfinished ( QNetworkReply * );
 
 };
 
