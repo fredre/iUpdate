@@ -13,11 +13,11 @@ LogWindow::~LogWindow(){
     delete ui;
 }
 
-void appendLog( QStringList appme ){
+void AppendLog( QStringList appme ){
 
 }
 
-void LogWindow::addUpdateHeader( QString fileUsed,QString mtused,QString subject ){
+void LogWindow::AddUpdateHeader( QString fileUsed,QString mtused,QString subject ){
     qDebug() << Q_FUNC_INFO <<"start";
 
    QTextCursor cur( ui->textEdit->textCursor() );
@@ -48,7 +48,7 @@ void LogWindow::addUpdateHeader( QString fileUsed,QString mtused,QString subject
     qDebug() << Q_FUNC_INFO <<"end";
 }
 
-void  LogWindow::addErrors( QStringList li ){
+void  LogWindow::AddErrors( QStringList li ){
  QTextCursor cur( ui->textEdit->textCursor() );
 
  cur.insertBlock();
@@ -73,7 +73,7 @@ void LogWindow::addWarning( QStringList li ){
     }
 }
 
-void LogWindow::addInformation( QStringList li ){
+void LogWindow::AddInformation( QStringList li ){
     QTextCursor cur( ui->textEdit->textCursor() );
 
     cur.insertBlock();

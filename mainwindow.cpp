@@ -415,7 +415,7 @@ void MainWindow::on_pushButtonUpdateMrks_clicked()
     qDebug()<<"Mark Type: "<<ui->comboBoxMarkTypeSlct->currentText();
     qDebug()<<"";
 
-   UpdateMarksLog->addUpdateHeader(csvInter.FilePath(),ui->comboBoxMarkTypeSlct->currentText(),csvInter.getSubjectCode());
+   UpdateMarksLog->AddUpdateHeader(csvInter.FilePath(),ui->comboBoxMarkTypeSlct->currentText(),csvInter.getSubjectCode());
 
 
     foreach (const QString snum,stunumbers)
@@ -456,9 +456,9 @@ void MainWindow::on_pushButtonUpdateMrks_clicked()
       qDebug()<<"";
 
     }
-UpdateMarksLog->addErrors(logErrors);
+UpdateMarksLog->AddErrors(logErrors);
 UpdateMarksLog->addWarning(logWarnings);
-UpdateMarksLog->addInformation(logInformation);
+UpdateMarksLog->AddInformation(logInformation);
 ui->labelProgress->hide();
 UpdateMarksLog->show();
 qDebug() << Q_FUNC_INFO <<"end";
