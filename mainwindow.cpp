@@ -28,7 +28,7 @@ MainWindow::MainWindow(QWidget *parent) :
 
     ui->setupUi(this);
 
-    //Setup the settings class
+    //Setup the setting class
     QCoreApplication::setOrganizationName("TUT");
     QCoreApplication::setOrganizationDomain("tut.ac.za");
     QCoreApplication::setApplicationName("IUpdate");
