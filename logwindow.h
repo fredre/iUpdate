@@ -29,7 +29,7 @@ public:
 
 
 private slots:
-    void on_actionSave_triggered();
+    void On_actionSave_triggered();
 
 private:
     Ui::LogWindow *ui;

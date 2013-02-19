@@ -86,7 +86,7 @@ void LogWindow::AddInformation( QStringList li ){
 }
 
 
-void LogWindow::on_actionSave_triggered(){
+void LogWindow::On_actionSave_triggered(){
     qDebug() << Q_FUNC_INFO <<"start";
     QDir dir;
      qDebug()<<"Current dir "<<dir.current();
