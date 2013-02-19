@@ -173,9 +173,9 @@ void MainWindow::on_actionLoad_triggered()
     //First try to load settings
     QString lstload = IUpdatesettings.value( "lastLoadPath",QDir::homePath() ).toString();
 
-    csvInter.setFilePath(QFileDialog::getOpenFileName( this,tr( "Open %1 Marks File" ).arg( csvInter.getFileTypeName() ), lstload, tr( "%1" ).arg( csvInter.getFileExt() ) ) );
+    csvInter.SetFilePath(QFileDialog::getOpenFileName( this,tr( "Open %1 Marks File" ).arg( csvInter.GetFileTypeName() ), lstload, tr( "%1" ).arg( csvInter.GetFileExt() ) ) );
 
-    if ( csvInter.loadFile() ){
+    if ( csvInter.LoadFile() ){
 
     //Update setting
     QDir d = QFileInfo( csvInter.FilePath() ).absoluteDir();
@@ -190,7 +190,7 @@ void MainWindow::on_actionLoad_triggered()
 
     //Load the marktypes into the combo box
     ui->comboBoxMarkTypeSlct->clear();
-    ui->comboBoxMarkTypeSlct->addItems( csvInter.getMarkTypesList() );
+    ui->comboBoxMarkTypeSlct->addItems( csvInter.GetMarkTypesList() );
 
     showSideWindow();
 
@@ -228,24 +228,23 @@ void MainWindow::on_actionLoad_triggered()
     ui->tableSubjecInfo->setVerticalHeaderItem(3,newItem3);
 
     //Add the info for the headers
-     QTableWidgetItem *NameItm = new QTableWidgetItem(csvInter.getSubjectCode());
+     QTableWidgetItem *NameItm = new QTableWidgetItem(csvInter.GetSubjectCode());
      ui->tableSubjecInfo->setItem(0,0,NameItm);
 
-     QTableWidgetItem *TCountItm = new QTableWidgetItem(tr("%1").arg(csvInter.getStudentCount()));
+     QTableWidgetItem *TCountItm = new QTableWidgetItem(tr("%1").arg(csvInter.GetStudentCount()));
      ui->tableSubjecInfo->setItem(1,0,TCountItm);
 
-     QTableWidgetItem *frstStuItm = new QTableWidgetItem(csvInter.getFirstStudentNumber());
+     QTableWidgetItem *frstStuItm = new QTableWidgetItem(csvInter.GetFirstStudentNumber());
      ui->tableSubjecInfo->setItem(2,0,frstStuItm);
 
-     QTableWidgetItem *lsttStuItm = new QTableWidgetItem(csvInter.getLastStudentNumber());
-     ui->tableSubjecInfo->setItem(3,0,lsttStuItm);
+     QTableWidgetItem *lsttStuItm = new QTableWidgetItem(csvInter.GetLastStudentNumber     ui->tableSubjecInfo->setItem(3,0,lsttStuItm);
 
-     ui->tableSubjecInfo->setRowCount(ui->tableSubjecInfo->rowCount()+csvInter.getMarkTypesCount());
+     ui->tableSubjecInfo->setRowCount(ui->tableSubjecInfo->rowCount()+csvInter.GetMarkTypesCount());
 
-     for(int a=0,x=4;a < csvInter.getMarkTypesList().count();a++,x++)
+     for(int a=0,x=4;a < csvInter.GetMarkTypesList().count();a++,x++)
      {
          //Add the header for each marktype
-         ui->tableSubjecInfo->setVerticalHeaderItem(x,new QTableWidgetItem(tr("Mark Type: %1").arg(csvInter.getMarkTypesList()[a])));
+         ui->tableSubjecInfo->setVerticalHeaderItem(x,new QTableWidgetItem(tr("Mark Type: %1").arg(csvInter.GetMarkTypesList()[a])));
 
          //Insert a new tEXTeDIT
          //QTextEdit *mtDetails = new QTextEdit(this);
@@ -257,8 +256,8 @@ void MainWindow::on_actionLoad_triggered()
 
          tmpl::html_template one(":/templ/mtdetails.tmpl");
 
-         one("NUMMARKS") =  csvInter.getMarkTypeTotalNumberMarks(csvInter.getMarkTypesList()[a]);
-         one("MISMARKS") = csvInter.getStudentCount()-csvInter.getMarkTypeTotalNumberMarks(csvInter.getMarkTypesList()[a]);
+         one("NUMMARKS") =  csvInter.GetMarkTypeTotalNumberMarks(csvInter.GetMarkTypesList()[a]);
+         one("MISMARKS") = csvInter.GetStudentCount()-csvInter.GetMarkTypeTotalNumberMarks(csvInter.GetMarkTypesList()[a]);
 
          mtDetails->setHtml(QString::fromStdString(one.Process()));
 
@@ -287,7 +286,7 @@ qDebug() << Q_FUNC_INFO <<"end";
 
 
      //Get all the marktypes and add a row
-     QStringList marktypes = csvInter.getMarkTypesList();
+     QStringList marktypes = csvInter.GetMarkTypesList();
      qDebug()<<marktypes.count();
 
     for( int a=0;a < marktypes.count();a++ )
@@ -298,15 +297,15 @@ qDebug() << Q_FUNC_INFO <<"end";
         qDebug()<<mtName;
 
        row_marktypes( "name" ) = mtName.toStdString();
-       row_marktypes( "nummarks" ) = csvInter.getMarkTypeTotalNumberMarks( mtName );
-       row_marktypes( "mismarks" ) = csvInter.getStudentCount()-csvInter.getMarkTypeTotalNumberMarks( mtName );
+       row_marktypes( "nummarks" ) = csvInter.GetMarkTypeTotalNumberMarks( mtName );
+       row_marktypes( "mismarks" ) = csvInter.GetStudentCount()-csvInter.GetMarkTypeTotalNumberMarks( mtName );
 
 
        //Loop start
         loop_t loop_marks;
         row_t row_marks;
 
-        QMap<QString,int>  marks= csvInter.getAllMarksPerMarkType( mtName );
+        QMap<QString,int>  marks= csvInter.GetAllMarksPerMarkType( mtName );
 
 
          QMapIterator<QString, int> i( marks ); //For each marktype get the marks and stu num then add to loop marks
@@ -334,8 +333,8 @@ qDebug() << Q_FUNC_INFO <<"end";
      one( "MARKTYPES" ) = loop_marktypes;
 
 
-     one( "NUMMARKS" ) =  csvInter.getMarkTypeTotalNumberMarks( csvInter.getMarkTypesList()[0] );
-     one( "MISMARKS" ) = csvInter.getStudentCount()-csvInter.getMarkTypeTotalNumberMarks( csvInter.getMarkTypesList()[0] );
+     one( "NUMMARKS" ) =  csvInter.GetMarkTypeTotalNumberMarks( csvInter.GetMarkTypesList()[0] );
+     one( "MISMARKS" ) = csvInter.GetStudentCount()-csvInter.GetMarkTypeTotalNumberMarks( csvInter.GetMarkTypesList()[0] );
 
     // ui->webViewSubjectInfo->setc
 
@@ -399,7 +398,7 @@ void MainWindow::on_pushButtonUpdateMrks_clicked()
 
     ui->labelProgress->show();
 
-    QStringList stunumbers = csvInter.getAllStudentNumbersPerMarkType( ui->comboBoxMarkTypeSlct->currentText() );
+    QStringList stunumbers = csvInter.GetAllStudentNumbersPerMarkType( ui->comboBoxMarkTypeSlct->currentText() );
 
     LogWindow *UpdateMarksLog = new LogWindow();
 
@@ -414,7 +413,7 @@ void MainWindow::on_pushButtonUpdateMrks_clicked()
     qDebug()<<"Mark Type: "<<ui->comboBoxMarkTypeSlct->currentText();
     qDebug()<<"";
 
-   UpdateMarksLog->addUpdateHeader( csvInter.FilePath(),ui->comboBoxMarkTypeSlct->currentText(),csvInter.getSubjectCode() );
+   UpdateMarksLog->addUpdateHeader( csvInter.FilePath(),ui->comboBoxMarkTypeSlct->currentText(),csvInter.GetSubjectCode() );
 
 
     foreach ( const QString snum,stunumbers )
@@ -434,7 +433,7 @@ void MainWindow::on_pushButtonUpdateMrks_clicked()
             qDebug()<<"Old mark: ";
             qDebug()<< oldMark;
             qDebug()<<"New mark: ";
-            int newmark = csvInter.getStudentMarkPerMarkType(ui->comboBoxMarkTypeSlct->currentText(),snum);
+            int newmark = csvInter.GetStudentMarkPerMarkType(ui->comboBoxMarkTypeSlct->currentText(),snum);
             qDebug()<<newmark;
 
             if( oldm > newmark ){
