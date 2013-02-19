@@ -430,7 +430,7 @@ void MainWindow::on_pushButtonUpdateMrks_clicked()
         }
        else
         {
-            int oldm = ui->wFitsbrowser->getInblrMark(snum);
+            int oldm = ui->wFitsbrowser->GetInblrMark(snum);
             QString oldMark;
             oldMark = tr("%1").arg(oldm);
             qDebug()<<"Old mark: ";
@@ -446,7 +446,7 @@ void MainWindow::on_pushButtonUpdateMrks_clicked()
             else
             {
 
-            ui->wFitsbrowser->setInblrMark(snum,newmark);
+            ui->wFitsbrowser->SetInblrMark(snum,newmark);
 
             logInformation.append(tr("Mark Updated %3 : %1 --> %2").arg(oldMark).arg(newmark).arg(snum));
             }
@@ -483,7 +483,7 @@ void MainWindow::on_actionMake_all_0_triggered()
             // Yes was clicked
              {
                 qDebug()<<"Making all marks 0";
-                ui->wFitsbrowser->setInblrMarkAllZero();
+                ui->wFitsbrowser->SetInblrMarkAllZero();
              }
             break;
         case QMessageBox::No:
@@ -500,14 +500,14 @@ qDebug() << Q_FUNC_INFO <<"end";
 void MainWindow::on_actionMake_empty_0_triggered()
 {
     qDebug() << Q_FUNC_INFO <<"start";
-    ui->wFitsbrowser->setInblrMarkZero();
+    ui->wFitsbrowser->SetInblrMarkZero();
     qDebug() << Q_FUNC_INFO <<"end";
 }
 
 void MainWindow::on_actionBlackout_Cancelled_triggered()
 {
   qDebug() << Q_FUNC_INFO <<"start";
-  ui->wFitsbrowser->setInblrCanBlackOut();
+  ui->wFitsbrowser->SetInblrCanBlackOut();
   qDebug() << Q_FUNC_INFO <<"end";
 }
 
