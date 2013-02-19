@@ -25,7 +25,7 @@ public:
     void AddUpdateHeader( QString,QString,QString );
     void AddErrors( QStringList );
     void AddInformation( QStringList );
-    void addWarning( QStringList );
+    void AddWarning( QStringList );
 
 
 private slots:

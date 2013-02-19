@@ -457,7 +457,7 @@ void MainWindow::on_pushButtonUpdateMrks_clicked()
 
     }
 UpdateMarksLog->AddErrors(logErrors);
-UpdateMarksLog->addWarning(logWarnings);
+UpdateMarksLog->AddWarning(logWarnings);
 UpdateMarksLog->AddInformation(logInformation);
 ui->labelProgress->hide();
 UpdateMarksLog->show();

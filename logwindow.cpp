@@ -61,7 +61,7 @@ void  LogWindow::AddErrors( QStringList li ){
 
 }
 
-void LogWindow::addWarning( QStringList li ){
+void LogWindow::AddWarning( QStringList li ){
     QTextCursor cur( ui->textEdit->textCursor() );
 
     cur.insertBlock();
