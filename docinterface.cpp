@@ -1,6 +1,7 @@
 #include "docinterface.h"
 
 DocInterface::DocInterface( QObject *parent ) :
+<<<<<<< HEAD
     QObject( parent ) {
 
 }
@@ -8,6 +9,18 @@ DocInterface::DocInterface( QObject *parent ) :
 void DocInterface::sanitizeString( QString &needsSanitation ) {
     //Remove ""
   if( needsSanitation.contains ( '"' ) ) {
+=======
+    QObject( parent )
+{
+
+}
+
+void DocInterface::sanitizeString( QString &needsSanitation )
+{
+    //Remove ""
+  if( needsSanitation.contains( '"' ) )
+  {
+>>>>>>> a4212718bf384bf0fceb4835198e3a3bc1d9ebad
     needsSanitation.replace( '"',"" );
   }
 
@@ -19,25 +32,46 @@ void DocInterface::sanitizeString( QString &needsSanitation ) {
 
 }
 
+<<<<<<< HEAD
 bool DocInterface::validateStudentNumber( QString number ) {
    //False trap to check
 
 
     if( number.length()>=10 ) {
+=======
+bool DocInterface::validateStudentNumber( QString number )
+{
+   //False trap to check
+
+
+    if( number.length()>=10 )
+    {
+>>>>>>> a4212718bf384bf0fceb4835198e3a3bc1d9ebad
         emit FileParseError( QString( "Invalid student number found. Student number %1 has more then 9 digits" ).arg( number ) );
         qDebug()<<QString( "Invalid student number found. Student number %1 has more then 9 digits" ).arg( number );
         return false;
     }
 
+<<<<<<< HEAD
     if( number.length()<=7 ) {
        emit FileParseError( QString( "Invalid student number found. Student number %1 has less then 8 digits" ).arg( number ) );
+=======
+    if( number.length()<=7 )
+    {
+       emit FileParseError( QString( "Invalid student number found. Student number %1 has less then 8 digits" ).arg( number ));
+>>>>>>> a4212718bf384bf0fceb4835198e3a3bc1d9ebad
        qDebug()<<QString( "Invalid student number found. Student number %1 has less then 8 digits" ).arg( number );
        return false;
     }
 
      QIntValidator v( 00000001, 999999999, this );
      int pos=0;
+<<<<<<< HEAD
      if( v.validate( number,pos ) == QValidator::Invalid ) {
+=======
+     if( v.validate( number,pos ) == QValidator::Invalid )
+     {
+>>>>>>> a4212718bf384bf0fceb4835198e3a3bc1d9ebad
       emit FileParseError( QString( "Invalid student number found. Student number %1 does not consist of all numbers or contains spaces." ).arg( number ) );
       qDebug()<<QString( "Invalid student number found. Student number %1 does not consist of all numbers or contains spaces." ).arg( number );
       return false;
@@ -46,7 +80,12 @@ bool DocInterface::validateStudentNumber( QString number ) {
     return true;
 }
 
+<<<<<<< HEAD
 bool DocInterface::checkDuplicateStudentNumbers( QStringList  lstsnums ) {
+=======
+bool DocInterface::checkDuplicateStudentNumbers( QStringList  lstsnums )
+{
+>>>>>>> a4212718bf384bf0fceb4835198e3a3bc1d9ebad
     //This is not really used by the app since the file contents is converted to QMap and Qmap does not allow duplicate keys.
     //And i used student number as key lol
     //So when 2 student numbers is the same one is just ignored !
@@ -54,10 +93,19 @@ bool DocInterface::checkDuplicateStudentNumbers( QStringList  lstsnums ) {
 
     lstsnums.sort();
 
+<<<<<<< HEAD
    for( int a =0;a<lstsnums.count()-1;a++ ) {
        if( lstsnums.at(a)==lstsnums.at(a+1) ) {
            qDebug()<<QString( "Duplicate student numbers found. %1 was found multiple times" ).arg( lstsnums.at( a ) );
            emit FileParseError( QString( "Duplicate student numbers found. %1 was found multiple times" ).arg( lstsnums.at( a ) ) );
+=======
+   for( int a =0;a<lstsnums.count()-1;a++ )
+   {
+       if( lstsnums.at( a )==lstsnums.at( a+1 ) )
+       {
+           qDebug()<<QString( "Duplicate student numbers found. %1 was found multiple times" ).arg( lstsnums.at( a ) );
+           emit FileParseError( QString(" Duplicate student numbers found. %1 was found multiple times" ).arg( lstsnums.at( a ) ) );
+>>>>>>> a4212718bf384bf0fceb4835198e3a3bc1d9ebad
            return false;
        }
    }
@@ -65,6 +113,7 @@ bool DocInterface::checkDuplicateStudentNumbers( QStringList  lstsnums ) {
   return true;
 }
 
+<<<<<<< HEAD
 QString DocInterface::FilePath() {
     return filepath;
 }
@@ -75,16 +124,42 @@ void DocInterface::setFilePath( QString fp ) {
 
 bool DocInterface::loadFile() {
     if( filepath.isNull() ) {
+=======
+QString DocInterface::FilePath()
+{
+    return filepath;
+}
+
+void DocInterface::setFilePath( QString fp )
+{
+    filepath = fp;
+}
+
+bool DocInterface::loadFile()
+{
+    if( filepath.isNull() )
+    {
+>>>>>>> a4212718bf384bf0fceb4835198e3a3bc1d9ebad
         return false;
     }
 
         QFile file( filepath );
 
+<<<<<<< HEAD
         if( file.open( QIODevice::ReadOnly | QIODevice::Text ) ) {
             //Clear file contents
             filecontents.clear();
 
             while( !file.atEnd() ) {
+=======
+        if ( file.open( QIODevice::ReadOnly | QIODevice::Text ) )
+        {
+            //Clear file contents
+            filecontents.clear();
+
+            while ( !file.atEnd() )
+            {
+>>>>>>> a4212718bf384bf0fceb4835198e3a3bc1d9ebad
                 QString line = file.readLine();
                 line = line.trimmed();
                 filecontents.append( line );
@@ -99,6 +174,7 @@ bool DocInterface::loadFile() {
         }
 }
 
+<<<<<<< HEAD
  QString DocInterface::getFileExt() {
      return "CSV Files (*.csv)";
  }
@@ -132,6 +208,48 @@ bool DocInterface::loadFile() {
 
         if ( content=="END" ) {
         QString lstu = filecontents[ a-1 ].split( ',' )[ 0 ];
+=======
+ QString DocInterface::getFileExt()
+ {
+     return "CSV Files (*.csv)";
+ }
+
+  QString  DocInterface::getFileTypeName()
+  {
+      return "CSV";
+  }
+
+  QString DocInterface::getSubjectCode()
+  {
+      QString scode;
+      scode = filecontents[0];
+      scode = scode.split(',')[0];
+      sanitizeString(scode);
+      return scode;
+  }
+
+  QString DocInterface::getFirstStudentNumber()
+  {
+      QString snum = filecontents[3];
+      snum = snum.split(',')[0];
+      sanitizeString(snum);
+      validateStudentNumber(snum);
+      return snum;
+  }
+
+  QString DocInterface::getLastStudentNumber()
+  {
+
+      for( int a=filecontents.count()-1;a>=0;a-- )
+      {
+       //this needs sanitation also bec of "END"
+       QString content =filecontents[a].split(',')[0];
+       sanitizeString( content );
+
+        if( content=="END" )
+       {
+        QString lstu = filecontents[a-1].split(',')[0];
+>>>>>>> a4212718bf384bf0fceb4835198e3a3bc1d9ebad
         sanitizeString( lstu );
         validateStudentNumber( lstu );
         return lstu;
@@ -139,27 +257,50 @@ bool DocInterface::loadFile() {
       }
   }
 
+<<<<<<< HEAD
   int  DocInterface::getStudentCount() {
       for ( int a=filecontents.count()-1;a>=0;a-- ) {
          QString content =filecontents[ a ].split( ',' )[ 0 ];
          sanitizeString( content );
 
          if ( content=="END" ) {
+=======
+  int  DocInterface::getStudentCount()
+  {
+      for( int a=filecontents.count()-1;a>=0;a-- )
+      {
+         QString content =filecontents[a].split( ',' )[0];
+         sanitizeString(content);
+
+         if( content=="END" )
+          {
+>>>>>>> a4212718bf384bf0fceb4835198e3a3bc1d9ebad
            return ( a-3 );
           }
       }
   }
 
+<<<<<<< HEAD
 QStringList DocInterface::getMarkTypesList() {
    QString mtypes =filecontents[ 2 ];
    sanitizeString( mtypes );
    QStringList mtypesSp = mtypes.split( ',' );
 
   mtypesSp.removeAt(0);
+=======
+QStringList DocInterface::getMarkTypesList()
+{
+   QString mtypes =filecontents[2];
+   sanitizeString( mtypes );
+   QStringList mtypesSp = mtypes.split( ',' );
+
+  mtypesSp.removeAt( 0 );
+>>>>>>> a4212718bf384bf0fceb4835198e3a3bc1d9ebad
 
  return mtypesSp;
 }
 
+<<<<<<< HEAD
  int DocInterface::getMarkTypeColumn( QString mt ) {
      //Will return the coloumn number of the marktype
      QStringList mtypesall = filecontents[ 2 ].split( ',' );
@@ -169,6 +310,20 @@ QStringList DocInterface::getMarkTypesList() {
        QString snglmt =mtypesall[ a ];
        sanitizeString( snglmt );
        if( snglmt==mt ) {
+=======
+ int DocInterface::getMarkTypeColumn( QString mt )
+ {
+     //Will return the coloumn number of the marktype
+     QStringList mtypesall = filecontents[2].split( ',' );
+     int loc;
+
+     for( int a=0;a<mtypesall.count();a++ )
+     {
+       QString snglmt =mtypesall[a];
+       sanitizeString( snglmt );
+       if( snglmt==mt )
+       {
+>>>>>>> a4212718bf384bf0fceb4835198e3a3bc1d9ebad
            loc =a;
            //qDebug()<<"Mark type found "<<mt<<" location "<<loc;
        }
@@ -178,7 +333,12 @@ QStringList DocInterface::getMarkTypesList() {
  }
 
 
+<<<<<<< HEAD
 int DocInterface::getMarkTypeTotalNumberMarks( QString mt ) {
+=======
+int DocInterface::getMarkTypeTotalNumberMarks( QString mt )
+{
+>>>>>>> a4212718bf384bf0fceb4835198e3a3bc1d9ebad
     //Return the total ammount of marks for the marktype
     //If mark is 0 or empty it is not counted
 
@@ -191,7 +351,12 @@ int DocInterface::getMarkTypeTotalNumberMarks( QString mt ) {
    QMap<QString, int>::const_iterator i = allMarks.constBegin();
     while ( i != allMarks.constEnd() ) {
 
+<<<<<<< HEAD
         if ( i.value()!=0 ) {
+=======
+        if( i.value()!=0 )
+        {
+>>>>>>> a4212718bf384bf0fceb4835198e3a3bc1d9ebad
           totamt++;
            //qDebug()<<"Ammount "<<totamt << "of marks incremented for mark "<<i.value()<<"Marktype "<<mt<<" student number"<<i.key();
         }
@@ -209,6 +374,7 @@ QMap<QString, int> DocInterface::getAllMarksPerMarkType( QString mt )
 
    int loc = getMarkTypeColumn( mt );
 
+<<<<<<< HEAD
    for ( int a=3;a<filecontents.count()-1;a++ ) {
        QStringList line = filecontents[ a ].split( ',' ); //Split the mark line into sperate marks
        QString mark = line[ loc ]; //Get only the mark for the marktype specified by arg mt
@@ -224,6 +390,26 @@ QMap<QString, int> DocInterface::getAllMarksPerMarkType( QString mt )
      //I shot the dean but I didnt shoot the associate dean ! This should never happen
    if( allMarks.count() != getStudentCount() ) {
      emit FileParseError( QString ( "Serious error. The total ammount of students are %1 but the ammount of marks returned for %2 is %3" ).arg( getStudentCount() ).arg(mt).arg( allMarks.count() ) );
+=======
+   for( int a=3;a<filecontents.count()-1;a++ )
+   {
+       QStringList line = filecontents[a].split( ',' ); //Split the mark line into sperate marks
+       QString mark = line[loc]; //Get only the mark for the marktype specified by arg mt
+       QString snum = line[0]; //Get the student number
+
+       //A QMap ingores duplicate keys. so if the map already contains key named stunum warn the user
+       if( allMarks.contains( snum ) )
+       {
+           emit FileParseError( QString( "Duplicate student number found. %1 was found for mark type %2 more then once" ).arg( snum ).arg( mt ) );
+       }
+
+       allMarks.insert(snum,mark.toInt());
+   }
+
+   if( allMarks.count() != getStudentCount() )  //I shot the dean but I didnt shoot the associate dean ! This should never happen
+   {
+     emit FileParseError( QString( "Serious error. The total ammount of students are %1 but the ammount of marks returned for %2 is %3" ).arg( getStudentCount() ).arg( mt ).arg( allMarks.count() ) );
+>>>>>>> a4212718bf384bf0fceb4835198e3a3bc1d9ebad
    }
 
  return allMarks;
@@ -239,7 +425,11 @@ QStringList DocInterface::getAllStudentNumbersPerMarkType( QString mt )
     QStringList snums;
 
     QMap<QString, int>::const_iterator i = allMarks.constBegin();
+<<<<<<< HEAD
      while ( i != allMarks.constEnd() ) {
+=======
+     while (i != allMarks.constEnd()) {
+>>>>>>> a4212718bf384bf0fceb4835198e3a3bc1d9ebad
          QString stunum = i.key();
          validateStudentNumber( stunum );
          snums.append( stunum );
@@ -249,6 +439,7 @@ QStringList DocInterface::getAllStudentNumbersPerMarkType( QString mt )
      return snums;
 }
 
+<<<<<<< HEAD
 int DocInterface::getStudentMarkPerMarkType( QString mt,QString stunum ) {
    QMap<QString, int> allMarks = getAllMarksPerMarkType( mt );
 
@@ -257,13 +448,30 @@ int DocInterface::getStudentMarkPerMarkType( QString mt,QString stunum ) {
         sanitizeString( stunum );
         validateStudentNumber( stunum );
         if( i.key()==stunum ) {
+=======
+int DocInterface::getStudentMarkPerMarkType( QString mt,QString stunum )
+{
+   QMap<QString, int> allMarks = getAllMarksPerMarkType( mt );
+
+   QMap<QString, int>::const_iterator i = allMarks.constBegin();
+    while (i != allMarks.constEnd()) {
+        sanitizeString( stunum );
+        validateStudentNumber( stunum );
+        if( i.key()==stunum )
+        {
+>>>>>>> a4212718bf384bf0fceb4835198e3a3bc1d9ebad
          return i.value();
         }
         ++i;
     }
 }
 
+<<<<<<< HEAD
  QStringList DocInterface::getStudentNumbersWithNoMark( QString mt ) {
+=======
+ QStringList DocInterface::getStudentNumbersWithNoMark( QString mt )
+ {
+>>>>>>> a4212718bf384bf0fceb4835198e3a3bc1d9ebad
 
   //Will return all student numbers where mark is 0 or empty
 
@@ -273,7 +481,12 @@ int DocInterface::getStudentMarkPerMarkType( QString mt,QString stunum ) {
 
  QMap<QString, int>::const_iterator i = allMarks.constBegin();
   while ( i != allMarks.constEnd() ) {
+<<<<<<< HEAD
       if( i.value()==0 ) {
+=======
+      if( i.value()==0 )
+      {
+>>>>>>> a4212718bf384bf0fceb4835198e3a3bc1d9ebad
        QString stunum = i.key();
        sanitizeString( stunum );
        validateStudentNumber( stunum );
@@ -286,6 +499,11 @@ int DocInterface::getStudentMarkPerMarkType( QString mt,QString stunum ) {
 
  }
 
+<<<<<<< HEAD
  int DocInterface::getMarkTypesCount() {
+=======
+ int DocInterface::getMarkTypesCount()
+ {
+>>>>>>> a4212718bf384bf0fceb4835198e3a3bc1d9ebad
      return getMarkTypesList().count();
  }
