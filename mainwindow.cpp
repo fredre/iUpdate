@@ -22,8 +22,11 @@ using namespace tmpl;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> a4212718bf384bf0fceb4835198e3a3bc1d9ebad
+=======
+>>>>>>> 0513e5bed07b7f959d3fe8fb5ef149750a4012c9
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
@@ -32,6 +35,7 @@ MainWindow::MainWindow(QWidget *parent) :
 
     ui->setupUi(this);
 
+<<<<<<< HEAD
 <<<<<<< HEAD
     //Setup the setting class
     QCoreApplication::setOrganizationName("TUT");
@@ -52,11 +56,16 @@ MainWindow::MainWindow( QWidget *parent ) :
     QCoreApplication::setApplicationName( "IUpdate" );
 >>>>>>> 0bf96991929a539aac0a172bd103e1896b41bdda
 =======
+=======
+>>>>>>> 0513e5bed07b7f959d3fe8fb5ef149750a4012c9
     //Setup the settings class
     QCoreApplication::setOrganizationName("TUT");
     QCoreApplication::setOrganizationDomain("tut.ac.za");
     QCoreApplication::setApplicationName("IUpdate");
+<<<<<<< HEAD
 >>>>>>> a4212718bf384bf0fceb4835198e3a3bc1d9ebad
+=======
+>>>>>>> 0513e5bed07b7f959d3fe8fb5ef149750a4012c9
 
 
 
@@ -66,6 +75,7 @@ MainWindow::MainWindow( QWidget *parent ) :
     hideSideWindow(); //Maximizes the splitter window
 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
     QMovie *movie = new QMovie(":/images/ajax-loader.gif");
@@ -81,14 +91,22 @@ MainWindow::MainWindow( QWidget *parent ) :
 
     ui->labelProgress->setMovie(movie);
 >>>>>>> a4212718bf384bf0fceb4835198e3a3bc1d9ebad
+=======
+    QMovie *movie = new QMovie(":/images/ajax-loader.gif");
+
+    ui->labelProgress->setMovie(movie);
+>>>>>>> 0513e5bed07b7f959d3fe8fb5ef149750a4012c9
 
     movie->start();
 
     //Hook up to the csv inter error reporter
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> a4212718bf384bf0fceb4835198e3a3bc1d9ebad
+=======
+>>>>>>> 0513e5bed07b7f959d3fe8fb5ef149750a4012c9
      connect(&csvInter,SIGNAL(FileParseError(QString)),this,SLOT(CsvFileParseError(QString)));
 
     //Hook up to the loadprogress and loadstarted
@@ -105,6 +123,7 @@ MainWindow::MainWindow( QWidget *parent ) :
     QNetworkDiskCache *diskCache = new QNetworkDiskCache(this);
     diskCache->setCacheDirectory("cachedir");
     ui->webViewSubjectInfo->page()->networkAccessManager()->setCache(diskCache );
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
      connect( &csvInter,SIGNAL( FileParseError( QString ) ),this,SLOT( CsvFileParseError( QString ) ) );
@@ -126,6 +145,8 @@ MainWindow::MainWindow( QWidget *parent ) :
 >>>>>>> 0bf96991929a539aac0a172bd103e1896b41bdda
 =======
 >>>>>>> a4212718bf384bf0fceb4835198e3a3bc1d9ebad
+=======
+>>>>>>> 0513e5bed07b7f959d3fe8fb5ef149750a4012c9
 
 
   qDebug() << Q_FUNC_INFO <<"end";
@@ -144,6 +165,7 @@ void MainWindow::on_pushButton_clicked()
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  void MainWindow::on_webViewBrowser_networkError(QString error)
 =======
  void MainWindow::on_webViewBrowser_networkError( QString error )
@@ -151,6 +173,9 @@ void MainWindow::on_pushButton_clicked()
 =======
  void MainWindow::on_webViewBrowser_networkError(QString error)
 >>>>>>> a4212718bf384bf0fceb4835198e3a3bc1d9ebad
+=======
+ void MainWindow::on_webViewBrowser_networkError(QString error)
+>>>>>>> 0513e5bed07b7f959d3fe8fb5ef149750a4012c9
  {
      qDebug() << Q_FUNC_INFO <<"start";
 
@@ -158,12 +183,16 @@ void MainWindow::on_pushButton_clicked()
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> a4212718bf384bf0fceb4835198e3a3bc1d9ebad
+=======
+>>>>>>> 0513e5bed07b7f959d3fe8fb5ef149750a4012c9
       tmpl::html_template errorPage(":/templ/conerror.tmpl");
 
 
       errorPage("ERMES") = error.toStdString();
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
       tmpl::html_template errorPage( ":/templ/conerror.tmpl" );
@@ -173,6 +202,8 @@ void MainWindow::on_pushButton_clicked()
 >>>>>>> 0bf96991929a539aac0a172bd103e1896b41bdda
 =======
 >>>>>>> a4212718bf384bf0fceb4835198e3a3bc1d9ebad
+=======
+>>>>>>> 0513e5bed07b7f959d3fe8fb5ef149750a4012c9
 
  \
      // ui->wFitsbrowser->setHtml(QString::fromStdString(errorPage.Process()));
@@ -184,13 +215,17 @@ void MainWindow::on_pushButton_clicked()
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> a4212718bf384bf0fceb4835198e3a3bc1d9ebad
+=======
+>>>>>>> 0513e5bed07b7f959d3fe8fb5ef149750a4012c9
 void MainWindow::on_webViewBrowser_anyError(QString error)
 {
     qDebug() << Q_FUNC_INFO <<"start";
 
     ui->statusBar->showMessage("Error on browser load: "+error);
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 void MainWindow::on_webViewBrowser_anyError( QString error )
@@ -201,18 +236,24 @@ void MainWindow::on_webViewBrowser_anyError( QString error )
 >>>>>>> 0bf96991929a539aac0a172bd103e1896b41bdda
 =======
 >>>>>>> a4212718bf384bf0fceb4835198e3a3bc1d9ebad
+=======
+>>>>>>> 0513e5bed07b7f959d3fe8fb5ef149750a4012c9
 
     qDebug() << Q_FUNC_INFO <<"end";
 }
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> a4212718bf384bf0fceb4835198e3a3bc1d9ebad
+=======
+>>>>>>> 0513e5bed07b7f959d3fe8fb5ef149750a4012c9
 void MainWindow::on_webViewBrowser_loadProgress(int progress)
 {
    qDebug() << Q_FUNC_INFO <<"start";
    ui->progressBarWebInd->setValue(progress);
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 void MainWindow::on_webViewBrowser_loadProgress( int progress )
@@ -222,6 +263,8 @@ void MainWindow::on_webViewBrowser_loadProgress( int progress )
 >>>>>>> 0bf96991929a539aac0a172bd103e1896b41bdda
 =======
 >>>>>>> a4212718bf384bf0fceb4835198e3a3bc1d9ebad
+=======
+>>>>>>> 0513e5bed07b7f959d3fe8fb5ef149750a4012c9
    qDebug() << Q_FUNC_INFO <<"end";
 }
 
@@ -232,13 +275,17 @@ void MainWindow::on_webViewBrowser_loadStarted()
     ui->labelProgress->show();
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> a4212718bf384bf0fceb4835198e3a3bc1d9ebad
+=======
+>>>>>>> 0513e5bed07b7f959d3fe8fb5ef149750a4012c9
     ui->statusBar->showMessage(ui->wFitsbrowser->url().toString());
     qDebug() << Q_FUNC_INFO <<"end";
 }
 
 void MainWindow::on_webViewBrowser_loadFinished(bool ok)
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
     ui->statusBar->showMessage( ui->wFitsbrowser->url().toString() );
@@ -249,6 +296,8 @@ void MainWindow::on_webViewBrowser_loadFinished( bool ok )
 >>>>>>> 0bf96991929a539aac0a172bd103e1896b41bdda
 =======
 >>>>>>> a4212718bf384bf0fceb4835198e3a3bc1d9ebad
+=======
+>>>>>>> 0513e5bed07b7f959d3fe8fb5ef149750a4012c9
 {
 qDebug() << Q_FUNC_INFO <<"start";
     ui->progressBarWebInd->hide();
@@ -287,6 +336,7 @@ void MainWindow::on_actionAbout_QT_triggered()
     qDebug() << Q_FUNC_INFO <<"start";
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     QMessageBox::aboutQt (this);
 =======
     QMessageBox::aboutQt ( this );
@@ -294,6 +344,9 @@ void MainWindow::on_actionAbout_QT_triggered()
 =======
     QMessageBox::aboutQt (this);
 >>>>>>> a4212718bf384bf0fceb4835198e3a3bc1d9ebad
+=======
+    QMessageBox::aboutQt (this);
+>>>>>>> 0513e5bed07b7f959d3fe8fb5ef149750a4012c9
     qDebug() << Q_FUNC_INFO <<"end";
 }
 
@@ -305,8 +358,11 @@ void MainWindow::on_actionLoad_triggered()
     //First try to load settings
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> a4212718bf384bf0fceb4835198e3a3bc1d9ebad
+=======
+>>>>>>> 0513e5bed07b7f959d3fe8fb5ef149750a4012c9
     QString lstload = IUpdatesettings.value("lastLoadPath",QDir::homePath()).toString();
 
     csvInter.setFilePath(QFileDialog::getOpenFileName(this,tr("Open %1 Marks File").arg(csvInter.getFileTypeName()), lstload, tr("%1").arg(csvInter.getFileExt())));
@@ -317,6 +373,7 @@ void MainWindow::on_actionLoad_triggered()
     QDir d = QFileInfo(csvInter.FilePath()).absoluteDir();
 
     IUpdatesettings.setValue("lastLoadPath",d.absolutePath());
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
     QString lstload = IUpdatesettings.value( "lastLoadPath",QDir::homePath() ).toString();
@@ -332,6 +389,8 @@ void MainWindow::on_actionLoad_triggered()
 >>>>>>> 0bf96991929a539aac0a172bd103e1896b41bdda
 =======
 >>>>>>> a4212718bf384bf0fceb4835198e3a3bc1d9ebad
+=======
+>>>>>>> 0513e5bed07b7f959d3fe8fb5ef149750a4012c9
 
     //PopulateSubjectGrid();
      PopulateSubjectWeb();
@@ -344,10 +403,13 @@ void MainWindow::on_actionLoad_triggered()
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> a4212718bf384bf0fceb4835198e3a3bc1d9ebad
 =======
 >>>>>>> Serame-master
+=======
+>>>>>>> 0513e5bed07b7f959d3fe8fb5ef149750a4012c9
     ui->comboBoxMarkTypeSlct->addItems(csvInter.getMarkTypesList());
 
     showSideWindow();
@@ -355,6 +417,7 @@ void MainWindow::on_actionLoad_triggered()
     }
     else
     {
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
     ui->comboBoxMarkTypeSlct->addItems( csvInter.getMarkTypesList() );
@@ -369,6 +432,8 @@ void MainWindow::on_actionLoad_triggered()
 >>>>>>> 0bf96991929a539aac0a172bd103e1896b41bdda
 =======
 >>>>>>> a4212718bf384bf0fceb4835198e3a3bc1d9ebad
+=======
+>>>>>>> 0513e5bed07b7f959d3fe8fb5ef149750a4012c9
         qDebug()<<"File not loaded (Perhaps cancell was clicked)";
     }
     ui->labelProgress->hide();
@@ -401,6 +466,7 @@ void MainWindow::on_actionLoad_triggered()
     ui->tableSubjecInfo->setVerticalHeaderItem(3,newItem3);
 
     //Add the info for the headers
+<<<<<<< HEAD
      QTableWidgetItem *NameItm = new QTableWidgetItem(csvInter.GetSubjectCode());
      ui->tableSubjecInfo->setItem(0,0,NameItm);
 
@@ -418,6 +484,26 @@ void MainWindow::on_actionLoad_triggered()
      {
          //Add the header for each marktype
          ui->tableSubjecInfo->setVerticalHeaderItem(x,new QTableWidgetItem(tr("Mark Type: %1").arg(csvInter.GetMarkTypesList()[a])));
+=======
+     QTableWidgetItem *NameItm = new QTableWidgetItem(csvInter.getSubjectCode());
+     ui->tableSubjecInfo->setItem(0,0,NameItm);
+
+     QTableWidgetItem *TCountItm = new QTableWidgetItem(tr("%1").arg(csvInter.getStudentCount()));
+     ui->tableSubjecInfo->setItem(1,0,TCountItm);
+
+     QTableWidgetItem *frstStuItm = new QTableWidgetItem(csvInter.getFirstStudentNumber());
+     ui->tableSubjecInfo->setItem(2,0,frstStuItm);
+
+     QTableWidgetItem *lsttStuItm = new QTableWidgetItem(csvInter.getLastStudentNumber());
+     ui->tableSubjecInfo->setItem(3,0,lsttStuItm);
+
+     ui->tableSubjecInfo->setRowCount(ui->tableSubjecInfo->rowCount()+csvInter.getMarkTypesCount());
+
+     for(int a=0,x=4;a < csvInter.getMarkTypesList().count();a++,x++)
+     {
+         //Add the header for each marktype
+         ui->tableSubjecInfo->setVerticalHeaderItem(x,new QTableWidgetItem(tr("Mark Type: %1").arg(csvInter.getMarkTypesList()[a])));
+>>>>>>> 0513e5bed07b7f959d3fe8fb5ef149750a4012c9
 
          //Insert a new tEXTeDIT
          //QTextEdit *mtDetails = new QTextEdit(this);
@@ -429,8 +515,13 @@ void MainWindow::on_actionLoad_triggered()
 
          tmpl::html_template one(":/templ/mtdetails.tmpl");
 
+<<<<<<< HEAD
          one("NUMMARKS") =  csvInter.GetMarkTypeTotalNumberMarks(csvInter.GetMarkTypesList()[a]);
          one("MISMARKS") = csvInter.GetStudentCount()-csvInter.GetMarkTypeTotalNumberMarks(csvInter.GetMarkTypesList()[a]);
+=======
+         one("NUMMARKS") =  csvInter.getMarkTypeTotalNumberMarks(csvInter.getMarkTypesList()[a]);
+         one("MISMARKS") = csvInter.getStudentCount()-csvInter.getMarkTypeTotalNumberMarks(csvInter.getMarkTypesList()[a]);
+>>>>>>> 0513e5bed07b7f959d3fe8fb5ef149750a4012c9
 
          mtDetails->setHtml(QString::fromStdString(one.Process()));
 
@@ -452,6 +543,7 @@ qDebug() << Q_FUNC_INFO <<"end";
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      tmpl::html_template one(":/templ/mtdetails.tmpl");
 =======
      tmpl::html_template one( ":/templ/mtdetails.tmpl" );
@@ -459,6 +551,9 @@ qDebug() << Q_FUNC_INFO <<"end";
 =======
      tmpl::html_template one(":/templ/mtdetails.tmpl");
 >>>>>>> a4212718bf384bf0fceb4835198e3a3bc1d9ebad
+=======
+     tmpl::html_template one(":/templ/mtdetails.tmpl");
+>>>>>>> 0513e5bed07b7f959d3fe8fb5ef149750a4012c9
 
      loop_t loop_marktypes;
 
@@ -467,6 +562,7 @@ qDebug() << Q_FUNC_INFO <<"end";
 
 
      //Get all the marktypes and add a row
+<<<<<<< HEAD
      QStringList marktypes = csvInter.GetMarkTypesList();
      qDebug()<<marktypes.count();
 
@@ -479,12 +575,19 @@ qDebug() << Q_FUNC_INFO <<"end";
 =======
     for(int a=0;a < marktypes.count();a++)
 >>>>>>> a4212718bf384bf0fceb4835198e3a3bc1d9ebad
+=======
+     QStringList marktypes = csvInter.getMarkTypesList();
+     qDebug()<<marktypes.count();
+
+    for(int a=0;a < marktypes.count();a++)
+>>>>>>> 0513e5bed07b7f959d3fe8fb5ef149750a4012c9
      {
 
         QString mtName = marktypes[a];
 
         qDebug()<<mtName;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
        row_marktypes("name") = mtName.toStdString();
@@ -507,6 +610,11 @@ qDebug() << Q_FUNC_INFO <<"end";
        row_marktypes( "mismarks" ) = csvInter.GetStudentCount()-csvInter.GetMarkTypeTotalNumberMarks( mtName );
 >>>>>>> 9741ee93263e965794ac363168e703497d496a37
 >>>>>>> Serame-master
+=======
+       row_marktypes("name") = mtName.toStdString();
+       row_marktypes("nummarks") = csvInter.getMarkTypeTotalNumberMarks(mtName);
+       row_marktypes("mismarks") = csvInter.getStudentCount()-csvInter.getMarkTypeTotalNumberMarks(mtName);
+>>>>>>> 0513e5bed07b7f959d3fe8fb5ef149750a4012c9
 
 
        //Loop start
@@ -516,10 +624,13 @@ qDebug() << Q_FUNC_INFO <<"end";
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> a4212718bf384bf0fceb4835198e3a3bc1d9ebad
 =======
 >>>>>>> Serame-master
+=======
+>>>>>>> 0513e5bed07b7f959d3fe8fb5ef149750a4012c9
         QMap<QString,int>  marks= csvInter.getAllMarksPerMarkType(mtName);
 
 
@@ -530,6 +641,7 @@ qDebug() << Q_FUNC_INFO <<"end";
              QString stunumber = i.key();
              row_marks("onemark") = onemark.toStdString();
              row_marks("stunumber") = stunumber.toStdString();
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
         QMap<QString,int>  marks= csvInter.getAllMarksPerMarkType( mtName );
@@ -548,11 +660,14 @@ qDebug() << Q_FUNC_INFO <<"end";
 >>>>>>> 0bf96991929a539aac0a172bd103e1896b41bdda
 =======
 >>>>>>> a4212718bf384bf0fceb4835198e3a3bc1d9ebad
+=======
+>>>>>>> 0513e5bed07b7f959d3fe8fb5ef149750a4012c9
             loop_marks+=row_marks;
 
         }
 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
        row_marktypes("allmarks") = loop_marks; //Now add loop_marks as a row to the orig loop called loop_marktypes (See template docss for more info)
@@ -562,6 +677,9 @@ qDebug() << Q_FUNC_INFO <<"end";
 =======
        row_marktypes("allmarks") = loop_marks; //Now add loop_marks as a row to the orig loop called loop_marktypes (See template docss for more info)
 >>>>>>> a4212718bf384bf0fceb4835198e3a3bc1d9ebad
+=======
+       row_marktypes("allmarks") = loop_marks; //Now add loop_marks as a row to the orig loop called loop_marktypes (See template docss for more info)
+>>>>>>> 0513e5bed07b7f959d3fe8fb5ef149750a4012c9
        loop_marktypes += row_marktypes;
        loop_marks.Empty();
 
@@ -573,13 +691,17 @@ qDebug() << Q_FUNC_INFO <<"end";
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> a4212718bf384bf0fceb4835198e3a3bc1d9ebad
+=======
+>>>>>>> 0513e5bed07b7f959d3fe8fb5ef149750a4012c9
      one("MARKTYPES") = loop_marktypes;
 
 
      one("NUMMARKS") =  csvInter.getMarkTypeTotalNumberMarks(csvInter.getMarkTypesList()[0]);
      one("MISMARKS") = csvInter.getStudentCount()-csvInter.getMarkTypeTotalNumberMarks(csvInter.getMarkTypesList()[0]);
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
      one( "MARKTYPES" ) = loop_marktypes;
@@ -597,11 +719,14 @@ qDebug() << Q_FUNC_INFO <<"end";
      one( "MISMARKS" ) = csvInter.GetStudentCount()-csvInter.GetMarkTypeTotalNumberMarks( csvInter.GetMarkTypesList()[0] );
 >>>>>>> 9741ee93263e965794ac363168e703497d496a37
 >>>>>>> Serame-master
+=======
+>>>>>>> 0513e5bed07b7f959d3fe8fb5ef149750a4012c9
 
     // ui->webViewSubjectInfo->setc
 
     // ui->webViewSubjectInfo->settings()->setUserStyleSheetUrl(QUrl::from);
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
      ui->webViewSubjectInfo->setHtml(QString::fromStdString(one.Process()));
@@ -611,6 +736,9 @@ qDebug() << Q_FUNC_INFO <<"end";
 =======
      ui->webViewSubjectInfo->setHtml(QString::fromStdString(one.Process()));
 >>>>>>> a4212718bf384bf0fceb4835198e3a3bc1d9ebad
+=======
+     ui->webViewSubjectInfo->setHtml(QString::fromStdString(one.Process()));
+>>>>>>> 0513e5bed07b7f959d3fe8fb5ef149750a4012c9
      qDebug() << Q_FUNC_INFO <<"end";
 
 }
@@ -629,6 +757,7 @@ qDebug() << Q_FUNC_INFO <<"end";
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      ui->splitter->setSizes(currentSizes);
 =======
      ui->splitter->setSizes( currentSizes );
@@ -636,6 +765,9 @@ qDebug() << Q_FUNC_INFO <<"end";
 =======
      ui->splitter->setSizes(currentSizes);
 >>>>>>> a4212718bf384bf0fceb4835198e3a3bc1d9ebad
+=======
+     ui->splitter->setSizes(currentSizes);
+>>>>>>> 0513e5bed07b7f959d3fe8fb5ef149750a4012c9
      qDebug() << Q_FUNC_INFO <<"end";
  }
 
@@ -652,6 +784,7 @@ qDebug() << Q_FUNC_INFO <<"end";
      currentSizes[0] = 0;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      currentSizes[0] = (this->width() * 25/100);
 
      ui->splitter->setSizes(currentSizes);
@@ -665,6 +798,11 @@ qDebug() << Q_FUNC_INFO <<"end";
 
      ui->splitter->setSizes(currentSizes);
 >>>>>>> a4212718bf384bf0fceb4835198e3a3bc1d9ebad
+=======
+     currentSizes[0] = (this->width() * 25/100);
+
+     ui->splitter->setSizes(currentSizes);
+>>>>>>> 0513e5bed07b7f959d3fe8fb5ef149750a4012c9
      qDebug() << Q_FUNC_INFO <<"end";
  }
 
@@ -690,6 +828,7 @@ void MainWindow::on_pushButtonUpdateMrks_clicked()
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     QStringList stunumbers = csvInter.getAllStudentNumbersPerMarkType(ui->comboBoxMarkTypeSlct->currentText());
 =======
     QStringList stunumbers = csvInter.getAllStudentNumbersPerMarkType( ui->comboBoxMarkTypeSlct->currentText() );
@@ -702,6 +841,9 @@ void MainWindow::on_pushButtonUpdateMrks_clicked()
     QStringList stunumbers = csvInter.GetAllStudentNumbersPerMarkType( ui->comboBoxMarkTypeSlct->currentText() );
 >>>>>>> 9741ee93263e965794ac363168e703497d496a37
 >>>>>>> Serame-master
+=======
+    QStringList stunumbers = csvInter.getAllStudentNumbersPerMarkType(ui->comboBoxMarkTypeSlct->currentText());
+>>>>>>> 0513e5bed07b7f959d3fe8fb5ef149750a4012c9
 
     LogWindow *UpdateMarksLog = new LogWindow();
 
@@ -718,10 +860,14 @@ void MainWindow::on_pushButtonUpdateMrks_clicked()
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
    UpdateMarksLog->addUpdateHeader(csvInter.FilePath(),ui->comboBoxMarkTypeSlct->currentText(),csvInter.getSubjectCode());
 =======
    UpdateMarksLog->AddUpdateHeader(csvInter.FilePath(),ui->comboBoxMarkTypeSlct->currentText(),csvInter.getSubjectCode());
 >>>>>>> a4212718bf384bf0fceb4835198e3a3bc1d9ebad
+=======
+   UpdateMarksLog->addUpdateHeader(csvInter.FilePath(),ui->comboBoxMarkTypeSlct->currentText(),csvInter.getSubjectCode());
+>>>>>>> 0513e5bed07b7f959d3fe8fb5ef149750a4012c9
 
 
     foreach (const QString snum,stunumbers)
@@ -736,6 +882,7 @@ void MainWindow::on_pushButtonUpdateMrks_clicked()
         }
        else
         {
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
    UpdateMarksLog->addUpdateHeader( csvInter.FilePath(),ui->comboBoxMarkTypeSlct->currentText(),csvInter.getSubjectCode() );
@@ -759,11 +906,15 @@ void MainWindow::on_pushButtonUpdateMrks_clicked()
 =======
 >>>>>>> a4212718bf384bf0fceb4835198e3a3bc1d9ebad
             int oldm = ui->wFitsbrowser->getInblrMark(snum);
+=======
+            int oldm = ui->wFitsbrowser->GetInblrMark(snum);
+>>>>>>> 0513e5bed07b7f959d3fe8fb5ef149750a4012c9
             QString oldMark;
             oldMark = tr("%1").arg(oldm);
             qDebug()<<"Old mark: ";
             qDebug()<< oldMark;
             qDebug()<<"New mark: ";
+<<<<<<< HEAD
             int newmark = csvInter.GetStudentMarkPerMarkType(ui->comboBoxMarkTypeSlct->currentText(),snum);
             qDebug()<<newmark;
 
@@ -771,6 +922,11 @@ void MainWindow::on_pushButtonUpdateMrks_clicked()
 <<<<<<< HEAD
 =======
 >>>>>>> a4212718bf384bf0fceb4835198e3a3bc1d9ebad
+=======
+            int newmark = csvInter.getStudentMarkPerMarkType(ui->comboBoxMarkTypeSlct->currentText(),snum);
+            qDebug()<<newmark;
+
+>>>>>>> 0513e5bed07b7f959d3fe8fb5ef149750a4012c9
             if(oldm > newmark)
             {
                 logWarnings.append(tr("Student %3 Old mark  (%1) > (%2) No update made").arg(oldMark).arg(newmark).arg(snum));
@@ -778,6 +934,7 @@ void MainWindow::on_pushButtonUpdateMrks_clicked()
             else
             {
 
+<<<<<<< HEAD
             ui->wFitsbrowser->setInblrMark(snum,newmark);
 
             logInformation.append(tr("Mark Updated %3 : %1 --> %2").arg(oldMark).arg(newmark).arg(snum));
@@ -794,6 +951,11 @@ void MainWindow::on_pushButtonUpdateMrks_clicked()
 >>>>>>> 0bf96991929a539aac0a172bd103e1896b41bdda
 =======
 >>>>>>> a4212718bf384bf0fceb4835198e3a3bc1d9ebad
+=======
+            ui->wFitsbrowser->SetInblrMark(snum,newmark);
+
+            logInformation.append(tr("Mark Updated %3 : %1 --> %2").arg(oldMark).arg(newmark).arg(snum));
+>>>>>>> 0513e5bed07b7f959d3fe8fb5ef149750a4012c9
             }
         }
 
@@ -801,6 +963,7 @@ void MainWindow::on_pushButtonUpdateMrks_clicked()
       qDebug()<<"";
 
     }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 UpdateMarksLog->addErrors(logErrors);
@@ -816,6 +979,11 @@ UpdateMarksLog->AddErrors(logErrors);
 UpdateMarksLog->AddWarning(logWarnings);
 UpdateMarksLog->AddInformation(logInformation);
 >>>>>>> a4212718bf384bf0fceb4835198e3a3bc1d9ebad
+=======
+UpdateMarksLog->addErrors(logErrors);
+UpdateMarksLog->addWarning(logWarnings);
+UpdateMarksLog->addInformation(logInformation);
+>>>>>>> 0513e5bed07b7f959d3fe8fb5ef149750a4012c9
 ui->labelProgress->hide();
 UpdateMarksLog->show();
 qDebug() << Q_FUNC_INFO <<"end";
@@ -837,6 +1005,7 @@ void MainWindow::on_actionMake_all_0_triggered()
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      switch (ret) {
 =======
      switch ( ret ) {
@@ -844,11 +1013,18 @@ void MainWindow::on_actionMake_all_0_triggered()
 =======
      switch (ret) {
 >>>>>>> a4212718bf384bf0fceb4835198e3a3bc1d9ebad
+=======
+     switch (ret) {
+>>>>>>> 0513e5bed07b7f959d3fe8fb5ef149750a4012c9
         case QMessageBox::Yes:
             // Yes was clicked
              {
                 qDebug()<<"Making all marks 0";
+<<<<<<< HEAD
                 ui->wFitsbrowser->setInblrMarkAllZero();
+=======
+                ui->wFitsbrowser->SetInblrMarkAllZero();
+>>>>>>> 0513e5bed07b7f959d3fe8fb5ef149750a4012c9
              }
             break;
         case QMessageBox::No:
@@ -865,14 +1041,22 @@ qDebug() << Q_FUNC_INFO <<"end";
 void MainWindow::on_actionMake_empty_0_triggered()
 {
     qDebug() << Q_FUNC_INFO <<"start";
+<<<<<<< HEAD
     ui->wFitsbrowser->setInblrMarkZero();
+=======
+    ui->wFitsbrowser->SetInblrMarkZero();
+>>>>>>> 0513e5bed07b7f959d3fe8fb5ef149750a4012c9
     qDebug() << Q_FUNC_INFO <<"end";
 }
 
 void MainWindow::on_actionBlackout_Cancelled_triggered()
 {
   qDebug() << Q_FUNC_INFO <<"start";
+<<<<<<< HEAD
   ui->wFitsbrowser->setInblrCanBlackOut();
+=======
+  ui->wFitsbrowser->SetInblrCanBlackOut();
+>>>>>>> 0513e5bed07b7f959d3fe8fb5ef149750a4012c9
   qDebug() << Q_FUNC_INFO <<"end";
 }
 
@@ -882,13 +1066,17 @@ void MainWindow::on_actionLoad_ec_tut_ac_za_triggered()
    qDebug()<<"Testing to see if ec.tut.ac.za loads";
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> a4212718bf384bf0fceb4835198e3a3bc1d9ebad
+=======
+>>>>>>> 0513e5bed07b7f959d3fe8fb5ef149750a4012c9
    ui->wFitsbrowser->setUrl(QUrl("http://ec.tut.ac.za"));
    qDebug() << Q_FUNC_INFO <<"end";
 }
 
 void MainWindow::CsvFileParseError(QString mes)
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
    ui->wFitsbrowser->setUrl(QUrl( "http://ec.tut.ac.za" ) );
@@ -899,18 +1087,24 @@ void MainWindow::CsvFileParseError( QString mes )
 >>>>>>> 0bf96991929a539aac0a172bd103e1896b41bdda
 =======
 >>>>>>> a4212718bf384bf0fceb4835198e3a3bc1d9ebad
+=======
+>>>>>>> 0513e5bed07b7f959d3fe8fb5ef149750a4012c9
 {
     qDebug() << Q_FUNC_INFO <<"start";
     //This slot will react to any errors when the CSv file is parced. It will report the message and the user must fix the problem.
     QMessageBox msgBox;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> a4212718bf384bf0fceb4835198e3a3bc1d9ebad
+=======
+>>>>>>> 0513e5bed07b7f959d3fe8fb5ef149750a4012c9
     QString messageToUser = QString("Error When Reading File:\n\n%1\n\nThe problem seems to be\n\n%2\n\nYou can still use the application but please fix the problem before continuing to avoid problems.").arg(csvInter.FilePath()).arg(mes);
 
     msgBox.setText(messageToUser);
     msgBox.setIcon(QMessageBox::Critical);
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
     QString messageToUser = QString( "Error When Reading File:\n\n%1\n\nThe problem seems to be\n\n%2\n\nYou can still use the application but please fix the problem before continuing to avoid problems." ).arg( csvInter.FilePath() ).arg( mes );
@@ -920,11 +1114,14 @@ void MainWindow::CsvFileParseError( QString mes )
 >>>>>>> 0bf96991929a539aac0a172bd103e1896b41bdda
 =======
 >>>>>>> a4212718bf384bf0fceb4835198e3a3bc1d9ebad
+=======
+>>>>>>> 0513e5bed07b7f959d3fe8fb5ef149750a4012c9
     msgBox.exec();
     qDebug() << Q_FUNC_INFO <<"end";
 
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 void MainWindow::on_comboBoxMarkTypeSlct_editTextChanged(const QString &arg1)
@@ -934,14 +1131,20 @@ void MainWindow::on_comboBoxMarkTypeSlct_editTextChanged( const QString &arg1 )
 =======
 void MainWindow::on_comboBoxMarkTypeSlct_editTextChanged(const QString &arg1)
 >>>>>>> a4212718bf384bf0fceb4835198e3a3bc1d9ebad
+=======
+void MainWindow::on_comboBoxMarkTypeSlct_editTextChanged(const QString &arg1)
+>>>>>>> 0513e5bed07b7f959d3fe8fb5ef149750a4012c9
 {
 
 }
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> a4212718bf384bf0fceb4835198e3a3bc1d9ebad
+=======
+>>>>>>> 0513e5bed07b7f959d3fe8fb5ef149750a4012c9
 void MainWindow::on_comboBoxMarkTypeSlct_currentIndexChanged(const QString &arg1)
 {
     qDebug()<<arg1;
@@ -950,6 +1153,7 @@ void MainWindow::on_comboBoxMarkTypeSlct_currentIndexChanged(const QString &arg1
 }
 
 void MainWindow::on_webViewSubjectInfo_loadFinished(bool arg1)
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 void MainWindow::on_comboBoxMarkTypeSlct_currentIndexChanged( const QString &arg1 )
@@ -963,6 +1167,8 @@ void MainWindow::on_webViewSubjectInfo_loadFinished( bool arg1 )
 >>>>>>> 0bf96991929a539aac0a172bd103e1896b41bdda
 =======
 >>>>>>> a4212718bf384bf0fceb4835198e3a3bc1d9ebad
+=======
+>>>>>>> 0513e5bed07b7f959d3fe8fb5ef149750a4012c9
 {
 
 

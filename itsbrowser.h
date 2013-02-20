@@ -1,5 +1,5 @@
-#ifndef ITSBROWSER_H
-#define ITSBROWSER_H
+#ifndef itsBrowser_H
+#define itsBrowser_H
 
 #include<QtWebKit>
 //#include<QtWebKitWidgets>
@@ -17,27 +17,26 @@
 #include <QNetworkProxy>
 #include <QNetworkReply>
 
-class itsBrowser : public QWebView
-{
+class itsBrowser : public QWebView{
     Q_OBJECT
 public:
     explicit itsBrowser( QWidget *parent = 0 );
-    int getInblrMark( QString );
-    void setInblrMark( QString,int );
-    void setInblrMarkAllZero();
-    void setInblrMarkZero();
+    int GetInblrMark( QString );
+    void SetInblrMark( QString,int );
+    void SetInblrMarkAllZero();
+    void SetInblrMarkZero();
     bool InblrContainsStuNum( QString );
-    void setInblrCanBlackOut();
+    void SetInblrCanBlackOut();
 
 signals:
     void onAnyError( QString );
-    void onNetworkError( QString ); //Problem with network connectivity
+    void OnNetworkError( QString ); //Problem with network connectivity
 public slots:
-    void handleSslErrors( QNetworkReply* reply, const QList<QSslError> &errors );
-    void provideAuthentication( QNetworkReply*,QAuthenticator* );
-    void provideProxAuthentication( const QNetworkProxy &, QAuthenticator* );
-    void networkTaskfinished ( QNetworkReply * );
+    void HandleSslErrors( QNetworkReply* reply, const QList<QSslError> &errors );
+    void ProvideAuthentication( QNetworkReply*,QAuthenticator* );
+    void ProvideProxAuthentication( const QNetworkProxy &, QAuthenticator* );
+    void NetworkTaskfinished ( QNetworkReply * );
 
 };
 
-#endif // ITSBROWSER_H
+#endif // itsBrowser_H
