@@ -20,28 +20,8 @@ using namespace std;
 using namespace tmpl;
 
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> a4212718bf384bf0fceb4835198e3a3bc1d9ebad
-=======
->>>>>>> 0513e5bed07b7f959d3fe8fb5ef149750a4012c9
-MainWindow::MainWindow(QWidget *parent) :
-    QMainWindow(parent),
-    ui(new Ui::MainWindow)
-{
-    qDebug() << Q_FUNC_INFO <<"start";
 
-    ui->setupUi(this);
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-    //Setup the setting class
-    QCoreApplication::setOrganizationName("TUT");
-    QCoreApplication::setOrganizationDomain("tut.ac.za");
-    QCoreApplication::setApplicationName("IUpdate");
-=======
 MainWindow::MainWindow( QWidget *parent ) :
     QMainWindow( parent ),
     ui( new Ui::MainWindow )
@@ -54,18 +34,6 @@ MainWindow::MainWindow( QWidget *parent ) :
     QCoreApplication::setOrganizationName( "TUT" );
     QCoreApplication::setOrganizationDomain( "tut.ac.za" );
     QCoreApplication::setApplicationName( "IUpdate" );
->>>>>>> 0bf96991929a539aac0a172bd103e1896b41bdda
-=======
-=======
->>>>>>> 0513e5bed07b7f959d3fe8fb5ef149750a4012c9
-    //Setup the settings class
-    QCoreApplication::setOrganizationName("TUT");
-    QCoreApplication::setOrganizationDomain("tut.ac.za");
-    QCoreApplication::setApplicationName("IUpdate");
-<<<<<<< HEAD
->>>>>>> a4212718bf384bf0fceb4835198e3a3bc1d9ebad
-=======
->>>>>>> 0513e5bed07b7f959d3fe8fb5ef149750a4012c9
 
 
 
@@ -75,57 +43,15 @@ MainWindow::MainWindow( QWidget *parent ) :
     hideSideWindow(); //Maximizes the splitter window
 
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-    QMovie *movie = new QMovie(":/images/ajax-loader.gif");
-
-    ui->labelProgress->setMovie(movie);
-=======
     QMovie *movie = new QMovie( ":/images/ajax-loader.gif" );
 
     ui->labelProgress->setMovie( movie );
->>>>>>> 0bf96991929a539aac0a172bd103e1896b41bdda
-=======
-    QMovie *movie = new QMovie(":/images/ajax-loader.gif");
 
-    ui->labelProgress->setMovie(movie);
->>>>>>> a4212718bf384bf0fceb4835198e3a3bc1d9ebad
-=======
-    QMovie *movie = new QMovie(":/images/ajax-loader.gif");
-
-    ui->labelProgress->setMovie(movie);
->>>>>>> 0513e5bed07b7f959d3fe8fb5ef149750a4012c9
 
     movie->start();
 
     //Hook up to the csv inter error reporter
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> a4212718bf384bf0fceb4835198e3a3bc1d9ebad
-=======
->>>>>>> 0513e5bed07b7f959d3fe8fb5ef149750a4012c9
-     connect(&csvInter,SIGNAL(FileParseError(QString)),this,SLOT(CsvFileParseError(QString)));
 
-    //Hook up to the loadprogress and loadstarted
-    connect(ui->wFitsbrowser,SIGNAL(loadProgress (int)),this,SLOT(on_webViewBrowser_loadProgress(int)));
-    connect(ui->wFitsbrowser,SIGNAL(loadStarted ()),this,SLOT(on_webViewBrowser_loadStarted()));
-    connect(ui->wFitsbrowser,SIGNAL(loadFinished (bool)),this,SLOT(on_webViewBrowser_loadFinished(bool)));
-    connect(ui->wFitsbrowser,SIGNAL(onAnyError(QString)),this,SLOT(on_webViewBrowser_anyError(QString)));
-    connect(ui->wFitsbrowser,SIGNAL(onNetworkError(QString)),this,SLOT(on_webViewBrowser_networkError(QString)));
-
-    ui->wFitsbrowser->setUrl(QUrl("https://jupiter.tut.ac.za/staffportal/system/login.php?refscript=/staffportal/index.php"));
-
-
-
-    QNetworkDiskCache *diskCache = new QNetworkDiskCache(this);
-    diskCache->setCacheDirectory("cachedir");
-    ui->webViewSubjectInfo->page()->networkAccessManager()->setCache(diskCache );
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
      connect( &csvInter,SIGNAL( FileParseError( QString ) ),this,SLOT( CsvFileParseError( QString ) ) );
 
     //Hook up to the loadprogress and loadstarted
@@ -142,12 +68,6 @@ MainWindow::MainWindow( QWidget *parent ) :
     QNetworkDiskCache *diskCache = new QNetworkDiskCache( this );
     diskCache->setCacheDirectory( "cachedir" );
     ui->webViewSubjectInfo->page()->networkAccessManager()->setCache( diskCache );
->>>>>>> 0bf96991929a539aac0a172bd103e1896b41bdda
-=======
->>>>>>> a4212718bf384bf0fceb4835198e3a3bc1d9ebad
-=======
->>>>>>> 0513e5bed07b7f959d3fe8fb5ef149750a4012c9
-
 
   qDebug() << Q_FUNC_INFO <<"end";
 
@@ -163,108 +83,39 @@ void MainWindow::on_pushButton_clicked()
 
 }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
- void MainWindow::on_webViewBrowser_networkError(QString error)
-=======
+
  void MainWindow::on_webViewBrowser_networkError( QString error )
->>>>>>> 0bf96991929a539aac0a172bd103e1896b41bdda
-=======
- void MainWindow::on_webViewBrowser_networkError(QString error)
->>>>>>> a4212718bf384bf0fceb4835198e3a3bc1d9ebad
-=======
- void MainWindow::on_webViewBrowser_networkError(QString error)
->>>>>>> 0513e5bed07b7f959d3fe8fb5ef149750a4012c9
+
  {
      qDebug() << Q_FUNC_INFO <<"start";
 
      qDebug()<<error;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> a4212718bf384bf0fceb4835198e3a3bc1d9ebad
-=======
->>>>>>> 0513e5bed07b7f959d3fe8fb5ef149750a4012c9
-      tmpl::html_template errorPage(":/templ/conerror.tmpl");
-
-
-      errorPage("ERMES") = error.toStdString();
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
       tmpl::html_template errorPage( ":/templ/conerror.tmpl" );
 
-
       errorPage( "ERMES" ) = error.toStdString();
->>>>>>> 0bf96991929a539aac0a172bd103e1896b41bdda
-=======
->>>>>>> a4212718bf384bf0fceb4835198e3a3bc1d9ebad
-=======
->>>>>>> 0513e5bed07b7f959d3fe8fb5ef149750a4012c9
 
- \
      // ui->wFitsbrowser->setHtml(QString::fromStdString(errorPage.Process()));
-
 
 
       qDebug() << Q_FUNC_INFO <<"end";
  }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> a4212718bf384bf0fceb4835198e3a3bc1d9ebad
-=======
->>>>>>> 0513e5bed07b7f959d3fe8fb5ef149750a4012c9
-void MainWindow::on_webViewBrowser_anyError(QString error)
-{
-    qDebug() << Q_FUNC_INFO <<"start";
 
-    ui->statusBar->showMessage("Error on browser load: "+error);
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
 void MainWindow::on_webViewBrowser_anyError( QString error )
 {
     qDebug() << Q_FUNC_INFO <<"start";
 
     ui->statusBar->showMessage( "Error on browser load: "+error );
->>>>>>> 0bf96991929a539aac0a172bd103e1896b41bdda
-=======
->>>>>>> a4212718bf384bf0fceb4835198e3a3bc1d9ebad
-=======
->>>>>>> 0513e5bed07b7f959d3fe8fb5ef149750a4012c9
 
     qDebug() << Q_FUNC_INFO <<"end";
 }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> a4212718bf384bf0fceb4835198e3a3bc1d9ebad
-=======
->>>>>>> 0513e5bed07b7f959d3fe8fb5ef149750a4012c9
-void MainWindow::on_webViewBrowser_loadProgress(int progress)
-{
-   qDebug() << Q_FUNC_INFO <<"start";
-   ui->progressBarWebInd->setValue(progress);
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
+
 void MainWindow::on_webViewBrowser_loadProgress( int progress )
 {
    qDebug() << Q_FUNC_INFO <<"start";
    ui->progressBarWebInd->setValue( progress );
->>>>>>> 0bf96991929a539aac0a172bd103e1896b41bdda
-=======
->>>>>>> a4212718bf384bf0fceb4835198e3a3bc1d9ebad
-=======
->>>>>>> 0513e5bed07b7f959d3fe8fb5ef149750a4012c9
    qDebug() << Q_FUNC_INFO <<"end";
 }
 
@@ -273,31 +124,13 @@ void MainWindow::on_webViewBrowser_loadStarted()
     qDebug() << Q_FUNC_INFO <<"start";
     ui->progressBarWebInd->show();
     ui->labelProgress->show();
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> a4212718bf384bf0fceb4835198e3a3bc1d9ebad
-=======
->>>>>>> 0513e5bed07b7f959d3fe8fb5ef149750a4012c9
     ui->statusBar->showMessage(ui->wFitsbrowser->url().toString());
     qDebug() << Q_FUNC_INFO <<"end";
 }
 
-void MainWindow::on_webViewBrowser_loadFinished(bool ok)
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-    ui->statusBar->showMessage( ui->wFitsbrowser->url().toString() );
-    qDebug() << Q_FUNC_INFO <<"end";
-}
+
 
 void MainWindow::on_webViewBrowser_loadFinished( bool ok )
->>>>>>> 0bf96991929a539aac0a172bd103e1896b41bdda
-=======
->>>>>>> a4212718bf384bf0fceb4835198e3a3bc1d9ebad
-=======
->>>>>>> 0513e5bed07b7f959d3fe8fb5ef149750a4012c9
 {
 qDebug() << Q_FUNC_INFO <<"start";
     ui->progressBarWebInd->hide();
@@ -334,19 +167,9 @@ qDebug() << Q_FUNC_INFO <<"end";
 void MainWindow::on_actionAbout_QT_triggered()
 {
     qDebug() << Q_FUNC_INFO <<"start";
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-    QMessageBox::aboutQt (this);
-=======
+
     QMessageBox::aboutQt ( this );
->>>>>>> 0bf96991929a539aac0a172bd103e1896b41bdda
-=======
-    QMessageBox::aboutQt (this);
->>>>>>> a4212718bf384bf0fceb4835198e3a3bc1d9ebad
-=======
-    QMessageBox::aboutQt (this);
->>>>>>> 0513e5bed07b7f959d3fe8fb5ef149750a4012c9
+
     qDebug() << Q_FUNC_INFO <<"end";
 }
 
@@ -356,26 +179,6 @@ void MainWindow::on_actionLoad_triggered()
     ui->labelProgress->show();
 
     //First try to load settings
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> a4212718bf384bf0fceb4835198e3a3bc1d9ebad
-=======
->>>>>>> 0513e5bed07b7f959d3fe8fb5ef149750a4012c9
-    QString lstload = IUpdatesettings.value("lastLoadPath",QDir::homePath()).toString();
-
-    csvInter.setFilePath(QFileDialog::getOpenFileName(this,tr("Open %1 Marks File").arg(csvInter.getFileTypeName()), lstload, tr("%1").arg(csvInter.getFileExt())));
-
-    if(csvInter.loadFile())
-    {
-    //Update setting
-    QDir d = QFileInfo(csvInter.FilePath()).absoluteDir();
-
-    IUpdatesettings.setValue("lastLoadPath",d.absolutePath());
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
     QString lstload = IUpdatesettings.value( "lastLoadPath",QDir::homePath() ).toString();
 
     csvInter.SetFilePath(QFileDialog::getOpenFileName( this,tr( "Open %1 Marks File" ).arg( csvInter.GetFileTypeName() ), lstload, tr( "%1" ).arg( csvInter.GetFileExt() ) ) );
@@ -386,11 +189,6 @@ void MainWindow::on_actionLoad_triggered()
     QDir d = QFileInfo( csvInter.FilePath() ).absoluteDir();
 
     IUpdatesettings.setValue( "lastLoadPath",d.absolutePath() );
->>>>>>> 0bf96991929a539aac0a172bd103e1896b41bdda
-=======
->>>>>>> a4212718bf384bf0fceb4835198e3a3bc1d9ebad
-=======
->>>>>>> 0513e5bed07b7f959d3fe8fb5ef149750a4012c9
 
     //PopulateSubjectGrid();
      PopulateSubjectWeb();
@@ -400,40 +198,13 @@ void MainWindow::on_actionLoad_triggered()
 
     //Load the marktypes into the combo box
     ui->comboBoxMarkTypeSlct->clear();
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> a4212718bf384bf0fceb4835198e3a3bc1d9ebad
-=======
->>>>>>> Serame-master
-=======
->>>>>>> 0513e5bed07b7f959d3fe8fb5ef149750a4012c9
+
     ui->comboBoxMarkTypeSlct->addItems(csvInter.getMarkTypesList());
-
-    showSideWindow();
-
-    }
-    else
-    {
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-    ui->comboBoxMarkTypeSlct->addItems( csvInter.getMarkTypesList() );
-=======
-    ui->comboBoxMarkTypeSlct->addItems( csvInter.GetMarkTypesList() );
->>>>>>> 9741ee93263e965794ac363168e703497d496a37
 
     showSideWindow();
 
     } else {
 
->>>>>>> 0bf96991929a539aac0a172bd103e1896b41bdda
-=======
->>>>>>> a4212718bf384bf0fceb4835198e3a3bc1d9ebad
-=======
->>>>>>> 0513e5bed07b7f959d3fe8fb5ef149750a4012c9
         qDebug()<<"File not loaded (Perhaps cancell was clicked)";
     }
     ui->labelProgress->hide();
@@ -541,113 +312,39 @@ qDebug() << Q_FUNC_INFO <<"end";
  {
      qDebug() << Q_FUNC_INFO <<"start";
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-     tmpl::html_template one(":/templ/mtdetails.tmpl");
-=======
      tmpl::html_template one( ":/templ/mtdetails.tmpl" );
->>>>>>> 0bf96991929a539aac0a172bd103e1896b41bdda
-=======
-     tmpl::html_template one(":/templ/mtdetails.tmpl");
->>>>>>> a4212718bf384bf0fceb4835198e3a3bc1d9ebad
-=======
-     tmpl::html_template one(":/templ/mtdetails.tmpl");
->>>>>>> 0513e5bed07b7f959d3fe8fb5ef149750a4012c9
 
      loop_t loop_marktypes;
-
 
      row_t row_marktypes;
 
 
      //Get all the marktypes and add a row
-<<<<<<< HEAD
-     QStringList marktypes = csvInter.GetMarkTypesList();
-     qDebug()<<marktypes.count();
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-    for(int a=0;a < marktypes.count();a++)
-=======
-    for( int a=0;a < marktypes.count();a++ )
->>>>>>> 0bf96991929a539aac0a172bd103e1896b41bdda
-=======
-    for(int a=0;a < marktypes.count();a++)
->>>>>>> a4212718bf384bf0fceb4835198e3a3bc1d9ebad
-=======
      QStringList marktypes = csvInter.getMarkTypesList();
      qDebug()<<marktypes.count();
 
-    for(int a=0;a < marktypes.count();a++)
->>>>>>> 0513e5bed07b7f959d3fe8fb5ef149750a4012c9
-     {
 
-        QString mtName = marktypes[a];
+    for( int a=0;a < marktypes.count();a++ )
 
-        qDebug()<<mtName;
+     QStringList marktypes = csvInter.getMarkTypesList();
+     qDebug()<<marktypes.count();
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-       row_marktypes("name") = mtName.toStdString();
-       row_marktypes("nummarks") = csvInter.getMarkTypeTotalNumberMarks(mtName);
-       row_marktypes("mismarks") = csvInter.getStudentCount()-csvInter.getMarkTypeTotalNumberMarks(mtName);
-=======
+     QString mtName = marktypes[a];
+
+     qDebug()<<mtName;
+
+
        row_marktypes( "name" ) = mtName.toStdString();
-<<<<<<< HEAD
        row_marktypes( "nummarks" ) = csvInter.getMarkTypeTotalNumberMarks( mtName );
        row_marktypes( "mismarks" ) = csvInter.getStudentCount()-csvInter.getMarkTypeTotalNumberMarks( mtName );
->>>>>>> 0bf96991929a539aac0a172bd103e1896b41bdda
-=======
-<<<<<<< HEAD
-       row_marktypes("name") = mtName.toStdString();
-       row_marktypes("nummarks") = csvInter.getMarkTypeTotalNumberMarks(mtName);
-       row_marktypes("mismarks") = csvInter.getStudentCount()-csvInter.getMarkTypeTotalNumberMarks(mtName);
->>>>>>> a4212718bf384bf0fceb4835198e3a3bc1d9ebad
-=======
-       row_marktypes( "nummarks" ) = csvInter.GetMarkTypeTotalNumberMarks( mtName );
-       row_marktypes( "mismarks" ) = csvInter.GetStudentCount()-csvInter.GetMarkTypeTotalNumberMarks( mtName );
->>>>>>> 9741ee93263e965794ac363168e703497d496a37
->>>>>>> Serame-master
-=======
-       row_marktypes("name") = mtName.toStdString();
-       row_marktypes("nummarks") = csvInter.getMarkTypeTotalNumberMarks(mtName);
-       row_marktypes("mismarks") = csvInter.getStudentCount()-csvInter.getMarkTypeTotalNumberMarks(mtName);
->>>>>>> 0513e5bed07b7f959d3fe8fb5ef149750a4012c9
-
 
        //Loop start
         loop_t loop_marks;
         row_t row_marks;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> a4212718bf384bf0fceb4835198e3a3bc1d9ebad
-=======
->>>>>>> Serame-master
-=======
->>>>>>> 0513e5bed07b7f959d3fe8fb5ef149750a4012c9
-        QMap<QString,int>  marks= csvInter.getAllMarksPerMarkType(mtName);
 
-
-         QMapIterator<QString, int> i(marks); //For each marktype get the marks and stu num then add to loop marks
-         while (i.hasNext()) {
-             i.next();
-             QString onemark = QString("%1").arg(i.value());
-             QString stunumber = i.key();
-             row_marks("onemark") = onemark.toStdString();
-             row_marks("stunumber") = stunumber.toStdString();
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-        QMap<QString,int>  marks= csvInter.getAllMarksPerMarkType( mtName );
-=======
         QMap<QString,int>  marks= csvInter.GetAllMarksPerMarkType( mtName );
->>>>>>> 9741ee93263e965794ac363168e703497d496a37
 
 
          QMapIterator<QString, int> i( marks ); //For each marktype get the marks and stu num then add to loop marks
@@ -657,35 +354,17 @@ qDebug() << Q_FUNC_INFO <<"end";
              QString stunumber = i.key();
              row_marks( "onemark" ) = onemark.toStdString();
              row_marks( "stunumber" ) = stunumber.toStdString();
->>>>>>> 0bf96991929a539aac0a172bd103e1896b41bdda
-=======
->>>>>>> a4212718bf384bf0fceb4835198e3a3bc1d9ebad
-=======
->>>>>>> 0513e5bed07b7f959d3fe8fb5ef149750a4012c9
+
             loop_marks+=row_marks;
 
         }
 
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-       row_marktypes("allmarks") = loop_marks; //Now add loop_marks as a row to the orig loop called loop_marktypes (See template docss for more info)
-=======
+
        row_marktypes( "allmarks" ) = loop_marks; //Now add loop_marks as a row to the orig loop called loop_marktypes (See template docss for more info)
->>>>>>> 0bf96991929a539aac0a172bd103e1896b41bdda
-=======
-       row_marktypes("allmarks") = loop_marks; //Now add loop_marks as a row to the orig loop called loop_marktypes (See template docss for more info)
->>>>>>> a4212718bf384bf0fceb4835198e3a3bc1d9ebad
-=======
-       row_marktypes("allmarks") = loop_marks; //Now add loop_marks as a row to the orig loop called loop_marktypes (See template docss for more info)
->>>>>>> 0513e5bed07b7f959d3fe8fb5ef149750a4012c9
-       loop_marktypes += row_marktypes;
-       loop_marks.Empty();
+
 
        //Loop end
-
-
 
       }
 
