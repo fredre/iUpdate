@@ -339,7 +339,11 @@ qDebug() << Q_FUNC_INFO <<"end";
 
     // ui->webViewSubjectInfo->settings()->setUserStyleSheetUrl(QUrl::from);
 
-     ui->webViewSubjectInfo->setHtml( QString::fromStdString(one.Process() ) );
+     qDebug()<<QString::fromStdString(one.Process() );
+
+
+
+     ui->webViewSubjectInfo->setHtml( QString::fromStdString(one.Process() ),QUrl("http://code.jquery.com") );
      qDebug() << Q_FUNC_INFO <<"end";
 
 }
