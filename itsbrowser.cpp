@@ -1,4 +1,4 @@
-#include "itsBrowser.h"
+#include "itsbrowser.h"
 
 itsBrowser::itsBrowser( QWidget *parent ) :
     QWebView( parent ){

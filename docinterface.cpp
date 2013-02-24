@@ -91,12 +91,12 @@ QString DocInterface::FilePath()
     return filepath;
 }
 
-void DocInterface::setFilePath( QString fp )
+void DocInterface::SetFilePath( QString fp )
 {
     filepath = fp;
 }
 
-bool DocInterface::loadFile()
+bool DocInterface::LoadFile()
 {
     if( filepath.isNull() )
     {
@@ -129,15 +129,15 @@ bool DocInterface::loadFile()
 }
 
 
- QString DocInterface::getFileExt() {
+ QString DocInterface::GetFileExt() {
      return "CSV Files (*.csv)";
  }
 
-  QString  DocInterface::getFileTypeName() {
+  QString  DocInterface::GetFileTypeName() {
       return "CSV";
   }
 
-  QString DocInterface::getSubjectCode() {
+  QString DocInterface::GetSubjectCode() {
       QString scode;
       scode = filecontents[ 0 ];
       scode = scode.split( ',' )[ 0 ];
@@ -145,7 +145,7 @@ bool DocInterface::loadFile()
       return scode;
   }
 
-  QString DocInterface::getFirstStudentNumber() {
+  QString DocInterface::GetFirstStudentNumber() {
       QString snum = filecontents[ 3 ];
       snum = snum.split( ',' )[ 0 ];
       sanitizeString( snum );
@@ -153,7 +153,7 @@ bool DocInterface::loadFile()
       return snum;
   }
 
-  QString DocInterface::getLastStudentNumber() {
+  QString DocInterface::GetLastStudentNumber() {
 
       for ( int a=filecontents.count()-1;a>=0;a-- ) {
        //this needs sanitation also bec of "END"
@@ -173,7 +173,7 @@ bool DocInterface::loadFile()
   }
 
 
-  int  DocInterface::getStudentCount() {
+  int  DocInterface::GetStudentCount() {
       for ( int a=filecontents.count()-1;a>=0;a-- ) {
          QString content =filecontents[ a ].split( ',' )[ 0 ];
          sanitizeString( content );
@@ -187,7 +187,7 @@ bool DocInterface::loadFile()
   }
 
 
-QStringList DocInterface::getMarkTypesList() {
+QStringList DocInterface::GetMarkTypesList() {
    QString mtypes =filecontents[ 2 ];
    sanitizeString( mtypes );
    QStringList mtypesSp = mtypes.split( ',' );
@@ -217,7 +217,7 @@ QStringList DocInterface::getMarkTypesList() {
 
 
 
-int DocInterface::getMarkTypeTotalNumberMarks( QString mt )
+int DocInterface::GetMarkTypeTotalNumberMarks( QString mt )
 {
     //Return the total ammount of marks for the marktype
     //If mark is 0 or empty it is not counted
@@ -225,7 +225,7 @@ int DocInterface::getMarkTypeTotalNumberMarks( QString mt )
     int totamt=0;
 
 
-   QMap<QString, int> allMarks = getAllMarksPerMarkType( mt );
+   QMap<QString, int> allMarks = GetAllMarksPerMarkType( mt );
 
 
     //loop over all marks and get the mark count for this marktype
@@ -271,9 +271,9 @@ QMap<QString, int> DocInterface::GetAllMarksPerMarkType(QString mt)
    }
 
 
-   if( allMarks.count() != getStudentCount() )  //I shot the dean but I didnt shoot the associate dean ! This should never happen
+   if( allMarks.count() != GetStudentCount() )  //I shot the dean but I didnt shoot the associate dean ! This should never happen
    {
-     emit FileParseError( QString( "Serious error. The total ammount of students are %1 but the ammount of marks returned for %2 is %3" ).arg( getStudentCount() ).arg( mt ).arg( allMarks.count() ) );
+     emit FileParseError( QString( "Serious error. The total ammount of students are %1 but the ammount of marks returned for %2 is %3" ).arg( GetStudentCount() ).arg( mt ).arg( allMarks.count() ) );
    }
 
  return allMarks;
@@ -284,7 +284,7 @@ QStringList DocInterface::GetAllStudentNumbersPerMarkType(QString mt){
 
     //Will return all student numbers irrespective of mark
 
-    QMap<QString, int> allMarks = getAllMarksPerMarkType( mt );
+    QMap<QString, int> allMarks = GetAllMarksPerMarkType( mt );
 
 
     QStringList snums;
@@ -303,8 +303,8 @@ QStringList DocInterface::GetAllStudentNumbersPerMarkType(QString mt){
 }
 
 
-int DocInterface::getStudentMarkPerMarkType( QString mt,QString stunum ){
-   QMap<QString, int> allMarks = getAllMarksPerMarkType( mt );
+int DocInterface::GetStudentMarkPerMarkType( QString mt,QString stunum ){
+   QMap<QString, int> allMarks = GetAllMarksPerMarkType( mt );
 
    QMap<QString, int>::const_iterator i = allMarks.constBegin();
     while (i != allMarks.constEnd()) {
@@ -319,7 +319,7 @@ int DocInterface::getStudentMarkPerMarkType( QString mt,QString stunum ){
 }
 
 
- QStringList DocInterface::getStudentNumbersWithNoMark( QString mt ) {
+ QStringList DocInterface::GetStudentNumbersWithNoMark( QString mt ) {
 
   //Will return all student numbers where mark is 0 or empty
 
@@ -348,7 +348,7 @@ int DocInterface::getStudentMarkPerMarkType( QString mt,QString stunum ){
  }
 
 
- int DocInterface::getMarkTypesCount() {
+ int DocInterface::GetMarkTypesCount() {
 
      return GetMarkTypesList().count();
 
