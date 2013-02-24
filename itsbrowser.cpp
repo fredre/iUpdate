@@ -91,9 +91,6 @@ void itsBrowser::ProvideProxAuthentication( const QNetworkProxy &np, QAuthentica
     auth->setPassword( pass );
 
 
-
-
-
 }
 
 int itsBrowser::GetInblrMark( QString stn ){
