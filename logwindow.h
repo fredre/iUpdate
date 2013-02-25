@@ -21,15 +21,15 @@ class LogWindow : public QMainWindow
 public:
     explicit LogWindow(QWidget *parent = 0);
     ~LogWindow();
-    void appendLog(QStringList);
-    void addUpdateHeader(QString,QString,QString);
-    void addErrors(QStringList);
-    void addInformation(QStringList);
-    void addWarning(QStringList);
+    void AppendLog( QStringList );
+    void AddUpdateHeader( QString,QString,QString );
+    void AddErrors( QStringList );
+    void AddInformation( QStringList );
+    void AddWarning( QStringList );
 
 
 private slots:
-    void on_actionSave_triggered();
+    void On_actionSave_triggered();
 
 private:
     Ui::LogWindow *ui;

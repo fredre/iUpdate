@@ -1,4 +1,3 @@
-
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include <QMessageBox>
@@ -20,18 +19,18 @@ using namespace std;
 using namespace tmpl;
 
 
-MainWindow::MainWindow(QWidget *parent) :
-    QMainWindow(parent),
-    ui(new Ui::MainWindow)
+MainWindow::MainWindow( QWidget *parent ) :
+    QMainWindow( parent ),
+    ui( new Ui::MainWindow )
 {
     qDebug() << Q_FUNC_INFO <<"start";
 
-    ui->setupUi(this);
+    ui->setupUi( this );
 
-    //Setup the setting class
-    QCoreApplication::setOrganizationName("TUT");
-    QCoreApplication::setOrganizationDomain("tut.ac.za");
-    QCoreApplication::setApplicationName("IUpdate");
+    //Setup the settings class
+    QCoreApplication::setOrganizationName( "TUT" );
+    QCoreApplication::setOrganizationDomain( "tut.ac.za" );
+    QCoreApplication::setApplicationName( "IUpdate" );
 
 
 
@@ -41,29 +40,29 @@ MainWindow::MainWindow(QWidget *parent) :
     hideSideWindow(); //Maximizes the splitter window
 
 
-    QMovie *movie = new QMovie(":/images/ajax-loader.gif");
+    QMovie *movie = new QMovie( ":/images/ajax-loader.gif" );
 
-    ui->labelProgress->setMovie(movie);
+    ui->labelProgress->setMovie( movie );
 
     movie->start();
 
     //Hook up to the csv inter error reporter
-     connect(&csvInter,SIGNAL(FileParseError(QString)),this,SLOT(CsvFileParseError(QString)));
+     connect( &csvInter,SIGNAL( FileParseError( QString ) ),this,SLOT( CsvFileParseError( QString ) ) );
 
     //Hook up to the loadprogress and loadstarted
-    connect(ui->wFitsbrowser,SIGNAL(loadProgress (int)),this,SLOT(on_webViewBrowser_loadProgress(int)));
-    connect(ui->wFitsbrowser,SIGNAL(loadStarted ()),this,SLOT(on_webViewBrowser_loadStarted()));
-    connect(ui->wFitsbrowser,SIGNAL(loadFinished (bool)),this,SLOT(on_webViewBrowser_loadFinished(bool)));
-    connect(ui->wFitsbrowser,SIGNAL(onAnyError(QString)),this,SLOT(on_webViewBrowser_anyError(QString)));
-    connect(ui->wFitsbrowser,SIGNAL(onNetworkError(QString)),this,SLOT(on_webViewBrowser_networkError(QString)));
+    connect(ui->wFitsbrowser,SIGNAL( loadProgress( int ) ),this,SLOT( on_webViewBrowser_loadProgress( int ) ) );
+    connect(ui->wFitsbrowser,SIGNAL( loadStarted () ),this,SLOT( on_webViewBrowser_loadStarted() ) );
+    connect(ui->wFitsbrowser,SIGNAL( loadFinished ( bool ) ),this,SLOT(on_webViewBrowser_loadFinished( bool ) ) );
+    connect(ui->wFitsbrowser,SIGNAL( onAnyError( QString ) ),this,SLOT( on_webViewBrowser_anyError( QString ) ) );
+    connect(ui->wFitsbrowser,SIGNAL( onNetworkError( QString ) ),this,SLOT( on_webViewBrowser_networkError( QString ) ) );
 
-    ui->wFitsbrowser->setUrl(QUrl("https://jupiter.tut.ac.za/staffportal/system/login.php?refscript=/staffportal/index.php"));
+    ui->wFitsbrowser->setUrl( QUrl( "https://jupiter.tut.ac.za/staffportal/system/login.php?refscript=/staffportal/index.php" ) );
 
 
 
-    QNetworkDiskCache *diskCache = new QNetworkDiskCache(this);
-    diskCache->setCacheDirectory("cachedir");
-    ui->webViewSubjectInfo->page()->networkAccessManager()->setCache(diskCache );
+    QNetworkDiskCache *diskCache = new QNetworkDiskCache( this );
+    diskCache->setCacheDirectory( "cachedir" );
+    ui->webViewSubjectInfo->page()->networkAccessManager()->setCache( diskCache );
 
 
   qDebug() << Q_FUNC_INFO <<"end";
@@ -80,16 +79,16 @@ void MainWindow::on_pushButton_clicked()
 
 }
 
- void MainWindow::on_webViewBrowser_networkError(QString error)
+ void MainWindow::on_webViewBrowser_networkError( QString error )
  {
      qDebug() << Q_FUNC_INFO <<"start";
 
      qDebug()<<error;
 
-      tmpl::html_template errorPage(":/templ/conerror.tmpl");
+      tmpl::html_template errorPage( ":/templ/conerror.tmpl" );
 
 
-      errorPage("ERMES") = error.toStdString();
+      errorPage( "ERMES" ) = error.toStdString();
 
  \
      // ui->wFitsbrowser->setHtml(QString::fromStdString(errorPage.Process()));
@@ -99,19 +98,19 @@ void MainWindow::on_pushButton_clicked()
       qDebug() << Q_FUNC_INFO <<"end";
  }
 
-void MainWindow::on_webViewBrowser_anyError(QString error)
+void MainWindow::on_webViewBrowser_anyError( QString error )
 {
     qDebug() << Q_FUNC_INFO <<"start";
 
-    ui->statusBar->showMessage("Error on browser load: "+error);
+    ui->statusBar->showMessage( "Error on browser load: "+error );
 
     qDebug() << Q_FUNC_INFO <<"end";
 }
 
-void MainWindow::on_webViewBrowser_loadProgress(int progress)
+void MainWindow::on_webViewBrowser_loadProgress( int progress )
 {
    qDebug() << Q_FUNC_INFO <<"start";
-   ui->progressBarWebInd->setValue(progress);
+   ui->progressBarWebInd->setValue( progress );
    qDebug() << Q_FUNC_INFO <<"end";
 }
 
@@ -120,11 +119,11 @@ void MainWindow::on_webViewBrowser_loadStarted()
     qDebug() << Q_FUNC_INFO <<"start";
     ui->progressBarWebInd->show();
     ui->labelProgress->show();
-    ui->statusBar->showMessage(ui->wFitsbrowser->url().toString());
+    ui->statusBar->showMessage( ui->wFitsbrowser->url().toString() );
     qDebug() << Q_FUNC_INFO <<"end";
 }
 
-void MainWindow::on_webViewBrowser_loadFinished(bool ok)
+void MainWindow::on_webViewBrowser_loadFinished( bool ok )
 {
 qDebug() << Q_FUNC_INFO <<"start";
     ui->progressBarWebInd->hide();
@@ -137,7 +136,7 @@ void MainWindow::on_actionAbout_triggered()
 {
     qDebug() << Q_FUNC_INFO <<"start";
     QMessageBox::about( this, "ITS Update",
-                       "Copyright (C) <2010>  <Fredre Hattingh>\n\n<hattinghfg@tut.ac.za>\n\n"
+                       "Copyright (C) <2010> <Fredre Hattingh>\n\n<hattinghfg@tut.ac.za>\n\n"
 
                          "This program comes with ABSOLUTELY NO WARRANTY\n\n\n"
 
@@ -148,11 +147,11 @@ void MainWindow::on_actionAbout_triggered()
 
                            "This program is distributed in the hope that it will be useful,\n"
                            "but WITHOUT ANY WARRANTY; without even the implied warranty of\n"
-                           "MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\n"
+                           "MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the\n"
                            "GNU General Public License for more details.\n\n"
 
                            "You should have received a copy of the GNU General Public License\n"
-                           "along with this program.  If not, see <http://www.gnu.org/licenses/>.\n"
+                           "along with this program. If not, see <http://www.gnu.org/licenses/>.\n"
                        );
 
 qDebug() << Q_FUNC_INFO <<"end";
@@ -161,7 +160,7 @@ qDebug() << Q_FUNC_INFO <<"end";
 void MainWindow::on_actionAbout_QT_triggered()
 {
     qDebug() << Q_FUNC_INFO <<"start";
-    QMessageBox::aboutQt (this);
+    QMessageBox::aboutQt ( this );
     qDebug() << Q_FUNC_INFO <<"end";
 }
 
@@ -171,16 +170,16 @@ void MainWindow::on_actionLoad_triggered()
     ui->labelProgress->show();
 
     //First try to load settings
-    QString lstload = IUpdatesettings.value("lastLoadPath",QDir::homePath()).toString();
+    QString lstload = IUpdatesettings.value( "lastLoadPath",QDir::homePath() ).toString();
 
-    csvInter.setFilePath(QFileDialog::getOpenFileName(this,tr("Open %1 Marks File").arg(csvInter.getFileTypeName()), lstload, tr("%1").arg(csvInter.getFileExt())));
+    csvInter.SetFilePath(QFileDialog::getOpenFileName( this,tr( "Open %1 Marks File" ).arg( csvInter.GetFileTypeName() ), lstload, tr( "%1" ).arg( csvInter.GetFileExt() ) ) );
 
-    if(csvInter.loadFile())
-    {
+    if ( csvInter.LoadFile() ){
+
     //Update setting
-    QDir d = QFileInfo(csvInter.FilePath()).absoluteDir();
+    QDir d = QFileInfo( csvInter.FilePath() ).absoluteDir();
 
-    IUpdatesettings.setValue("lastLoadPath",d.absolutePath());
+    IUpdatesettings.setValue( "lastLoadPath",d.absolutePath() );
 
     //PopulateSubjectGrid();
      PopulateSubjectWeb();
@@ -190,13 +189,12 @@ void MainWindow::on_actionLoad_triggered()
 
     //Load the marktypes into the combo box
     ui->comboBoxMarkTypeSlct->clear();
-    ui->comboBoxMarkTypeSlct->addItems(csvInter.getMarkTypesList());
+    ui->comboBoxMarkTypeSlct->addItems( csvInter.GetMarkTypesList() );
 
     showSideWindow();
 
-    }
-    else
-    {
+    } else {
+
         qDebug()<<"File not loaded (Perhaps cancell was clicked)";
     }
     ui->labelProgress->hide();
@@ -207,79 +205,78 @@ void MainWindow::on_actionLoad_triggered()
  void MainWindow::PopulateSubjectGrid()
  {
      /*
-     //Not used anymore ! Rather have a single template with everything needed in html loaded in webview
+//Not used anymore ! Rather have a single template with everything needed in html loaded in webview
 
-    qDebug() << Q_FUNC_INFO <<"start";
+qDebug() << Q_FUNC_INFO <<"start";
 
-    //Clear all from the table
-    ui->tableSubjecInfo->clear();
-    ui->tableSubjecInfo->setRowCount(4);
+//Clear all from the table
+ui->tableSubjecInfo->clear();
+ui->tableSubjecInfo->setRowCount(4);
 
-    //Setup the table for subject info by adding the headers
-    QTableWidgetItem *newItem = new QTableWidgetItem("Subject Name: ");
-    ui->tableSubjecInfo->setVerticalHeaderItem(0,newItem);
+//Setup the table for subject info by adding the headers
+QTableWidgetItem *newItem = new QTableWidgetItem("Subject Name: ");
+ui->tableSubjecInfo->setVerticalHeaderItem(0,newItem);
 
-    QTableWidgetItem *newItem1 = new QTableWidgetItem("Total Students: ");
-    ui->tableSubjecInfo->setVerticalHeaderItem(1,newItem1);
+QTableWidgetItem *newItem1 = new QTableWidgetItem("Total Students: ");
+ui->tableSubjecInfo->setVerticalHeaderItem(1,newItem1);
 
-    QTableWidgetItem *newItem2 = new QTableWidgetItem("First Student: ");
-    ui->tableSubjecInfo->setVerticalHeaderItem(2,newItem2);
+QTableWidgetItem *newItem2 = new QTableWidgetItem("First Student: ");
+ui->tableSubjecInfo->setVerticalHeaderItem(2,newItem2);
 
-    QTableWidgetItem *newItem3 = new QTableWidgetItem("Last Student: ");
-    ui->tableSubjecInfo->setVerticalHeaderItem(3,newItem3);
+QTableWidgetItem *newItem3 = new QTableWidgetItem("Last Student: ");
+ui->tableSubjecInfo->setVerticalHeaderItem(3,newItem3);
 
-    //Add the info for the headers
-     QTableWidgetItem *NameItm = new QTableWidgetItem(csvInter.getSubjectCode());
-     ui->tableSubjecInfo->setItem(0,0,NameItm);
+//Add the info for the headers
+QTableWidgetItem *NameItm = new QTableWidgetItem(csvInter.GetSubjectCode());
+ui->tableSubjecInfo->setItem(0,0,NameItm);
 
-     QTableWidgetItem *TCountItm = new QTableWidgetItem(tr("%1").arg(csvInter.getStudentCount()));
-     ui->tableSubjecInfo->setItem(1,0,TCountItm);
+QTableWidgetItem *TCountItm = new QTableWidgetItem(tr("%1").arg(csvInter.GetStudentCount()));
+ui->tableSubjecInfo->setItem(1,0,TCountItm);
 
-     QTableWidgetItem *frstStuItm = new QTableWidgetItem(csvInter.getFirstStudentNumber());
-     ui->tableSubjecInfo->setItem(2,0,frstStuItm);
+QTableWidgetItem *frstStuItm = new QTableWidgetItem(csvInter.GetFirstStudentNumber());
+ui->tableSubjecInfo->setItem(2,0,frstStuItm);
 
-     QTableWidgetItem *lsttStuItm = new QTableWidgetItem(csvInter.getLastStudentNumber());
-     ui->tableSubjecInfo->setItem(3,0,lsttStuItm);
+QTableWidgetItem *lsttStuItm = new QTableWidgetItem(csvInter.GetLastStudentNumber ui->tableSubjecInfo->setItem(3,0,lsttStuItm);
 
-     ui->tableSubjecInfo->setRowCount(ui->tableSubjecInfo->rowCount()+csvInter.getMarkTypesCount());
+ui->tableSubjecInfo->setRowCount(ui->tableSubjecInfo->rowCount()+csvInter.GetMarkTypesCount());
 
-     for(int a=0,x=4;a < csvInter.getMarkTypesList().count();a++,x++)
-     {
-         //Add the header for each marktype
-         ui->tableSubjecInfo->setVerticalHeaderItem(x,new QTableWidgetItem(tr("Mark Type: %1").arg(csvInter.getMarkTypesList()[a])));
+for(int a=0,x=4;a < csvInter.GetMarkTypesList().count();a++,x++)
+{
+//Add the header for each marktype
+ui->tableSubjecInfo->setVerticalHeaderItem(x,new QTableWidgetItem(tr("Mark Type: %1").arg(csvInter.GetMarkTypesList()[a])));
 
-         //Insert a new tEXTeDIT
-         //QTextEdit *mtDetails = new QTextEdit(this);
-         //mtDetails->setStyleSheet(" border: 1px solid gray;padding: 4px;border-radius: 6px;");
+//Insert a new tEXTeDIT
+//QTextEdit *mtDetails = new QTextEdit(this);
+//mtDetails->setStyleSheet(" border: 1px solid gray;padding: 4px;border-radius: 6px;");
 
-         //Insert a new QWebView
-         QWebView *mtDetails;
-         mtDetails = new QWebView(this);
+//Insert a new QWebView
+QWebView *mtDetails;
+mtDetails = new QWebView(this);
 
-         tmpl::html_template one(":/templ/mtdetails.tmpl");
+tmpl::html_template one(":/templ/mtdetails.tmpl");
 
-         one("NUMMARKS") =  csvInter.getMarkTypeTotalNumberMarks(csvInter.getMarkTypesList()[a]);
-         one("MISMARKS") = csvInter.getStudentCount()-csvInter.getMarkTypeTotalNumberMarks(csvInter.getMarkTypesList()[a]);
+one("NUMMARKS") = csvInter.GetMarkTypeTotalNumberMarks(csvInter.GetMarkTypesList()[a]);
+one("MISMARKS") = csvInter.GetStudentCount()-csvInter.GetMarkTypeTotalNumberMarks(csvInter.GetMarkTypesList()[a]);
 
-         mtDetails->setHtml(QString::fromStdString(one.Process()));
+mtDetails->setHtml(QString::fromStdString(one.Process()));
 
-         ui->tableSubjecInfo->setCellWidget(x,0, mtDetails);
-     }
+ui->tableSubjecInfo->setCellWidget(x,0, mtDetails);
+}
 
-     ui->tableSubjecInfo->verticalHeader()->setSizePolicy(QSizePolicy::MinimumExpanding,QSizePolicy::MinimumExpanding);
-     ui->tableSubjecInfo->verticalHeaderItem(3)->setSizeHint(QSize(120,120));
+ui->tableSubjecInfo->verticalHeader()->setSizePolicy(QSizePolicy::MinimumExpanding,QSizePolicy::MinimumExpanding);
+ui->tableSubjecInfo->verticalHeaderItem(3)->setSizeHint(QSize(120,120));
 
-     ui->tableSubjecInfo->resizeColumnsToContents();
-     ui->tableSubjecInfo->resizeRowsToContents();
+ui->tableSubjecInfo->resizeColumnsToContents();
+ui->tableSubjecInfo->resizeRowsToContents();
 qDebug() << Q_FUNC_INFO <<"end";
- */
+*/
  }
 
- void  MainWindow::PopulateSubjectWeb()
+ void MainWindow::PopulateSubjectWeb()
  {
      qDebug() << Q_FUNC_INFO <<"start";
 
-     tmpl::html_template one(":/templ/mtdetails.tmpl");
+     tmpl::html_template one( ":/templ/mtdetails.tmpl" );
 
      loop_t loop_marktypes;
 
@@ -288,41 +285,41 @@ qDebug() << Q_FUNC_INFO <<"end";
 
 
      //Get all the marktypes and add a row
-     QStringList marktypes = csvInter.getMarkTypesList();
+     QStringList marktypes = csvInter.GetMarkTypesList();
      qDebug()<<marktypes.count();
 
-    for(int a=0;a < marktypes.count();a++)
+    for( int a=0;a < marktypes.count();a++ )
      {
 
         QString mtName = marktypes[a];
 
         qDebug()<<mtName;
 
-       row_marktypes("name") = mtName.toStdString();
-       row_marktypes("nummarks") = csvInter.getMarkTypeTotalNumberMarks(mtName);
-       row_marktypes("mismarks") = csvInter.getStudentCount()-csvInter.getMarkTypeTotalNumberMarks(mtName);
+       row_marktypes( "name" ) = mtName.toStdString();
+       row_marktypes( "nummarks" ) = csvInter.GetMarkTypeTotalNumberMarks( mtName );
+       row_marktypes( "mismarks" ) = csvInter.GetStudentCount()-csvInter.GetMarkTypeTotalNumberMarks( mtName );
 
 
        //Loop start
         loop_t loop_marks;
         row_t row_marks;
 
-        QMap<QString,int>  marks= csvInter.getAllMarksPerMarkType(mtName);
+        QMap<QString,int> marks= csvInter.GetAllMarksPerMarkType( mtName );
 
 
-         QMapIterator<QString, int> i(marks); //For each marktype get the marks and stu num then add to loop marks
-         while (i.hasNext()) {
+         QMapIterator<QString, int> i( marks ); //For each marktype get the marks and stu num then add to loop marks
+         while ( i.hasNext() ) {
              i.next();
-             QString onemark = QString("%1").arg(i.value());
+             QString onemark = QString( "%1" ).arg( i.value() );
              QString stunumber = i.key();
-             row_marks("onemark") = onemark.toStdString();
-             row_marks("stunumber") = stunumber.toStdString();
+             row_marks( "onemark" ) = onemark.toStdString();
+             row_marks( "stunumber" ) = stunumber.toStdString();
             loop_marks+=row_marks;
 
         }
 
 
-       row_marktypes("allmarks") = loop_marks; //Now add loop_marks as a row to the orig loop called loop_marktypes (See template docss for more info)
+       row_marktypes( "allmarks" ) = loop_marks; //Now add loop_marks as a row to the orig loop called loop_marktypes (See template docss for more info)
        loop_marktypes += row_marktypes;
        loop_marks.Empty();
 
@@ -332,17 +329,21 @@ qDebug() << Q_FUNC_INFO <<"end";
 
       }
 
-     one("MARKTYPES") = loop_marktypes;
+     one( "MARKTYPES" ) = loop_marktypes;
 
 
-     one("NUMMARKS") =  csvInter.getMarkTypeTotalNumberMarks(csvInter.getMarkTypesList()[0]);
-     one("MISMARKS") = csvInter.getStudentCount()-csvInter.getMarkTypeTotalNumberMarks(csvInter.getMarkTypesList()[0]);
+     one( "NUMMARKS" ) = csvInter.GetMarkTypeTotalNumberMarks( csvInter.GetMarkTypesList()[0] );
+     one( "MISMARKS" ) = csvInter.GetStudentCount()-csvInter.GetMarkTypeTotalNumberMarks( csvInter.GetMarkTypesList()[0] );
 
     // ui->webViewSubjectInfo->setc
 
     // ui->webViewSubjectInfo->settings()->setUserStyleSheetUrl(QUrl::from);
 
-     ui->webViewSubjectInfo->setHtml(QString::fromStdString(one.Process()));
+     qDebug()<<QString::fromStdString(one.Process() );
+
+
+
+     ui->webViewSubjectInfo->setHtml( QString::fromStdString(one.Process() ),QUrl("http://code.jquery.com") );
      qDebug() << Q_FUNC_INFO <<"end";
 
 }
@@ -359,7 +360,7 @@ qDebug() << Q_FUNC_INFO <<"end";
 
      currentSizes[1] = ui->wFitsbrowser->width();
 
-     ui->splitter->setSizes(currentSizes);
+     ui->splitter->setSizes( currentSizes );
      qDebug() << Q_FUNC_INFO <<"end";
  }
 
@@ -374,9 +375,9 @@ qDebug() << Q_FUNC_INFO <<"end";
      // adjust sizes individually
 
      currentSizes[0] = 0;
-     currentSizes[0] = (this->width() * 25/100);
+     currentSizes[0] = ( this->width() * 25/100 );
 
-     ui->splitter->setSizes(currentSizes);
+     ui->splitter->setSizes( currentSizes );
      qDebug() << Q_FUNC_INFO <<"end";
  }
 
@@ -400,7 +401,7 @@ void MainWindow::on_pushButtonUpdateMrks_clicked()
 
     ui->labelProgress->show();
 
-    QStringList stunumbers = csvInter.getAllStudentNumbersPerMarkType(ui->comboBoxMarkTypeSlct->currentText());
+    QStringList stunumbers = csvInter.GetAllStudentNumbersPerMarkType( ui->comboBoxMarkTypeSlct->currentText() );
 
     LogWindow *UpdateMarksLog = new LogWindow();
 
@@ -415,40 +416,37 @@ void MainWindow::on_pushButtonUpdateMrks_clicked()
     qDebug()<<"Mark Type: "<<ui->comboBoxMarkTypeSlct->currentText();
     qDebug()<<"";
 
-   UpdateMarksLog->addUpdateHeader(csvInter.FilePath(),ui->comboBoxMarkTypeSlct->currentText(),csvInter.getSubjectCode());
+   UpdateMarksLog->AddUpdateHeader( csvInter.FilePath(),ui->comboBoxMarkTypeSlct->currentText(),csvInter.GetSubjectCode() );
 
 
-    foreach (const QString snum,stunumbers)
+    foreach ( const QString snum,stunumbers )
     {
         qDebug()<<"Updating student number: "<<snum;
 
-        if(!ui->wFitsbrowser->InblrContainsStuNum(snum))
-        {
-            logErrors.append(tr("Student not found on Inabler: %1 No update made").arg(snum));
+        if( !ui->wFitsbrowser->InblrContainsStuNum( snum ) ){
+
+            logErrors.append( tr( "Student not found on Inabler: %1 No update made" ).arg( snum ) );
             qDebug()<<"Student "<<snum<< "not found on Inabler";
             qDebug()<<"MARK NOT UPDATED "<<snum;
-        }
-       else
-        {
-            int oldm = ui->wFitsbrowser->getInblrMark(snum);
+        }else{
+
+            int oldm = ui->wFitsbrowser->GetInblrMark(snum);
             QString oldMark;
             oldMark = tr("%1").arg(oldm);
             qDebug()<<"Old mark: ";
             qDebug()<< oldMark;
             qDebug()<<"New mark: ";
-            int newmark = csvInter.getStudentMarkPerMarkType(ui->comboBoxMarkTypeSlct->currentText(),snum);
+            int newmark = csvInter.GetStudentMarkPerMarkType(ui->comboBoxMarkTypeSlct->currentText(),snum);
             qDebug()<<newmark;
 
-            if(oldm > newmark)
-            {
-                logWarnings.append(tr("Student %3 Old mark  (%1) > (%2) No update made").arg(oldMark).arg(newmark).arg(snum));
-            }
-            else
-            {
+            if( oldm > newmark ){
 
-            ui->wFitsbrowser->setInblrMark(snum,newmark);
+                logWarnings.append( tr( "Student %3 Old mark ( %1 ) > ( %2 ) No update made" ).arg( oldMark ).arg( newmark ).arg( snum ) );
+            }else{
 
-            logInformation.append(tr("Mark Updated %3 : %1 --> %2").arg(oldMark).arg(newmark).arg(snum));
+            ui->wFitsbrowser->SetInblrMark( snum,newmark );
+
+            logInformation.append(tr( "Mark Updated %3 : %1 --> %2" ).arg( oldMark ).arg( newmark ).arg( snum ) );
             }
         }
 
@@ -456,9 +454,9 @@ void MainWindow::on_pushButtonUpdateMrks_clicked()
       qDebug()<<"";
 
     }
-UpdateMarksLog->addErrors(logErrors);
-UpdateMarksLog->addWarning(logWarnings);
-UpdateMarksLog->addInformation(logInformation);
+UpdateMarksLog->AddErrors( logErrors );
+UpdateMarksLog->AddWarning( logWarnings );
+UpdateMarksLog->AddInformation( logInformation );
 ui->labelProgress->hide();
 UpdateMarksLog->show();
 qDebug() << Q_FUNC_INFO <<"end";
@@ -478,12 +476,12 @@ void MainWindow::on_actionMake_all_0_triggered()
      msgBox.setDefaultButton(QMessageBox::No);
      int ret = msgBox.exec();
 
-     switch (ret) {
+     switch ( ret ) {
         case QMessageBox::Yes:
             // Yes was clicked
              {
                 qDebug()<<"Making all marks 0";
-                ui->wFitsbrowser->setInblrMarkAllZero();
+                ui->wFitsbrowser->SetInblrMarkAllZero();
              }
             break;
         case QMessageBox::No:
@@ -500,14 +498,14 @@ qDebug() << Q_FUNC_INFO <<"end";
 void MainWindow::on_actionMake_empty_0_triggered()
 {
     qDebug() << Q_FUNC_INFO <<"start";
-    ui->wFitsbrowser->setInblrMarkZero();
+    ui->wFitsbrowser->SetInblrMarkZero();
     qDebug() << Q_FUNC_INFO <<"end";
 }
 
 void MainWindow::on_actionBlackout_Cancelled_triggered()
 {
   qDebug() << Q_FUNC_INFO <<"start";
-  ui->wFitsbrowser->setInblrCanBlackOut();
+  ui->wFitsbrowser->SetInblrCanBlackOut();
   qDebug() << Q_FUNC_INFO <<"end";
 }
 
@@ -515,37 +513,37 @@ void MainWindow::on_actionLoad_ec_tut_ac_za_triggered()
 {
    qDebug() << Q_FUNC_INFO <<"start";
    qDebug()<<"Testing to see if ec.tut.ac.za loads";
-   ui->wFitsbrowser->setUrl(QUrl("http://ec.tut.ac.za"));
+   ui->wFitsbrowser->setUrl(QUrl( "http://ec.tut.ac.za" ) );
    qDebug() << Q_FUNC_INFO <<"end";
 }
 
-void MainWindow::CsvFileParseError(QString mes)
+void MainWindow::CsvFileParseError( QString mes )
 {
     qDebug() << Q_FUNC_INFO <<"start";
     //This slot will react to any errors when the CSv file is parced. It will report the message and the user must fix the problem.
     QMessageBox msgBox;
-    QString messageToUser = QString("Error When Reading File:\n\n%1\n\nThe problem seems to be\n\n%2\n\nYou can still use the application but please fix the problem before continuing to avoid problems.").arg(csvInter.FilePath()).arg(mes);
+    QString messageToUser = QString( "Error When Reading File:\n\n%1\n\nThe problem seems to be\n\n%2\n\nYou can still use the application but please fix the problem before continuing to avoid problems." ).arg( csvInter.FilePath() ).arg( mes );
 
-    msgBox.setText(messageToUser);
-    msgBox.setIcon(QMessageBox::Critical);
+    msgBox.setText( messageToUser );
+    msgBox.setIcon( QMessageBox::Critical );
     msgBox.exec();
     qDebug() << Q_FUNC_INFO <<"end";
 
 }
 
-void MainWindow::on_comboBoxMarkTypeSlct_editTextChanged(const QString &arg1)
+void MainWindow::on_comboBoxMarkTypeSlct_editTextChanged( const QString &arg1 )
 {
 
 }
 
-void MainWindow::on_comboBoxMarkTypeSlct_currentIndexChanged(const QString &arg1)
+void MainWindow::on_comboBoxMarkTypeSlct_currentIndexChanged( const QString &arg1 )
 {
     qDebug()<<arg1;
-    ui->webViewSubjectInfo->findText(QString(" "));
-    ui->webViewSubjectInfo->findText(arg1,QWebPage::FindWrapsAroundDocument);
+    ui->webViewSubjectInfo->findText( QString( " " ) );
+    ui->webViewSubjectInfo->findText( arg1,QWebPage::FindWrapsAroundDocument );
 }
 
-void MainWindow::on_webViewSubjectInfo_loadFinished(bool arg1)
+void MainWindow::on_webViewSubjectInfo_loadFinished( bool arg1 )
 {
 
 
