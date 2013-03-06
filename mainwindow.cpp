@@ -3,6 +3,7 @@
 #include <QMessageBox>
 #include "qdebug.h"
 #include <QNetworkDiskCache>
+#include "errorwindow.h"
 
 #ifdef Q_OS_WIN //This may not be needed (unless the entire TUT switch to Linux from Monday)
     #include "Templates\html_template.h"
@@ -495,42 +496,47 @@ void MainWindow::on_actionMake_all_0_triggered()
 qDebug() << Q_FUNC_INFO <<"end";
 }
 
-void MainWindow::on_actionMake_empty_0_triggered()
-{
+void MainWindow::on_actionMake_empty_0_triggered() {
     qDebug() << Q_FUNC_INFO <<"start";
     ui->wFitsbrowser->SetInblrMarkZero();
     qDebug() << Q_FUNC_INFO <<"end";
 }
 
-void MainWindow::on_actionBlackout_Cancelled_triggered()
-{
-  qDebug() << Q_FUNC_INFO <<"start";
+void MainWindow::on_actionBlackout_Cancelled_triggered() {
+
+    qDebug() << Q_FUNC_INFO <<"start";
   ui->wFitsbrowser->SetInblrCanBlackOut();
   qDebug() << Q_FUNC_INFO <<"end";
 }
 
-void MainWindow::on_actionLoad_ec_tut_ac_za_triggered()
-{
-   qDebug() << Q_FUNC_INFO <<"start";
+void MainWindow::on_actionLoad_ec_tut_ac_za_triggered() {
+
+    qDebug() << Q_FUNC_INFO <<"start";
    qDebug()<<"Testing to see if ec.tut.ac.za loads";
    ui->wFitsbrowser->setUrl(QUrl( "http://ec.tut.ac.za" ) );
    qDebug() << Q_FUNC_INFO <<"end";
 }
 
-void MainWindow::CsvFileParseError( QString mes )
-{
+
+void MainWindow::CsvFileParseError( QString mes ){
     qDebug() << Q_FUNC_INFO <<"start";
     //This slot will react to any errors when the CSv file is parced. It will report the message and the user must fix the problem.
-    QMessageBox msgBox;
-    QString messageToUser = QString( "Error When Reading File:\n\n%1\n\nThe problem seems to be\n\n%2\n\nYou can still use the application but please fix the problem before continuing to avoid problems." ).arg( csvInter.FilePath() ).arg( mes );
+    //QMessageBox msgBox;
 
-    msgBox.setText( messageToUser );
-    msgBox.setIcon( QMessageBox::Critical );
-    msgBox.exec();
+    QString messageToUser = QString("Error When Reading File:\n%1\n\nThe problem seems to be:\n%2\n\nPlease note:\nYou can still use the application but please fix the problem before continuing to avoid problems.\n\n========================================================================================" ).arg( csvInter.FilePath() ).arg( mes );
+
+    if( !errorlist.empty() ){
+
+         errorwindow->show();
+
+    }
+     errorlist.append(messageToUser);
+     errorwindow->ErrorList(errorlist);
+
+
     qDebug() << Q_FUNC_INFO <<"end";
 
 }
-
 void MainWindow::on_comboBoxMarkTypeSlct_editTextChanged( const QString &arg1 )
 {
 

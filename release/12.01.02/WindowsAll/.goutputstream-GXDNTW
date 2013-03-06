@@ -1,0 +1,424 @@
+Debug: MainWindow::MainWindow(QWidget*) start 
+Warning: QMetaObject::connectSlotsByName: No matching signal for on_pushButton_clicked()
+Warning: QMetaObject::connectSlotsByName: No matching signal for on_webViewBrowser_loadProgress(int)
+Warning: QMetaObject::connectSlotsByName: No matching signal for on_webViewBrowser_loadStarted()
+Warning: QMetaObject::connectSlotsByName: No matching signal for on_webViewBrowser_loadFinished(bool)
+Warning: QMetaObject::connectSlotsByName: No matching signal for on_webViewBrowser_anyError(QString)
+Debug: void MainWindow::hideSideWindow() start 
+Debug: void MainWindow::hideSideWindow() end 
+Debug: void MainWindow::on_webViewBrowser_loadStarted() start 
+Debug: void MainWindow::on_webViewBrowser_loadStarted() end 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) start 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) end 
+Debug: MainWindow::MainWindow(QWidget*) end 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) start 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) end 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) start 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) end 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) start 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) end 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) start 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) end 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) start 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) end 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) start 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) end 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) start 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) end 
+Debug: void MainWindow::on_webViewBrowser_loadFinished(bool) start 
+Debug: void MainWindow::on_webViewBrowser_loadFinished(bool) end 
+Debug: void MainWindow::on_actionLoad_ec_tut_ac_za_triggered() start 
+Debug: Testing to see if ec.tut.ac.za loads 
+Debug: void MainWindow::on_webViewBrowser_loadStarted() start 
+Debug: void MainWindow::on_webViewBrowser_loadStarted() end 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) start 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) end 
+Debug: void MainWindow::on_actionLoad_ec_tut_ac_za_triggered() end 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) start 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) end 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) start 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) end 
+Debug: void MainWindow::on_webViewBrowser_loadFinished(bool) start 
+Debug: void MainWindow::on_webViewBrowser_loadFinished(bool) end 
+Debug: MainWindow::MainWindow(QWidget*) start 
+Warning: QMetaObject::connectSlotsByName: No matching signal for on_pushButton_clicked()
+Warning: QMetaObject::connectSlotsByName: No matching signal for on_webViewBrowser_loadProgress(int)
+Warning: QMetaObject::connectSlotsByName: No matching signal for on_webViewBrowser_loadStarted()
+Warning: QMetaObject::connectSlotsByName: No matching signal for on_webViewBrowser_loadFinished(bool)
+Warning: QMetaObject::connectSlotsByName: No matching signal for on_webViewBrowser_anyError(QString)
+Debug: void MainWindow::hideSideWindow() start 
+Debug: void MainWindow::hideSideWindow() end 
+Debug: void MainWindow::on_webViewBrowser_loadStarted() start 
+Debug: void MainWindow::on_webViewBrowser_loadStarted() end 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) start 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) end 
+Debug: MainWindow::MainWindow(QWidget*) end 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) start 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) end 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) start 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) end 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) start 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) end 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) start 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) end 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) start 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) end 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) start 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) end 
+Debug: void MainWindow::on_webViewBrowser_loadFinished(bool) start 
+Debug: void MainWindow::on_webViewBrowser_loadFinished(bool) end 
+Debug: MainWindow::MainWindow(QWidget*) start 
+Warning: QMetaObject::connectSlotsByName: No matching signal for on_pushButton_clicked()
+Warning: QMetaObject::connectSlotsByName: No matching signal for on_webViewBrowser_loadProgress(int)
+Warning: QMetaObject::connectSlotsByName: No matching signal for on_webViewBrowser_loadStarted()
+Warning: QMetaObject::connectSlotsByName: No matching signal for on_webViewBrowser_loadFinished(bool)
+Warning: QMetaObject::connectSlotsByName: No matching signal for on_webViewBrowser_anyError(QString)
+Debug: void MainWindow::hideSideWindow() start 
+Debug: void MainWindow::hideSideWindow() end 
+Debug: void MainWindow::on_webViewBrowser_loadStarted() start 
+Debug: void MainWindow::on_webViewBrowser_loadStarted() end 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) start 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) end 
+Debug: MainWindow::MainWindow(QWidget*) end 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) start 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) end 
+Debug: void MainWindow::on_webViewBrowser_loadFinished(bool) start 
+Debug: void MainWindow::on_webViewBrowser_loadFinished(bool) end 
+Debug: void MainWindow::on_actionLoad_ec_tut_ac_za_triggered() start 
+Debug: Testing to see if ec.tut.ac.za loads 
+Debug: void MainWindow::on_webViewBrowser_loadStarted() start 
+Debug: void MainWindow::on_webViewBrowser_loadStarted() end 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) start 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) end 
+Debug: void MainWindow::on_actionLoad_ec_tut_ac_za_triggered() end 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) start 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) end 
+Debug: void MainWindow::on_webViewBrowser_loadFinished(bool) start 
+Debug: void MainWindow::on_webViewBrowser_loadFinished(bool) end 
+Debug: void MainWindow::on_actionLoad_ec_tut_ac_za_triggered() start 
+Debug: Testing to see if ec.tut.ac.za loads 
+Debug: void MainWindow::on_webViewBrowser_loadStarted() start 
+Debug: void MainWindow::on_webViewBrowser_loadStarted() end 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) start 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) end 
+Debug: void MainWindow::on_actionLoad_ec_tut_ac_za_triggered() end 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) start 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) end 
+Debug: void MainWindow::on_webViewBrowser_loadFinished(bool) start 
+Debug: void MainWindow::on_webViewBrowser_loadFinished(bool) end 
+Debug: MainWindow::MainWindow(QWidget*) start 
+Warning: QMetaObject::connectSlotsByName: No matching signal for on_pushButton_clicked()
+Warning: QMetaObject::connectSlotsByName: No matching signal for on_webViewBrowser_loadProgress(int)
+Warning: QMetaObject::connectSlotsByName: No matching signal for on_webViewBrowser_loadStarted()
+Warning: QMetaObject::connectSlotsByName: No matching signal for on_webViewBrowser_loadFinished(bool)
+Warning: QMetaObject::connectSlotsByName: No matching signal for on_webViewBrowser_anyError(QString)
+Debug: void MainWindow::hideSideWindow() start 
+Debug: void MainWindow::hideSideWindow() end 
+Debug: void MainWindow::on_webViewBrowser_loadStarted() start 
+Debug: void MainWindow::on_webViewBrowser_loadStarted() end 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) start 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) end 
+Debug: MainWindow::MainWindow(QWidget*) end 
+Debug: Hello 2 "" 
+Debug: handleSslErrors:  
+Debug: ssl error:  "No error" 
+Debug: void MainWindow::on_webViewBrowser_anyError(QString) start 
+Debug: void MainWindow::on_webViewBrowser_anyError(QString) end 
+Debug: ssl error:  "No error" 
+Debug: void MainWindow::on_webViewBrowser_anyError(QString) start 
+Debug: void MainWindow::on_webViewBrowser_anyError(QString) end 
+Debug: Hello "" 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) start 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) end 
+Debug: Hello 2 "" 
+Debug: handleSslErrors:  
+Debug: ssl error:  "No error" 
+Debug: void MainWindow::on_webViewBrowser_anyError(QString) start 
+Debug: void MainWindow::on_webViewBrowser_anyError(QString) end 
+Debug: ssl error:  "No error" 
+Debug: void MainWindow::on_webViewBrowser_anyError(QString) start 
+Debug: void MainWindow::on_webViewBrowser_anyError(QString) end 
+Debug: Hello "" 
+Debug: Hello 2 "" 
+Debug: handleSslErrors:  
+Debug: ssl error:  "No error" 
+Debug: void MainWindow::on_webViewBrowser_anyError(QString) start 
+Debug: void MainWindow::on_webViewBrowser_anyError(QString) end 
+Debug: ssl error:  "No error" 
+Debug: void MainWindow::on_webViewBrowser_anyError(QString) start 
+Debug: void MainWindow::on_webViewBrowser_anyError(QString) end 
+Debug: Hello "" 
+Debug: Hello 2 "" 
+Debug: handleSslErrors:  
+Debug: ssl error:  "No error" 
+Debug: void MainWindow::on_webViewBrowser_anyError(QString) start 
+Debug: void MainWindow::on_webViewBrowser_anyError(QString) end 
+Debug: ssl error:  "No error" 
+Debug: void MainWindow::on_webViewBrowser_anyError(QString) start 
+Debug: void MainWindow::on_webViewBrowser_anyError(QString) end 
+Debug: Hello "" 
+Debug: Hello 2 "" 
+Debug: handleSslErrors:  
+Debug: ssl error:  "No error" 
+Debug: void MainWindow::on_webViewBrowser_anyError(QString) start 
+Debug: void MainWindow::on_webViewBrowser_anyError(QString) end 
+Debug: ssl error:  "No error" 
+Debug: void MainWindow::on_webViewBrowser_anyError(QString) start 
+Debug: void MainWindow::on_webViewBrowser_anyError(QString) end 
+Debug: Hello "" 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) start 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) end 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) start 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) end 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) start 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) end 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) start 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) end 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) start 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) end 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) start 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) end 
+Debug: void MainWindow::on_webViewBrowser_loadFinished(bool) start 
+Debug: void MainWindow::on_webViewBrowser_loadFinished(bool) end 
+Debug: MainWindow::MainWindow(QWidget*) start 
+Warning: QMetaObject::connectSlotsByName: No matching signal for on_pushButton_clicked()
+Warning: QMetaObject::connectSlotsByName: No matching signal for on_webViewBrowser_loadProgress(int)
+Warning: QMetaObject::connectSlotsByName: No matching signal for on_webViewBrowser_loadStarted()
+Warning: QMetaObject::connectSlotsByName: No matching signal for on_webViewBrowser_loadFinished(bool)
+Warning: QMetaObject::connectSlotsByName: No matching signal for on_webViewBrowser_anyError(QString)
+Debug: void MainWindow::hideSideWindow() start 
+Debug: void MainWindow::hideSideWindow() end 
+Debug: void MainWindow::on_webViewBrowser_loadStarted() start 
+Debug: void MainWindow::on_webViewBrowser_loadStarted() end 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) start 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) end 
+Debug: MainWindow::MainWindow(QWidget*) end 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) start 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) end 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) start 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) end 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) start 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) end 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) start 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) end 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) start 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) end 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) start 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) end 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) start 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) end 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) start 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) end 
+Debug: void MainWindow::on_webViewBrowser_loadFinished(bool) start 
+Debug: void MainWindow::on_webViewBrowser_loadFinished(bool) end 
+Debug: MainWindow::MainWindow(QWidget*) start 
+Warning: QMetaObject::connectSlotsByName: No matching signal for on_pushButton_clicked()
+Warning: QMetaObject::connectSlotsByName: No matching signal for on_webViewBrowser_loadProgress(int)
+Warning: QMetaObject::connectSlotsByName: No matching signal for on_webViewBrowser_loadStarted()
+Warning: QMetaObject::connectSlotsByName: No matching signal for on_webViewBrowser_loadFinished(bool)
+Warning: QMetaObject::connectSlotsByName: No matching signal for on_webViewBrowser_anyError(QString)
+Debug: void MainWindow::hideSideWindow() start 
+Debug: void MainWindow::hideSideWindow() end 
+Debug: void MainWindow::on_webViewBrowser_loadStarted() start 
+Debug: void MainWindow::on_webViewBrowser_loadStarted() end 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) start 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) end 
+Debug: MainWindow::MainWindow(QWidget*) end 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) start 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) end 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) start 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) end 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) start 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) end 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) start 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) end 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) start 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) end 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) start 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) end 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) start 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) end 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) start 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) end 
+Debug: void MainWindow::on_webViewBrowser_loadFinished(bool) start 
+Debug: void MainWindow::on_webViewBrowser_loadFinished(bool) end 
+Debug: MainWindow::MainWindow(QWidget*) start 
+Warning: QMetaObject::connectSlotsByName: No matching signal for on_pushButton_clicked()
+Warning: QMetaObject::connectSlotsByName: No matching signal for on_webViewBrowser_loadProgress(int)
+Warning: QMetaObject::connectSlotsByName: No matching signal for on_webViewBrowser_loadStarted()
+Warning: QMetaObject::connectSlotsByName: No matching signal for on_webViewBrowser_loadFinished(bool)
+Warning: QMetaObject::connectSlotsByName: No matching signal for on_webViewBrowser_anyError(QString)
+Debug: void MainWindow::hideSideWindow() start 
+Debug: void MainWindow::hideSideWindow() end 
+Debug: void MainWindow::on_webViewBrowser_loadStarted() start 
+Debug: void MainWindow::on_webViewBrowser_loadStarted() end 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) start 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) end 
+Debug: MainWindow::MainWindow(QWidget*) end 
+Debug: void MainWindow::on_actionLoad_ec_tut_ac_za_triggered() start 
+Debug: Testing to see if ec.tut.ac.za loads 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) start 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) end 
+Debug: void MainWindow::on_webViewBrowser_loadFinished(bool) start 
+Debug: void MainWindow::on_webViewBrowser_loadFinished(bool) end 
+Debug: void MainWindow::on_webViewBrowser_loadStarted() start 
+Debug: void MainWindow::on_webViewBrowser_loadStarted() end 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) start 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) end 
+Debug: void MainWindow::on_actionLoad_ec_tut_ac_za_triggered() end 
+Debug: MainWindow::MainWindow(QWidget*) start 
+Warning: QMetaObject::connectSlotsByName: No matching signal for on_pushButton_clicked()
+Warning: QMetaObject::connectSlotsByName: No matching signal for on_webViewBrowser_loadProgress(int)
+Warning: QMetaObject::connectSlotsByName: No matching signal for on_webViewBrowser_loadStarted()
+Warning: QMetaObject::connectSlotsByName: No matching signal for on_webViewBrowser_loadFinished(bool)
+Warning: QMetaObject::connectSlotsByName: No matching signal for on_webViewBrowser_anyError(QString)
+Debug: void MainWindow::hideSideWindow() start 
+Debug: void MainWindow::hideSideWindow() end 
+Debug: void MainWindow::on_webViewBrowser_loadStarted() start 
+Debug: void MainWindow::on_webViewBrowser_loadStarted() end 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) start 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) end 
+Debug: MainWindow::MainWindow(QWidget*) end 
+Debug: Hello 2 "" 
+Debug: handleSslErrors:  
+Debug: ssl error:  "No error" 
+Debug: void MainWindow::on_webViewBrowser_anyError(QString) start 
+Debug: void MainWindow::on_webViewBrowser_anyError(QString) end 
+Debug: ssl error:  "No error" 
+Debug: void MainWindow::on_webViewBrowser_anyError(QString) start 
+Debug: void MainWindow::on_webViewBrowser_anyError(QString) end 
+Debug: Hello "" 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) start 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) end 
+Debug: Hello 2 "" 
+Debug: handleSslErrors:  
+Debug: ssl error:  "No error" 
+Debug: void MainWindow::on_webViewBrowser_anyError(QString) start 
+Debug: void MainWindow::on_webViewBrowser_anyError(QString) end 
+Debug: ssl error:  "No error" 
+Debug: void MainWindow::on_webViewBrowser_anyError(QString) start 
+Debug: void MainWindow::on_webViewBrowser_anyError(QString) end 
+Debug: Hello "" 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) start 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) end 
+Debug: Hello 2 "" 
+Debug: handleSslErrors:  
+Debug: ssl error:  "No error" 
+Debug: void MainWindow::on_webViewBrowser_anyError(QString) start 
+Debug: void MainWindow::on_webViewBrowser_anyError(QString) end 
+Debug: ssl error:  "No error" 
+Debug: void MainWindow::on_webViewBrowser_anyError(QString) start 
+Debug: void MainWindow::on_webViewBrowser_anyError(QString) end 
+Debug: Hello "" 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) start 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) end 
+Debug: Hello 2 "" 
+Debug: handleSslErrors:  
+Debug: ssl error:  "No error" 
+Debug: void MainWindow::on_webViewBrowser_anyError(QString) start 
+Debug: void MainWindow::on_webViewBrowser_anyError(QString) end 
+Debug: ssl error:  "No error" 
+Debug: void MainWindow::on_webViewBrowser_anyError(QString) start 
+Debug: void MainWindow::on_webViewBrowser_anyError(QString) end 
+Debug: Hello "" 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) start 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) end 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) start 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) end 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) start 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) end 
+Debug: Hello 2 "" 
+Debug: handleSslErrors:  
+Debug: ssl error:  "No error" 
+Debug: void MainWindow::on_webViewBrowser_anyError(QString) start 
+Debug: void MainWindow::on_webViewBrowser_anyError(QString) end 
+Debug: ssl error:  "No error" 
+Debug: void MainWindow::on_webViewBrowser_anyError(QString) start 
+Debug: void MainWindow::on_webViewBrowser_anyError(QString) end 
+Debug: Hello "" 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) start 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) end 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) start 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) end 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) start 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) end 
+Debug: void MainWindow::on_webViewBrowser_loadFinished(bool) start 
+Debug: void MainWindow::on_webViewBrowser_loadFinished(bool) end 
+Debug: MainWindow::MainWindow(QWidget*) start 
+Warning: QMetaObject::connectSlotsByName: No matching signal for on_pushButton_clicked()
+Warning: QMetaObject::connectSlotsByName: No matching signal for on_webViewBrowser_loadProgress(int)
+Warning: QMetaObject::connectSlotsByName: No matching signal for on_webViewBrowser_loadStarted()
+Warning: QMetaObject::connectSlotsByName: No matching signal for on_webViewBrowser_loadFinished(bool)
+Warning: QMetaObject::connectSlotsByName: No matching signal for on_webViewBrowser_anyError(QString)
+Debug: void MainWindow::hideSideWindow() start 
+Debug: void MainWindow::hideSideWindow() end 
+Debug: void MainWindow::on_webViewBrowser_loadStarted() start 
+Debug: void MainWindow::on_webViewBrowser_loadStarted() end 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) start 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) end 
+Debug: MainWindow::MainWindow(QWidget*) end 
+Debug: Hello 2 "" 
+Debug: handleSslErrors:  
+Debug: ssl error:  "No error" 
+Debug: void MainWindow::on_webViewBrowser_anyError(QString) start 
+Debug: void MainWindow::on_webViewBrowser_anyError(QString) end 
+Debug: ssl error:  "No error" 
+Debug: void MainWindow::on_webViewBrowser_anyError(QString) start 
+Debug: void MainWindow::on_webViewBrowser_anyError(QString) end 
+Debug: Hello "" 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) start 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) end 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) start 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) end 
+Debug: Hello 2 "" 
+Debug: handleSslErrors:  
+Debug: ssl error:  "No error" 
+Debug: void MainWindow::on_webViewBrowser_anyError(QString) start 
+Debug: void MainWindow::on_webViewBrowser_anyError(QString) end 
+Debug: ssl error:  "No error" 
+Debug: void MainWindow::on_webViewBrowser_anyError(QString) start 
+Debug: void MainWindow::on_webViewBrowser_anyError(QString) end 
+Debug: Hello "" 
+Debug: Hello 2 "" 
+Debug: handleSslErrors:  
+Debug: ssl error:  "No error" 
+Debug: void MainWindow::on_webViewBrowser_anyError(QString) start 
+Debug: void MainWindow::on_webViewBrowser_anyError(QString) end 
+Debug: ssl error:  "No error" 
+Debug: void MainWindow::on_webViewBrowser_anyError(QString) start 
+Debug: void MainWindow::on_webViewBrowser_anyError(QString) end 
+Debug: Hello "" 
+Debug: Hello 2 "" 
+Debug: handleSslErrors:  
+Debug: ssl error:  "No error" 
+Debug: void MainWindow::on_webViewBrowser_anyError(QString) start 
+Debug: void MainWindow::on_webViewBrowser_anyError(QString) end 
+Debug: ssl error:  "No error" 
+Debug: void MainWindow::on_webViewBrowser_anyError(QString) start 
+Debug: void MainWindow::on_webViewBrowser_anyError(QString) end 
+Debug: Hello "" 
+Debug: Hello 2 "" 
+Debug: handleSslErrors:  
+Debug: ssl error:  "No error" 
+Debug: void MainWindow::on_webViewBrowser_anyError(QString) start 
+Debug: void MainWindow::on_webViewBrowser_anyError(QString) end 
+Debug: ssl error:  "No error" 
+Debug: void MainWindow::on_webViewBrowser_anyError(QString) start 
+Debug: void MainWindow::on_webViewBrowser_anyError(QString) end 
+Debug: Hello "" 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) start 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) end 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) start 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) end 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) start 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) end 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) start 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) end 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) start 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) end 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) start 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) end 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) start 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) end 
+Debug: void MainWindow::on_webViewBrowser_loadFinished(bool) start 
+Debug: void MainWindow::on_webViewBrowser_loadFinished(bool) end 

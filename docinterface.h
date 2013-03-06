@@ -37,6 +37,7 @@ public:
 private:
     QString filepath;
     QStringList filecontents;
+    QStringList erros;
 
 
 
