@@ -20,14 +20,17 @@
    <widget class="QListWidget" name="listWidget">
     <property name="geometry">
      <rect>
-      <x>20</x>
-      <y>70</y>
+      <x>10</x>
+      <y>10</y>
       <width>751</width>
       <height>431</height>
      </rect>
     </property>
     <property name="frameShape">
      <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="alternatingRowColors">
+     <bool>true</bool>
     </property>
     <property name="movement">
      <enum>QListView::Static</enum>
@@ -39,54 +42,17 @@
      <enum>QListView::IconMode</enum>
     </property>
    </widget>
-   <widget class="QPushButton" name="btnCancel">
-    <property name="geometry">
-     <rect>
-      <x>540</x>
-      <y>520</y>
-      <width>99</width>
-      <height>27</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Clear</string>
-    </property>
-   </widget>
    <widget class="QPushButton" name="btnOk">
     <property name="geometry">
      <rect>
-      <x>670</x>
-      <y>520</y>
+      <x>690</x>
+      <y>460</y>
       <width>99</width>
       <height>27</height>
      </rect>
     </property>
     <property name="text">
      <string>Ok</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label">
-    <property name="geometry">
-     <rect>
-      <x>20</x>
-      <y>26</y>
-      <width>321</width>
-      <height>21</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>URW Gothic L</family>
-      <pointsize>24</pointsize>
-      <weight>75</weight>
-      <bold>true</bold>
-     </font>
-    </property>
-    <property name="frameShadow">
-     <enum>QFrame::Sunken</enum>
-    </property>
-    <property name="text">
-     <string>Errors Encountered:</string>
     </property>
    </widget>
   </widget>

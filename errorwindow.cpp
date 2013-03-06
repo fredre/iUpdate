@@ -19,6 +19,4 @@ void ErrorWindow::on_btnOk_clicked() {
     close();
 }
 
-void ErrorWindow::on_btnCancel_clicked() {
-    ui->listWidget->clear();
-}
+
