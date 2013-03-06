@@ -76,7 +76,7 @@ bool DocInterface::checkDuplicateStudentNumbers( QStringList  lstsnums )
        if( lstsnums.at( a )==lstsnums.at( a+1 ) )
        {
            qDebug()<<QString( "Duplicate student numbers found. %1 was found multiple times" ).arg( lstsnums.at( a ) );
-           emit FileParseError( QString(" Duplicate student numbers found. %1 was found multiple times" ).arg( lstsnums.at( a ) ) );
+           //emit FileParseError( QString(" Duplicate student numbers found. %1 was found multiple times" ).arg( lstsnums.at( a ) ) );
 
            return false;
        }
