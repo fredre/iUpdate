@@ -15,17 +15,20 @@ SOURCES += main.cpp\
     itsbrowser.cpp \
     docinterface.cpp \
     Templates/html_template.cpp \
-    logwindow.cpp
+    logwindow.cpp \
+    errorwindow.cpp
 
 HEADERS  += mainwindow.h \
     itsbrowser.h \
     docinterface.h \
     Templates/html_template.h \
     logwindow.h \
-    DocumentInterface.h
+    DocumentInterface.h \
+    errorwindow.h
 
 FORMS    += mainwindow.ui \
-    logwindow.ui
+    logwindow.ui \
+    errorwindow.ui
 
 RESOURCES += \
     res.qrc

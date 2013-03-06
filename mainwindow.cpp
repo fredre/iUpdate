@@ -520,8 +520,7 @@ void MainWindow::on_actionLoad_ec_tut_ac_za_triggered() {
 
 void MainWindow::CsvFileParseError( QString mes ){
     qDebug() << Q_FUNC_INFO <<"start";
-    //This slot will react to any errors when the CSv file is parced. It will report the message and the user must fix the problem.
-    //QMessageBox msgBox;
+   //This slot will react to any errors when the CSv file is parced. It will report the message and the user must fix the problem.
 
     QString messageToUser = QString("Error When Reading File:\n%1\n\nThe problem seems to be:\n%2\n\nPlease note:\nYou can still use the application but please fix the problem before continuing to avoid problems.\n\n========================================================================================" ).arg( csvInter.FilePath() ).arg( mes );
 
@@ -532,7 +531,6 @@ void MainWindow::CsvFileParseError( QString mes ){
     }
      errorlist.append(messageToUser);
      errorwindow->ErrorList(errorlist);
-
 
     qDebug() << Q_FUNC_INFO <<"end";
 

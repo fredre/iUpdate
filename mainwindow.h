@@ -80,7 +80,7 @@ private:
     void hideSideWindow();
     void showSideWindow();
     QStringList errorlist;
-    ErrorWindow *errorwindow = new ErrorWindow(this);
+    ErrorWindow *errorwindow = new ErrorWindow( this );
 
 };
 
