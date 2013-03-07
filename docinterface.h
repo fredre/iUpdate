@@ -8,6 +8,7 @@
 #include <QMap>
 #include <QIntValidator>
 
+
 class DocInterface : public QObject
 {
     Q_OBJECT

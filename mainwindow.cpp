@@ -521,13 +521,25 @@ void MainWindow::CsvFileParseError( QString mes )
 {
     qDebug() << Q_FUNC_INFO <<"start";
     //This slot will react to any errors when the CSv file is parced. It will report the message and the user must fix the problem.
-    QMessageBox msgBox;
+
+    //QMessageBox msgBox;
     QString messageToUser = QString( "Error When Reading File:\n\n%1\n\nThe problem seems to be\n\n%2\n\nYou can still use the application but please fix the problem before continuing to avoid problems." ).arg( csvInter.FilePath() ).arg( mes );
 
-    msgBox.setText( messageToUser );
+    if(!errorList.empty())
+    {
+        errDialog->show();
+    }
+
+    errorList.append(messageToUser);
+    errDialog->displayErrors(errorList);
+
+
+
+
+    /*msgBox.setText( messageToUser );
     msgBox.setIcon( QMessageBox::Critical );
     msgBox.exec();
-    qDebug() << Q_FUNC_INFO <<"end";
+    qDebug() << Q_FUNC_INFO <<"end";*/
 
 }
 

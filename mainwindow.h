@@ -18,6 +18,10 @@
 #include "logwindow.h"
 #include <QSettings>
 
+//added
+#include <QStringList>
+#include "errordialog.h"
+
 namespace Ui {
     class MainWindow;
 }
@@ -78,6 +82,10 @@ private:
     DocInterface csvInter;
     void hideSideWindow();
     void showSideWindow();
+
+    //added
+    QStringList errorList;
+    errorDialog *errDialog = new errorDialog(this);
 
 };
 
