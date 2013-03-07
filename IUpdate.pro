@@ -16,7 +16,7 @@ SOURCES += main.cpp\
     docinterface.cpp \
     Templates/html_template.cpp \
     logwindow.cpp \
-    errordialog.cpp
+    errorwindow.cpp
 
 HEADERS  += mainwindow.h \
     itsbrowser.h \
@@ -24,11 +24,11 @@ HEADERS  += mainwindow.h \
     Templates/html_template.h \
     logwindow.h \
     DocumentInterface.h \
-    errordialog.h
+    errorwindow.h
 
 FORMS    += mainwindow.ui \
     logwindow.ui \
-    errordialog.ui
+    errorwindow.ui
 
 RESOURCES += \
     res.qrc

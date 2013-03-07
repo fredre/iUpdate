@@ -76,7 +76,7 @@ bool DocInterface::checkDuplicateStudentNumbers( QStringList  lstsnums )
        if( lstsnums.at( a )==lstsnums.at( a+1 ) )
        {
            qDebug()<<QString( "Duplicate student numbers found. %1 was found multiple times" ).arg( lstsnums.at( a ) );
-           emit FileParseError( QString(" Duplicate student numbers found. %1 was found multiple times" ).arg( lstsnums.at( a ) ) );
+           //emit FileParseError( QString(" Duplicate student numbers found. %1 was found multiple times" ).arg( lstsnums.at( a ) ) );
 
            return false;
        }
@@ -264,17 +264,19 @@ QMap<QString, int> DocInterface::GetAllMarksPerMarkType(QString mt)
 
        //A QMap ingores duplicate keys. so if the map already contains key named stunum warn the user
        if( allMarks.contains( snum ) ) {
-           emit FileParseError( QString ( "Duplicate student number found. %1 was found for mark type %2 more then once" ).arg( snum ).arg( mt ));
+
+            emit FileParseError( QString ( "Duplicate student number found. %1 was found for mark type %2 more then once" ).arg( snum ).arg( mt ));
+
        }
 
        allMarks.insert( snum,mark.toInt() );
    }
-
-
    if( allMarks.count() != GetStudentCount() )  //I shot the dean but I didnt shoot the associate dean ! This should never happen
    {
      emit FileParseError( QString( "Serious error. The total ammount of students are %1 but the ammount of marks returned for %2 is %3" ).arg( GetStudentCount() ).arg( mt ).arg( allMarks.count() ) );
    }
+
+
 
  return allMarks;
 }

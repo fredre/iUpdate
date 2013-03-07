@@ -17,6 +17,7 @@
 #include <QNetworkProxy>
 #include "logwindow.h"
 #include <QSettings>
+#include "errorwindow.h"
 
 //added
 #include <QStringList>
@@ -82,6 +83,8 @@ private:
     DocInterface csvInter;
     void hideSideWindow();
     void showSideWindow();
+    QStringList errorlist;
+    ErrorWindow *errorwindow = new ErrorWindow( this );
 
     //added
     QStringList errorList;
