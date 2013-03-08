@@ -23,6 +23,7 @@ ErrorWindow::~ErrorWindow() {
 void ErrorWindow::ErrorList( QStringList errorlist ) {
 
     ui->listWidget->clear();
+    errorlist.removeDuplicates();
     ui->listWidget->addItems(errorlist);
     ErrorWindow::setErrorList(errorlist);
 }
