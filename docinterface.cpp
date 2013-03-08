@@ -258,6 +258,7 @@ QMap<QString, int> DocInterface::GetAllMarksPerMarkType(QString mt)
 
 
    for ( int a=3;a<filecontents.count()-1;a++ ) {
+
        QStringList line = filecontents[ a ].split( ',' ); //Split the mark line into sperate marks
        QString mark = line[ loc ]; //Get only the mark for the marktype specified by arg mt
        QString snum = line[ 0 ]; //Get the student number
@@ -269,7 +270,14 @@ QMap<QString, int> DocInterface::GetAllMarksPerMarkType(QString mt)
 
        }
 
-       allMarks.insert( snum,mark.toInt() );
+       sanitizeString(snum);
+
+       if(validateStudentNumber(snum))
+       {
+            allMarks.insert( snum,mark.toInt() );
+       }
+
+
    }
    if( allMarks.count() != GetStudentCount() )  //I shot the dean but I didnt shoot the associate dean ! This should never happen
    {
