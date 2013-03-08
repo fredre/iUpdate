@@ -1,6 +1,9 @@
 #include "logwindow.h"
 #include "ui_logwindow.h"
 #include "qdebug.h"
+#include "mainwindow.h"
+#include "ui_mainwindow.h"
+#include <QMessageBox>
 
 LogWindow::LogWindow( QWidget *parent ) :
     QMainWindow( parent ),
