@@ -269,7 +269,12 @@ QMap<QString, int> DocInterface::GetAllMarksPerMarkType(QString mt)
 
        }
 
-       allMarks.insert( snum,mark.toInt() );
+       if(validateStudentNumber(snum))
+       {
+           allMarks.insert( snum,mark.toInt() );
+       }
+
+
    }
    if( allMarks.count() != GetStudentCount() )  //I shot the dean but I didnt shoot the associate dean ! This should never happen
    {
