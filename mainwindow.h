@@ -36,6 +36,10 @@ public:
     ~MainWindow();
     QSettings IUpdatesettings;
 
+    //added
+    QStringList getErrorList();
+    void setErrorlist(QStringList);
+
 private slots:
     void on_pushButton_clicked();
 
@@ -85,10 +89,6 @@ private:
     void showSideWindow();
     QStringList errorlist;
     ErrorWindow *errorwindow = new ErrorWindow( this );
-
-    //added
-    QStringList errorList;
-    errorDialog *errDialog = new errorDialog(this);
 
 };
 
