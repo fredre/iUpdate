@@ -45,7 +45,7 @@ void ErrorWindow::setErrorList(QStringList errorList){
 
 void ErrorWindow::on_btnSave_clicked()
 {
-    QString directory = QFileDialog::getExistingDirectory(this,tr("Choose or Create Directory"),"/home",QFileDialog::ShowDirsOnly|QFileDialog::DontUseNativeDialog);
+    QString directory = QFileDialog::getExistingDirectory(this,tr("Choose or Create Directory"),QDir::homePath(),QFileDialog::ShowDirsOnly);
         if(directory != "")
         {
             QFile file;
@@ -70,4 +70,4 @@ void ErrorWindow::on_btnSave_clicked()
 
     }
 
-}
+

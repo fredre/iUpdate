@@ -91,7 +91,7 @@ void LogWindow::AddInformation( QStringList li ){
 
 void LogWindow::On_actionSave_triggered(){
     qDebug() << Q_FUNC_INFO <<"start";
-    QDir dir;
+     QDir dir;
      qDebug()<<"Current dir "<<dir.current();
 
     bool stat =  dir.mkdir( Subname );
