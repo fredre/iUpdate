@@ -258,6 +258,7 @@ QMap<QString, int> DocInterface::GetAllMarksPerMarkType(QString mt)
 
 
    for ( int a=3;a<filecontents.count()-1;a++ ) {
+
        QStringList line = filecontents[ a ].split( ',' ); //Split the mark line into sperate marks
        QString mark = line[ loc ]; //Get only the mark for the marktype specified by arg mt
        QString snum = line[ 0 ]; //Get the student number
@@ -268,6 +269,8 @@ QMap<QString, int> DocInterface::GetAllMarksPerMarkType(QString mt)
             emit FileParseError( QString ( "Duplicate student number found. %1 was found for mark type %2 more then once" ).arg( snum ).arg( mt ));
 
        }
+
+       sanitizeString(snum);
 
        if(validateStudentNumber(snum))
        {

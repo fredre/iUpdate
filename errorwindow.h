@@ -14,7 +14,10 @@ class ErrorWindow : public QMainWindow
 public:
     explicit ErrorWindow(QWidget *parent = 0);
     ~ErrorWindow();
-    void ErrorList(QStringList );
+    void ErrorList( QStringList );
+    void setErrorList( QStringList );
+    QStringList getErrorList();
+
     
 private slots:
     void on_btnOk_clicked();
@@ -24,6 +27,7 @@ private slots:
 
 private:
     Ui::ErrorWindow *ui;
+    QStringList errorList;
 
 };
 

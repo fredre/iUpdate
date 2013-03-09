@@ -19,6 +19,10 @@
 #include <QSettings>
 #include "errorwindow.h"
 
+//added
+#include <QStringList>
+#include "errordialog.h"
+
 namespace Ui {
     class MainWindow;
 }
@@ -31,6 +35,10 @@ public:
     explicit MainWindow( QWidget *parent = 0 );
     ~MainWindow();
     QSettings IUpdatesettings;
+
+    //added
+    QStringList getErrorList();
+    void setErrorlist(QStringList);
 
 private slots:
     void on_pushButton_clicked();

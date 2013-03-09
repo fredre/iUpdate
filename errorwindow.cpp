@@ -1,5 +1,15 @@
 #include "errorwindow.h"
 #include "ui_errorwindow.h"
+
+//added
+#include <QDir>
+#include "docinterface.h"
+#include <QFileDialog>
+#include <QDebug>
+#include <QFile>
+#include <QDateTime>
+#include <QIODevice>
+#include <QtCore/QTextStream>
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include <QMessageBox>
@@ -15,13 +25,22 @@ ErrorWindow::~ErrorWindow() {
 void ErrorWindow::ErrorList( QStringList errorlist ) {
 
     ui->listWidget->clear();
+    errorlist.removeDuplicates();
     ui->listWidget->addItems(errorlist);
+    ErrorWindow::setErrorList(errorlist);
 }
 
 void ErrorWindow::on_btnOk_clicked() {
     close();
 }
 
+QStringList ErrorWindow::getErrorList(){
+    return errorList;
+}
+
+void ErrorWindow::setErrorList(QStringList errorList){
+    this->errorList = errorList;
+}
 
 
 void ErrorWindow::on_btnSave_clicked()
@@ -48,4 +67,7 @@ void ErrorWindow::on_btnSave_clicked()
             msgBox.exec();
             this->close();
         }
+
+    }
+
 }

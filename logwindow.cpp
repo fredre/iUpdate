@@ -101,7 +101,8 @@ void LogWindow::On_actionSave_triggered(){
 
     QString filename = tr( "%1%4%2_UpdateLog_%3-%5-%6@%7-%8.txt" ).arg( dir.absolutePath() ).arg( MarkType ).arg( QDateTime::currentDateTime().date().year() ).arg( "/" ).arg( QDateTime::currentDateTime().date().month() ).arg( QDateTime::currentDateTime().date().day() ).arg( QDateTime::currentDateTime().time().hour() ).arg( QDateTime::currentDateTime().time().minute() );
     qDebug()<<"Writing log to file "<<filename;
-    QFile outfile;outfile.setFileName( filename );
+    QFile outfile;
+    outfile.setFileName( filename );
     outfile.open( QIODevice::Append| QIODevice::Text );
     QTextStream out(&outfile);
     out<< ui->textEdit->document()->toPlainText()<<endl;
