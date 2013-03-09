@@ -20,6 +20,8 @@ private slots:
     void on_btnOk_clicked();
 
 
+    void on_btnSave_clicked();
+
 private:
     Ui::ErrorWindow *ui;
 
