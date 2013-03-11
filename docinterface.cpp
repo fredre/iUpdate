@@ -185,14 +185,30 @@ bool DocInterface::LoadFile()
           }
       }
   }
+/*Removes spaces from a string*/
+void DocInterface::RemoveSpaces(QString &text)
+{
+    if(text.contains(" "))
+    {
 
+        text.replace(" ","");
+
+    }
+}
 
 QStringList DocInterface::GetMarkTypesList() {
    QString mtypes =filecontents[ 2 ];
    sanitizeString( mtypes );
    QStringList mtypesSp = mtypes.split( ',' );
+    mtypesSp.removeAt(0);
+   for(int x = 0; x<mtypesSp.size();x++)
+   {
 
-  mtypesSp.removeAt(0);
+       QString s = mtypesSp.at(x);
+       RemoveSpaces(s);
+       mtypesSp.replace(x,s);
+
+   }
 
  return mtypesSp;
 }

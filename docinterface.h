@@ -34,6 +34,7 @@ public:
     bool validateStudentNumber( QString );
     void sanitizeString( QString & );
     bool checkDuplicateStudentNumbers( QStringList );
+    void RemoveSpaces(QString &);
 
 private:
     QString filepath;
