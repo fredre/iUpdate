@@ -63,9 +63,6 @@
             <verstretch>0</verstretch>
            </sizepolicy>
           </property>
-          <zorder>lineEdit</zorder>
-          <zorder>lineEdit</zorder>
-          <zorder>lineEdit</zorder>
          </widget>
         </item>
        </layout>
@@ -139,10 +136,17 @@
     </property>
     <addaction name="actionLoad_ec_tut_ac_za"/>
    </widget>
+   <widget class="QMenu" name="menuGo_to">
+    <property name="title">
+     <string>Go to</string>
+    </property>
+    <addaction name="actionLogin_page"/>
+   </widget>
    <addaction name="menuHelp"/>
    <addaction name="menuSubject"/>
    <addaction name="menuIEnabler"/>
    <addaction name="menuTest"/>
+   <addaction name="menuGo_to"/>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
   <action name="actionAbout">
@@ -183,13 +187,18 @@
     <string>Load ec.tut.ac.za</string>
    </property>
   </action>
+  <action name="actionLogin_page">
+   <property name="text">
+    <string>Login page</string>
+   </property>
+  </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <customwidgets>
   <customwidget>
    <class>QWebView</class>
    <extends>QWidget</extends>
-   <header>QtWebKit/QWebView</header>
+   <header>QtWebKitWidgets/QWebView</header>
   </customwidget>
   <customwidget>
    <class>itsBrowser</class>

@@ -519,7 +519,7 @@ void MainWindow::on_actionLoad_ec_tut_ac_za_triggered() {
 
 
 void MainWindow::CsvFileParseError( QString mes ){
-    qDebug() << Q_FUNC_INFO <<"start";
+    qDebug() << Q_FUNC_INFO <<"startt";
    //This slot will react to any errors when the CSv file is parced. It will report the message and the user must fix the problem.
 
     QString messageToUser = QString("Error When Reading File:\n%1\n\nThe problem seems to be:\n%2\n\nPlease note:\nYou can still use the application but please fix the problem before continuing to avoid problems.\n\n========================================================================================" ).arg( csvInter.FilePath() ).arg( mes );
@@ -558,3 +558,10 @@ void MainWindow::on_webViewSubjectInfo_loadStarted()
 
 }
 
+
+void MainWindow::on_actionLogin_page_triggered()
+{
+    //reset the addres to the login page
+    ui->wFitsbrowser->setUrl( QUrl( "https://jupiter.tut.ac.za/staffportal/system/login.php?refscript=/staffportal/index.php" ) );
+
+}
