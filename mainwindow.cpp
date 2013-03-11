@@ -558,3 +558,10 @@ void MainWindow::on_webViewSubjectInfo_loadStarted()
 
 }
 
+
+void MainWindow::on_actionLogin_page_triggered()
+{
+    //reset the addres to the login page
+    ui->wFitsbrowser->setUrl( QUrl( "https://jupiter.tut.ac.za/staffportal/system/login.php?refscript=/staffportal/index.php" ) );
+
+}
