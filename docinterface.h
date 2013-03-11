@@ -32,6 +32,7 @@ public:
     QStringList GetStudentNumbersWithNoMark( QString );
     int getMarkTypeColumn( QString );
     bool validateStudentNumber( QString );
+    bool validateDecimal(QString);
     void sanitizeString( QString & );
     bool checkDuplicateStudentNumbers( QStringList );
 

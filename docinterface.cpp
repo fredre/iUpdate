@@ -25,7 +25,6 @@ void DocInterface::sanitizeString(QString &needsSanitation)
 
 }
 
-
 bool DocInterface::validateStudentNumber( QString number )
 {
    //False trap to check
@@ -115,6 +114,7 @@ bool DocInterface::LoadFile()
             {
 
                 QString line = file.readLine();
+
                 line = line.trimmed();
                 filecontents.append( line );
                 //qDebug()<<line;
@@ -189,6 +189,7 @@ bool DocInterface::LoadFile()
 
 QStringList DocInterface::GetMarkTypesList() {
    QString mtypes =filecontents[ 2 ];
+
    sanitizeString( mtypes );
    QStringList mtypesSp = mtypes.split( ',' );
 
@@ -225,7 +226,8 @@ int DocInterface::GetMarkTypeTotalNumberMarks( QString mt )
     int totamt=0;
 
 
-   QMap<QString, int> allMarks = GetAllMarksPerMarkType( mt );
+
+    QMap<QString, int> allMarks = GetAllMarksPerMarkType( mt );
 
 
     //loop over all marks and get the mark count for this marktype
@@ -269,14 +271,16 @@ QMap<QString, int> DocInterface::GetAllMarksPerMarkType(QString mt)
             emit FileParseError( QString ( "Duplicate student number found. %1 was found for mark type %2 more then once" ).arg( snum ).arg( mt ));
 
        }
-
-       sanitizeString(snum);
-
-       if(validateStudentNumber(snum))
+       sanitizeString( snum );
+       if(validateStudentNumber( snum ))
        {
            allMarks.insert( snum,mark.toInt() );
        }
-
+    //checks if a mark is a decimal or integer
+       if(validateDecimal(mark))
+       {
+           emit FileParseError( QString ( "Error found student number %1 for mark type %2 contains a decimal number" ).arg( snum ).arg( mt ));
+       }
 
    }
    if( allMarks.count() != GetStudentCount() )  //I shot the dean but I didnt shoot the associate dean ! This should never happen
@@ -288,7 +292,15 @@ QMap<QString, int> DocInterface::GetAllMarksPerMarkType(QString mt)
 
  return allMarks;
 }
+bool DocInterface::validateDecimal(QString lstsnums)
+{
 
+    if( lstsnums.contains(".") )//checks if string contains a . and if it contains a . returns a true because tha would be a decimal0.
+       {
+
+           return true;
+       }
+}
 
 QStringList DocInterface::GetAllStudentNumbersPerMarkType(QString mt){
 
