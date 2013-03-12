@@ -207,10 +207,16 @@ QStringList DocInterface::GetMarkTypesList() {
      for ( int a=0;a<mtypesall.count();a++ ) {
        QString snglmt =mtypesall[ a ];
        sanitizeString( snglmt );
-       if( snglmt==mt ) {
-           loc =a;
-           //qDebug()<<"Mark type found "<<mt<<" location "<<loc;
-       }
+
+           if( snglmt==mt ) {
+
+
+                loc =a;
+               qDebug()<<"Mark type found "<<mt<<" location "<<loc;
+           }
+
+
+
      }
 
      return loc;
@@ -239,8 +245,9 @@ int DocInterface::GetMarkTypeTotalNumberMarks( QString mt )
         if ( i.value()!=0 ) {
 
           totamt++;
-           //qDebug()<<"Ammount "<<totamt << "of marks incremented for mark "<<i.value()<<"Marktype "<<mt<<" student number"<<i.key();
+          qDebug()<<"Ammount "<<totamt << "of marks incremented for mark "<<i.value()<<"Marktype "<<mt<<" student number"<<i.key();
         }
+
            ++i;
     }
 
@@ -274,11 +281,16 @@ QMap<QString, int> DocInterface::GetAllMarksPerMarkType(QString mt)
        sanitizeString( snum );
        if(validateStudentNumber( snum ))
        {
-           allMarks.insert( snum,mark.toInt() );
+           if(!mark[loc].isNull())//checks if the mark location is empty
+           {
+                allMarks.insert( snum,mark.toInt() );
+           }
+
        }
     //checks if a mark is a decimal or integer
        if(validateDecimal(mark))
        {
+
            emit FileParseError( QString ( "Error found student number %1 for mark type %2 contains a decimal number" ).arg( snum ).arg( mt ));
        }
 
