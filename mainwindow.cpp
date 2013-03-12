@@ -273,6 +273,29 @@ qDebug() << Q_FUNC_INFO <<"end";
 */
  }
 
+ //Method for checking if the coluomn has marks
+ int MainWindow::CheckCoulumnMarkAvailability(QString mt){
+     QMap<QString,int> marks = csvInter.GetAllMarksPerMarkType(mt);
+     QMapIterator<QString,int>i(marks);
+     //Check if the coulumn is empty
+     //If the number of zeros is equal the number of marks it simply means the whole doesnt have marks, its not quantum physics
+
+     int countZeros =0;
+     while(i.hasNext())
+     {
+         i.next();
+         QString mrk = QString("%1").arg(i.value());
+         if(mrk == "0")
+         {
+             countZeros+=1;
+
+         }
+     }
+
+     return countZeros;
+
+ }
+
  void MainWindow::PopulateSubjectWeb()
  {
      qDebug() << Q_FUNC_INFO <<"start";
@@ -306,16 +329,26 @@ qDebug() << Q_FUNC_INFO <<"end";
         row_t row_marks;
 
         QMap<QString,int> marks= csvInter.GetAllMarksPerMarkType( mtName );
+        int numZeros = CheckCoulumnMarkAvailability(mtName);
+
 
 
          QMapIterator<QString, int> i( marks ); //For each marktype get the marks and stu num then add to loop marks
+
          while ( i.hasNext() ) {
              i.next();
              QString onemark = QString( "%1" ).arg( i.value() );
              QString stunumber = i.key();
-             row_marks( "onemark" ) = onemark.toStdString();
-             row_marks( "stunumber" ) = stunumber.toStdString();
-            loop_marks+=row_marks;
+
+             if(numZeros != marks.count())
+             {
+                 row_marks( "onemark" ) = onemark.toStdString();
+                 row_marks( "stunumber" ) = stunumber.toStdString();
+                loop_marks+=row_marks;
+
+             }
+
+
 
         }
 
