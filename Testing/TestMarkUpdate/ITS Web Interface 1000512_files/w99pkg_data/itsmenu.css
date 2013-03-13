@@ -1,0 +1,193 @@
+/* ################################################################
+// System           : WEB SYSTEMS
+// Program name     : itsmenu.css
+// Description      : Stylesheet for the web menu 
+// Date created     : 01-jan-2002 Ollie
+// Date changed     : 13-MAY-2004 109706 Ollie Add Auto Navigate logic
+// Date changed     : 21-JUN-2004 111948 Ollie Do not hide any menus 
+// Versions         : v11.3.1.1
+//                  : v12.0.1.1
+//                  : v13.0.0.0
+// Copyright        : Integrated Tertiary Software 01-JAN-1987
+// ################################################################
+*/
+
+body {
+	background-color:  #EFF3FF;
+	background-image : none;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 9pt;
+        margin-top : 0;
+        margin-left : 5;
+        scrollbar-face-color: #1E4E80;
+        scrollbar-shadow-color: white;
+        scrollbar-highlight-color: #000000;
+        scrollbar-3dlight-color: navy;
+        scrollbar-darkshadow-color: navy;
+        scrollbar-track-color: #4EA7DC;
+        scrollbar-arrow-color: white;
+}
+
+.framebody {
+	background-color:  #EFF3FF;
+	background-image : none;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 9pt;
+        scrollbar-face-color: #1E4E80;
+        scrollbar-shadow-color: white;
+        scrollbar-highlight-color: #000000;
+        scrollbar-3dlight-color: navy;
+        scrollbar-darkshadow-color: navy;
+        scrollbar-track-color: #4EA7DC;
+        scrollbar-arrow-color: white;
+}
+
+A, A:active, A:link, A:visited {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 9pt;
+	color : #5A7EDC;
+	text-decoration: none;
+}
+
+A:hover {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 9pt;
+	color : #5A7EDC;
+	text-decoration : underline;
+}
+
+div.mnu_frame {
+        text-align: left;
+}
+
+table.mnu_header {
+	background-image: url(/itsimages/InsImg.gif);
+	background-color: transparent;
+	background-position: left;
+	width: 100%;
+	background-repeat: no-repeat;
+}
+
+table.mnu_header_ire {
+	background-color: transparent;
+	background-position: bottom, left;
+	width: 91%;
+}
+
+TD.mnu_header_ire {
+	font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 6pt;
+	font-weight: bold;
+	width: 100%;
+	color: #000000;
+	text-align: left;
+        vertical-align : top;
+}
+TD.mnu_header {
+	font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 6pt;
+	font-weight: bold;
+	width: 100%;
+	color: #000000;
+	text-align: right;
+        vertical-align : top;
+}
+
+TH.mnu_detail {
+	background-color: #EFF3FF;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 10pt;
+	font-weight: bold;
+	width: 100%;
+	color: #000000;
+	text-align: left;
+        vertical-align : top;
+}
+
+div.mnu_image {
+	position: relative;
+        bottom: 0%;
+        left: 0%;
+}
+
+.menuLvl0, .menuLvl0:active, .menuLvl0:link, .menuLvl0:visited, .menuLvl0:hover {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size : 8pt;
+	color : red;
+	font-weight : bold;
+	text-decoration : none;
+}
+
+.menuLvlM1, .menuLvlM1:active, .menuLvlM1:link, .menuLvlM1:visited, .menuLvlM1:hover {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size : 8pt;
+	color : #000000;
+	text-decoration : none;
+}
+
+.menuLvlU1, .menuLvlU1:active, .menuLvlU1:link, .menuLvlU1:visited, .menuLvlU1:hover {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size : 8pt;
+	color : #5A7EDC;
+	color : #3333FF;
+	text-decoration : none;
+}
+
+.menuLvlM2, .menuLvlM2:active, .menuLvlM2:link, .menuLvlM2:visited, .menuLvlM2:hover {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size : 8pt;
+	color : #000000;
+	text-decoration : none;
+}
+
+.menuLvlU2, .menuLvlU2:active, .menuLvlU2:link, .menuLvlU2:visited, .menuLvlU2:hover {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size : 8pt;
+	color : #3333FF;
+	text-decoration : none;
+}
+
+.menuLvlM3, .menuLvlM3:active, .menuLvlM3:link, .menuLvlM3:visited, .menuLvlM3:hover {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size : 8pt;
+	color : #000000;
+	text-decoration : none;
+}
+
+
+.menuLvlU3, .menuLvlU3:active, .menuLvlU3:link, .menuLvlU3:visited, .menuLvlU3:hover {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size : 8pt;
+	color : #3333FF;
+	text-decoration : none;
+}
+
+.menuLvlM4, .menuLvlM4:active, .menuLvlM4:link, .menuLvlM4:visited, .menuLvlM4:hover {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size : 8pt;
+	color : #000000;
+	text-decoration : none;
+}
+
+
+.menuLvlU4, .menuLvlU4:active, .menuLvlU4:link, .menuLvlU4:visited, .menuLvlU4:hover {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size : 8pt;
+	color : #3333FF;
+	text-decoration : none;
+}
+
+.menuLvlM5, .menuLvlM5:active, .menuLvlM5:link, .menuLvlM5:visited, .menuLvlM5:hover {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size : 8pt;
+	color : #000000;
+	text-decoration : none;
+}
+
+
+.menuLvlU5, .menuLvlU5:active, .menuLvlU5:link, .menuLvlU5:visited, .menuLvlU5:hover {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size : 8pt;
+	color : #3333FF;
+	text-decoration : none;
+}

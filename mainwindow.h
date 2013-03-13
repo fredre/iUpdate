@@ -39,6 +39,7 @@ public:
     //added
     QStringList getErrorList();
     void setErrorlist(QStringList);
+    int CheckCoulumnMarkAvailability(QString mt);
 
 private slots:
     void on_pushButton_clicked();
