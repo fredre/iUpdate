@@ -585,3 +585,14 @@ void MainWindow::on_webViewSubjectInfo_loadStarted()
 
 }
 
+
+void MainWindow::on_actionLoad_Local_Tes_triggered()
+{
+    qDebug() << Q_FUNC_INFO <<"start";
+   qDebug()<<"Trying to load test file";
+   ui->wFitsbrowser->setUrl(QUrl::fromLocalFile(QFileDialog::getOpenFileName( this,tr( "Open  HTML File" ), QDir::homePath(), tr("Html (*.html)")   ))  );
+   qDebug() << Q_FUNC_INFO <<"end";
+
+
+
+}

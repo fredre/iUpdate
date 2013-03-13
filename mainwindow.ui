@@ -43,8 +43,8 @@
          </layout>
         </item>
         <item>
-         <widget class="QWebView" name="webViewSubjectInfo">
-          <property name="url">
+         <widget class="QWebView" name="webViewSubjectInfo" native="true">
+          <property name="url" stdset="0">
            <url>
             <string>about:blank</string>
            </url>
@@ -63,9 +63,6 @@
             <verstretch>0</verstretch>
            </sizepolicy>
           </property>
-          <zorder>lineEdit</zorder>
-          <zorder>lineEdit</zorder>
-          <zorder>lineEdit</zorder>
          </widget>
         </item>
        </layout>
@@ -138,6 +135,7 @@
      <string>Test</string>
     </property>
     <addaction name="actionLoad_ec_tut_ac_za"/>
+    <addaction name="actionLoad_Local_Tes"/>
    </widget>
    <addaction name="menuHelp"/>
    <addaction name="menuSubject"/>
@@ -181,6 +179,11 @@
   <action name="actionLoad_ec_tut_ac_za">
    <property name="text">
     <string>Load ec.tut.ac.za</string>
+   </property>
+  </action>
+  <action name="actionLoad_Local_Tes">
+   <property name="text">
+    <string>Load Local Test</string>
    </property>
   </action>
  </widget>

@@ -83,6 +83,8 @@ private slots:
 
     void on_webViewSubjectInfo_loadStarted();
 
+    void on_actionLoad_Local_Tes_triggered();
+
 private:
     Ui::MainWindow *ui;
     DocInterface csvInter;
