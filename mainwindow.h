@@ -85,6 +85,8 @@ private slots:
 
     void on_actionLoad_Local_Tes_triggered();
 
+    void on_actionGo_back_to_login_page_triggered();
+
 private:
     Ui::MainWindow *ui;
     DocInterface csvInter;

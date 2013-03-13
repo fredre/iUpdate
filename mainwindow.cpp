@@ -596,3 +596,13 @@ void MainWindow::on_actionLoad_Local_Tes_triggered()
 
 
 }
+
+void MainWindow::on_actionGo_back_to_login_page_triggered()
+{
+
+    qDebug() << Q_FUNC_INFO <<"start";
+   qDebug()<<"Trying to load test file";
+    ui->wFitsbrowser->setUrl( QUrl( "https://jupiter.tut.ac.za/staffportal/system/login.php?refscript=/staffportal/index.php" ) );
+ qDebug() << Q_FUNC_INFO <<"end";
+
+}
