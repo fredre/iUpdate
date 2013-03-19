@@ -1,5 +1,5 @@
 #include "itsbrowser.h"
-
+#include "mainwindow.h"
 itsBrowser::itsBrowser( QWidget *parent ) :
     QWebView( parent ){
 
@@ -61,12 +61,12 @@ void itsBrowser::ProvideAuthentication( QNetworkReply *rep , QAuthenticator *aut
     qDebug()<<"Active directory waisting our time master. Auto engage responce";
 
     bool ok;
-    QString user = QInputDialog::getText( this , tr( "Provide user name" ) , tr( "User name:" ), QLineEdit::Normal , tr( "tut\\" ) , &ok);
+   // QString user = QInputDialog::getText( this , tr( "Provide user name" ) , tr( "User name:" ), QLineEdit::Normal , tr( "tut\\" ) , &ok);
 
-    QString pass = QInputDialog::getText( this , tr( "Provide password" ), tr( "Password:" ), QLineEdit::Normal , tr( "" ) , &ok);
+    //QString pass = QInputDialog::getText( this , tr( "Provide password" ), tr( "Password:" ), QLineEdit::Normal , tr( "" ) , &ok);
 
-
-    auth->setUser( user );
+    emit loadStarted();
+   /* auth->setUser( user );
     auth->setPassword( pass );
 
 
@@ -74,7 +74,7 @@ void itsBrowser::ProvideAuthentication( QNetworkReply *rep , QAuthenticator *aut
     qDebug()<<auth->password();
     qDebug()<<auth->user();
     qDebug()<<rep->error();
-    rep->ignoreSslErrors();
+    rep->ignoreSslErrors();*/
 }
 
 void itsBrowser::ProvideProxAuthentication( const QNetworkProxy &np, QAuthenticator *auth ){
