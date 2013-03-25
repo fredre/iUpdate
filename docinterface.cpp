@@ -191,9 +191,19 @@ QStringList DocInterface::GetMarkTypesList() {
    QString mtypes =filecontents[ 2 ];
 
    sanitizeString( mtypes );
-   QStringList mtypesSp = mtypes.split( ',' );
+   QStringList mtypesSp;
 
-  mtypesSp.removeAt(0);
+       mtypesSp = mtypes.split( ',' );
+        mtypesSp.removeAt(0);
+
+       for(int x = 0; x< mtypesSp.size(); x++)
+       {
+           if(mtypesSp.at(x) == "")
+           {
+               mtypesSp.removeAt(x);
+           }
+       }
+       qDebug()<<"@#@%"<<mtypesSp;
 
  return mtypesSp;
 }
@@ -207,17 +217,18 @@ QStringList DocInterface::GetMarkTypesList() {
      for ( int a=0;a<mtypesall.count();a++ ) {
        QString snglmt =mtypesall[ a ];
        sanitizeString( snglmt );
-       if( snglmt==mt ) {
-           loc =a;
-           //qDebug()<<"Mark type found "<<mt<<" location "<<loc;
-       }
+
+           if( snglmt==mt ) {
+               loc =a;
+               //qDebug()<<"Mark type found "<<mt<<" location "<<loc;
+           }
+
+
+
      }
 
      return loc;
  }
-
-
-
 int DocInterface::GetMarkTypeTotalNumberMarks( QString mt )
 {
     //Return the total ammount of marks for the marktype
@@ -225,10 +236,7 @@ int DocInterface::GetMarkTypeTotalNumberMarks( QString mt )
 
     int totamt=0;
 
-
-
     QMap<QString, int> allMarks = GetAllMarksPerMarkType( mt );
-
 
     //loop over all marks and get the mark count for this marktype
    QMap<QString, int>::const_iterator i = allMarks.constBegin();
@@ -238,16 +246,21 @@ int DocInterface::GetMarkTypeTotalNumberMarks( QString mt )
 
         if ( i.value()!=0 ) {
 
-          totamt++;
+
+
+               totamt++;
+
+
            //qDebug()<<"Ammount "<<totamt << "of marks incremented for mark "<<i.value()<<"Marktype "<<mt<<" student number"<<i.key();
         }
-           ++i;
+
+         ++i;
+        qDebug()<<"Ammount "<<totamt;
+
     }
 
     return totamt;
 }
-
-
 QMap<QString, int> DocInterface::GetAllMarksPerMarkType(QString mt)
 
 {

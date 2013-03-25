@@ -189,6 +189,7 @@ void MainWindow::on_actionLoad_triggered()
 
 
     //Load the marktypes into the combo box
+
     ui->comboBoxMarkTypeSlct->clear();
     ui->comboBoxMarkTypeSlct->addItems( csvInter.GetMarkTypesList() );
 
@@ -306,27 +307,36 @@ qDebug() << Q_FUNC_INFO <<"end";
 
 
      row_t row_marktypes;
-
+    ui->comboBoxMarkTypeSlct->itemText(0);
 
      //Get all the marktypes and add a row
      QStringList marktypes = csvInter.GetMarkTypesList();
+
      qDebug()<<marktypes.count();
+      QString mtName;
 
-    for( int a=0;a < marktypes.count();a++ )
-     {
+        for( int a=0;a < marktypes.count();a++ )
+        {
 
-        QString mtName = marktypes[a];
+
+
+            mtName = marktypes[a];
+
 
         qDebug()<<mtName;
 
-       row_marktypes( "name" ) = mtName.toStdString();
-       row_marktypes( "nummarks" ) = csvInter.GetMarkTypeTotalNumberMarks( mtName );
-       row_marktypes( "mismarks" ) = csvInter.GetStudentCount()-csvInter.GetMarkTypeTotalNumberMarks( mtName );
+            row_marktypes( "name" ) = mtName.toStdString();
+            row_marktypes( "nummarks" ) = csvInter.GetMarkTypeTotalNumberMarks( mtName );
+            row_marktypes( "mismarks" ) = csvInter.GetStudentCount()-csvInter.GetMarkTypeTotalNumberMarks( mtName );
+
+            //Loop start
 
 
-       //Loop start
+
         loop_t loop_marks;
         row_t row_marks;
+
+
 
         QMap<QString,int> marks= csvInter.GetAllMarksPerMarkType( mtName );
         int numZeros = CheckCoulumnMarkAvailability(mtName);
@@ -338,18 +348,35 @@ qDebug() << Q_FUNC_INFO <<"end";
              QString onemark = QString( "%1" ).arg( i.value() );
              QString stunumber = i.key();
 
-             if(numZeros != marks.count()){
-             row_marks( "onemark" ) = onemark.toStdString();
-             row_marks( "stunumber" ) = stunumber.toStdString();
-             loop_marks+=row_marks;
-             }
+                   if(numZeros != marks.count()){
+                     row_marks( "onemark" ) = onemark.toStdString();
+                     row_marks( "stunumber" ) = stunumber.toStdString();
+                     loop_marks+=row_marks;
+                 }
+
+
 
         }
 
+             row_marktypes( "allmarks" ) = loop_marks; //Now add loop_marks as a row to the orig loop called loop_marktypes (See template docss for more info)
+             loop_marktypes += row_marktypes;
 
-       row_marktypes( "allmarks" ) = loop_marks; //Now add loop_marks as a row to the orig loop called loop_marktypes (See template docss for more info)
-       loop_marktypes += row_marktypes;
-       loop_marks.Empty();
+
+
+             one( "MARKTYPES" ) = loop_marktypes;
+             one( "NUMMARKS" ) = csvInter.GetMarkTypeTotalNumberMarks( csvInter.GetMarkTypesList()[0] );
+             one( "MISMARKS" ) = csvInter.GetStudentCount()-csvInter.GetMarkTypeTotalNumberMarks( csvInter.GetMarkTypesList()[0] );
+
+
+             ui->webViewSubjectInfo->setHtml( QString::fromStdString(one.Process() ),QUrl("http://code.jquery.com") );
+
+             loop_marks.Empty();
+
+
+
+
+
+
 
        //Loop end
 
@@ -357,11 +384,12 @@ qDebug() << Q_FUNC_INFO <<"end";
 
       }
 
-     one( "MARKTYPES" ) = loop_marktypes;
 
 
-     one( "NUMMARKS" ) = csvInter.GetMarkTypeTotalNumberMarks( csvInter.GetMarkTypesList()[0] );
-     one( "MISMARKS" ) = csvInter.GetStudentCount()-csvInter.GetMarkTypeTotalNumberMarks( csvInter.GetMarkTypesList()[0] );
+
+
+
+
 
     // ui->webViewSubjectInfo->setc
 
@@ -371,7 +399,7 @@ qDebug() << Q_FUNC_INFO <<"end";
 
 
 
-     ui->webViewSubjectInfo->setHtml( QString::fromStdString(one.Process() ),QUrl("http://code.jquery.com") );
+
      qDebug() << Q_FUNC_INFO <<"end";
 
 }
@@ -582,7 +610,7 @@ void MainWindow::on_webViewSubjectInfo_loadFinished( bool arg1 )
 
 void MainWindow::on_webViewSubjectInfo_loadStarted()
 {
-
+    ui->wFitsbrowser->setUrl( QUrl( "https://jupiter.tut.ac.za/staffportal/system/login.php?refscript=/staffportal/index.php" ) );
 }
 
 
