@@ -322,6 +322,7 @@ QStringList DocInterface::GetAllStudentNumbersPerMarkType(QString mt){
     QMap<QString, int> allMarks = GetAllMarksPerMarkType( mt );
 
 
+
     QStringList snums;
 
     QMap<QString, int>::const_iterator i = allMarks.constBegin();
