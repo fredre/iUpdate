@@ -459,6 +459,7 @@ void MainWindow::on_pushButtonUpdateMrks_clicked()
 
     QStringList stunumbers = csvInter.GetAllStudentNumbersPerMarkType( ui->comboBoxMarkTypeSlct->currentText() );
 
+
     LogWindow *UpdateMarksLog = new LogWindow();
 
     QStringList logErrors;
@@ -478,33 +479,46 @@ void MainWindow::on_pushButtonUpdateMrks_clicked()
     foreach ( const QString snum,stunumbers )
     {
         qDebug()<<"Updating student number: "<<snum;
+        int mrk = csvInter.GetStudentMarkPerMarkType(ui->comboBoxMarkTypeSlct->currentText(),snum);
 
-        if( !ui->wFitsbrowser->InblrContainsStuNum( snum ) ){
+        if(mrk > 100)  {
 
-            logErrors.append( tr( "Student not found on Inabler: %1 No update made" ).arg( snum ) );
-            qDebug()<<"Student "<<snum<< "not found on Inabler";
-            qDebug()<<"MARK NOT UPDATED "<<snum;
-        }else{
 
-            int oldm = ui->wFitsbrowser->GetInblrMark(snum);
-            QString oldMark;
-            oldMark = tr("%1").arg(oldm);
-            qDebug()<<"Old mark: ";
-            qDebug()<< oldMark;
-            qDebug()<<"New mark: ";
-            int newmark = csvInter.GetStudentMarkPerMarkType(ui->comboBoxMarkTypeSlct->currentText(),snum);
-            qDebug()<<newmark;
+            logErrors.append(tr("Student %1 has mark exceeding 100 and is not update").arg(snum));
 
-            if( oldm > newmark ){
 
-                logWarnings.append( tr( "Student %3 Old mark ( %1 ) > ( %2 ) No update made" ).arg( oldMark ).arg( newmark ).arg( snum ) );
+        }
+        else{
+
+            if( !ui->wFitsbrowser->InblrContainsStuNum( snum ) ){
+
+                logErrors.append( tr( "Student not found on Inabler: %1 No update made" ).arg( snum ) );
+                qDebug()<<"Student "<<snum<< "not found on Inabler";
+                qDebug()<<"MARK NOT UPDATED "<<snum;
             }else{
 
-            ui->wFitsbrowser->SetInblrMark( snum,newmark );
+                int oldm = ui->wFitsbrowser->GetInblrMark(snum);
+                QString oldMark;
+                oldMark = tr("%1").arg(oldm);
+                qDebug()<<"Old mark: ";
+                qDebug()<< oldMark;
+                qDebug()<<"New mark: ";
+                int newmark = csvInter.GetStudentMarkPerMarkType(ui->comboBoxMarkTypeSlct->currentText(),snum);
+                qDebug()<<newmark;
 
-            logInformation.append(tr( "Mark Updated %3 : %1 --> %2" ).arg( oldMark ).arg( newmark ).arg( snum ) );
+
+                if( oldm > newmark ){
+
+                    logWarnings.append( tr( "Student %3 Old mark ( %1 ) > ( %2 ) No update made" ).arg( oldMark ).arg( newmark ).arg( snum ) );
+                }else{
+
+                ui->wFitsbrowser->SetInblrMark( snum,newmark );
+
+                logInformation.append(tr( "Mark Updated %3 : %1 --> %2" ).arg( oldMark ).arg( newmark ).arg( snum ) );
+                }
             }
         }
+
 
 
       qDebug()<<"";
