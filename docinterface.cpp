@@ -182,7 +182,12 @@ bool DocInterface::LoadFile()
 
            return ( a-3 );
 
-          }
+         }
+         else
+         {
+             //The file doesnt contain END
+             isWithoutEnd = true;
+         }
       }
   }
 
@@ -296,15 +301,23 @@ QMap<QString, int> DocInterface::GetAllMarksPerMarkType(QString mt)
        }
 
    }
+
    if( allMarks.count() != GetStudentCount() )  //I shot the dean but I didnt shoot the associate dean ! This should never happen
    {
-     emit FileParseError( QString( "Serious error. The total ammount of students are %1 but the ammount of marks returned for %2 is %3" ).arg( GetStudentCount() ).arg( mt ).arg( allMarks.count() ) );
+       //The file doesnt contain END after all students
+       if(isWithoutEnd == true){
+
+           emit FileParseError( QString( "Please include END after the student number in your file" ));
+       }
+       else{
+
+            emit FileParseError( QString( "Serious error. The total amount of students are %1 but the ammount of marks returned for %2 is %3" ).arg( GetStudentCount() ).arg( mt ).arg( allMarks.count() ) );
+       }
    }
-
-
 
  return allMarks;
 }
+
 bool DocInterface::validateDecimal(QString lstsnums)
 {
 
