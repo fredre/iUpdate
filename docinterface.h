@@ -36,10 +36,13 @@ public:
     void sanitizeString( QString & );
     bool checkDuplicateStudentNumbers( QStringList );
 
+
 private:
     QString filepath;
     QStringList filecontents;
     QStringList erros;
+
+    bool isWithoutEnd = false;
 
 
 
