@@ -58,6 +58,7 @@ void  LogWindow::AddErrors( QStringList li ){
  cur.insertText( tr( "Errors \n" ) );
  cur.insertBlock();
 
+
   foreach( QString item,li ){
     cur.insertText( tr( "%1 \n" ).arg( item ) );
   }
@@ -109,4 +110,34 @@ void LogWindow::On_actionSave_triggered(){
 
 
     qDebug() << Q_FUNC_INFO <<"end";
+}
+
+void LogWindow::on_pushButton_2_clicked()
+{
+    QString directory = QFileDialog::getExistingDirectory(this,tr("Choose or Create Directory"),"/home",QFileDialog::ShowDirsOnly|QFileDialog::DontUseNativeDialog);
+    if(directory != "")
+    {
+        QString fileName = directory+"/"+Subname+" Logile.txt";
+        QFile file;
+        file.setFileName(fileName);
+        file.open(QIODevice::Append| QIODevice::Text);
+        QTextStream write(&file);
+        write<<ui->textEdit->toPlainText();
+        QMessageBox msgBox;
+        msgBox.setText("Log file saved at"+directory );
+        msgBox.setIcon(QMessageBox::Information);
+        msgBox.exec();
+        this->close();
+        file.close();
+
+    }
+
+
+
+
+}
+
+void LogWindow::on_pushButton_clicked()
+{
+    this->close();
 }
