@@ -4,6 +4,7 @@
 #include "qdebug.h"
 #include <QNetworkDiskCache>
 #include "errorwindow.h"
+#include "itsbrowser.h"
 
 #ifdef Q_OS_WIN //This may not be needed (unless the entire TUT switch to Linux from Monday)
     #include "Templates\html_template.h"
@@ -12,7 +13,6 @@
 #ifdef Q_OS_LINUX
     #include "Templates/html_template.h"
 #endif
-
 
 #include <QTextEdit>
 
@@ -57,9 +57,9 @@ MainWindow::MainWindow( QWidget *parent ) :
     connect(ui->wFitsbrowser,SIGNAL( onAnyError( QString ) ),this,SLOT( on_webViewBrowser_anyError( QString ) ) );
     connect(ui->wFitsbrowser,SIGNAL( onNetworkError( QString ) ),this,SLOT( on_webViewBrowser_networkError( QString ) ) );
 
+
+
     ui->wFitsbrowser->setUrl( QUrl( "https://jupiter.tut.ac.za/staffportal/system/login.php?refscript=/staffportal/index.php" ) );
-
-
 
     QNetworkDiskCache *diskCache = new QNetworkDiskCache( this );
     diskCache->setCacheDirectory( "cachedir" );
@@ -91,10 +91,6 @@ void MainWindow::on_pushButton_clicked()
 
       errorPage( "ERMES" ) = error.toStdString();
 
- \
-     // ui->wFitsbrowser->setHtml(QString::fromStdString(errorPage.Process()));
-
-
 
       qDebug() << Q_FUNC_INFO <<"end";
  }
@@ -121,16 +117,20 @@ void MainWindow::on_webViewBrowser_loadStarted()
     ui->progressBarWebInd->show();
     ui->labelProgress->show();
     ui->statusBar->showMessage( ui->wFitsbrowser->url().toString() );
-    qDebug() << Q_FUNC_INFO <<"end";
-}
 
+    qDebug() << Q_FUNC_INFO <<"end";
+
+}
 void MainWindow::on_webViewBrowser_loadFinished( bool ok )
 {
 qDebug() << Q_FUNC_INFO <<"start";
+
     ui->progressBarWebInd->hide();
     ui->labelProgress->hide();
     ui->statusBar->clearMessage();
-qDebug() << Q_FUNC_INFO <<"end";
+
+    qDebug() << Q_FUNC_INFO <<"end";
+    qDebug()<<"lets see if iiijlaskdfjlkasjdfklasdj";
 }
 
 void MainWindow::on_actionAbout_triggered()
@@ -372,38 +372,18 @@ qDebug() << Q_FUNC_INFO <<"end";
 
              loop_marks.Empty();
 
-
-
-
-
-
-
        //Loop end
 
-
-
       }
-
-
-
-
-
-
-
 
     // ui->webViewSubjectInfo->setc
 
     // ui->webViewSubjectInfo->settings()->setUserStyleSheetUrl(QUrl::from);
 
      qDebug()<<QString::fromStdString(one.Process() );
-
-
-
-
      qDebug() << Q_FUNC_INFO <<"end";
 
 }
-
 
  void MainWindow::hideSideWindow()
 {
@@ -459,7 +439,6 @@ void MainWindow::on_pushButtonUpdateMrks_clicked()
 
     QStringList stunumbers = csvInter.GetAllStudentNumbersPerMarkType( ui->comboBoxMarkTypeSlct->currentText() );
 
-
     LogWindow *UpdateMarksLog = new LogWindow();
 
     QStringList logErrors;
@@ -479,47 +458,33 @@ void MainWindow::on_pushButtonUpdateMrks_clicked()
     foreach ( const QString snum,stunumbers )
     {
         qDebug()<<"Updating student number: "<<snum;
-        int mrk = csvInter.GetStudentMarkPerMarkType(ui->comboBoxMarkTypeSlct->currentText(),snum);
 
-        if(mrk > 100)  {
+        if( !ui->wFitsbrowser->InblrContainsStuNum( snum ) ){
 
+            logErrors.append( tr( "Student not found on Inabler: %1 No update made" ).arg( snum ) );
+            qDebug()<<"Student "<<snum<< "not found on Inabler";
+            qDebug()<<"MARK NOT UPDATED "<<snum;
+        }else{
 
-            logErrors.append(tr("Student %1 has mark exceeding 100 and is not update").arg(snum));
+            int oldm = ui->wFitsbrowser->GetInblrMark(snum);
+            QString oldMark;
+            oldMark = tr("%1").arg(oldm);
+            qDebug()<<"Old mark: ";
+            qDebug()<< oldMark;
+            qDebug()<<"New mark: ";
+            int newmark = csvInter.GetStudentMarkPerMarkType(ui->comboBoxMarkTypeSlct->currentText(),snum);
+            qDebug()<<newmark;
 
+            if( oldm > newmark ){
 
-        }
-        else{
-
-            if( !ui->wFitsbrowser->InblrContainsStuNum( snum ) ){
-
-                logErrors.append( tr( "Student not found on Inabler: %1 No update made" ).arg( snum ) );
-                qDebug()<<"Student "<<snum<< "not found on Inabler";
-                qDebug()<<"MARK NOT UPDATED "<<snum;
+                logWarnings.append( tr( "Student %3 Old mark ( %1 ) > ( %2 ) No update made" ).arg( oldMark ).arg( newmark ).arg( snum ) );
             }else{
 
-                int oldm = ui->wFitsbrowser->GetInblrMark(snum);
-                QString oldMark;
-                oldMark = tr("%1").arg(oldm);
-                qDebug()<<"Old mark: ";
-                qDebug()<< oldMark;
-                qDebug()<<"New mark: ";
-                int newmark = csvInter.GetStudentMarkPerMarkType(ui->comboBoxMarkTypeSlct->currentText(),snum);
-                qDebug()<<newmark;
+            ui->wFitsbrowser->SetInblrMark( snum,newmark );
 
-
-                if( oldm > newmark ){
-
-                    logWarnings.append( tr( "Student %3 Old mark ( %1 ) > ( %2 ) No update made" ).arg( oldMark ).arg( newmark ).arg( snum ) );
-                }else{
-
-                ui->wFitsbrowser->SetInblrMark( snum,newmark );
-
-                logInformation.append(tr( "Mark Updated %3 : %1 --> %2" ).arg( oldMark ).arg( newmark ).arg( snum ) );
-                }
+            logInformation.append(tr( "Mark Updated %3 : %1 --> %2" ).arg( oldMark ).arg( newmark ).arg( snum ) );
             }
         }
-
-
 
       qDebug()<<"";
 
@@ -575,6 +540,7 @@ void MainWindow::on_actionBlackout_Cancelled_triggered() {
 
     qDebug() << Q_FUNC_INFO <<"start";
   ui->wFitsbrowser->SetInblrCanBlackOut();
+
   qDebug() << Q_FUNC_INFO <<"end";
 }
 
@@ -582,8 +548,7 @@ void MainWindow::on_actionLoad_ec_tut_ac_za_triggered() {
 
     qDebug() << Q_FUNC_INFO <<"start";
    qDebug()<<"Testing to see if ec.tut.ac.za loads";
-   ui->wFitsbrowser->setUrl(QUrl( "http://ec.tut.ac.za" ) );
-   qDebug() << Q_FUNC_INFO <<"end";
+          qDebug() << Q_FUNC_INFO <<"end";
 }
 
 
@@ -619,12 +584,12 @@ void MainWindow::on_comboBoxMarkTypeSlct_currentIndexChanged( const QString &arg
 void MainWindow::on_webViewSubjectInfo_loadFinished( bool arg1 )
 {
 
-
+    ui->statusBar->showMessage( ui->wFitsbrowser->url().toString() );
 }
 
 void MainWindow::on_webViewSubjectInfo_loadStarted()
 {
-    ui->wFitsbrowser->setUrl( QUrl( "https://jupiter.tut.ac.za/staffportal/system/login.php?refscript=/staffportal/index.php" ) );
+    //ui->wFitsbrowser->setUrl( QUrl( "https://jupiter.tut.ac.za/staffportal/system/login.php?refscript=/staffportal/index.php" ) );
 }
 
 
@@ -634,9 +599,6 @@ void MainWindow::on_actionLoad_Local_Tes_triggered()
    qDebug()<<"Trying to load test file";
    ui->wFitsbrowser->setUrl(QUrl::fromLocalFile(QFileDialog::getOpenFileName( this,tr( "Open  HTML File" ), QDir::homePath(), tr("Html (*.html)")   ))  );
    qDebug() << Q_FUNC_INFO <<"end";
-
-
-
 }
 
 void MainWindow::on_actionGo_back_to_login_page_triggered()
@@ -648,3 +610,5 @@ void MainWindow::on_actionGo_back_to_login_page_triggered()
  qDebug() << Q_FUNC_INFO <<"end";
 
 }
+
+
