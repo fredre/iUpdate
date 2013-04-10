@@ -1,5 +1,7 @@
 #include "itsbrowser.h"
 #include "mainwindow.h"
+#include <QWebView>
+#include "ui_mainwindow.h"
 itsBrowser::itsBrowser( QWidget *parent ) :
     QWebView( parent ){
 
@@ -9,8 +11,6 @@ itsBrowser::itsBrowser( QWidget *parent ) :
     sslConfig.setProtocol( QSsl::SslV3 ); //Seems under ubuntu we need to specify the version
     QSslConfiguration::setDefaultConfiguration( sslConfig );
 
-
-
     QWebSettings *Tsettings = settings();
     Tsettings->setAttribute( QWebSettings::JavascriptEnabled , true );
     Tsettings->setAttribute( QWebSettings::PluginsEnabled , true );
@@ -18,11 +18,7 @@ itsBrowser::itsBrowser( QWidget *parent ) :
     Tsettings->setAttribute( QWebSettings::JavaEnabled , true );
     Tsettings->setAttribute( QWebSettings::JavascriptCanOpenWindows , true);
 
-
-
-
     QNetworkCookieJar *myjar = new QNetworkCookieJar();
-
 
     this->page()->networkAccessManager()->setCookieJar(myjar);
 
@@ -31,15 +27,14 @@ itsBrowser::itsBrowser( QWidget *parent ) :
     connect( page()->networkAccessManager(), SIGNAL( proxyAuthenticationRequired(const QNetworkProxy &, QAuthenticator *)) , this , SLOT( ProvideProxAuthentication( const QNetworkProxy&, QAuthenticator*) ) );
     connect( page()->networkAccessManager(), SIGNAL( finished ( QNetworkReply *)),this,SLOT(NetworkTaskfinished (QNetworkReply *)));
 
-
 }
 
 void itsBrowser::NetworkTaskfinished( QNetworkReply *reply ){
     qDebug() << Q_FUNC_INFO <<"start";
     qDebug()<<reply->errorString();
     emit OnNetworkError( reply->errorString() );
-    qDebug() << Q_FUNC_INFO <<"end";
 
+    qDebug() << Q_FUNC_INFO <<"end";
 
 }
 
@@ -52,44 +47,24 @@ void itsBrowser::HandleSslErrors( QNetworkReply* reply , const QList<QSslError> 
         qDebug() << "ssl error: " << e;
         emit onAnyError( e.errorString( ));
     }
-
     reply->ignoreSslErrors();
+
     qDebug() << Q_FUNC_INFO <<"end";
 }
 
 void itsBrowser::ProvideAuthentication( QNetworkReply *rep , QAuthenticator *auth ){
     qDebug()<<"Active directory waisting our time master. Auto engage responce";
 
-    bool ok;
-   // QString user = QInputDialog::getText( this , tr( "Provide user name" ) , tr( "User name:" ), QLineEdit::Normal , tr( "tut\\" ) , &ok);
+        QMessageBox::information(this,"Information","No Active directory",QMessageBox::Ok);
 
-    //QString pass = QInputDialog::getText( this , tr( "Provide password" ), tr( "Password:" ), QLineEdit::Normal , tr( "" ) , &ok);
+        //sets url
+        setUrl( QUrl( "https://jupiter.tut.ac.za/staffportal/system/login.php?refscript=/staffportal/index.php" ) );
 
-    emit loadStarted();
-   /* auth->setUser( user );
-    auth->setPassword( pass );
-
-
-    qDebug() << rep->readAll();
-    qDebug()<<auth->password();
-    qDebug()<<auth->user();
-    qDebug()<<rep->error();
-    rep->ignoreSslErrors();*/
 }
 
 void itsBrowser::ProvideProxAuthentication( const QNetworkProxy &np, QAuthenticator *auth ){
     qDebug()<<"Proxy authentication required !!!!!";
-
     qDebug()<<"Proxy authentication is requisted !!!!";
-
-    bool ok;
-    QString user = QInputDialog::getText( this, tr( "Provide user name" ),tr( "User name:" ), QLineEdit::Normal,tr( "tut\\" ) , &ok );
-
-    QString pass = QInputDialog::getText( this, tr( "Provide password" ), tr( "Password:" ), QLineEdit::Normal,tr( "" ) , &ok );
-
-    auth->setUser( user );
-    auth->setPassword( pass );
-
 
 }
 
