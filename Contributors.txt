@@ -1,0 +1,7 @@
+Maintainer
+
+Fredre Hattingh <hattinghfg@tut.ac.za>
+
+Developers
+
+Ass your name and surname here <add your email here>
