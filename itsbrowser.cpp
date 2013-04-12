@@ -55,7 +55,7 @@ void itsBrowser::HandleSslErrors( QNetworkReply* reply , const QList<QSslError> 
 void itsBrowser::ProvideAuthentication( QNetworkReply *rep , QAuthenticator *auth ){
     qDebug()<<"Active directory waisting our time master. Auto engage responce";
 
-        QMessageBox::information(this,"Information","No Active directory",QMessageBox::Ok);
+        QMessageBox::information(this,"Information","Active Directory login not currently supported due to badly configured TUT Directory Server",QMessageBox::Ok);
 
         //sets url
         setUrl( QUrl( "https://jupiter.tut.ac.za/staffportal/system/login.php?refscript=/staffportal/index.php" ) );
