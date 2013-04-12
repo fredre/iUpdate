@@ -4,4 +4,5 @@ Fredre Hattingh <hattinghfg@tut.ac.za>
 
 Developers
 
-Ass your name and surname here <add your email here>
+Add your name and surname here <add your email here>
+Example Goodman <thegood@email.com>
