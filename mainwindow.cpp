@@ -58,12 +58,12 @@ MainWindow::MainWindow( QWidget *parent ) :
     connect(ui->wFitsbrowser,SIGNAL( onNetworkError( QString ) ),this,SLOT( on_webViewBrowser_networkError( QString ) ) );
 
 
-
     ui->wFitsbrowser->setUrl( QUrl( "https://jupiter.tut.ac.za/staffportal/system/login.php?refscript=/staffportal/index.php" ) );
 
     QNetworkDiskCache *diskCache = new QNetworkDiskCache( this );
     diskCache->setCacheDirectory( "cachedir" );
     ui->webViewSubjectInfo->page()->networkAccessManager()->setCache( diskCache );
+
 
 
   qDebug() << Q_FUNC_INFO <<"end";
@@ -107,8 +107,12 @@ void MainWindow::on_webViewBrowser_anyError( QString error )
 void MainWindow::on_webViewBrowser_loadProgress( int progress )
 {
    qDebug() << Q_FUNC_INFO <<"start";
+   QString na;
    ui->progressBarWebInd->setValue( progress );
+
+
    qDebug() << Q_FUNC_INFO <<"end";
+
 }
 
 void MainWindow::on_webViewBrowser_loadStarted()
@@ -376,6 +380,7 @@ qDebug() << Q_FUNC_INFO <<"end";
 
       }
 
+
     // ui->webViewSubjectInfo->setc
 
     // ui->webViewSubjectInfo->settings()->setUserStyleSheetUrl(QUrl::from);
@@ -383,8 +388,17 @@ qDebug() << Q_FUNC_INFO <<"end";
      qDebug()<<QString::fromStdString(one.Process() );
      qDebug() << Q_FUNC_INFO <<"end";
 
-}
 
+}
+void MainWindow::setComboBox()
+{
+      tmpl::html_template one( ":/templ/mtdetails.tmpl" );
+      QString name;
+      one( "MARKTYPES" )= name.toStdString();
+       qDebug() << name <<"labino start";
+
+
+}
  void MainWindow::hideSideWindow()
 {
     qDebug() << Q_FUNC_INFO <<"start";
@@ -579,12 +593,17 @@ void MainWindow::on_comboBoxMarkTypeSlct_currentIndexChanged( const QString &arg
     qDebug()<<arg1;
     ui->webViewSubjectInfo->findText( QString( " " ) );
     ui->webViewSubjectInfo->findText( arg1,QWebPage::FindWrapsAroundDocument );
+
+    qDebug()<<"labino wweewerwerwr";
 }
 
 void MainWindow::on_webViewSubjectInfo_loadFinished( bool arg1 )
 {
-
+    QString na;
     ui->statusBar->showMessage( ui->wFitsbrowser->url().toString() );
+    QWebFrame *frame = ui->webViewSubjectInfo->page()->mainFrame();
+    na = frame->evaluateJavaScript("num(name)").toString();
+    ui->comboBoxMarkTypeSlct->setCurrentText(na);
 }
 
 void MainWindow::on_webViewSubjectInfo_loadStarted()
