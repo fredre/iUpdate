@@ -40,6 +40,7 @@ public:
     QStringList getErrorList();
     void setErrorlist(QStringList);
     int CheckCoulumnMarkAvailability(QString mt);
+    void setComboBox();
 
 private slots:
     void on_pushButton_clicked();
