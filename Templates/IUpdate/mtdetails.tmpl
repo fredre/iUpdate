@@ -14,6 +14,11 @@
              var name;
              function num(name)
              {
+                mainWindow.on_JS_Subject_change(name);
+                //alert(mainWindow.on_JS_Subject_change());
+
+
+
                 return name;
              }
        </script>
@@ -35,7 +40,7 @@
 
  <TMPL_LOOP NAME=MARKTYPES>
 
-    <div data-role="collapsible" >
+    <div id="<TMPL_VAR NAME=NAME>" data-role="collapsible" >
     <h3  onclick="num('<TMPL_VAR NAME=NAME>')"> <TMPL_VAR NAME=NAME > </h3>
     <p> Number of marks <TMPL_VAR NAME=NUMMARKS>. </p>
     <p style="color:red;"> Missing Marks (Mark is 0 or empty) <TMPL_VAR NAME=MISMARKS>.   </p>

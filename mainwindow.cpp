@@ -372,9 +372,18 @@ qDebug() << Q_FUNC_INFO <<"end";
              one( "MISMARKS" ) = csvInter.GetStudentCount()-csvInter.GetMarkTypeTotalNumberMarks( csvInter.GetMarkTypesList()[0] );
 
 
+             QObject::connect(ui->webViewSubjectInfo->page()->mainFrame(), SIGNAL(javaScriptWindowObjectCleared()),
+                                  this, SLOT(addJSObject()));
+
+             ui->webViewSubjectInfo->settings()->globalSettings()->setAttribute(QWebSettings::DeveloperExtrasEnabled, true);
+
+
              ui->webViewSubjectInfo->setHtml( QString::fromStdString(one.Process() ),QUrl("http://code.jquery.com") );
 
              loop_marks.Empty();
+             //Send the object to javascript
+             //ui->webViewSubjectInfo->page()->mainFrame()->addToJavaScriptWindowObject("mainWindow", this);
+
 
        //Loop end
 
@@ -388,8 +397,16 @@ qDebug() << Q_FUNC_INFO <<"end";
      qDebug()<<QString::fromStdString(one.Process() );
      qDebug() << Q_FUNC_INFO <<"end";
 
-
 }
+
+ void MainWindow::addJSObject() {
+      // Add pAnalyzer to JavaScript Frame as member "imageAnalyzer".
+     qDebug()<<"Add JS object";
+     ui->webViewSubjectInfo->page()->mainFrame()->addToJavaScriptWindowObject(QString("mainWindow"), this);
+  }
+
+
+
 void MainWindow::setComboBox()
 {
       tmpl::html_template one( ":/templ/mtdetails.tmpl" );
@@ -421,6 +438,9 @@ void MainWindow::setComboBox()
      ui->comboBoxMarkTypeSlct->show();
      ui->webViewSubjectInfo->show();
 
+     //Send the object to javascript
+     ui->webViewSubjectInfo->page()->mainFrame()->addToJavaScriptWindowObject("mainWindow", this);
+
      QList<int> currentSizes = ui->splitter->sizes();
      // adjust sizes individually
 
@@ -429,6 +449,18 @@ void MainWindow::setComboBox()
 
      ui->splitter->setSizes( currentSizes );
      qDebug() << Q_FUNC_INFO <<"end";
+ }
+
+ void MainWindow::on_JS_Subject_change(QString name)
+ {
+     qDebug()<<"Called from Javascript";
+     qDebug()<<name;
+
+     //Update the combox
+     if(!name.isEmpty() || name != " " || name!="")
+     {
+     ui->comboBoxMarkTypeSlct->setCurrentText(name);
+     }
  }
 
 void MainWindow::on_pushButtonUpdateMrks_clicked()
@@ -583,18 +615,32 @@ void MainWindow::CsvFileParseError( QString mes ){
     qDebug() << Q_FUNC_INFO <<"end";
 
 }
-void MainWindow::on_comboBoxMarkTypeSlct_editTextChanged( const QString &arg1 )
-{
 
-}
 
 void MainWindow::on_comboBoxMarkTypeSlct_currentIndexChanged( const QString &arg1 )
 {
-    qDebug()<<arg1;
+
+
+    //qDebug()<<arg1;
     ui->webViewSubjectInfo->findText( QString( " " ) );
     ui->webViewSubjectInfo->findText( arg1,QWebPage::FindWrapsAroundDocument );
 
-    qDebug()<<"labino wweewerwerwr";
+    qDebug()<<arg1;
+
+    QString src = "$('#%1').trigger('expand');";
+    src = src.arg(arg1);
+
+    qDebug()<<src;
+
+    ui->webViewSubjectInfo->findText( QString( " " ) );
+    ui->webViewSubjectInfo->findText( arg1,QWebPage::FindWrapsAroundDocument );
+
+
+
+
+    ui->webViewSubjectInfo->page()->currentFrame()->evaluateJavaScript(src);
+
+
 }
 
 void MainWindow::on_webViewSubjectInfo_loadFinished( bool arg1 )

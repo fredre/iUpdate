@@ -42,6 +42,8 @@ public:
     int CheckCoulumnMarkAvailability(QString mt);
     void setComboBox();
 
+    Q_INVOKABLE void on_JS_Subject_change(QString); //When the user selects a different subject
+
 private slots:
     void on_pushButton_clicked();
 
@@ -76,7 +78,6 @@ private slots:
 
     void CsvFileParseError( QString );
 
-    void on_comboBoxMarkTypeSlct_editTextChanged( const QString &arg1 );
 
     void on_comboBoxMarkTypeSlct_currentIndexChanged( const QString &arg1 );
 
@@ -87,6 +88,8 @@ private slots:
     void on_actionLoad_Local_Tes_triggered();
 
     void on_actionGo_back_to_login_page_triggered();
+
+    void addJSObject();
 
 private:
     Ui::MainWindow *ui;

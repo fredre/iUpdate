@@ -102,3 +102,5 @@ bool itsBrowser::InblrContainsStuNum( QString stn ){
  void itsBrowser::SetInblrCanBlackOut(){
    QVariant result = this->page()->currentFrame()->evaluateJavaScript( QString( "for(a=0;a<document.frmOne.elements.length;a++ ) { if(document.frmOne.elements[a].type='table' ) {for ( i = 0, row; row = document.frmOne.elements[a].rows[i]; i++ ) {}  }  } " ) );
 }
+
+

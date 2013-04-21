@@ -28,6 +28,10 @@ public:
     bool InblrContainsStuNum( QString );
     void SetInblrCanBlackOut();
 
+
+
+
+
 signals:
     void onAnyError( QString );
     void OnNetworkError( QString ); //Problem with network connectivity
@@ -36,6 +40,7 @@ public slots:
     void ProvideAuthentication( QNetworkReply*,QAuthenticator* );
     void ProvideProxAuthentication( const QNetworkProxy &, QAuthenticator* );
     void NetworkTaskfinished ( QNetworkReply * );
+
 
 };
 
