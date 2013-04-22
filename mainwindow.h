@@ -91,6 +91,9 @@ private slots:
 
     void addJSObject();
 
+
+    void on_comboBoxMarkTypeSlct_currentTextChanged(const QString &arg1);
+
 private:
     Ui::MainWindow *ui;
     DocInterface csvInter;

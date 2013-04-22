@@ -381,9 +381,6 @@ qDebug() << Q_FUNC_INFO <<"end";
              ui->webViewSubjectInfo->setHtml( QString::fromStdString(one.Process() ),QUrl("http://code.jquery.com") );
 
              loop_marks.Empty();
-             //Send the object to javascript
-             //ui->webViewSubjectInfo->page()->mainFrame()->addToJavaScriptWindowObject("mainWindow", this);
-
 
        //Loop end
 
@@ -621,24 +618,7 @@ void MainWindow::on_comboBoxMarkTypeSlct_currentIndexChanged( const QString &arg
 {
 
 
-    //qDebug()<<arg1;
-    ui->webViewSubjectInfo->findText( QString( " " ) );
-    ui->webViewSubjectInfo->findText( arg1,QWebPage::FindWrapsAroundDocument );
 
-    qDebug()<<arg1;
-
-    QString src = "$('#%1').trigger('expand');";
-    src = src.arg(arg1);
-
-    qDebug()<<src;
-
-    ui->webViewSubjectInfo->findText( QString( " " ) );
-    ui->webViewSubjectInfo->findText( arg1,QWebPage::FindWrapsAroundDocument );
-
-
-
-
-    ui->webViewSubjectInfo->page()->currentFrame()->evaluateJavaScript(src);
 
 
 }
@@ -677,3 +657,28 @@ void MainWindow::on_actionGo_back_to_login_page_triggered()
 }
 
 
+
+
+
+void MainWindow::on_comboBoxMarkTypeSlct_currentTextChanged(const QString &arg1)
+{
+    qDebug()<<"Combo Box Current text changed";
+    //qDebug()<<arg1;
+    ui->webViewSubjectInfo->findText( QString( " " ) );
+    ui->webViewSubjectInfo->findText( arg1,QWebPage::FindWrapsAroundDocument );
+
+    qDebug()<<arg1;
+
+    QString src = "$('#%1').trigger('expand');";
+    src = src.arg(arg1);
+
+    qDebug()<<src;
+
+    ui->webViewSubjectInfo->findText( QString( " " ) );
+    ui->webViewSubjectInfo->findText( arg1,QWebPage::FindWrapsAroundDocument );
+
+
+
+
+    //ui->webViewSubjectInfo->page()->currentFrame()->evaluateJavaScript(src);
+}
