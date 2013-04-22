@@ -134,7 +134,7 @@ qDebug() << Q_FUNC_INFO <<"start";
     ui->statusBar->clearMessage();
 
     qDebug() << Q_FUNC_INFO <<"end";
-    qDebug()<<"lets see if iiijlaskdfjlkasjdfklasdj";
+
 }
 
 void MainWindow::on_actionAbout_triggered()
