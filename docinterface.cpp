@@ -140,6 +140,7 @@ bool DocInterface::LoadFile()
   QString DocInterface::GetSubjectCode() {
       QString scode;
       scode = filecontents[ 0 ];
+
       scode = scode.split( ',' )[ 0 ];
       sanitizeString( scode );
       return scode;
@@ -195,6 +196,16 @@ bool DocInterface::LoadFile()
 QStringList DocInterface::GetMarkTypesList() {
    QString mtypes =filecontents[ 2 ];
 
+   //Do some additional checking here since it is the first time the file contents is being evaluated
+
+
+
+   //Check if first line contains a string
+   if(filecontents[0].isEmpty() || filecontents[0] == "" || filecontents[0] == " " || filecontents[0][0]==',')
+   {
+     emit FileParseError( QString( "No valid subject name found currently subject name is: %1. Are you sure the very first row contains the subject name ?" ).arg(filecontents[0]));
+   }
+
    sanitizeString( mtypes );
    QStringList mtypesSp;
 
@@ -208,7 +219,6 @@ QStringList DocInterface::GetMarkTypesList() {
                mtypesSp.removeAt(x);
            }
        }
-       qDebug()<<"@#@%"<<mtypesSp;
 
  return mtypesSp;
 }
@@ -217,6 +227,9 @@ QStringList DocInterface::GetMarkTypesList() {
  int DocInterface::getMarkTypeColumn( QString mt ) {
      //Will return the coloumn number of the marktype
      QStringList mtypesall = filecontents[ 2 ].split( ',' );
+
+
+
      int loc;
 
      for ( int a=0;a<mtypesall.count();a++ ) {
