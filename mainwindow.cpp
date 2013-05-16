@@ -1,3 +1,6 @@
+//https://github.com/pypt/fervor#readme
+
+
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include <QMessageBox>
@@ -57,7 +60,7 @@ MainWindow::MainWindow( QWidget *parent ) :
     connect(ui->wFitsbrowser,SIGNAL( onAnyError( QString ) ),this,SLOT( on_webViewBrowser_anyError( QString ) ) );
     connect(ui->wFitsbrowser,SIGNAL( onNetworkError( QString ) ),this,SLOT( on_webViewBrowser_networkError( QString ) ) );
 
-
+   // ui->wFitsbrowser->setUrl(QUrl("www.tut.ac.za"));
     ui->wFitsbrowser->setUrl( QUrl( "https://jupiter.tut.ac.za/staffportal/system/login.php?refscript=/staffportal/index.php" ) );
 
     QNetworkDiskCache *diskCache = new QNetworkDiskCache( this );
@@ -591,7 +594,8 @@ void MainWindow::on_actionLoad_ec_tut_ac_za_triggered() {
 
     qDebug() << Q_FUNC_INFO <<"start";
    qDebug()<<"Testing to see if ec.tut.ac.za loads";
-          qDebug() << Q_FUNC_INFO <<"end";
+    ui->wFitsbrowser->setUrl( QUrl( "http://ec.tut.ac.za" ) );
+    qDebug() << Q_FUNC_INFO <<"end";
 }
 
 

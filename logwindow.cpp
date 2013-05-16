@@ -47,6 +47,7 @@ void LogWindow::AddUpdateHeader( QString fileUsed,QString mtused,QString subject
 
     MarkType = mtused;
     MarkType = MarkType.trimmed();
+    MarkType = MarkType.simplified();
 
     qDebug() << Q_FUNC_INFO <<"end";
 }
@@ -114,25 +115,37 @@ void LogWindow::On_actionSave_triggered(){
 
 void LogWindow::on_pushButton_2_clicked()
 {
-    QString directory = QFileDialog::getExistingDirectory(this,tr("Choose or Create Directory"),"/home",QFileDialog::ShowDirsOnly|QFileDialog::DontUseNativeDialog);
+    QMessageBox msgBox;
+    qDebug() << Q_FUNC_INFO <<"start";
+
+    QString directory = QFileDialog::getExistingDirectory(this,tr("Choose or Create Directory"),QDir::homePath(),QFileDialog::ShowDirsOnly);
     if(directory != "")
     {
-        QString fileName = directory+"/"+Subname+" Logile.txt";
+        QDir savedir(directory);
+        QString fileName = tr( "%9_%1%4%2_UpdateLog_%3-%5-%6@%7-%8.txt" ).arg( savedir.absolutePath() ).arg( MarkType ).arg( QDateTime::currentDateTime().date().year() ).arg( QDir::separator() ).arg( QDateTime::currentDateTime().date().month() ).arg( QDateTime::currentDateTime().date().day() ).arg( QDateTime::currentDateTime().time().hour() ).arg( QDateTime::currentDateTime().time().minute()).arg(Subname);
         QFile file;
         file.setFileName(fileName);
         file.open(QIODevice::Append| QIODevice::Text);
         QTextStream write(&file);
         write<<ui->textEdit->toPlainText();
-        QMessageBox msgBox;
-        msgBox.setText("Log file saved at"+directory );
+
+        msgBox.setText(QString("Log file saved at %1").arg(fileName) );
+        msgBox.setWindowTitle("Update Log saved");
         msgBox.setIcon(QMessageBox::Information);
         msgBox.exec();
         this->close();
         file.close();
 
     }
+    else{
+        msgBox.setText("Log file not saved. Problem with directory structure" );
+        msgBox.setIcon(QMessageBox::Critical);
+        msgBox.setWindowTitle("ERROR");
+        msgBox.exec();
+    }
 
 
+qDebug() << Q_FUNC_INFO <<"end";
 
 
 }

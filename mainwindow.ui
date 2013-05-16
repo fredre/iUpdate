@@ -136,6 +136,7 @@
     <property name="title">
      <string>Test</string>
     </property>
+    <addaction name="separator"/>
     <addaction name="actionLoad_ec_tut_ac_za"/>
     <addaction name="actionLoad_Local_Tes"/>
    </widget>
