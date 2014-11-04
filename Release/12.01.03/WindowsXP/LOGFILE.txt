@@ -1,0 +1,916 @@
+Debug: 12.01.03 
+Debug: MainWindow::MainWindow(QWidget*) start 
+Warning: QMetaObject::connectSlotsByName: No matching signal for on_pushButton_clicked()
+Warning: QMetaObject::connectSlotsByName: No matching signal for on_webViewBrowser_loadProgress(int)
+Warning: QMetaObject::connectSlotsByName: No matching signal for on_webViewBrowser_loadStarted()
+Warning: QMetaObject::connectSlotsByName: No matching signal for on_webViewBrowser_loadFinished(bool)
+Warning: QMetaObject::connectSlotsByName: No matching signal for on_webViewBrowser_anyError(QString)
+Debug: void MainWindow::hideSideWindow() start 
+Debug: void MainWindow::hideSideWindow() end 
+Debug: void MainWindow::on_webViewBrowser_loadStarted() start 
+Debug: void MainWindow::on_webViewBrowser_loadStarted() end 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) start 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) end 
+Debug: MainWindow::MainWindow(QWidget*) end 
+Debug: 12.01.03 
+Debug: MainWindow::MainWindow(QWidget*) start 
+Warning: QMetaObject::connectSlotsByName: No matching signal for on_pushButton_clicked()
+Warning: QMetaObject::connectSlotsByName: No matching signal for on_webViewBrowser_loadProgress(int)
+Warning: QMetaObject::connectSlotsByName: No matching signal for on_webViewBrowser_loadStarted()
+Warning: QMetaObject::connectSlotsByName: No matching signal for on_webViewBrowser_loadFinished(bool)
+Warning: QMetaObject::connectSlotsByName: No matching signal for on_webViewBrowser_anyError(QString)
+Debug: void MainWindow::hideSideWindow() start 
+Debug: void MainWindow::hideSideWindow() end 
+Debug: void MainWindow::on_webViewBrowser_loadStarted() start 
+Debug: void MainWindow::on_webViewBrowser_loadStarted() end 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) start 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) end 
+Debug: MainWindow::MainWindow(QWidget*) end 
+Debug: 12.01.03 
+Debug: MainWindow::MainWindow(QWidget*) start 
+Warning: QMetaObject::connectSlotsByName: No matching signal for on_pushButton_clicked()
+Warning: QMetaObject::connectSlotsByName: No matching signal for on_webViewBrowser_loadProgress(int)
+Warning: QMetaObject::connectSlotsByName: No matching signal for on_webViewBrowser_loadStarted()
+Warning: QMetaObject::connectSlotsByName: No matching signal for on_webViewBrowser_loadFinished(bool)
+Warning: QMetaObject::connectSlotsByName: No matching signal for on_webViewBrowser_anyError(QString)
+Debug: void MainWindow::hideSideWindow() start 
+Debug: void MainWindow::hideSideWindow() end 
+Debug: void MainWindow::on_webViewBrowser_loadStarted() start 
+Debug: void MainWindow::on_webViewBrowser_loadStarted() end 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) start 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) end 
+Debug: MainWindow::MainWindow(QWidget*) end 
+Debug: void itsBrowser::handleSslErrors(QNetworkReply*, const QList<QSslError>&) start 
+Debug: handleSslErrors:  
+Debug: ssl error:  "No error" 
+Debug: void MainWindow::on_webViewBrowser_anyError(QString) start 
+Debug: void MainWindow::on_webViewBrowser_anyError(QString) end 
+Debug: ssl error:  "No error" 
+Debug: void MainWindow::on_webViewBrowser_anyError(QString) start 
+Debug: void MainWindow::on_webViewBrowser_anyError(QString) end 
+Debug: void itsBrowser::handleSslErrors(QNetworkReply*, const QList<QSslError>&) end 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) start 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) end 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) start 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) end 
+Debug: void itsBrowser::handleSslErrors(QNetworkReply*, const QList<QSslError>&) start 
+Debug: handleSslErrors:  
+Debug: ssl error:  "No error" 
+Debug: void MainWindow::on_webViewBrowser_anyError(QString) start 
+Debug: void MainWindow::on_webViewBrowser_anyError(QString) end 
+Debug: ssl error:  "No error" 
+Debug: void MainWindow::on_webViewBrowser_anyError(QString) start 
+Debug: void MainWindow::on_webViewBrowser_anyError(QString) end 
+Debug: void itsBrowser::handleSslErrors(QNetworkReply*, const QList<QSslError>&) end 
+Debug: void itsBrowser::handleSslErrors(QNetworkReply*, const QList<QSslError>&) start 
+Debug: handleSslErrors:  
+Debug: ssl error:  "No error" 
+Debug: void MainWindow::on_webViewBrowser_anyError(QString) start 
+Debug: void MainWindow::on_webViewBrowser_anyError(QString) end 
+Debug: ssl error:  "No error" 
+Debug: void MainWindow::on_webViewBrowser_anyError(QString) start 
+Debug: void MainWindow::on_webViewBrowser_anyError(QString) end 
+Debug: void itsBrowser::handleSslErrors(QNetworkReply*, const QList<QSslError>&) end 
+Debug: void itsBrowser::handleSslErrors(QNetworkReply*, const QList<QSslError>&) start 
+Debug: handleSslErrors:  
+Debug: ssl error:  "No error" 
+Debug: void MainWindow::on_webViewBrowser_anyError(QString) start 
+Debug: void MainWindow::on_webViewBrowser_anyError(QString) end 
+Debug: ssl error:  "No error" 
+Debug: void MainWindow::on_webViewBrowser_anyError(QString) start 
+Debug: void MainWindow::on_webViewBrowser_anyError(QString) end 
+Debug: void itsBrowser::handleSslErrors(QNetworkReply*, const QList<QSslError>&) end 
+Debug: void itsBrowser::handleSslErrors(QNetworkReply*, const QList<QSslError>&) start 
+Debug: handleSslErrors:  
+Debug: ssl error:  "No error" 
+Debug: void MainWindow::on_webViewBrowser_anyError(QString) start 
+Debug: void MainWindow::on_webViewBrowser_anyError(QString) end 
+Debug: ssl error:  "No error" 
+Debug: void MainWindow::on_webViewBrowser_anyError(QString) start 
+Debug: void MainWindow::on_webViewBrowser_anyError(QString) end 
+Debug: void itsBrowser::handleSslErrors(QNetworkReply*, const QList<QSslError>&) end 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) start 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) end 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) start 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) end 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) start 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) end 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) start 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) end 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) start 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) end 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) start 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) end 
+Debug: void MainWindow::on_webViewBrowser_loadFinished(bool) start 
+Debug: void MainWindow::on_webViewBrowser_loadFinished(bool) end 
+Debug: 12.01.03 
+Debug: MainWindow::MainWindow(QWidget*) start 
+Debug: QFactoryLoader::QFactoryLoader() looking at "C:/QtSDK/Desktop/Qt/4.7.3/mingw/plugins/bearer/libqgenericbearer4.a" 
+Debug: "The file 'C:/QtSDK/Desktop/Qt/4.7.3/mingw/plugins/bearer/libqgenericbearer4.a' is not a valid Qt plugin." 
+Debug:          not a plugin 
+Debug: QFactoryLoader::QFactoryLoader() looking at "C:/QtSDK/Desktop/Qt/4.7.3/mingw/plugins/bearer/libqgenericbearerd4.a" 
+Debug: "The file 'C:/QtSDK/Desktop/Qt/4.7.3/mingw/plugins/bearer/libqgenericbearerd4.a' is not a valid Qt plugin." 
+Debug:          not a plugin 
+Debug: QFactoryLoader::QFactoryLoader() looking at "C:/QtSDK/Desktop/Qt/4.7.3/mingw/plugins/bearer/libqnativewifibearer4.a" 
+Debug: "The file 'C:/QtSDK/Desktop/Qt/4.7.3/mingw/plugins/bearer/libqnativewifibearer4.a' is not a valid Qt plugin." 
+Debug:          not a plugin 
+Debug: QFactoryLoader::QFactoryLoader() looking at "C:/QtSDK/Desktop/Qt/4.7.3/mingw/plugins/bearer/libqnativewifibearerd4.a" 
+Debug: "The file 'C:/QtSDK/Desktop/Qt/4.7.3/mingw/plugins/bearer/libqnativewifibearerd4.a' is not a valid Qt plugin." 
+Debug:          not a plugin 
+Debug: QFactoryLoader::QFactoryLoader() looking at "C:/QtSDK/Desktop/Qt/4.7.3/mingw/plugins/bearer/qgenericbearer4.dll" 
+Debug: keys ("generic") 
+Debug: QFactoryLoader::QFactoryLoader() looking at "C:/QtSDK/Desktop/Qt/4.7.3/mingw/plugins/bearer/qgenericbearerd4.dll" 
+Warning: In C:/QtSDK/Desktop/Qt/4.7.3/mingw/plugins/bearer/qgenericbearerd4.dll:
+  Plugin uses incompatible Qt library
+  expected build key "Windows mingw release full-config", got "Windows mingw debug full-config"
+Debug: "The plugin 'C:/QtSDK/Desktop/Qt/4.7.3/mingw/plugins/bearer/qgenericbearerd4.dll' uses incompatible Qt library. Expected build key "Windows mingw release full-config", got "Windows mingw debug full-config"" 
+Debug:          not a plugin 
+Debug: QFactoryLoader::QFactoryLoader() looking at "C:/QtSDK/Desktop/Qt/4.7.3/mingw/plugins/bearer/qnativewifibearer4.dll" 
+Debug: keys ("nativewifi") 
+Debug: QFactoryLoader::QFactoryLoader() looking at "C:/QtSDK/Desktop/Qt/4.7.3/mingw/plugins/bearer/qnativewifibearerd4.dll" 
+Warning: In C:/QtSDK/Desktop/Qt/4.7.3/mingw/plugins/bearer/qnativewifibearerd4.dll:
+  Plugin uses incompatible Qt library
+  expected build key "Windows mingw release full-config", got "Windows mingw debug full-config"
+Debug: "The plugin 'C:/QtSDK/Desktop/Qt/4.7.3/mingw/plugins/bearer/qnativewifibearerd4.dll' uses incompatible Qt library. Expected build key "Windows mingw release full-config", got "Windows mingw debug full-config"" 
+Debug:          not a plugin 
+Debug: QFactoryLoader::QFactoryLoader() looking at "C:/QtSDK/Desktop/Qt/4.7.3/mingw/plugins/codecs/libqcncodecs4.a" 
+Debug: "The file 'C:/QtSDK/Desktop/Qt/4.7.3/mingw/plugins/codecs/libqcncodecs4.a' is not a valid Qt plugin." 
+Debug:          not a plugin 
+Debug: QFactoryLoader::QFactoryLoader() looking at "C:/QtSDK/Desktop/Qt/4.7.3/mingw/plugins/codecs/libqcncodecsd4.a" 
+Debug: "The file 'C:/QtSDK/Desktop/Qt/4.7.3/mingw/plugins/codecs/libqcncodecsd4.a' is not a valid Qt plugin." 
+Debug:          not a plugin 
+Debug: QFactoryLoader::QFactoryLoader() looking at "C:/QtSDK/Desktop/Qt/4.7.3/mingw/plugins/codecs/libqjpcodecs4.a" 
+Debug: "The file 'C:/QtSDK/Desktop/Qt/4.7.3/mingw/plugins/codecs/libqjpcodecs4.a' is not a valid Qt plugin." 
+Debug:          not a plugin 
+Debug: QFactoryLoader::QFactoryLoader() looking at "C:/QtSDK/Desktop/Qt/4.7.3/mingw/plugins/codecs/libqjpcodecsd4.a" 
+Debug: "The file 'C:/QtSDK/Desktop/Qt/4.7.3/mingw/plugins/codecs/libqjpcodecsd4.a' is not a valid Qt plugin." 
+Debug:          not a plugin 
+Debug: QFactoryLoader::QFactoryLoader() looking at "C:/QtSDK/Desktop/Qt/4.7.3/mingw/plugins/codecs/libqkrcodecs4.a" 
+Debug: "The file 'C:/QtSDK/Desktop/Qt/4.7.3/mingw/plugins/codecs/libqkrcodecs4.a' is not a valid Qt plugin." 
+Debug:          not a plugin 
+Debug: QFactoryLoader::QFactoryLoader() looking at "C:/QtSDK/Desktop/Qt/4.7.3/mingw/plugins/codecs/libqkrcodecsd4.a" 
+Debug: "The file 'C:/QtSDK/Desktop/Qt/4.7.3/mingw/plugins/codecs/libqkrcodecsd4.a' is not a valid Qt plugin." 
+Debug:          not a plugin 
+Debug: QFactoryLoader::QFactoryLoader() looking at "C:/QtSDK/Desktop/Qt/4.7.3/mingw/plugins/codecs/libqtwcodecs4.a" 
+Debug: "The file 'C:/QtSDK/Desktop/Qt/4.7.3/mingw/plugins/codecs/libqtwcodecs4.a' is not a valid Qt plugin." 
+Debug:          not a plugin 
+Debug: QFactoryLoader::QFactoryLoader() looking at "C:/QtSDK/Desktop/Qt/4.7.3/mingw/plugins/codecs/libqtwcodecsd4.a" 
+Debug: "The file 'C:/QtSDK/Desktop/Qt/4.7.3/mingw/plugins/codecs/libqtwcodecsd4.a' is not a valid Qt plugin." 
+Debug:          not a plugin 
+Debug: QFactoryLoader::QFactoryLoader() looking at "C:/QtSDK/Desktop/Qt/4.7.3/mingw/plugins/codecs/qcncodecs4.dll" 
+Debug: keys ("GB18030", "GBK", "GB2312", "CP936", "MS936", "windows-936", "MIB: 114", "MIB: 113", "MIB: 2025") 
+Debug: QFactoryLoader::QFactoryLoader() looking at "C:/QtSDK/Desktop/Qt/4.7.3/mingw/plugins/codecs/qcncodecsd4.dll" 
+Warning: In C:/QtSDK/Desktop/Qt/4.7.3/mingw/plugins/codecs/qcncodecsd4.dll:
+  Plugin uses incompatible Qt library
+  expected build key "Windows mingw release full-config", got "Windows mingw debug full-config"
+Debug: "The plugin 'C:/QtSDK/Desktop/Qt/4.7.3/mingw/plugins/codecs/qcncodecsd4.dll' uses incompatible Qt library. Expected build key "Windows mingw release full-config", got "Windows mingw debug full-config"" 
+Debug:          not a plugin 
+Debug: QFactoryLoader::QFactoryLoader() looking at "C:/QtSDK/Desktop/Qt/4.7.3/mingw/plugins/codecs/qjpcodecs4.dll" 
+Debug: keys ("EUC-JP", "ISO-2022-JP", "Shift_JIS", "JIS7", "SJIS", "MS_Kanji", "MIB: 18", "MIB: 39", "MIB: 17") 
+Debug: QFactoryLoader::QFactoryLoader() looking at "C:/QtSDK/Desktop/Qt/4.7.3/mingw/plugins/codecs/qjpcodecsd4.dll" 
+Warning: In C:/QtSDK/Desktop/Qt/4.7.3/mingw/plugins/codecs/qjpcodecsd4.dll:
+  Plugin uses incompatible Qt library
+  expected build key "Windows mingw release full-config", got "Windows mingw debug full-config"
+Debug: "The plugin 'C:/QtSDK/Desktop/Qt/4.7.3/mingw/plugins/codecs/qjpcodecsd4.dll' uses incompatible Qt library. Expected build key "Windows mingw release full-config", got "Windows mingw debug full-config"" 
+Debug:          not a plugin 
+Debug: QFactoryLoader::QFactoryLoader() looking at "C:/QtSDK/Desktop/Qt/4.7.3/mingw/plugins/codecs/qkrcodecs4.dll" 
+Debug: keys ("EUC-KR", "cp949", "MIB: 38", "MIB: -949") 
+Debug: QFactoryLoader::QFactoryLoader() looking at "C:/QtSDK/Desktop/Qt/4.7.3/mingw/plugins/codecs/qkrcodecsd4.dll" 
+Warning: In C:/QtSDK/Desktop/Qt/4.7.3/mingw/plugins/codecs/qkrcodecsd4.dll:
+  Plugin uses incompatible Qt library
+  expected build key "Windows mingw release full-config", got "Windows mingw debug full-config"
+Debug: "The plugin 'C:/QtSDK/Desktop/Qt/4.7.3/mingw/plugins/codecs/qkrcodecsd4.dll' uses incompatible Qt library. Expected build key "Windows mingw release full-config", got "Windows mingw debug full-config"" 
+Debug:          not a plugin 
+Debug: QFactoryLoader::QFactoryLoader() looking at "C:/QtSDK/Desktop/Qt/4.7.3/mingw/plugins/codecs/qtwcodecs4.dll" 
+Debug: keys ("Big5", "Big5-HKSCS", "Big5-ETen", "CP950", "MIB: 2026", "MIB: 2101") 
+Debug: QFactoryLoader::QFactoryLoader() looking at "C:/QtSDK/Desktop/Qt/4.7.3/mingw/plugins/codecs/qtwcodecsd4.dll" 
+Warning: In C:/QtSDK/Desktop/Qt/4.7.3/mingw/plugins/codecs/qtwcodecsd4.dll:
+  Plugin uses incompatible Qt library
+  expected build key "Windows mingw release full-config", got "Windows mingw debug full-config"
+Debug: "The plugin 'C:/QtSDK/Desktop/Qt/4.7.3/mingw/plugins/codecs/qtwcodecsd4.dll' uses incompatible Qt library. Expected build key "Windows mingw release full-config", got "Windows mingw debug full-config"" 
+Debug:          not a plugin 
+Warning: QMetaObject::connectSlotsByName: No matching signal for on_pushButton_clicked()
+Warning: QMetaObject::connectSlotsByName: No matching signal for on_webViewBrowser_loadProgress(int)
+Warning: QMetaObject::connectSlotsByName: No matching signal for on_webViewBrowser_loadStarted()
+Warning: QMetaObject::connectSlotsByName: No matching signal for on_webViewBrowser_loadFinished(bool)
+Warning: QMetaObject::connectSlotsByName: No matching signal for on_webViewBrowser_anyError(QString)
+Debug: void MainWindow::hideSideWindow() start 
+Debug: void MainWindow::hideSideWindow() end 
+Debug: QFactoryLoader::QFactoryLoader() looking at "C:/QtSDK/Desktop/Qt/4.7.3/mingw/plugins/imageformats/libqgif4.a" 
+Debug: "The file 'C:/QtSDK/Desktop/Qt/4.7.3/mingw/plugins/imageformats/libqgif4.a' is not a valid Qt plugin." 
+Debug:          not a plugin 
+Debug: QFactoryLoader::QFactoryLoader() looking at "C:/QtSDK/Desktop/Qt/4.7.3/mingw/plugins/imageformats/libqgifd4.a" 
+Debug: "The file 'C:/QtSDK/Desktop/Qt/4.7.3/mingw/plugins/imageformats/libqgifd4.a' is not a valid Qt plugin." 
+Debug:          not a plugin 
+Debug: QFactoryLoader::QFactoryLoader() looking at "C:/QtSDK/Desktop/Qt/4.7.3/mingw/plugins/imageformats/libqico4.a" 
+Debug: "The file 'C:/QtSDK/Desktop/Qt/4.7.3/mingw/plugins/imageformats/libqico4.a' is not a valid Qt plugin." 
+Debug:          not a plugin 
+Debug: QFactoryLoader::QFactoryLoader() looking at "C:/QtSDK/Desktop/Qt/4.7.3/mingw/plugins/imageformats/libqicod4.a" 
+Debug: "The file 'C:/QtSDK/Desktop/Qt/4.7.3/mingw/plugins/imageformats/libqicod4.a' is not a valid Qt plugin." 
+Debug:          not a plugin 
+Debug: QFactoryLoader::QFactoryLoader() looking at "C:/QtSDK/Desktop/Qt/4.7.3/mingw/plugins/imageformats/libqjpeg4.a" 
+Debug: "The file 'C:/QtSDK/Desktop/Qt/4.7.3/mingw/plugins/imageformats/libqjpeg4.a' is not a valid Qt plugin." 
+Debug:          not a plugin 
+Debug: QFactoryLoader::QFactoryLoader() looking at "C:/QtSDK/Desktop/Qt/4.7.3/mingw/plugins/imageformats/libqjpegd4.a" 
+Debug: "The file 'C:/QtSDK/Desktop/Qt/4.7.3/mingw/plugins/imageformats/libqjpegd4.a' is not a valid Qt plugin." 
+Debug:          not a plugin 
+Debug: QFactoryLoader::QFactoryLoader() looking at "C:/QtSDK/Desktop/Qt/4.7.3/mingw/plugins/imageformats/libqmng4.a" 
+Debug: "The file 'C:/QtSDK/Desktop/Qt/4.7.3/mingw/plugins/imageformats/libqmng4.a' is not a valid Qt plugin." 
+Debug:          not a plugin 
+Debug: QFactoryLoader::QFactoryLoader() looking at "C:/QtSDK/Desktop/Qt/4.7.3/mingw/plugins/imageformats/libqmngd4.a" 
+Debug: "The file 'C:/QtSDK/Desktop/Qt/4.7.3/mingw/plugins/imageformats/libqmngd4.a' is not a valid Qt plugin." 
+Debug:          not a plugin 
+Debug: QFactoryLoader::QFactoryLoader() looking at "C:/QtSDK/Desktop/Qt/4.7.3/mingw/plugins/imageformats/libqsvg4.a" 
+Debug: "The file 'C:/QtSDK/Desktop/Qt/4.7.3/mingw/plugins/imageformats/libqsvg4.a' is not a valid Qt plugin." 
+Debug:          not a plugin 
+Debug: QFactoryLoader::QFactoryLoader() looking at "C:/QtSDK/Desktop/Qt/4.7.3/mingw/plugins/imageformats/libqsvgd4.a" 
+Debug: "The file 'C:/QtSDK/Desktop/Qt/4.7.3/mingw/plugins/imageformats/libqsvgd4.a' is not a valid Qt plugin." 
+Debug:          not a plugin 
+Debug: QFactoryLoader::QFactoryLoader() looking at "C:/QtSDK/Desktop/Qt/4.7.3/mingw/plugins/imageformats/libqtiff4.a" 
+Debug: "The file 'C:/QtSDK/Desktop/Qt/4.7.3/mingw/plugins/imageformats/libqtiff4.a' is not a valid Qt plugin." 
+Debug:          not a plugin 
+Debug: QFactoryLoader::QFactoryLoader() looking at "C:/QtSDK/Desktop/Qt/4.7.3/mingw/plugins/imageformats/libqtiffd4.a" 
+Debug: "The file 'C:/QtSDK/Desktop/Qt/4.7.3/mingw/plugins/imageformats/libqtiffd4.a' is not a valid Qt plugin." 
+Debug:          not a plugin 
+Debug: QFactoryLoader::QFactoryLoader() looking at "C:/QtSDK/Desktop/Qt/4.7.3/mingw/plugins/imageformats/qgif4.dll" 
+Debug: keys ("gif") 
+Debug: QFactoryLoader::QFactoryLoader() looking at "C:/QtSDK/Desktop/Qt/4.7.3/mingw/plugins/imageformats/qgifd4.dll" 
+Warning: In C:/QtSDK/Desktop/Qt/4.7.3/mingw/plugins/imageformats/qgifd4.dll:
+  Plugin uses incompatible Qt library
+  expected build key "Windows mingw release full-config", got "Windows mingw debug full-config"
+Debug: "The plugin 'C:/QtSDK/Desktop/Qt/4.7.3/mingw/plugins/imageformats/qgifd4.dll' uses incompatible Qt library. Expected build key "Windows mingw release full-config", got "Windows mingw debug full-config"" 
+Debug:          not a plugin 
+Debug: QFactoryLoader::QFactoryLoader() looking at "C:/QtSDK/Desktop/Qt/4.7.3/mingw/plugins/imageformats/qico4.dll" 
+Debug: keys ("ico") 
+Debug: QFactoryLoader::QFactoryLoader() looking at "C:/QtSDK/Desktop/Qt/4.7.3/mingw/plugins/imageformats/qicod4.dll" 
+Warning: In C:/QtSDK/Desktop/Qt/4.7.3/mingw/plugins/imageformats/qicod4.dll:
+  Plugin uses incompatible Qt library
+  expected build key "Windows mingw release full-config", got "Windows mingw debug full-config"
+Debug: "The plugin 'C:/QtSDK/Desktop/Qt/4.7.3/mingw/plugins/imageformats/qicod4.dll' uses incompatible Qt library. Expected build key "Windows mingw release full-config", got "Windows mingw debug full-config"" 
+Debug:          not a plugin 
+Debug: QFactoryLoader::QFactoryLoader() looking at "C:/QtSDK/Desktop/Qt/4.7.3/mingw/plugins/imageformats/qjpeg4.dll" 
+Debug: keys ("jpeg", "jpg") 
+Debug: QFactoryLoader::QFactoryLoader() looking at "C:/QtSDK/Desktop/Qt/4.7.3/mingw/plugins/imageformats/qjpegd4.dll" 
+Warning: In C:/QtSDK/Desktop/Qt/4.7.3/mingw/plugins/imageformats/qjpegd4.dll:
+  Plugin uses incompatible Qt library
+  expected build key "Windows mingw release full-config", got "Windows mingw debug full-config"
+Debug: "The plugin 'C:/QtSDK/Desktop/Qt/4.7.3/mingw/plugins/imageformats/qjpegd4.dll' uses incompatible Qt library. Expected build key "Windows mingw release full-config", got "Windows mingw debug full-config"" 
+Debug:          not a plugin 
+Debug: QFactoryLoader::QFactoryLoader() looking at "C:/QtSDK/Desktop/Qt/4.7.3/mingw/plugins/imageformats/qmng4.dll" 
+Debug: keys ("mng") 
+Debug: QFactoryLoader::QFactoryLoader() looking at "C:/QtSDK/Desktop/Qt/4.7.3/mingw/plugins/imageformats/qmngd4.dll" 
+Warning: In C:/QtSDK/Desktop/Qt/4.7.3/mingw/plugins/imageformats/qmngd4.dll:
+  Plugin uses incompatible Qt library
+  expected build key "Windows mingw release full-config", got "Windows mingw debug full-config"
+Debug: "The plugin 'C:/QtSDK/Desktop/Qt/4.7.3/mingw/plugins/imageformats/qmngd4.dll' uses incompatible Qt library. Expected build key "Windows mingw release full-config", got "Windows mingw debug full-config"" 
+Debug:          not a plugin 
+Debug: QFactoryLoader::QFactoryLoader() looking at "C:/QtSDK/Desktop/Qt/4.7.3/mingw/plugins/imageformats/qsvg4.dll" 
+Debug: keys ("svg", "svgz") 
+Debug: QFactoryLoader::QFactoryLoader() looking at "C:/QtSDK/Desktop/Qt/4.7.3/mingw/plugins/imageformats/qsvgd4.dll" 
+Warning: In C:/QtSDK/Desktop/Qt/4.7.3/mingw/plugins/imageformats/qsvgd4.dll:
+  Plugin uses incompatible Qt library
+  expected build key "Windows mingw release full-config", got "Windows mingw debug full-config"
+Debug: "The plugin 'C:/QtSDK/Desktop/Qt/4.7.3/mingw/plugins/imageformats/qsvgd4.dll' uses incompatible Qt library. Expected build key "Windows mingw release full-config", got "Windows mingw debug full-config"" 
+Debug:          not a plugin 
+Debug: QFactoryLoader::QFactoryLoader() looking at "C:/QtSDK/Desktop/Qt/4.7.3/mingw/plugins/imageformats/qtiff4.dll" 
+Debug: keys ("tiff", "tif") 
+Debug: QFactoryLoader::QFactoryLoader() looking at "C:/QtSDK/Desktop/Qt/4.7.3/mingw/plugins/imageformats/qtiffd4.dll" 
+Warning: In C:/QtSDK/Desktop/Qt/4.7.3/mingw/plugins/imageformats/qtiffd4.dll:
+  Plugin uses incompatible Qt library
+  expected build key "Windows mingw release full-config", got "Windows mingw debug full-config"
+Debug: "The plugin 'C:/QtSDK/Desktop/Qt/4.7.3/mingw/plugins/imageformats/qtiffd4.dll' uses incompatible Qt library. Expected build key "Windows mingw release full-config", got "Windows mingw debug full-config"" 
+Debug:          not a plugin 
+Debug: void MainWindow::on_webViewBrowser_loadStarted() start 
+Debug: void MainWindow::on_webViewBrowser_loadStarted() end 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) start 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) end 
+Debug: MainWindow::MainWindow(QWidget*) end 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) start 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) end 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) start 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) end 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) start 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) end 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) start 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) end 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) start 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) end 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) start 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) end 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) start 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) end 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) start 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) end 
+Debug: void MainWindow::on_webViewBrowser_loadFinished(bool) start 
+Debug: void MainWindow::on_webViewBrowser_loadFinished(bool) end 
+Debug: 12.01.03 
+Debug: MainWindow::MainWindow(QWidget*) start 
+Warning: QMetaObject::connectSlotsByName: No matching signal for on_pushButton_clicked()
+Warning: QMetaObject::connectSlotsByName: No matching signal for on_webViewBrowser_loadProgress(int)
+Warning: QMetaObject::connectSlotsByName: No matching signal for on_webViewBrowser_loadStarted()
+Warning: QMetaObject::connectSlotsByName: No matching signal for on_webViewBrowser_loadFinished(bool)
+Warning: QMetaObject::connectSlotsByName: No matching signal for on_webViewBrowser_anyError(QString)
+Debug: void MainWindow::hideSideWindow() start 
+Debug: void MainWindow::hideSideWindow() end 
+Debug: void MainWindow::on_webViewBrowser_loadStarted() start 
+Debug: void MainWindow::on_webViewBrowser_loadStarted() end 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) start 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) end 
+Debug: MainWindow::MainWindow(QWidget*) end 
+Debug: void itsBrowser::handleSslErrors(QNetworkReply*, const QList<QSslError>&) start 
+Debug: handleSslErrors:  
+Debug: ssl error:  "No error" 
+Debug: void MainWindow::on_webViewBrowser_anyError(QString) start 
+Debug: void MainWindow::on_webViewBrowser_anyError(QString) end 
+Debug: ssl error:  "No error" 
+Debug: void MainWindow::on_webViewBrowser_anyError(QString) start 
+Debug: void MainWindow::on_webViewBrowser_anyError(QString) end 
+Debug: void itsBrowser::handleSslErrors(QNetworkReply*, const QList<QSslError>&) end 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) start 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) end 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) start 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) end 
+Debug: void itsBrowser::handleSslErrors(QNetworkReply*, const QList<QSslError>&) start 
+Debug: handleSslErrors:  
+Debug: ssl error:  "No error" 
+Debug: void MainWindow::on_webViewBrowser_anyError(QString) start 
+Debug: void MainWindow::on_webViewBrowser_anyError(QString) end 
+Debug: ssl error:  "No error" 
+Debug: void MainWindow::on_webViewBrowser_anyError(QString) start 
+Debug: void MainWindow::on_webViewBrowser_anyError(QString) end 
+Debug: void itsBrowser::handleSslErrors(QNetworkReply*, const QList<QSslError>&) end 
+Debug: void itsBrowser::handleSslErrors(QNetworkReply*, const QList<QSslError>&) start 
+Debug: handleSslErrors:  
+Debug: ssl error:  "No error" 
+Debug: void MainWindow::on_webViewBrowser_anyError(QString) start 
+Debug: void MainWindow::on_webViewBrowser_anyError(QString) end 
+Debug: ssl error:  "No error" 
+Debug: void MainWindow::on_webViewBrowser_anyError(QString) start 
+Debug: void MainWindow::on_webViewBrowser_anyError(QString) end 
+Debug: void itsBrowser::handleSslErrors(QNetworkReply*, const QList<QSslError>&) end 
+Debug: void itsBrowser::handleSslErrors(QNetworkReply*, const QList<QSslError>&) start 
+Debug: handleSslErrors:  
+Debug: ssl error:  "No error" 
+Debug: void MainWindow::on_webViewBrowser_anyError(QString) start 
+Debug: void MainWindow::on_webViewBrowser_anyError(QString) end 
+Debug: ssl error:  "No error" 
+Debug: void MainWindow::on_webViewBrowser_anyError(QString) start 
+Debug: void MainWindow::on_webViewBrowser_anyError(QString) end 
+Debug: void itsBrowser::handleSslErrors(QNetworkReply*, const QList<QSslError>&) end 
+Debug: void itsBrowser::handleSslErrors(QNetworkReply*, const QList<QSslError>&) start 
+Debug: handleSslErrors:  
+Debug: ssl error:  "No error" 
+Debug: void MainWindow::on_webViewBrowser_anyError(QString) start 
+Debug: void MainWindow::on_webViewBrowser_anyError(QString) end 
+Debug: ssl error:  "No error" 
+Debug: void MainWindow::on_webViewBrowser_anyError(QString) start 
+Debug: void MainWindow::on_webViewBrowser_anyError(QString) end 
+Debug: void itsBrowser::handleSslErrors(QNetworkReply*, const QList<QSslError>&) end 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) start 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) end 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) start 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) end 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) start 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) end 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) start 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) end 
+Debug: 12.01.03 
+Debug: MainWindow::MainWindow(QWidget*) start 
+Warning: QMetaObject::connectSlotsByName: No matching signal for on_pushButton_clicked()
+Warning: QMetaObject::connectSlotsByName: No matching signal for on_webViewBrowser_loadProgress(int)
+Warning: QMetaObject::connectSlotsByName: No matching signal for on_webViewBrowser_loadStarted()
+Warning: QMetaObject::connectSlotsByName: No matching signal for on_webViewBrowser_loadFinished(bool)
+Warning: QMetaObject::connectSlotsByName: No matching signal for on_webViewBrowser_anyError(QString)
+Debug: void MainWindow::hideSideWindow() start 
+Debug: void MainWindow::hideSideWindow() end 
+Debug: void MainWindow::on_webViewBrowser_loadStarted() start 
+Debug: void MainWindow::on_webViewBrowser_loadStarted() end 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) start 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) end 
+Debug: MainWindow::MainWindow(QWidget*) end 
+Debug: void itsBrowser::handleSslErrors(QNetworkReply*, const QList<QSslError>&) start 
+Debug: handleSslErrors:  
+Debug: ssl error:  "No error" 
+Debug: void MainWindow::on_webViewBrowser_anyError(QString) start 
+Debug: void MainWindow::on_webViewBrowser_anyError(QString) end 
+Debug: ssl error:  "No error" 
+Debug: void MainWindow::on_webViewBrowser_anyError(QString) start 
+Debug: void MainWindow::on_webViewBrowser_anyError(QString) end 
+Debug: void itsBrowser::handleSslErrors(QNetworkReply*, const QList<QSslError>&) end 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) start 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) end 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) start 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) end 
+Debug: void itsBrowser::handleSslErrors(QNetworkReply*, const QList<QSslError>&) start 
+Debug: handleSslErrors:  
+Debug: ssl error:  "No error" 
+Debug: void MainWindow::on_webViewBrowser_anyError(QString) start 
+Debug: void MainWindow::on_webViewBrowser_anyError(QString) end 
+Debug: ssl error:  "No error" 
+Debug: void MainWindow::on_webViewBrowser_anyError(QString) start 
+Debug: void MainWindow::on_webViewBrowser_anyError(QString) end 
+Debug: void itsBrowser::handleSslErrors(QNetworkReply*, const QList<QSslError>&) end 
+Debug: void itsBrowser::handleSslErrors(QNetworkReply*, const QList<QSslError>&) start 
+Debug: handleSslErrors:  
+Debug: ssl error:  "No error" 
+Debug: void MainWindow::on_webViewBrowser_anyError(QString) start 
+Debug: void MainWindow::on_webViewBrowser_anyError(QString) end 
+Debug: ssl error:  "No error" 
+Debug: void MainWindow::on_webViewBrowser_anyError(QString) start 
+Debug: void MainWindow::on_webViewBrowser_anyError(QString) end 
+Debug: void itsBrowser::handleSslErrors(QNetworkReply*, const QList<QSslError>&) end 
+Debug: void itsBrowser::handleSslErrors(QNetworkReply*, const QList<QSslError>&) start 
+Debug: handleSslErrors:  
+Debug: ssl error:  "No error" 
+Debug: void MainWindow::on_webViewBrowser_anyError(QString) start 
+Debug: void MainWindow::on_webViewBrowser_anyError(QString) end 
+Debug: ssl error:  "No error" 
+Debug: void MainWindow::on_webViewBrowser_anyError(QString) start 
+Debug: void MainWindow::on_webViewBrowser_anyError(QString) end 
+Debug: void itsBrowser::handleSslErrors(QNetworkReply*, const QList<QSslError>&) end 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) start 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) end 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) start 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) end 
+Debug: void itsBrowser::handleSslErrors(QNetworkReply*, const QList<QSslError>&) start 
+Debug: handleSslErrors:  
+Debug: ssl error:  "No error" 
+Debug: void MainWindow::on_webViewBrowser_anyError(QString) start 
+Debug: void MainWindow::on_webViewBrowser_anyError(QString) end 
+Debug: ssl error:  "No error" 
+Debug: void MainWindow::on_webViewBrowser_anyError(QString) start 
+Debug: void MainWindow::on_webViewBrowser_anyError(QString) end 
+Debug: void itsBrowser::handleSslErrors(QNetworkReply*, const QList<QSslError>&) end 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) start 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) end 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) start 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) end 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) start 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) end 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) start 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) end 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) start 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) end 
+Debug: void MainWindow::on_webViewBrowser_loadFinished(bool) start 
+Debug: void MainWindow::on_webViewBrowser_loadFinished(bool) end 
+Debug: 12.01.03 
+Debug: MainWindow::MainWindow(QWidget*) start 
+Debug: QFactoryLoader::QFactoryLoader() looking at "C:/QtSDK/Desktop/Qt/4.7.3/mingw/plugins/bearer/libqgenericbearer4.a" 
+Debug: "The file 'C:/QtSDK/Desktop/Qt/4.7.3/mingw/plugins/bearer/libqgenericbearer4.a' is not a valid Qt plugin." 
+Debug:          not a plugin 
+Debug: QFactoryLoader::QFactoryLoader() looking at "C:/QtSDK/Desktop/Qt/4.7.3/mingw/plugins/bearer/libqgenericbearerd4.a" 
+Debug: "The file 'C:/QtSDK/Desktop/Qt/4.7.3/mingw/plugins/bearer/libqgenericbearerd4.a' is not a valid Qt plugin." 
+Debug:          not a plugin 
+Debug: QFactoryLoader::QFactoryLoader() looking at "C:/QtSDK/Desktop/Qt/4.7.3/mingw/plugins/bearer/libqnativewifibearer4.a" 
+Debug: "The file 'C:/QtSDK/Desktop/Qt/4.7.3/mingw/plugins/bearer/libqnativewifibearer4.a' is not a valid Qt plugin." 
+Debug:          not a plugin 
+Debug: QFactoryLoader::QFactoryLoader() looking at "C:/QtSDK/Desktop/Qt/4.7.3/mingw/plugins/bearer/libqnativewifibearerd4.a" 
+Debug: "The file 'C:/QtSDK/Desktop/Qt/4.7.3/mingw/plugins/bearer/libqnativewifibearerd4.a' is not a valid Qt plugin." 
+Debug:          not a plugin 
+Debug: QFactoryLoader::QFactoryLoader() looking at "C:/QtSDK/Desktop/Qt/4.7.3/mingw/plugins/bearer/qgenericbearer4.dll" 
+Debug: keys ("generic") 
+Debug: QFactoryLoader::QFactoryLoader() looking at "C:/QtSDK/Desktop/Qt/4.7.3/mingw/plugins/bearer/qgenericbearerd4.dll" 
+Warning: In C:/QtSDK/Desktop/Qt/4.7.3/mingw/plugins/bearer/qgenericbearerd4.dll:
+  Plugin uses incompatible Qt library
+  expected build key "Windows mingw release full-config", got "Windows mingw debug full-config"
+Debug: "The plugin 'C:/QtSDK/Desktop/Qt/4.7.3/mingw/plugins/bearer/qgenericbearerd4.dll' uses incompatible Qt library. Expected build key "Windows mingw release full-config", got "Windows mingw debug full-config"" 
+Debug:          not a plugin 
+Debug: QFactoryLoader::QFactoryLoader() looking at "C:/QtSDK/Desktop/Qt/4.7.3/mingw/plugins/bearer/qnativewifibearer4.dll" 
+Debug: keys ("nativewifi") 
+Debug: QFactoryLoader::QFactoryLoader() looking at "C:/QtSDK/Desktop/Qt/4.7.3/mingw/plugins/bearer/qnativewifibearerd4.dll" 
+Warning: In C:/QtSDK/Desktop/Qt/4.7.3/mingw/plugins/bearer/qnativewifibearerd4.dll:
+  Plugin uses incompatible Qt library
+  expected build key "Windows mingw release full-config", got "Windows mingw debug full-config"
+Debug: "The plugin 'C:/QtSDK/Desktop/Qt/4.7.3/mingw/plugins/bearer/qnativewifibearerd4.dll' uses incompatible Qt library. Expected build key "Windows mingw release full-config", got "Windows mingw debug full-config"" 
+Debug:          not a plugin 
+Debug: QFactoryLoader::QFactoryLoader() looking at "C:/QtSDK/Desktop/Qt/4.7.3/mingw/plugins/codecs/libqcncodecs4.a" 
+Debug: "The file 'C:/QtSDK/Desktop/Qt/4.7.3/mingw/plugins/codecs/libqcncodecs4.a' is not a valid Qt plugin." 
+Debug:          not a plugin 
+Debug: QFactoryLoader::QFactoryLoader() looking at "C:/QtSDK/Desktop/Qt/4.7.3/mingw/plugins/codecs/libqcncodecsd4.a" 
+Debug: "The file 'C:/QtSDK/Desktop/Qt/4.7.3/mingw/plugins/codecs/libqcncodecsd4.a' is not a valid Qt plugin." 
+Debug:          not a plugin 
+Debug: QFactoryLoader::QFactoryLoader() looking at "C:/QtSDK/Desktop/Qt/4.7.3/mingw/plugins/codecs/libqjpcodecs4.a" 
+Debug: "The file 'C:/QtSDK/Desktop/Qt/4.7.3/mingw/plugins/codecs/libqjpcodecs4.a' is not a valid Qt plugin." 
+Debug:          not a plugin 
+Debug: QFactoryLoader::QFactoryLoader() looking at "C:/QtSDK/Desktop/Qt/4.7.3/mingw/plugins/codecs/libqjpcodecsd4.a" 
+Debug: "The file 'C:/QtSDK/Desktop/Qt/4.7.3/mingw/plugins/codecs/libqjpcodecsd4.a' is not a valid Qt plugin." 
+Debug:          not a plugin 
+Debug: QFactoryLoader::QFactoryLoader() looking at "C:/QtSDK/Desktop/Qt/4.7.3/mingw/plugins/codecs/libqkrcodecs4.a" 
+Debug: "The file 'C:/QtSDK/Desktop/Qt/4.7.3/mingw/plugins/codecs/libqkrcodecs4.a' is not a valid Qt plugin." 
+Debug:          not a plugin 
+Debug: QFactoryLoader::QFactoryLoader() looking at "C:/QtSDK/Desktop/Qt/4.7.3/mingw/plugins/codecs/libqkrcodecsd4.a" 
+Debug: "The file 'C:/QtSDK/Desktop/Qt/4.7.3/mingw/plugins/codecs/libqkrcodecsd4.a' is not a valid Qt plugin." 
+Debug:          not a plugin 
+Debug: QFactoryLoader::QFactoryLoader() looking at "C:/QtSDK/Desktop/Qt/4.7.3/mingw/plugins/codecs/libqtwcodecs4.a" 
+Debug: "The file 'C:/QtSDK/Desktop/Qt/4.7.3/mingw/plugins/codecs/libqtwcodecs4.a' is not a valid Qt plugin." 
+Debug:          not a plugin 
+Debug: QFactoryLoader::QFactoryLoader() looking at "C:/QtSDK/Desktop/Qt/4.7.3/mingw/plugins/codecs/libqtwcodecsd4.a" 
+Debug: "The file 'C:/QtSDK/Desktop/Qt/4.7.3/mingw/plugins/codecs/libqtwcodecsd4.a' is not a valid Qt plugin." 
+Debug:          not a plugin 
+Debug: QFactoryLoader::QFactoryLoader() looking at "C:/QtSDK/Desktop/Qt/4.7.3/mingw/plugins/codecs/qcncodecs4.dll" 
+Debug: keys ("GB18030", "GBK", "GB2312", "CP936", "MS936", "windows-936", "MIB: 114", "MIB: 113", "MIB: 2025") 
+Debug: QFactoryLoader::QFactoryLoader() looking at "C:/QtSDK/Desktop/Qt/4.7.3/mingw/plugins/codecs/qcncodecsd4.dll" 
+Warning: In C:/QtSDK/Desktop/Qt/4.7.3/mingw/plugins/codecs/qcncodecsd4.dll:
+  Plugin uses incompatible Qt library
+  expected build key "Windows mingw release full-config", got "Windows mingw debug full-config"
+Debug: "The plugin 'C:/QtSDK/Desktop/Qt/4.7.3/mingw/plugins/codecs/qcncodecsd4.dll' uses incompatible Qt library. Expected build key "Windows mingw release full-config", got "Windows mingw debug full-config"" 
+Debug:          not a plugin 
+Debug: QFactoryLoader::QFactoryLoader() looking at "C:/QtSDK/Desktop/Qt/4.7.3/mingw/plugins/codecs/qjpcodecs4.dll" 
+Debug: keys ("EUC-JP", "ISO-2022-JP", "Shift_JIS", "JIS7", "SJIS", "MS_Kanji", "MIB: 18", "MIB: 39", "MIB: 17") 
+Debug: QFactoryLoader::QFactoryLoader() looking at "C:/QtSDK/Desktop/Qt/4.7.3/mingw/plugins/codecs/qjpcodecsd4.dll" 
+Warning: In C:/QtSDK/Desktop/Qt/4.7.3/mingw/plugins/codecs/qjpcodecsd4.dll:
+  Plugin uses incompatible Qt library
+  expected build key "Windows mingw release full-config", got "Windows mingw debug full-config"
+Debug: "The plugin 'C:/QtSDK/Desktop/Qt/4.7.3/mingw/plugins/codecs/qjpcodecsd4.dll' uses incompatible Qt library. Expected build key "Windows mingw release full-config", got "Windows mingw debug full-config"" 
+Debug:          not a plugin 
+Debug: QFactoryLoader::QFactoryLoader() looking at "C:/QtSDK/Desktop/Qt/4.7.3/mingw/plugins/codecs/qkrcodecs4.dll" 
+Debug: keys ("EUC-KR", "cp949", "MIB: 38", "MIB: -949") 
+Debug: QFactoryLoader::QFactoryLoader() looking at "C:/QtSDK/Desktop/Qt/4.7.3/mingw/plugins/codecs/qkrcodecsd4.dll" 
+Warning: In C:/QtSDK/Desktop/Qt/4.7.3/mingw/plugins/codecs/qkrcodecsd4.dll:
+  Plugin uses incompatible Qt library
+  expected build key "Windows mingw release full-config", got "Windows mingw debug full-config"
+Debug: "The plugin 'C:/QtSDK/Desktop/Qt/4.7.3/mingw/plugins/codecs/qkrcodecsd4.dll' uses incompatible Qt library. Expected build key "Windows mingw release full-config", got "Windows mingw debug full-config"" 
+Debug:          not a plugin 
+Debug: QFactoryLoader::QFactoryLoader() looking at "C:/QtSDK/Desktop/Qt/4.7.3/mingw/plugins/codecs/qtwcodecs4.dll" 
+Debug: keys ("Big5", "Big5-HKSCS", "Big5-ETen", "CP950", "MIB: 2026", "MIB: 2101") 
+Debug: QFactoryLoader::QFactoryLoader() looking at "C:/QtSDK/Desktop/Qt/4.7.3/mingw/plugins/codecs/qtwcodecsd4.dll" 
+Warning: In C:/QtSDK/Desktop/Qt/4.7.3/mingw/plugins/codecs/qtwcodecsd4.dll:
+  Plugin uses incompatible Qt library
+  expected build key "Windows mingw release full-config", got "Windows mingw debug full-config"
+Debug: "The plugin 'C:/QtSDK/Desktop/Qt/4.7.3/mingw/plugins/codecs/qtwcodecsd4.dll' uses incompatible Qt library. Expected build key "Windows mingw release full-config", got "Windows mingw debug full-config"" 
+Debug:          not a plugin 
+Warning: QMetaObject::connectSlotsByName: No matching signal for on_pushButton_clicked()
+Warning: QMetaObject::connectSlotsByName: No matching signal for on_webViewBrowser_loadProgress(int)
+Warning: QMetaObject::connectSlotsByName: No matching signal for on_webViewBrowser_loadStarted()
+Warning: QMetaObject::connectSlotsByName: No matching signal for on_webViewBrowser_loadFinished(bool)
+Warning: QMetaObject::connectSlotsByName: No matching signal for on_webViewBrowser_anyError(QString)
+Debug: void MainWindow::hideSideWindow() start 
+Debug: void MainWindow::hideSideWindow() end 
+Debug: QFactoryLoader::QFactoryLoader() looking at "C:/QtSDK/Desktop/Qt/4.7.3/mingw/plugins/imageformats/libqgif4.a" 
+Debug: "The file 'C:/QtSDK/Desktop/Qt/4.7.3/mingw/plugins/imageformats/libqgif4.a' is not a valid Qt plugin." 
+Debug:          not a plugin 
+Debug: QFactoryLoader::QFactoryLoader() looking at "C:/QtSDK/Desktop/Qt/4.7.3/mingw/plugins/imageformats/libqgifd4.a" 
+Debug: "The file 'C:/QtSDK/Desktop/Qt/4.7.3/mingw/plugins/imageformats/libqgifd4.a' is not a valid Qt plugin." 
+Debug:          not a plugin 
+Debug: QFactoryLoader::QFactoryLoader() looking at "C:/QtSDK/Desktop/Qt/4.7.3/mingw/plugins/imageformats/libqico4.a" 
+Debug: "The file 'C:/QtSDK/Desktop/Qt/4.7.3/mingw/plugins/imageformats/libqico4.a' is not a valid Qt plugin." 
+Debug:          not a plugin 
+Debug: QFactoryLoader::QFactoryLoader() looking at "C:/QtSDK/Desktop/Qt/4.7.3/mingw/plugins/imageformats/libqicod4.a" 
+Debug: "The file 'C:/QtSDK/Desktop/Qt/4.7.3/mingw/plugins/imageformats/libqicod4.a' is not a valid Qt plugin." 
+Debug:          not a plugin 
+Debug: QFactoryLoader::QFactoryLoader() looking at "C:/QtSDK/Desktop/Qt/4.7.3/mingw/plugins/imageformats/libqjpeg4.a" 
+Debug: "The file 'C:/QtSDK/Desktop/Qt/4.7.3/mingw/plugins/imageformats/libqjpeg4.a' is not a valid Qt plugin." 
+Debug:          not a plugin 
+Debug: QFactoryLoader::QFactoryLoader() looking at "C:/QtSDK/Desktop/Qt/4.7.3/mingw/plugins/imageformats/libqjpegd4.a" 
+Debug: "The file 'C:/QtSDK/Desktop/Qt/4.7.3/mingw/plugins/imageformats/libqjpegd4.a' is not a valid Qt plugin." 
+Debug:          not a plugin 
+Debug: QFactoryLoader::QFactoryLoader() looking at "C:/QtSDK/Desktop/Qt/4.7.3/mingw/plugins/imageformats/libqmng4.a" 
+Debug: "The file 'C:/QtSDK/Desktop/Qt/4.7.3/mingw/plugins/imageformats/libqmng4.a' is not a valid Qt plugin." 
+Debug:          not a plugin 
+Debug: QFactoryLoader::QFactoryLoader() looking at "C:/QtSDK/Desktop/Qt/4.7.3/mingw/plugins/imageformats/libqmngd4.a" 
+Debug: "The file 'C:/QtSDK/Desktop/Qt/4.7.3/mingw/plugins/imageformats/libqmngd4.a' is not a valid Qt plugin." 
+Debug:          not a plugin 
+Debug: QFactoryLoader::QFactoryLoader() looking at "C:/QtSDK/Desktop/Qt/4.7.3/mingw/plugins/imageformats/libqsvg4.a" 
+Debug: "The file 'C:/QtSDK/Desktop/Qt/4.7.3/mingw/plugins/imageformats/libqsvg4.a' is not a valid Qt plugin." 
+Debug:          not a plugin 
+Debug: QFactoryLoader::QFactoryLoader() looking at "C:/QtSDK/Desktop/Qt/4.7.3/mingw/plugins/imageformats/libqsvgd4.a" 
+Debug: "The file 'C:/QtSDK/Desktop/Qt/4.7.3/mingw/plugins/imageformats/libqsvgd4.a' is not a valid Qt plugin." 
+Debug:          not a plugin 
+Debug: QFactoryLoader::QFactoryLoader() looking at "C:/QtSDK/Desktop/Qt/4.7.3/mingw/plugins/imageformats/libqtiff4.a" 
+Debug: "The file 'C:/QtSDK/Desktop/Qt/4.7.3/mingw/plugins/imageformats/libqtiff4.a' is not a valid Qt plugin." 
+Debug:          not a plugin 
+Debug: QFactoryLoader::QFactoryLoader() looking at "C:/QtSDK/Desktop/Qt/4.7.3/mingw/plugins/imageformats/libqtiffd4.a" 
+Debug: "The file 'C:/QtSDK/Desktop/Qt/4.7.3/mingw/plugins/imageformats/libqtiffd4.a' is not a valid Qt plugin." 
+Debug:          not a plugin 
+Debug: QFactoryLoader::QFactoryLoader() looking at "C:/QtSDK/Desktop/Qt/4.7.3/mingw/plugins/imageformats/qgif4.dll" 
+Debug: keys ("gif") 
+Debug: QFactoryLoader::QFactoryLoader() looking at "C:/QtSDK/Desktop/Qt/4.7.3/mingw/plugins/imageformats/qgifd4.dll" 
+Warning: In C:/QtSDK/Desktop/Qt/4.7.3/mingw/plugins/imageformats/qgifd4.dll:
+  Plugin uses incompatible Qt library
+  expected build key "Windows mingw release full-config", got "Windows mingw debug full-config"
+Debug: "The plugin 'C:/QtSDK/Desktop/Qt/4.7.3/mingw/plugins/imageformats/qgifd4.dll' uses incompatible Qt library. Expected build key "Windows mingw release full-config", got "Windows mingw debug full-config"" 
+Debug:          not a plugin 
+Debug: QFactoryLoader::QFactoryLoader() looking at "C:/QtSDK/Desktop/Qt/4.7.3/mingw/plugins/imageformats/qico4.dll" 
+Debug: keys ("ico") 
+Debug: QFactoryLoader::QFactoryLoader() looking at "C:/QtSDK/Desktop/Qt/4.7.3/mingw/plugins/imageformats/qicod4.dll" 
+Warning: In C:/QtSDK/Desktop/Qt/4.7.3/mingw/plugins/imageformats/qicod4.dll:
+  Plugin uses incompatible Qt library
+  expected build key "Windows mingw release full-config", got "Windows mingw debug full-config"
+Debug: "The plugin 'C:/QtSDK/Desktop/Qt/4.7.3/mingw/plugins/imageformats/qicod4.dll' uses incompatible Qt library. Expected build key "Windows mingw release full-config", got "Windows mingw debug full-config"" 
+Debug:          not a plugin 
+Debug: QFactoryLoader::QFactoryLoader() looking at "C:/QtSDK/Desktop/Qt/4.7.3/mingw/plugins/imageformats/qjpeg4.dll" 
+Debug: keys ("jpeg", "jpg") 
+Debug: QFactoryLoader::QFactoryLoader() looking at "C:/QtSDK/Desktop/Qt/4.7.3/mingw/plugins/imageformats/qjpegd4.dll" 
+Warning: In C:/QtSDK/Desktop/Qt/4.7.3/mingw/plugins/imageformats/qjpegd4.dll:
+  Plugin uses incompatible Qt library
+  expected build key "Windows mingw release full-config", got "Windows mingw debug full-config"
+Debug: "The plugin 'C:/QtSDK/Desktop/Qt/4.7.3/mingw/plugins/imageformats/qjpegd4.dll' uses incompatible Qt library. Expected build key "Windows mingw release full-config", got "Windows mingw debug full-config"" 
+Debug:          not a plugin 
+Debug: QFactoryLoader::QFactoryLoader() looking at "C:/QtSDK/Desktop/Qt/4.7.3/mingw/plugins/imageformats/qmng4.dll" 
+Debug: keys ("mng") 
+Debug: QFactoryLoader::QFactoryLoader() looking at "C:/QtSDK/Desktop/Qt/4.7.3/mingw/plugins/imageformats/qmngd4.dll" 
+Warning: In C:/QtSDK/Desktop/Qt/4.7.3/mingw/plugins/imageformats/qmngd4.dll:
+  Plugin uses incompatible Qt library
+  expected build key "Windows mingw release full-config", got "Windows mingw debug full-config"
+Debug: "The plugin 'C:/QtSDK/Desktop/Qt/4.7.3/mingw/plugins/imageformats/qmngd4.dll' uses incompatible Qt library. Expected build key "Windows mingw release full-config", got "Windows mingw debug full-config"" 
+Debug:          not a plugin 
+Debug: QFactoryLoader::QFactoryLoader() looking at "C:/QtSDK/Desktop/Qt/4.7.3/mingw/plugins/imageformats/qsvg4.dll" 
+Debug: keys ("svg", "svgz") 
+Debug: QFactoryLoader::QFactoryLoader() looking at "C:/QtSDK/Desktop/Qt/4.7.3/mingw/plugins/imageformats/qsvgd4.dll" 
+Warning: In C:/QtSDK/Desktop/Qt/4.7.3/mingw/plugins/imageformats/qsvgd4.dll:
+  Plugin uses incompatible Qt library
+  expected build key "Windows mingw release full-config", got "Windows mingw debug full-config"
+Debug: "The plugin 'C:/QtSDK/Desktop/Qt/4.7.3/mingw/plugins/imageformats/qsvgd4.dll' uses incompatible Qt library. Expected build key "Windows mingw release full-config", got "Windows mingw debug full-config"" 
+Debug:          not a plugin 
+Debug: QFactoryLoader::QFactoryLoader() looking at "C:/QtSDK/Desktop/Qt/4.7.3/mingw/plugins/imageformats/qtiff4.dll" 
+Debug: keys ("tiff", "tif") 
+Debug: QFactoryLoader::QFactoryLoader() looking at "C:/QtSDK/Desktop/Qt/4.7.3/mingw/plugins/imageformats/qtiffd4.dll" 
+Warning: In C:/QtSDK/Desktop/Qt/4.7.3/mingw/plugins/imageformats/qtiffd4.dll:
+  Plugin uses incompatible Qt library
+  expected build key "Windows mingw release full-config", got "Windows mingw debug full-config"
+Debug: "The plugin 'C:/QtSDK/Desktop/Qt/4.7.3/mingw/plugins/imageformats/qtiffd4.dll' uses incompatible Qt library. Expected build key "Windows mingw release full-config", got "Windows mingw debug full-config"" 
+Debug:          not a plugin 
+Debug: void MainWindow::on_webViewBrowser_loadStarted() start 
+Debug: void MainWindow::on_webViewBrowser_loadStarted() end 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) start 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) end 
+Debug: MainWindow::MainWindow(QWidget*) end 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) start 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) end 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) start 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) end 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) start 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) end 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) start 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) end 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) start 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) end 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) start 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) end 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) start 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) end 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) start 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) end 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) start 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) end 
+Debug: void MainWindow::on_webViewBrowser_loadFinished(bool) start 
+Debug: void MainWindow::on_webViewBrowser_loadFinished(bool) end 
+Debug: 12.01.03 
+Debug: MainWindow::MainWindow(QWidget*) start 
+Warning: QMetaObject::connectSlotsByName: No matching signal for on_pushButton_clicked()
+Warning: QMetaObject::connectSlotsByName: No matching signal for on_webViewBrowser_loadProgress(int)
+Warning: QMetaObject::connectSlotsByName: No matching signal for on_webViewBrowser_loadStarted()
+Warning: QMetaObject::connectSlotsByName: No matching signal for on_webViewBrowser_loadFinished(bool)
+Warning: QMetaObject::connectSlotsByName: No matching signal for on_webViewBrowser_anyError(QString)
+Debug: void MainWindow::hideSideWindow() start 
+Debug: void MainWindow::hideSideWindow() end 
+Debug: void MainWindow::on_webViewBrowser_loadStarted() start 
+Debug: void MainWindow::on_webViewBrowser_loadStarted() end 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) start 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) end 
+Debug: MainWindow::MainWindow(QWidget*) end 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) start 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) end 
+Debug: void MainWindow::on_webViewBrowser_loadFinished(bool) start 
+Debug: void MainWindow::on_webViewBrowser_loadFinished(bool) end 
+Debug: 12.01.03 
+Debug: MainWindow::MainWindow(QWidget*) start 
+Warning: QMetaObject::connectSlotsByName: No matching signal for on_pushButton_clicked()
+Warning: QMetaObject::connectSlotsByName: No matching signal for on_webViewBrowser_loadProgress(int)
+Warning: QMetaObject::connectSlotsByName: No matching signal for on_webViewBrowser_loadStarted()
+Warning: QMetaObject::connectSlotsByName: No matching signal for on_webViewBrowser_loadFinished(bool)
+Warning: QMetaObject::connectSlotsByName: No matching signal for on_webViewBrowser_anyError(QString)
+Debug: void MainWindow::hideSideWindow() start 
+Debug: void MainWindow::hideSideWindow() end 
+Debug: void MainWindow::on_webViewBrowser_loadStarted() start 
+Debug: void MainWindow::on_webViewBrowser_loadStarted() end 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) start 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) end 
+Debug: MainWindow::MainWindow(QWidget*) end 
+Debug: void itsBrowser::handleSslErrors(QNetworkReply*, const QList<QSslError>&) start 
+Debug: handleSslErrors:  
+Debug: ssl error:  "No error" 
+Debug: void MainWindow::on_webViewBrowser_anyError(QString) start 
+Debug: void MainWindow::on_webViewBrowser_anyError(QString) end 
+Debug: ssl error:  "No error" 
+Debug: void MainWindow::on_webViewBrowser_anyError(QString) start 
+Debug: void MainWindow::on_webViewBrowser_anyError(QString) end 
+Debug: void itsBrowser::handleSslErrors(QNetworkReply*, const QList<QSslError>&) end 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) start 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) end 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) start 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) end 
+Debug: void itsBrowser::handleSslErrors(QNetworkReply*, const QList<QSslError>&) start 
+Debug: handleSslErrors:  
+Debug: ssl error:  "No error" 
+Debug: void MainWindow::on_webViewBrowser_anyError(QString) start 
+Debug: void MainWindow::on_webViewBrowser_anyError(QString) end 
+Debug: ssl error:  "No error" 
+Debug: void MainWindow::on_webViewBrowser_anyError(QString) start 
+Debug: void MainWindow::on_webViewBrowser_anyError(QString) end 
+Debug: void itsBrowser::handleSslErrors(QNetworkReply*, const QList<QSslError>&) end 
+Debug: void itsBrowser::handleSslErrors(QNetworkReply*, const QList<QSslError>&) start 
+Debug: handleSslErrors:  
+Debug: ssl error:  "No error" 
+Debug: void MainWindow::on_webViewBrowser_anyError(QString) start 
+Debug: void MainWindow::on_webViewBrowser_anyError(QString) end 
+Debug: ssl error:  "No error" 
+Debug: void MainWindow::on_webViewBrowser_anyError(QString) start 
+Debug: void MainWindow::on_webViewBrowser_anyError(QString) end 
+Debug: void itsBrowser::handleSslErrors(QNetworkReply*, const QList<QSslError>&) end 
+Debug: void itsBrowser::handleSslErrors(QNetworkReply*, const QList<QSslError>&) start 
+Debug: handleSslErrors:  
+Debug: ssl error:  "No error" 
+Debug: void MainWindow::on_webViewBrowser_anyError(QString) start 
+Debug: void MainWindow::on_webViewBrowser_anyError(QString) end 
+Debug: ssl error:  "No error" 
+Debug: void MainWindow::on_webViewBrowser_anyError(QString) start 
+Debug: void MainWindow::on_webViewBrowser_anyError(QString) end 
+Debug: void itsBrowser::handleSslErrors(QNetworkReply*, const QList<QSslError>&) end 
+Debug: void itsBrowser::handleSslErrors(QNetworkReply*, const QList<QSslError>&) start 
+Debug: handleSslErrors:  
+Debug: ssl error:  "No error" 
+Debug: void MainWindow::on_webViewBrowser_anyError(QString) start 
+Debug: void MainWindow::on_webViewBrowser_anyError(QString) end 
+Debug: ssl error:  "No error" 
+Debug: void MainWindow::on_webViewBrowser_anyError(QString) start 
+Debug: void MainWindow::on_webViewBrowser_anyError(QString) end 
+Debug: void itsBrowser::handleSslErrors(QNetworkReply*, const QList<QSslError>&) end 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) start 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) end 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) start 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) end 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) start 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) end 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) start 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) end 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) start 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) end 
+Debug: 12.01.03 
+Debug: MainWindow::MainWindow(QWidget*) start 
+Warning: QMetaObject::connectSlotsByName: No matching signal for on_pushButton_clicked()
+Warning: QMetaObject::connectSlotsByName: No matching signal for on_webViewBrowser_loadProgress(int)
+Warning: QMetaObject::connectSlotsByName: No matching signal for on_webViewBrowser_loadStarted()
+Warning: QMetaObject::connectSlotsByName: No matching signal for on_webViewBrowser_loadFinished(bool)
+Warning: QMetaObject::connectSlotsByName: No matching signal for on_webViewBrowser_anyError(QString)
+Debug: void MainWindow::hideSideWindow() start 
+Debug: void MainWindow::hideSideWindow() end 
+Debug: void MainWindow::on_webViewBrowser_loadStarted() start 
+Debug: void MainWindow::on_webViewBrowser_loadStarted() end 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) start 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) end 
+Debug: MainWindow::MainWindow(QWidget*) end 
+Debug: void itsBrowser::handleSslErrors(QNetworkReply*, const QList<QSslError>&) start 
+Debug: handleSslErrors:  
+Debug: ssl error:  "No error" 
+Debug: void MainWindow::on_webViewBrowser_anyError(QString) start 
+Debug: void MainWindow::on_webViewBrowser_anyError(QString) end 
+Debug: ssl error:  "No error" 
+Debug: void MainWindow::on_webViewBrowser_anyError(QString) start 
+Debug: void MainWindow::on_webViewBrowser_anyError(QString) end 
+Debug: void itsBrowser::handleSslErrors(QNetworkReply*, const QList<QSslError>&) end 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) start 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) end 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) start 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) end 
+Debug: 12.01.03 
+Debug: MainWindow::MainWindow(QWidget*) start 
+Warning: QMetaObject::connectSlotsByName: No matching signal for on_pushButton_clicked()
+Warning: QMetaObject::connectSlotsByName: No matching signal for on_webViewBrowser_loadProgress(int)
+Warning: QMetaObject::connectSlotsByName: No matching signal for on_webViewBrowser_loadStarted()
+Warning: QMetaObject::connectSlotsByName: No matching signal for on_webViewBrowser_loadFinished(bool)
+Warning: QMetaObject::connectSlotsByName: No matching signal for on_webViewBrowser_anyError(QString)
+Debug: void MainWindow::hideSideWindow() start 
+Debug: void MainWindow::hideSideWindow() end 
+Debug: void MainWindow::on_webViewBrowser_loadStarted() start 
+Debug: void MainWindow::on_webViewBrowser_loadStarted() end 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) start 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) end 
+Debug: MainWindow::MainWindow(QWidget*) end 
+Debug: void itsBrowser::handleSslErrors(QNetworkReply*, const QList<QSslError>&) start 
+Debug: handleSslErrors:  
+Debug: ssl error:  "No error" 
+Debug: void MainWindow::on_webViewBrowser_anyError(QString) start 
+Debug: void MainWindow::on_webViewBrowser_anyError(QString) end 
+Debug: ssl error:  "No error" 
+Debug: void MainWindow::on_webViewBrowser_anyError(QString) start 
+Debug: void MainWindow::on_webViewBrowser_anyError(QString) end 
+Debug: void itsBrowser::handleSslErrors(QNetworkReply*, const QList<QSslError>&) end 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) start 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) end 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) start 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) end 
+Debug: void itsBrowser::handleSslErrors(QNetworkReply*, const QList<QSslError>&) start 
+Debug: handleSslErrors:  
+Debug: ssl error:  "No error" 
+Debug: void MainWindow::on_webViewBrowser_anyError(QString) start 
+Debug: void MainWindow::on_webViewBrowser_anyError(QString) end 
+Debug: ssl error:  "No error" 
+Debug: void MainWindow::on_webViewBrowser_anyError(QString) start 
+Debug: void MainWindow::on_webViewBrowser_anyError(QString) end 
+Debug: void itsBrowser::handleSslErrors(QNetworkReply*, const QList<QSslError>&) end 
+Debug: void itsBrowser::handleSslErrors(QNetworkReply*, const QList<QSslError>&) start 
+Debug: handleSslErrors:  
+Debug: ssl error:  "No error" 
+Debug: void MainWindow::on_webViewBrowser_anyError(QString) start 
+Debug: void MainWindow::on_webViewBrowser_anyError(QString) end 
+Debug: ssl error:  "No error" 
+Debug: void MainWindow::on_webViewBrowser_anyError(QString) start 
+Debug: void MainWindow::on_webViewBrowser_anyError(QString) end 
+Debug: void itsBrowser::handleSslErrors(QNetworkReply*, const QList<QSslError>&) end 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) start 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) end 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) start 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) end 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) start 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) end 
+Debug: void itsBrowser::handleSslErrors(QNetworkReply*, const QList<QSslError>&) start 
+Debug: handleSslErrors:  
+Debug: ssl error:  "No error" 
+Debug: void MainWindow::on_webViewBrowser_anyError(QString) start 
+Debug: void MainWindow::on_webViewBrowser_anyError(QString) end 
+Debug: ssl error:  "No error" 
+Debug: void MainWindow::on_webViewBrowser_anyError(QString) start 
+Debug: void MainWindow::on_webViewBrowser_anyError(QString) end 
+Debug: void itsBrowser::handleSslErrors(QNetworkReply*, const QList<QSslError>&) end 
+Debug: void itsBrowser::handleSslErrors(QNetworkReply*, const QList<QSslError>&) start 
+Debug: handleSslErrors:  
+Debug: ssl error:  "No error" 
+Debug: void MainWindow::on_webViewBrowser_anyError(QString) start 
+Debug: void MainWindow::on_webViewBrowser_anyError(QString) end 
+Debug: ssl error:  "No error" 
+Debug: void MainWindow::on_webViewBrowser_anyError(QString) start 
+Debug: void MainWindow::on_webViewBrowser_anyError(QString) end 
+Debug: void itsBrowser::handleSslErrors(QNetworkReply*, const QList<QSslError>&) end 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) start 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) end 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) start 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) end 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) start 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) end 
+Debug: void MainWindow::on_webViewBrowser_loadFinished(bool) start 
+Debug: void MainWindow::on_webViewBrowser_loadFinished(bool) end 
+Debug: 12.01.03 
+Debug: MainWindow::MainWindow(QWidget*) start 
+Warning: QMetaObject::connectSlotsByName: No matching signal for on_pushButton_clicked()
+Warning: QMetaObject::connectSlotsByName: No matching signal for on_webViewBrowser_loadProgress(int)
+Warning: QMetaObject::connectSlotsByName: No matching signal for on_webViewBrowser_loadStarted()
+Warning: QMetaObject::connectSlotsByName: No matching signal for on_webViewBrowser_loadFinished(bool)
+Warning: QMetaObject::connectSlotsByName: No matching signal for on_webViewBrowser_anyError(QString)
+Debug: void MainWindow::hideSideWindow() start 
+Debug: void MainWindow::hideSideWindow() end 
+Debug: void MainWindow::on_webViewBrowser_loadStarted() start 
+Debug: void MainWindow::on_webViewBrowser_loadStarted() end 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) start 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) end 
+Debug: MainWindow::MainWindow(QWidget*) end 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) start 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) end 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) start 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) end 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) start 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) end 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) start 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) end 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) start 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) end 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) start 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) end 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) start 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) end 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) start 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) end 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) start 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) end 
+Debug: void MainWindow::on_webViewBrowser_loadFinished(bool) start 
+Debug: void MainWindow::on_webViewBrowser_loadFinished(bool) end 
+Debug: void MainWindow::on_webViewBrowser_loadStarted() start 
+Debug: void MainWindow::on_webViewBrowser_loadStarted() end 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) start 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) end 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) start 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) end 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) start 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) end 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) start 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) end 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) start 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) end 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) start 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) end 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) start 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) end 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) start 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) end 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) start 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) end 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) start 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) end 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) start 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) end 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) start 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) end 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) start 
+Debug: void MainWindow::on_webViewBrowser_loadProgress(int) end 
+Debug: void MainWindow::on_webViewBrowser_loadFinished(bool) start 
+Debug: void MainWindow::on_webViewBrowser_loadFinished(bool) end 

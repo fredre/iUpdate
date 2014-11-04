@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package>
+    <DisplayName>IUpdate</DisplayName>
+    <Description>Install full iUpdate application.</Description>
+    <Version>14.01</Version>
+    <ReleaseDate>2014-05-01</ReleaseDate>
+    <Name>IUpdate</Name>
+    <Licenses>
+        <License name="GNU GENERAL PUBLIC LICENSE Version 3, 29 June 2007" file="license.txt" />
+    </Licenses>
+    <Default>script</Default>
+    <Script>installscript.qs</Script>
+</Package>

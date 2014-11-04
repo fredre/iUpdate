@@ -1,0 +1,2 @@
+windeployqt  --no-quick-import --no-translations  --no-system-d3d-compiler --no-bluetooth IUpdate.exe
+binarycreator.exe -c config\config.xml -p packages YourInstaller.exe
