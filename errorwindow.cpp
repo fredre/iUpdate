@@ -49,7 +49,7 @@ void ErrorWindow::on_btnSave_clicked()
         if(directory != "")
         {
             QFile file;
-            QString fileName = tr("%1/%2%3%4").arg(directory).arg(QDateTime::currentDateTime().date().year()).arg(QDateTime::currentDateTime().date().dayOfWeek()).arg(".txt");
+            QString fileName = tr("%1_%2_%3_%4").arg(directory).arg(QDateTime::currentDateTime().date().year()).arg(QDateTime::currentDateTime().date().dayOfWeek()).arg(".txt");
             file.setFileName(fileName);
             file.open(QIODevice::Append| QIODevice::Text);
             QTextStream write(&file);

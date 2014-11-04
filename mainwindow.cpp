@@ -1,6 +1,3 @@
-//https://github.com/pypt/fervor#readme
-
-
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include <QMessageBox>
@@ -60,13 +57,16 @@ MainWindow::MainWindow( QWidget *parent ) :
     connect(ui->wFitsbrowser,SIGNAL( onAnyError( QString ) ),this,SLOT( on_webViewBrowser_anyError( QString ) ) );
     connect(ui->wFitsbrowser,SIGNAL( onNetworkError( QString ) ),this,SLOT( on_webViewBrowser_networkError( QString ) ) );
 
-   // ui->wFitsbrowser->setUrl(QUrl("www.tut.ac.za"));
+    //Connect to importer
+    connect(csvimporter,SIGNAL(JSonGenerated(QJsonDocument*)),this,SLOT(JSonGeneratedByImporter(QJsonDocument*)));
+
+
+  // ui->wFitsbrowser->setUrl(QUrl("https://service.oneaccount.com/onlineV2/OSV2?event=login&pt=3"));
     ui->wFitsbrowser->setUrl( QUrl( "https://jupiter.tut.ac.za/staffportal/system/login.php?refscript=/staffportal/index.php" ) );
 
     QNetworkDiskCache *diskCache = new QNetworkDiskCache( this );
     diskCache->setCacheDirectory( "cachedir" );
     ui->webViewSubjectInfo->page()->networkAccessManager()->setCache( diskCache );
-
 
 
   qDebug() << Q_FUNC_INFO <<"end";
@@ -124,6 +124,7 @@ void MainWindow::on_webViewBrowser_loadStarted()
     ui->progressBarWebInd->show();
     ui->labelProgress->show();
     ui->statusBar->showMessage( ui->wFitsbrowser->url().toString() );
+    ui->pushButtonUpdateMrks->setEnabled(false);
 
     qDebug() << Q_FUNC_INFO <<"end";
 
@@ -135,7 +136,7 @@ qDebug() << Q_FUNC_INFO <<"start";
     ui->progressBarWebInd->hide();
     ui->labelProgress->hide();
     ui->statusBar->clearMessage();
-
+   ui->pushButtonUpdateMrks->setEnabled(true);
     qDebug() << Q_FUNC_INFO <<"end";
 
 }
@@ -174,40 +175,23 @@ void MainWindow::on_actionAbout_QT_triggered()
 
 void MainWindow::on_actionLoad_triggered()
 {
-    qDebug() << Q_FUNC_INFO <<"start";
-    ui->labelProgress->show();
+    csvimporter->show();
+}
 
-    //First try to load settings
-    QString lstload = IUpdatesettings.value( "lastLoadPath",QDir::homePath() ).toString();
+void  MainWindow::JSonGeneratedByImporter(QJsonDocument *theDoc)
+{
+    qDebug()<<"Json was generated without error";
+    csvimporter->hide();
 
-    csvInter.SetFilePath(QFileDialog::getOpenFileName( this,tr( "Open %1 Marks File" ).arg( csvInter.GetFileTypeName() ), lstload, tr( "%1" ).arg( csvInter.GetFileExt() ) ) );
+    csvInter.LoadJsonDoc(theDoc);
 
-    if ( csvInter.LoadFile() ){
+    PopulateSubjectWeb();
 
-    //Update setting
-    QDir d = QFileInfo( csvInter.FilePath() ).absoluteDir();
-
-    IUpdatesettings.setValue( "lastLoadPath",d.absolutePath() );
-
-    //PopulateSubjectGrid();
-     PopulateSubjectWeb();
-
-    //ADD POPULATE HTML INFO HERE
-
-
-    //Load the marktypes into the combo box
-
-    ui->comboBoxMarkTypeSlct->clear();
-    ui->comboBoxMarkTypeSlct->addItems( csvInter.GetMarkTypesList() );
+     //Load the marktypes into the combo box
+     ui->comboBoxMarkTypeSlct->clear();
+     ui->comboBoxMarkTypeSlct->addItems( csvInter.GetMarkTypesList() );
 
     showSideWindow();
-
-    } else {
-
-        qDebug()<<"File not loaded (Perhaps cancell was clicked)";
-    }
-    ui->labelProgress->hide();
-    qDebug() << Q_FUNC_INFO <<"end";
 }
 
 
@@ -325,25 +309,18 @@ qDebug() << Q_FUNC_INFO <<"end";
         for( int a=0;a < marktypes.count();a++ )
         {
 
-
-
             mtName = marktypes[a];
-
-
-        qDebug()<<mtName;
 
             row_marktypes( "name" ) = mtName.toStdString();
             row_marktypes( "nummarks" ) = csvInter.GetMarkTypeTotalNumberMarks( mtName );
-            row_marktypes( "mismarks" ) = csvInter.GetStudentCount()-csvInter.GetMarkTypeTotalNumberMarks( mtName );
+            int numberStudents = csvInter.GetStudentCount();
+            int numbermarks = csvInter.GetMarkTypeTotalNumberMarks( mtName );
+            row_marktypes( "mismarks" ) =numberStudents - numbermarks;
 
             //Loop start
 
-
-
         loop_t loop_marks;
         row_t row_marks;
-
-
 
         QMap<QString,int> marks= csvInter.GetAllMarksPerMarkType( mtName );
         int numZeros = CheckCoulumnMarkAvailability(mtName);
@@ -389,12 +366,7 @@ qDebug() << Q_FUNC_INFO <<"end";
 
       }
 
-
-    // ui->webViewSubjectInfo->setc
-
-    // ui->webViewSubjectInfo->settings()->setUserStyleSheetUrl(QUrl::from);
-
-     qDebug()<<QString::fromStdString(one.Process() );
+     //qDebug()<<QString::fromStdString(one.Process() );
      qDebug() << Q_FUNC_INFO <<"end";
 
 }
@@ -466,20 +438,6 @@ void MainWindow::setComboBox()
 void MainWindow::on_pushButtonUpdateMrks_clicked()
 {
     qDebug() << Q_FUNC_INFO <<"start";
-
-    //qDebug()<<"Testing getInblrMark (Student With mark) :";
-    //qDebug() <<ui->wFitsbrowser->getInblrMark("200300154");
-    //qDebug()<<"Testing getInblrMark (Student With empty mark) :";
-    //qDebug() <<ui->wFitsbrowser->getInblrMark("200000844");
-
-    //qDebug()<<"Testing setInblrMark (200300154 --> 40): " ;
-    //ui->wFitsbrowser->setInblrMark("200300154",40);
-
-    //qDebug()<<"Testing InblrContainsStuNum (200300154): Should be true: ";
-    //qDebug()<<ui->wFitsbrowser->InblrContainsStuNum("200300154");
-
-    //qDebug()<<"Testing InblrContainsStuNum (204063982): Should be false: ";
-    //qDebug()<<ui->wFitsbrowser->InblrContainsStuNum("204063982");
 
     ui->labelProgress->show();
 
@@ -634,11 +592,13 @@ void MainWindow::on_webViewSubjectInfo_loadFinished( bool arg1 )
     QWebFrame *frame = ui->webViewSubjectInfo->page()->mainFrame();
     na = frame->evaluateJavaScript("num(name)").toString();
     ui->comboBoxMarkTypeSlct->setCurrentText(na);
+
 }
 
 void MainWindow::on_webViewSubjectInfo_loadStarted()
 {
     //ui->wFitsbrowser->setUrl( QUrl( "https://jupiter.tut.ac.za/staffportal/system/login.php?refscript=/staffportal/index.php" ) );
+
 }
 
 

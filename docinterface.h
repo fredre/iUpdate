@@ -8,6 +8,11 @@
 #include <QMap>
 #include <QIntValidator>
 
+#include <QJsonObject>
+#include <QJsonValue>
+#include <QJsonDocument>
+#include <QJsonArray>
+
 
 class DocInterface : public QObject
 {
@@ -16,35 +21,28 @@ public:
     explicit DocInterface( QObject *parent = 0 );
     QString FilePath();
     void SetFilePath( QString );
+    void LoadJsonDoc(QJsonDocument*);
+
     QString GetFileExt();
     QString GetFileTypeName();
     bool LoadFile();
     QString GetSubjectCode();
-    QString GetFirstStudentNumber();
-    QString GetLastStudentNumber();
     int GetStudentCount();
     QStringList GetMarkTypesList();
-    int GetMarkTypesCount();
     int GetMarkTypeTotalNumberMarks( QString );
     QStringList GetAllStudentNumbersPerMarkType( QString );
     QMap<QString, int> GetAllMarksPerMarkType( QString );
     int GetStudentMarkPerMarkType( QString,QString );
-    QStringList GetStudentNumbersWithNoMark( QString );
-    int getMarkTypeColumn( QString );
-    bool validateStudentNumber( QString );
-    bool validateDecimal(QString);
-    void sanitizeString( QString & );
-    bool checkDuplicateStudentNumbers( QStringList );
 
+    bool validateStudentNumber( QString );
+    bool validateDecimal(double mark);
+    void sanitizeString( QString & );
 
 private:
     QString filepath;
     QStringList filecontents;
     QStringList erros;
-
-    bool isWithoutEnd = false;
-
-
+    QJsonDocument *JDoc;
 
 signals:
     void FileParseError( QString );

@@ -6,6 +6,8 @@
 
 QT       += core gui webkit network widgets webkitwidgets
 
+CONFIG += openssl-linked
+
 TARGET = IUpdate
 TEMPLATE = app
 
@@ -16,7 +18,8 @@ SOURCES += main.cpp\
     docinterface.cpp \
     Templates/html_template.cpp \
     logwindow.cpp \
-    errorwindow.cpp
+    errorwindow.cpp \
+    csvimport.cpp
 
 HEADERS  += mainwindow.h \
     itsbrowser.h \
@@ -24,17 +27,19 @@ HEADERS  += mainwindow.h \
     Templates/html_template.h \
     logwindow.h \
     DocumentInterface.h \
-    errorwindow.h
+    errorwindow.h \
+    csvimport.h
 
 FORMS    += mainwindow.ui \
     logwindow.ui \
-    errorwindow.ui
+    errorwindow.ui \
+    csvimport.ui
 
 RESOURCES += \
     res.qrc
 
 # The application version
-VERSION = 13.01
+VERSION = 14.01
 
 # Define the preprocessor macro to get the application version in our application.
 DEFINES += APP_VERSION=\\\"$$VERSION\\\"

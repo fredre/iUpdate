@@ -2,14 +2,24 @@
 #include "mainwindow.h"
 #include <QWebView>
 #include "ui_mainwindow.h"
+#include <QSslSocket>
 itsBrowser::itsBrowser( QWidget *parent ) :
     QWebView( parent ){
 
     //This is needed in Ubuntu under QT 5 for SSL to work
     //Still need to test in Windows7
+    //Seems for Windows 7 you need to install SSL binaries located:
+    //http://slproweb.com/products/Win32OpenSSL.html
     QSslConfiguration sslConfig = QSslConfiguration::defaultConfiguration();
     sslConfig.setProtocol( QSsl::SslV3 ); //Seems under ubuntu we need to specify the version
+
     QSslConfiguration::setDefaultConfiguration( sslConfig );
+
+
+    if(!QSslSocket::supportsSsl())
+    {
+         qDebug() << "It seems SSL is not supported According to supportsSsl. Have you installed open SSL ?";
+    }
 
     QWebSettings *Tsettings = settings();
     Tsettings->setAttribute( QWebSettings::JavascriptEnabled , true );
@@ -38,7 +48,7 @@ void itsBrowser::NetworkTaskfinished( QNetworkReply *reply ){
 
 }
 
-void itsBrowser::HandleSslErrors( QNetworkReply* reply , const QList<QSslError> &errors ){
+void itsBrowser::handleSslErrors( QNetworkReply* reply , const QList<QSslError> &errors ){
 
     qDebug() << Q_FUNC_INFO <<"start";
     qDebug() << "handleSslErrors: !!!!!!!!!!!!!!!! ";
@@ -58,7 +68,8 @@ void itsBrowser::ProvideAuthentication( QNetworkReply *rep , QAuthenticator *aut
         QMessageBox::information(this,"Information","Active Directory login not currently supported due to badly configured TUT Directory Server",QMessageBox::Ok);
 
         //sets url
-        setUrl( QUrl( "https://jupiter.tut.ac.za/staffportal/system/login.php?refscript=/staffportal/index.php" ) );
+        setUrl( QUrl( "www.google.com" ) );
+      //  setUrl( QUrl( "https://jupiter.tut.ac.za/staffportal/system/login.php?refscript=/staffportal/index.php" ) );
 
 }
 

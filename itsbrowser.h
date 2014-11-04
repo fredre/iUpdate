@@ -2,7 +2,6 @@
 #define itsBrowser_H
 
 #include<QtWebKit>
-//#include<QtWebKitWidgets>
 #include <QWebView>
 #include <QNetworkCookieJar>
 #include "qdebug.h"
@@ -28,19 +27,14 @@ public:
     bool InblrContainsStuNum( QString );
     void SetInblrCanBlackOut();
 
-
-
-
-
 signals:
     void onAnyError( QString );
     void OnNetworkError( QString ); //Problem with network connectivity
 public slots:
-    void HandleSslErrors( QNetworkReply* reply, const QList<QSslError> &errors );
+    void handleSslErrors( QNetworkReply* reply, const QList<QSslError> &errors );
     void ProvideAuthentication( QNetworkReply*,QAuthenticator* );
     void ProvideProxAuthentication( const QNetworkProxy &, QAuthenticator* );
     void NetworkTaskfinished ( QNetworkReply * );
-
 
 };
 

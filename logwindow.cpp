@@ -122,7 +122,7 @@ void LogWindow::on_pushButton_2_clicked()
     if(directory != "")
     {
         QDir savedir(directory);
-        QString fileName = tr( "%9_%1%4%2_UpdateLog_%3-%5-%6@%7-%8.txt" ).arg( savedir.absolutePath() ).arg( MarkType ).arg( QDateTime::currentDateTime().date().year() ).arg( QDir::separator() ).arg( QDateTime::currentDateTime().date().month() ).arg( QDateTime::currentDateTime().date().day() ).arg( QDateTime::currentDateTime().time().hour() ).arg( QDateTime::currentDateTime().time().minute()).arg(Subname);
+        QString fileName = tr( "%1%4_%9_%2_UpdateLog_%3-%5-%6@%7-%8.txt" ).arg( savedir.absolutePath() ).arg( MarkType ).arg( QDateTime::currentDateTime().date().year() ).arg( QDir::separator() ).arg( QDateTime::currentDateTime().date().month() ).arg( QDateTime::currentDateTime().date().day() ).arg( QDateTime::currentDateTime().time().hour() ).arg( QDateTime::currentDateTime().time().minute()).arg(Subname);
         QFile file;
         file.setFileName(fileName);
         file.open(QIODevice::Append| QIODevice::Text);

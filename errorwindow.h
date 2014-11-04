@@ -18,11 +18,8 @@ public:
     void setErrorList( QStringList );
     QStringList getErrorList();
 
-    
 private slots:
     void on_btnOk_clicked();
-
-
     void on_btnSave_clicked();
 
 private:

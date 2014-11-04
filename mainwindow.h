@@ -3,7 +3,6 @@
 
 #include <QMainWindow>
 #include <QInputDialog>
-//#include <QWebFrame>
 #include <QNetworkCookieJar>
 #include <QMovie>
 #include <QAuthenticator>
@@ -18,14 +17,23 @@
 #include "logwindow.h"
 #include <QSettings>
 #include "errorwindow.h"
+#include "logwindow.h"
 
-//added
+
 #include <QStringList>
 #include "errordialog.h"
+#include "csvimport.h"
+
+#include <QJsonObject>
+#include <QJsonValue>
+#include <QJsonDocument>
+#include <QJsonArray>
 
 namespace Ui {
     class MainWindow;
 }
+
+
 
 class MainWindow : public QMainWindow
 {
@@ -94,6 +102,8 @@ private slots:
 
     void on_comboBoxMarkTypeSlct_currentTextChanged(const QString &arg1);
 
+    void JSonGeneratedByImporter(QJsonDocument *theDoc);
+
 private:
     Ui::MainWindow *ui;
     DocInterface csvInter;
@@ -101,6 +111,7 @@ private:
     void showSideWindow();
     QStringList errorlist;
     ErrorWindow *errorwindow = new ErrorWindow( this );
+    CSVImport   *csvimporter = new CSVImport( this );
 
 };
 

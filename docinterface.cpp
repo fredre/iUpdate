@@ -7,8 +7,6 @@ QObject( parent )
 
 }
 
-
-
 void DocInterface::sanitizeString(QString &needsSanitation)
 {
     //Remove ""
@@ -60,31 +58,6 @@ bool DocInterface::validateStudentNumber( QString number )
     return true;
 }
 
-
-bool DocInterface::checkDuplicateStudentNumbers( QStringList  lstsnums )
-{
-    //This is not really used by the app since the file contents is converted to QMap and Qmap does not allow duplicate keys.
-    //And i used student number as key lol
-    //So when 2 student numbers is the same one is just ignored !
-    //This is fixed at the point where the qmap is built ! and the user is warned getAllMarksPerMarkType
-
-    lstsnums.sort();
-
-   for( int a =0;a<lstsnums.count()-1;a++ )
-   {
-       if( lstsnums.at( a )==lstsnums.at( a+1 ) )
-       {
-           qDebug()<<QString( "Duplicate student numbers found. %1 was found multiple times" ).arg( lstsnums.at( a ) );
-           //emit FileParseError( QString(" Duplicate student numbers found. %1 was found multiple times" ).arg( lstsnums.at( a ) ) );
-
-           return false;
-       }
-   }
-
-  return true;
-}
-
-
 QString DocInterface::FilePath()
 {
     return filepath;
@@ -93,6 +66,12 @@ QString DocInterface::FilePath()
 void DocInterface::SetFilePath( QString fp )
 {
     filepath = fp;
+}
+
+void  DocInterface::LoadJsonDoc(QJsonDocument *thedoc)
+{
+  JDoc = thedoc;
+  qDebug()<<JDoc->toJson();
 }
 
 bool DocInterface::LoadFile()
@@ -128,129 +107,66 @@ bool DocInterface::LoadFile()
         }
 }
 
-
- QString DocInterface::GetFileExt() {
+QString DocInterface::GetFileExt() {
      return "CSV Files (*.csv)";
  }
 
-  QString  DocInterface::GetFileTypeName() {
+QString  DocInterface::GetFileTypeName() {
       return "CSV";
   }
 
-  QString DocInterface::GetSubjectCode() {
-      QString scode;
-      scode = filecontents[ 0 ];
-
-      scode = scode.split( ',' )[ 0 ];
-      sanitizeString( scode );
-      return scode;
+QString DocInterface::GetSubjectCode() {
+       QJsonObject json_O_mainObject(JDoc->object());
+       QString scode = json_O_mainObject["SubjectName"].toString();
+       sanitizeString( scode );
+       return scode;
   }
 
-  QString DocInterface::GetFirstStudentNumber() {
-      QString snum = filecontents[ 3 ];
-      snum = snum.split( ',' )[ 0 ];
-      sanitizeString( snum );
-      validateStudentNumber( snum );
-      return snum;
-  }
+int DocInterface::GetStudentCount() {
 
-  QString DocInterface::GetLastStudentNumber() {
+      QJsonObject json_O_mainObject(JDoc->object());
 
-      for ( int a=filecontents.count()-1;a>=0;a-- ) {
-       //this needs sanitation also bec of "END"
-       QString content =filecontents[ a ].split( ',' )[ 0 ];
-       sanitizeString( content );
+      QJsonArray json_A_stlist = json_O_mainObject["AllStudentNumbers"].toArray();
 
-        if ( content=="END" ) {
-        QString lstu = filecontents[ a-1 ].split( ',' )[ 0 ];
+      //Also check for duplicate student numbers here
+      QStringList allstuNums;
+      foreach(const QJsonValue & value,json_A_stlist)
+      {
+          QString stu = value.toString();
+          if(allstuNums.contains(stu))
+          {
+             emit FileParseError( QString ( "Duplicate student number found. %1 was found more then once" ).arg( stu ));
+          }
+          else
+          {
+              allstuNums.append(stu);
+          }
 
-
-        sanitizeString( lstu );
-        validateStudentNumber( lstu );
-
-        return lstu;
-       }
       }
+
+      int stuCount = json_A_stlist.size();
+
+      return stuCount;
   }
-
-
-  int  DocInterface::GetStudentCount() {
-      for ( int a=filecontents.count()-1;a>=0;a-- ) {
-         QString content =filecontents[ a ].split( ',' )[ 0 ];
-         sanitizeString( content );
-
-         if ( content=="END" ) {
-
-           return ( a-3 );
-
-         }
-         else
-         {
-             //The file doesnt contain END
-             isWithoutEnd = true;
-         }
-      }
-  }
-
 
 QStringList DocInterface::GetMarkTypesList() {
-   QString mtypes =filecontents[ 2 ];
 
-   //Do some additional checking here since it is the first time the file contents is being evaluated
+    QStringList mtypesSp;
 
+    QJsonObject json_O_mainObject(JDoc->object());
 
+    QJsonArray json_A_mtlist = json_O_mainObject["AllMarkTypes"].toArray();
 
-   //Check if first line contains a string
-   if(filecontents[0].isEmpty() || filecontents[0] == "" || filecontents[0] == " " || filecontents[0][0]==',')
-   {
-     emit FileParseError( QString( "No valid subject name found currently subject name is: %1. Are you sure the very first row contains the subject name ?" ).arg(filecontents[0]));
-   }
+    foreach(const QJsonValue & value,json_A_mtlist)
+    {
+        QString mt = value.toString();
+        mtypesSp.append(mt);
+    }
 
-   sanitizeString( mtypes );
-   QStringList mtypesSp;
-
-       mtypesSp = mtypes.split( ',' );
-        mtypesSp.removeAt(0);
-
-       for(int x = 0; x< mtypesSp.size(); x++)
-       {
-           if(mtypesSp.at(x) == "")
-           {
-               mtypesSp.removeAt(x);
-           }
-       }
-
- return mtypesSp;
+  return mtypesSp;
 }
 
-
- int DocInterface::getMarkTypeColumn( QString mt ) {
-     //Will return the coloumn number of the marktype
-     QStringList mtypesall = filecontents[ 2 ].split( ',' );
-
-
-
-     int loc;
-
-     for ( int a=0;a<mtypesall.count();a++ ) {
-       QString snglmt =mtypesall[ a ];
-       sanitizeString( snglmt );
-
-           if( snglmt==mt ) {
-               loc =a;
-               //qDebug()<<"Mark type found "<<mt<<" location "<<loc;
-           }
-
-
-
-     }
-
-     return loc;
- }
-int DocInterface::GetMarkTypeTotalNumberMarks( QString mt )
-{
-    //Return the total ammount of marks for the marktype
-    //If mark is 0 or empty it is not counted
+int DocInterface::GetMarkTypeTotalNumberMarks( QString mt ){
 
     int totamt=0;
 
@@ -263,91 +179,68 @@ int DocInterface::GetMarkTypeTotalNumberMarks( QString mt )
 
 
         if ( i.value()!=0 ) {
-
-
-
                totamt++;
-
-
-           //qDebug()<<"Ammount "<<totamt << "of marks incremented for mark "<<i.value()<<"Marktype "<<mt<<" student number"<<i.key();
         }
 
          ++i;
-        qDebug()<<"Ammount "<<totamt;
 
     }
 
     return totamt;
 }
-QMap<QString, int> DocInterface::GetAllMarksPerMarkType(QString mt)
 
-{
-   //This will return all marks from the file for the specified marktype. If the mark is empty or 0 the mark will slill be returned
+QMap<QString, int> DocInterface::GetAllMarksPerMarkType(QString mt){
+   //This will return all marks from the file for the specified marktype. If the mark is empty or 0 the mark will still be returned
 
    QMap<QString, int> allMarks;
 
 
-   int loc = getMarkTypeColumn( mt );
+   QJsonObject json_O_mainObject(JDoc->object());
 
+   QJsonObject json_O_mtObject = json_O_mainObject[mt].toObject(); //Get the object for the MT
 
-   for ( int a=3;a<filecontents.count()-1;a++ ) {
-
-       QStringList line = filecontents[ a ].split( ',' ); //Split the mark line into sperate marks
-       QString mark = line[ loc ]; //Get only the mark for the marktype specified by arg mt
-       QString snum = line[ 0 ]; //Get the student number
-
-       //A QMap ingores duplicate keys. so if the map already contains key named stunum warn the user
-       if( allMarks.contains( snum ) ) {
-
-            emit FileParseError( QString ( "Duplicate student number found. %1 was found for mark type %2 more then once" ).arg( snum ).arg( mt ));
-
-       }
-       sanitizeString( snum );
-       if(validateStudentNumber( snum ))
-       {
-           allMarks.insert( snum,mark.toInt() );
-       }
-    //checks if a mark is a decimal or integer
-       if(validateDecimal(mark))
-       {
-           emit FileParseError( QString ( "Error found student number %1 for mark type %2 contains a decimal number" ).arg( snum ).arg( mt ));
-       }
-
-   }
-
-   if( allMarks.count() != GetStudentCount() )  //I shot the dean but I didnt shoot the associate dean ! This should never happen
+   foreach(const QString & key,json_O_mtObject.keys()) //Key is the student number
    {
-       //The file doesnt contain END after all students
-       if(isWithoutEnd == true){
+      QJsonValue oneMark = json_O_mtObject.value(key);
 
-           emit FileParseError( QString( "Please include END after the student number in your file" ));
-       }
-       else{
+      if( allMarks.contains( key ) ) {
+       emit FileParseError( QString ( "Duplicate student number found. %1 was found for mark type %2 more then once" ).arg( key ).arg( mt ));
+      }
 
-            emit FileParseError( QString( "Serious error. The total amount of students are %1 but the ammount of marks returned for %2 is %3" ).arg( GetStudentCount() ).arg( mt ).arg( allMarks.count() ) );
-       }
+      //sanitizeString( &key );
+
+      if(validateStudentNumber( key ))
+      {
+       allMarks.insert( key,oneMark.toDouble() );
+      }
+
+      if(validateDecimal(oneMark.toDouble()))
+      {
+       emit FileParseError( QString ( "Error found student number %1 for mark type %2 contains a decimal number" ).arg( key ).arg( mt ));
+      }
+
+      if(oneMark.toDouble() > 100)
+      {
+          emit FileParseError( QString ( "Invalid mark found. Plase not ITS only accepts final % marks between 0 and 100% the mark %1 for student %2 is not valid" ).arg( oneMark.toDouble()).arg(key));
+      }
    }
 
  return allMarks;
 }
 
-bool DocInterface::validateDecimal(QString lstsnums)
+bool DocInterface::validateDecimal(double mark)
 {
-
-    if( lstsnums.contains(".") )//checks if string contains a . and if it contains a . returns a true because tha would be a decimal0.
-       {
-
-           return true;
-       }
+    int intmark = (static_cast<int>(mark));
+    if( mark - intmark  > 0 ) {
+     return true;
+    }
+   return false;
 }
 
 QStringList DocInterface::GetAllStudentNumbersPerMarkType(QString mt){
 
     //Will return all student numbers irrespective of mark
-
     QMap<QString, int> allMarks = GetAllMarksPerMarkType( mt );
-
-
 
     QStringList snums;
 
@@ -360,10 +253,8 @@ QStringList DocInterface::GetAllStudentNumbersPerMarkType(QString mt){
          snums.append( stunum );
          ++i;
      }
-     checkDuplicateStudentNumbers( snums );
      return snums;
 }
-
 
 int DocInterface::GetStudentMarkPerMarkType( QString mt,QString stunum ){
    QMap<QString, int> allMarks = GetAllMarksPerMarkType( mt );
@@ -378,40 +269,6 @@ int DocInterface::GetStudentMarkPerMarkType( QString mt,QString stunum ){
         }
         ++i;
     }
+     emit FileParseError( QString ( "No mark found for student %1  for mark type %2" ).arg( stunum ).arg( mt ));
+     return 0;
 }
-
-
- QStringList DocInterface::GetStudentNumbersWithNoMark( QString mt ) {
-
-  //Will return all student numbers where mark is 0 or empty
-
- QMap<QString, int> allMarks = GetAllMarksPerMarkType( mt );
-
-
- QStringList nomarks;
-
- QMap<QString, int>::const_iterator i = allMarks.constBegin();
-
-  while ( i != allMarks.constEnd() ) {
-
-      if( i.value()==0 )
-      {
-
-       QString stunum = i.key();
-       sanitizeString(stunum);
-       validateStudentNumber(stunum);
-        nomarks.append(stunum);
-     }
-         ++i;
-  }
-   checkDuplicateStudentNumbers(nomarks);
-
-    return nomarks;
- }
-
-
- int DocInterface::GetMarkTypesCount() {
-
-     return GetMarkTypesList().count();
-
- }
