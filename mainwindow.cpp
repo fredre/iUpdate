@@ -61,8 +61,8 @@ MainWindow::MainWindow( QWidget *parent ) :
     connect(csvimporter,SIGNAL(JSonGenerated(QJsonDocument*)),this,SLOT(JSonGeneratedByImporter(QJsonDocument*)));
 
 
-  // ui->wFitsbrowser->setUrl(QUrl("https://service.oneaccount.com/onlineV2/OSV2?event=login&pt=3"));
-    ui->wFitsbrowser->setUrl( QUrl( "https://jupiter.tut.ac.za/staffportal/system/login.php?refscript=/staffportal/index.php" ) );
+
+    ui->wFitsbrowser->setUrl( QUrl( "https://staffienabler.tut.ac.za/pls/prodi41/w99pkg.mi_login" ) );
 
     QNetworkDiskCache *diskCache = new QNetworkDiskCache( this );
     diskCache->setCacheDirectory( "cachedir" );

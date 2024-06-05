@@ -10,10 +10,10 @@ itsBrowser::itsBrowser( QWidget *parent ) :
     //Still need to test in Windows7
     //Seems for Windows 7 you need to install SSL binaries located:
     //http://slproweb.com/products/Win32OpenSSL.html
-    QSslConfiguration sslConfig = QSslConfiguration::defaultConfiguration();
-    sslConfig.setProtocol( QSsl::SslV3 ); //Seems under ubuntu we need to specify the version
+    //QSslConfiguration sslConfig = QSslConfiguration::defaultConfiguration();
+    //sslConfig.setProtocol( QSsl::SslV3 ); //Seems under ubuntu we need to specify the version
 
-    QSslConfiguration::setDefaultConfiguration( sslConfig );
+    //QSslConfiguration::setDefaultConfiguration( sslConfig );
 
 
     if(!QSslSocket::supportsSsl())
